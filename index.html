@@ -1,44 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Deklarácia, že používame HTML5 dokument -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ILCS LTD - Frontend Trends</title>
+<html lang="en"> <!-- Začiatok HTML dokumentu, jazyk nastavený na angličtinu -->
 
-  <!-- Google Fonts -->
+<head> <!-- Hlavička stránky, tu sú meta dáta a linky -->
+  <meta charset="UTF-8" /> <!-- Kódovanie písmen, používa sa na správne zobrazenie textu -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Nastavenie veľkosti stránky pre mobily a tablety -->
+  <title>ILCS LTD - Frontend Trends</title> <!-- Text, ktorý sa zobrazí v záložke prehliadača -->
+
+  <!-- Google Fonts - tu si pridávaš písma, ktoré sa načítajú z Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
+  <!-- Odkaz na tvoj CSS súbor, tu meníš vzhľad stránky -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-container">
-      <h1 class="logo-text">ILCS LTD</h1>
+<body> <!-- Telo stránky, tu sa zobrazuje všetok obsah -->
 
-      <!-- NAVIGATION MENU -->
-      <nav class="site-nav" id="nav-menu">
-        <ul>
-          <li><a href="#">Home</a></li>
+  <!-- HLAVIČKA -->
+  <header class="site-header"> <!-- Toto je vrchná lišta, kde je logo a menu -->
+    <div class="header-container"> <!-- Zbalené všetko do jedného bloku, kvôli rozloženiu -->
 
-          <!-- SERVICES DROPDOWN -->
-          <li class="dropdown">
-            <a href="#" onclick="toggleDropdown(event, this)">Services</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Laser Rust Removal</a></li>
+      <h1 class="logo-text">ILCS LTD</h1> <!-- Tu je názov firmy (logo), môžeš zmeniť text -->
+
+      <!-- NAVIGAČNÉ MENU -->
+      <nav class="site-nav" id="nav-menu"> <!-- Navigácia na stránke -->
+        <ul> <!-- Zoznam položiek v menu -->
+
+          <li><a href="#">Home</a></li> <!-- Odkaz na domácu stránku, môžeš pridať inú adresu -->
+
+          <!-- MENU S ROZBALOVACOU PONUKOU - SERVICES -->
+          <li class="dropdown"> <!-- Prvý dropdown - skupina Services -->
+            <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)"> <!-- Po kliknutí sa otvorí menu -->
+              Services <span class="arrow"></span> <!-- Text + šipka (grafická indikácia, že sa to dá rozkliknúť) -->
+            </a>
+            <ul class="dropdown-menu"> <!-- Rozbaľovacie menu -->
+              <li><a href="#">Laser Rust Removal</a></li> <!-- Položka menu -->
               <li><a href="#">Industrial Equipment Cleaning</a></li>
               <li><a href="#">Surface Preparation</a></li>
               <li><a href="#">Eco-Friendly Solutions</a></li>
             </ul>
           </li>
 
-          <!-- LENSES DROPDOWN -->
-          <li class="dropdown">
-            <a href="#" onclick="toggleDropdown(event, this)">Lenses</a>
-            <ul class="dropdown-menu">
+          <!-- MENU S ROZBALOVACOU PONUKOU - LENSES -->
+          <li class="dropdown"> <!-- Druhý dropdown - skupina Lenses -->
+            <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
+              Lenses <span class="arrow"></span> <!-- Text + šipka -->
+            </a>
+            <ul class="dropdown-menu"> <!-- Rozbaľovacie menu -->
               <li><a href="#">Precision Lenses</a></li>
               <li><a href="#">Coated Lenses</a></li>
               <li><a href="#">Cleaning Kits</a></li>
@@ -46,29 +54,55 @@
             </ul>
           </li>
 
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Gallery</a></li> <!-- Odkaz na galériu (môžeš doplniť link) -->
+
+          <!-- Kontakt odkaz, keď klikneš, posunie ťa dolu na formulár -->
+          <li><a href="#contact-form">Contact Us</a></li>
+
         </ul>
       </nav>
 
-      <!-- HAMBURGER MENU -->
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <!-- HAMBURGER MENU pre mobilné zobrazenie -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div> <!-- Tento "burger" menu sa zobrazuje na mobiloch -->
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <!-- PARTICLES BACKGROUND -->
-    <div id="particles-js"></div>
-
-    <!-- TITLES -->
-    <h1 class="hero-title">FRONTEND TRENDS</h1>
-    <h3 class="hero-subtitle">BENEFITS OF TECHNOLOGIES</h3>
+  <!-- HLAVNÁ SEKCIA - HERO BANNER -->
+  <section class="hero"> <!-- Toto je sekcia v strede stránky, najviac viditeľná -->
+    <div id="particles-js"></div> <!-- Toto je pozadie s pohybujúcimi sa čiastočkami (particles) -->
+    <h1 class="hero-title">INDUSTRIAL LASER</h1> <!-- Hlavný nadpis na stránke -->
+    <h3 class="hero-subtitle">CLEANING SOLUTIONS</h3> <!-- Podnadpis na stránke -->
   </section>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="script.js"></script>
+  <!-- PRIPOJENIE JAVASCRIPT KNIZNICE -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> <!-- Knižnica na animáciu častíc -->
+  <script src="script.js"></script> <!-- Tvoj vlastný JS súbor -->
+
+  <!-- KONTAKT FORMULÁR NA KONCI STRÁNKY -->
+  <section class="contact-form-section" id="contact-form"> <!-- Sekcia s kontaktným formulárom -->
+    <h2>Contact Us</h2> <!-- Nadpis sekcie -->
+    <p>Fill out the form and we will get back to you soon!</p> <!-- Popis sekcie -->
+
+    <form id="email-form"> <!-- Samotný formulár -->
+      <div class="form-group"> <!-- Skupina pre meno -->
+        <label for="name">Your Name</label> <!-- Popisok nad poľom -->
+        <input type="text" id="name" name="name" placeholder="Enter your name..." required /> <!-- Pole pre meno -->
+      </div>
+
+      <div class="form-group"> <!-- Skupina pre email -->
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email..." required /> <!-- Pole pre email -->
+      </div>
+
+      <div class="form-group"> <!-- Skupina pre správu -->
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..." required></textarea> <!-- Textové pole na správu -->
+      </div>
+
+      <button type="submit">Send Message</button> <!-- Tlačidlo na odoslanie formulára -->
+    </form>
+  </section>
+
 </body>
 
 </html>
