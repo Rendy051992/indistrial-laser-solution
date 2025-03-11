@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ILCS LTD - Frontend Trends</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <h1 class="logo-text">ILCS LTD</h1>
+
+      <!-- NAVIGATION MENU -->
+      <nav class="site-nav" id="nav-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+
+          <!-- SERVICES DROPDOWN -->
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event, this)">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Laser Rust Removal</a></li>
+              <li><a href="#">Industrial Equipment Cleaning</a></li>
+              <li><a href="#">Surface Preparation</a></li>
+              <li><a href="#">Eco-Friendly Solutions</a></li>
+            </ul>
+          </li>
+
+          <!-- LENSES DROPDOWN -->
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event, this)">Lenses</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Precision Lenses</a></li>
+              <li><a href="#">Coated Lenses</a></li>
+              <li><a href="#">Cleaning Kits</a></li>
+              <li><a href="#">Lens Repair</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- HAMBURGER MENU -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <!-- PARTICLES BACKGROUND -->
+    <div id="particles-js"></div>
+
+    <!-- TITLES -->
+    <h1 class="hero-title">FRONTEND TRENDS</h1>
+    <h3 class="hero-subtitle">BENEFITS OF TECHNOLOGIES</h3>
+  </section>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
