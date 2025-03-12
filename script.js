@@ -259,6 +259,30 @@ class NavigationPage {
   }
 }
 
+// Nájde šípku
+const scrollArrow = document.querySelector('.scroll-down-arrow');
+
+// Keď na ňu klikneš:
+scrollArrow.addEventListener('click', function(e) {
+  e.preventDefault(); // nezbehne klasické preskočenie
+  document.querySelector('#info').scrollIntoView({
+    behavior: 'smooth' // pekný plynulý posun
+  });
+  
+  scrollArrow.style.display = 'none'; // schová šípku po kliknutí
+});
+
+// Keď scrolluješ hore/dole:
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.scrollY;
+  if (scrollPosition > 200) {
+    scrollArrow.style.display = 'none';  // schová šípku
+  } else {
+    scrollArrow.style.display = 'flex'; // zobrazí znova, ak si hore
+  }
+});
+
+
 new NavigationPage();
 /* Credit and Thanks:
 Matrix - Particles.js;
