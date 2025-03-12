@@ -1,139 +1,120 @@
-<!DOCTYPE html> <!-- Deklarácia, že používame HTML5 dokument -->
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en"> <!-- Začiatok HTML dokumentu, jazyk nastavený na angličtinu -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ILCS LTD - Frontend Trends</title>
 
-<head> <!-- Hlavička stránky, tu sú meta dáta a linky -->
-  <meta charset="UTF-8" /> <!-- Kódovanie písmen, používa sa na správne zobrazenie textu -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Nastavenie veľkosti stránky pre mobily a tablety -->
-  <title>ILCS LTD - Frontend Trends</title> <!-- Text, ktorý sa zobrazí v záložke prehliadača -->
-
-  <!-- Google Fonts - tu si pridávaš písma, ktoré sa načítajú z Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <!-- AOS - Animate On Scroll CSS štýly -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <!-- AOS - Animate On Scroll CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Odkaz na tvoj CSS súbor, tu meníš vzhľad stránky -->
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Tvoj CSS -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Lightbox2 CSS štýly -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-
 </head>
 
-<body> <!-- Telo stránky, tu sa zobrazuje všetok obsah -->
+<body>
 
   <!-- HLAVIČKA -->
-  <header class="site-header"> <!-- Toto je vrchná lišta, kde je logo a menu -->
-    <div class="header-container"> <!-- Zbalené všetko do jedného bloku, kvôli rozloženiu -->
-
-      <h1 class="logo-text">ILCS LTD</h1> <!-- Tu je názov firmy (logo), môžeš zmeniť text -->
-
-      <!-- NAVIGAČNÉ MENU -->
-      <nav class="site-nav" id="nav-menu"> <!-- Navigácia na stránke -->
-        <ul> <!-- Zoznam položiek v menu -->
-
-          <li><a href="#">Home</a></li> <!-- Odkaz na domácu stránku, môžeš pridať inú adresu -->
-
-          <!-- MENU S ROZBALOVACOU PONUKOU - SERVICES -->
-          <li class="dropdown"> <!-- Prvý dropdown - skupina Services -->
-            <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)"> <!-- Po kliknutí sa otvorí menu -->
-              Services <span class="arrow"></span> <!-- Text + šipka (grafická indikácia, že sa to dá rozkliknúť) -->
+  <header class="site-header">
+    <div class="header-container">
+      <h1 class="logo-text">ILCS LTD</h1>
+      <nav class="site-nav" id="nav-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
+              Services <span class="arrow"></span>
             </a>
-            <ul class="dropdown-menu"> <!-- Rozbaľovacie menu -->
-              <li><a href="#">Laser Rust Removal</a></li> <!-- Položka menu -->
+            <ul class="dropdown-menu">
+              <li><a href="#">Laser Rust Removal</a></li>
               <li><a href="#">Industrial Equipment Cleaning</a></li>
               <li><a href="#">Surface Preparation</a></li>
               <li><a href="#">Eco-Friendly Solutions</a></li>
             </ul>
           </li>
-
-          <!-- MENU S ROZBALOVACOU PONUKOU - LENSES -->
-          <li class="dropdown"> <!-- Druhý dropdown - skupina Lenses -->
+          <li class="dropdown">
             <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
-              Lenses <span class="arrow"></span> <!-- Text + šipka -->
+              Lenses <span class="arrow"></span>
             </a>
-            <ul class="dropdown-menu"> <!-- Rozbaľovacie menu -->
+            <ul class="dropdown-menu">
               <li><a href="#">Precision Lenses</a></li>
               <li><a href="#">Coated Lenses</a></li>
               <li><a href="#">Cleaning Kits</a></li>
               <li><a href="#">Lens Repair</a></li>
             </ul>
           </li>
-
-          <li><a href="gallery.html" target="_blank">Gallery</a></li> <!-- Odkaz na galériu (môžeš doplniť link) -->
-
-          <!-- Kontakt odkaz, keď klikneš, posunie ťa dolu na formulár -->
+          <li><a href="gallery.html" target="_blank">Gallery</a></li>
           <li><a href="#contact-form">Contact Us</a></li>
-
         </ul>
       </nav>
-
-      <!-- HAMBURGER MENU pre mobilné zobrazenie -->
-      <div class="hamburger" onclick="toggleMenu()">☰</div> <!-- Tento "burger" menu sa zobrazuje na mobiloch -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
-  <!-- HLAVNÁ SEKCIA - HERO BANNER -->
-  <section class="hero"> <!-- Toto je sekcia v strede stránky, najviac viditeľná -->
-    <div id="particles-js"></div> <!-- Toto je pozadie s pohybujúcimi sa čiastočkami (particles) -->
-    <h1 class="hero-title" data-aos="fade-up">INDUSTRIAL LASER</h1> <!-- Efekt fade-up -->
-<h3 class="hero-subtitle" data-aos="fade-right">CLEANING SOLUTIONS</h3> <!-- Efekt fade-right -->
-
+  <!-- HERO SEKCIA -->
+  <section class="hero">
+    <div id="particles-js"></div>
+    <h1 class="hero-title" data-aos="fade-up">INDUSTRIAL LASER</h1>
+    <h3 class="hero-subtitle" data-aos="fade-right">CLEANING SOLUTIONS</h3>
     
+    <!-- ŠIPKA -->
+    <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">↓</a>
+  </section>
+  
+
+  <!-- INFO SEKCIU O LASEROCH (BIELE POZADIE) -->
+  <<section id="info" class="info-section white-background">
+
+
+    <div class="info-container" data-aos="fade-up">
+      <h1>LASERS</h1>
+      <p>
+        Precision and Efficiency with CNC Laser Technology. CNC laser machines have revolutionized modern manufacturing by offering unparalleled precision and efficiency. Using a focused beam of light controlled by computer software, these machines can cut, engrave, and mark a wide range of materials, including metals, plastics, wood, and composites.<br><br>
+        One of the key advantages of CNC laser technology is its ability to create complex shapes and intricate designs with minimal material waste. Modern CNC laser systems are equipped with advanced motion control and high-speed processing, making them ideal for both prototyping and large-scale production.<br><br>
+        Industries such as automotive, aerospace, electronics, and medical device manufacturing rely on CNC lasers for their accuracy and consistency. Additionally, the non-contact process ensures there is no physical wear on tools, reducing maintenance costs and downtime. Whether used for cutting thin sheets of stainless steel or engraving detailed graphics on acrylic surfaces, CNC laser machines offer flexibility and speed, helping businesses improve productivity and deliver high-quality products to their customers.
+      </p>
+    </div>
   </section>
 
-  <!-- PRIPOJENIE JAVASCRIPT KNIZNICE -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> <!-- Knižnica na animáciu častíc -->
-  <script src="script.js"></script> <!-- Tvoj vlastný JS súbor -->
-
-  <!-- KONTAKT FORMULÁR NA KONCI STRÁNKY -->
-  <section class="contact-form-section" id="contact-form"> <!-- Sekcia s kontaktným formulárom -->
-    <h2>Contact Us</h2> <!-- Nadpis sekcie -->
-    <p>Fill out the form and we will get back to you soon!</p> <!-- Popis sekcie -->
-
-    <form id="email-form"> <!-- Samotný formulár -->
-      <div class="form-group"> <!-- Skupina pre meno -->
-        <label for="name">Your Name</label> <!-- Popisok nad poľom -->
-        <input type="text" id="name" name="name" placeholder="Enter your name..." required /> <!-- Pole pre meno -->
+  <!-- KONTAKT FORMULÁR -->
+  <section class="contact-form-section" id="contact-form">
+    <h2>Contact Us</h2>
+    <p>Fill out the form and we will get back to you soon!</p>
+    <form id="email-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name..." required />
       </div>
-
-      <div class="form-group"> <!-- Skupina pre email -->
+      <div class="form-group">
         <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email..." required /> <!-- Pole pre email -->
+        <input type="email" id="email" name="email" placeholder="Enter your email..." required />
       </div>
-
-      <div class="form-group"> <!-- Skupina pre správu -->
+      <div class="form-group">
         <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Write your message..." required></textarea> <!-- Textové pole na správu -->
+        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
       </div>
-
-      <button type="submit">Send Message</button> <!-- Tlačidlo na odoslanie formulára -->
+      <button type="submit">Send Message</button>
     </form>
   </section>
-  <!-- AOS - Animate On Scroll JavaScript -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
-// Tento kód spustí animácie AOS na stránke
-AOS.init(); // Inicializácia AOS (spustí všetky animácie, ktoré si nastavíš nižšie)
-</script>
-<!-- Lightbox2 JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <!-- TLAČIDLO SPÄŤ HORE -->
+  <a href="#" class="back-to-top">↑</a>
 
-<section class="gallery">
-  <!-- Prvý obrázok -->
-  <a href="images/photo1.jpg" data-lightbox="mygallery" data-title="Popis obrázku 1">
-    <img src="images/thumb1.jpg" alt="Náhľad obrázku 1">
-  </a>
-
-  <!-- Druhý obrázok -->
-  <a href="images/photo2.jpg" data-lightbox="mygallery" data-title="Popis obrázku 2">
-    <img src="images/thumb2.jpg" alt="Náhľad obrázku 2">
-  </a>
-</section>
-<!-- Tlačidlo "Späť hore" -->
-<a href="#" class="back-to-top">↑</a>
-
+  <!-- SCRIPTY -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
 </body>
 

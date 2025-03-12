@@ -1,334 +1,522 @@
-/* RESET */
-/* Tento blok nastavuje, že všetky okraje a výplne budú nulové
-   a všetky elementy budú mať rovnaký výpočet veľkostí (box-sizing).
-   Nemusíš tu nič meniť. */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* HLAVNÉ TELO STRÁNKY */
-  body {
-    font-family: "Roboto", sans-serif; /* Tu si môžeš zmeniť font písma na niečo iné z Google Fonts */
-    background-color: #1e1f26; /* Tu zmeníš farbu pozadia celej stránky (teraz je tmavo sivá) */
-    color: #fff; /* Tu si nastavuješ farbu textu (teraz biela) */
-    overflow-x: hidden; /* Zabráni horizontálnemu posúvaniu stránky, ak niečo presahuje */
-  }
-  
-  /* HLAVIČKA STRÁNKY */
-  .site-header {
-    position: fixed; /* Hlavička je stále hore, aj keď scrolluješ */
-    top: 0; /* Od vrchu stránky */
-    left: 0;
-    width: 100%;
-    background-color: #00ADEF; /* Farba hlavičky, môžeš zmeniť napr. na #FF0000 (červená) */
-    padding: 15px 30px; /* Vnútorný priestor hore/dole 15px a zľava/ zprava 30px */
-    display: flex; /* Flexbox - prvky sú vedľa seba */
-    justify-content: space-between; /* Rozdelí priestor medzi logom a menu */
-    align-items: center; /* Zarovná zvisle na stred */
-    z-index: 1000; /* Vrchná vrstva, aby bolo menu nad ostatným obsahom */
-  }
+  /* RESET */
+  /* Tento blok nastavuje, že všetky okraje a výplne budú nulové
+    a všetky elementy budú mať rovnaký výpočet veľkostí (box-sizing).
+    Nemusíš tu nič meniť. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* HLAVNÉ TELO STRÁNKY */
+    body {
+      font-family: "Roboto", sans-serif; /* Tu si môžeš zmeniť font písma na niečo iné z Google Fonts */
+      background-color: #1e1f26; /* Tu zmeníš farbu pozadia celej stránky (teraz je tmavo sivá) */
+      color: #fff; /* Tu si nastavuješ farbu textu (teraz biela) */
+      overflow-x: hidden; /* Zabráni horizontálnemu posúvaniu stránky, ak niečo presahuje */
+    }
+    
+    /* HLAVIČKA STRÁNKY */
+    .site-header {
+      position: fixed; /* Hlavička je stále hore, aj keď scrolluješ */
+      top: 0; /* Od vrchu stránky */
+      left: 0;
+      width: 100%;
+      background-color: #00ADEF; /* Farba hlavičky, môžeš zmeniť napr. na #FF0000 (červená) */
+      padding: 15px 30px; /* Vnútorný priestor hore/dole 15px a zľava/ zprava 30px */
+      display: flex; /* Flexbox - prvky sú vedľa seba */
+      justify-content: space-between; /* Rozdelí priestor medzi logom a menu */
+      align-items: center; /* Zarovná zvisle na stred */
+      z-index: 1000; /* Vrchná vrstva, aby bolo menu nad ostatným obsahom */
+    }
 
-  .site-header {
-    background-color: transparent; /* Transparentná na začiatku */
-    transition: background-color 0.3s ease; /* Plynulá zmena farby */
-  }
-  
-  .site-header.scrolled {
-    background-color: #0f6d93; /* Po scrollnutí sa hlavicka zmení na modrú */
-  }
-  
-  
-  /* KONTAJNER V HLAVIČKE */
-  .header-container {
-    width: 100%; /* Celá šírka */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* LOGO TEXT */
-  .logo-text {
-    font-size: 24px; /* Veľkosť písma loga */
-    font-weight: bold; /* Tučné písmo */
-    color: #fff; /* Farba loga (biela) */
-  }
-  
-  /* NAVIGAČNÉ MENU */
-  .site-nav ul {
-    display: flex; /* Položky menu vedľa seba */
-    list-style: none; /* Odstráni bodky zo zoznamu */
-    gap: 20px; /* Medzera medzi položkami menu */
-  }
-  
-  .site-nav ul li {
-    position: relative; /* Potrebné pre dropdown menu */
-  }
-  
-  .site-nav ul li a {
-    color: #fff; /* Farba odkazov v menu */
-    text-decoration: none; /* Žiadne podčiarknutie */
-    padding: 10px 15px; /* Vnútorný priestor pre pohodlné kliknutie */
+    .site-header {
+      background-color: transparent; /* Transparentná na začiatku */
+      transition: background-color 0.3s ease; /* Plynulá zmena farby */
+    }
+    
+    .site-header.scrolled {
+      background-color: #0f6d93; /* Po scrollnutí sa hlavicka zmení na modrú */
+    }
+    
+    
+    /* KONTAJNER V HLAVIČKE */
+    .header-container {
+      width: 100%; /* Celá šírka */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    /* LOGO TEXT */
+    .logo-text {
+      font-size: 24px; /* Veľkosť písma loga */
+      font-weight: bold; /* Tučné písmo */
+      color: #fff; /* Farba loga (biela) */
+    }
+    
+    /* NAVIGAČNÉ MENU */
+    .site-nav ul {
+      display: flex; /* Položky menu vedľa seba */
+      list-style: none; /* Odstráni bodky zo zoznamu */
+      gap: 20px; /* Medzera medzi položkami menu */
+    }
+    
+    .site-nav ul li {
+      position: relative; /* Potrebné pre dropdown menu */
+    }
+    
+    .site-nav ul li a {
+      color: #fff; /* Farba odkazov v menu */
+      text-decoration: none; /* Žiadne podčiarknutie */
+      padding: 10px 15px; /* Vnútorný priestor pre pohodlné kliknutie */
+      transition: background-color 0.3s ease; /* Plynulá zmena farby pri hoveri */
+    }
+    
+    .site-nav ul li a:hover {
+      background-color: #0077BE; /* Farba pozadia po prejdení myšou */
+      border-radius: 5px; /* Zaoblené rohy */
+    }
+    
+    /* DROPDOWN MENU (skryté menu) */
+    .dropdown-menu {
+      position: absolute; /* Poloha vzhľadom na li element */
+      top: 160%; /* Medzera medzi menu a dropdown menu */
+      left: 0;
+      background: linear-gradient(135deg, #0077BE, #00ADEF); /* Tu zmeníš gradient pozadie dropdown menu */
+      display: none; /* Skryté štandardne */
+      flex-direction: column;
+      min-width: 220px; /* Minimálna šírka menu */
+      border-radius: 8px; /* Zaoblené rohy menu */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Tieň pod menu */
+      opacity: 0; /* Neviditeľné štandardne */
+      visibility: hidden; /* Skryté štandardne */
+      transition: opacity 0.4s ease, transform 0.4s ease; /* Plynulé zobrazenie */
+      transform: translateY(10px); /* Posunuté dole o 10px keď je skryté */
+      z-index: 100;
+    }
+    
+    /* Ak je menu otvorené */
+    .dropdown.open .dropdown-menu {
+      display: flex; /* Zobrazí sa ako flexbox */
+      opacity: 1; /* Viditeľné */
+      visibility: visible; /* Viditeľné */
+      transform: translateY(0); /* Posunie na pôvodnú pozíciu */
+    }
+    
+    /* ODKAZY V DROPDOWNE */
+    .dropdown-menu li a {
+      color: #fff; /* Farba textu */
+      padding: 12px 20px; /* Priestor okolo textu */
+      text-decoration: none; /* Žiadne podčiarknutie */
+      display: block;
+      transition: background-color 0.3s ease, padding-left 0.3s ease;
+      font-size: 14px; /* Veľkosť písma v dropdown menu */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Čiara medzi položkami */
+    }
+    
+    .dropdown-menu li:last-child a {
+      border-bottom: none; /* Posledná položka nemá spodnú čiaru */
+    }
+    
+    .dropdown-menu li a:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* Svetlejšie pozadie pri hoveri */
+      padding-left: 30px; /* Posunie text doprava pri hoveri */
+    }
+    
+    /* ŠIPKA PRI DROPDOWNE */
+    .arrow {
+      display: inline-block;
+      margin-left: 8px; /* Medzera medzi textom a šipkou */
+      transition: transform 0.3s ease; /* Plynulá animácia */
+      font-size: 0.6em; /* Veľkosť šipky */
+    }
+    
+    /* OTOČENÁ ŠIPKA AK JE MENU OTVORENÉ */
+    .dropdown.open .arrow {
+      transform: rotate(180deg); /* Otočí šipku hore nohami */
+    }
+    
+    .arrow::after {
+      content: '▼'; /* Symbol šipky, môžeš zmeniť na ► alebo ⌄ */
+      font-size: 0.8em;
+      color: #fff; /* Farba šipky */
+    }
+    
+    /* ZAFARBENIE TLAČIDLA PRI AKTÍVNOM MENU */
+    .dropdown.open > .dropdown-toggle {
+      background-color: rgba(0, 0, 0, 0.2); /* Polopriesvitné čierne pozadie */
+      border-radius: 5px;
+    }
+    
+    /* HAMBURGER MENU PRE MOBIL */
+    .hamburger {
+      display: none; /* Skryté na veľkých obrazovkách */
+      font-size: 24px; /* Veľkosť ikonky */
+      color: #fff; /* Farba ikonky */
+      cursor: pointer; /* Kurzor ruky pri hoveri */
+    }
+    
+    /* HLAVNÁ SEKCIA (HERO) */
+    .hero {
+      position: relative;
+      height: 70vh; /*  Výšku hlavnej obrazovky (animacia) */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertikálne na stred */
+      align-items: center; /* Horizontálne na stred */
+      text-align: center;
+      margin-top: 80px; /* Odstup od vrchu (hlavička) */
+    }
+
+    
+    
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;  /* velkost particles animacie */
+      top: 0;
+      left: 0;
+      z-index: 0;
+      overflow: hidden; /* ZABRÁNI presahu častíc */
+    }
+    
+    
+    
+    /* HLAVNÝ NADPIS */
+    .hero-title {
+      cursor: pointer;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 5vw;
+      letter-spacing: 0.5rem;
+    
+      /* Gradient text - základný vzhľad */
+      background: linear-gradient(90deg, #03dac6, #ff0266);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    
+      transition: all 0.4s ease;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+      animation: pulseGlow 3s ease-in-out infinite;
+    
+      z-index: 1;
+    }
+    
+    .hero-title:hover {
+      display: inline-flex;          /* Flexbox len pre element */
+      justify-content: center;       /* Horizontálne centrovanie */
+      align-items: center;           /* Vertikálne centrovanie */
+      
+      padding: 20px 40px;            /* Mierny padding (zmenšené) */
+      height: auto;                  /* Automatická výška podľa obsahu */
+    
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50px;
+      
+      transform: scale(1.05);        /* Jemné zväčšenie */
+      box-shadow: 0 0 20px rgba(15, 109, 147, 0.6);
+    
+      animation: pulse 1.5s infinite;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+    
+
+
+    
+    /* PODNADPIS */
+    .hero-subtitle {
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      font-size: 2vw;
+      color: #ff0266;
+      margin-top: 20px;
+    
+      /* nič viac - žiadne padding, border-radius, background */
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .hero-subtitle:hover {
+      padding: 15px 30px; /* pridá sa len pri hoveri */
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50px; /* bublina len keď hoveruješ */
+    
+      transform: scale(1.2);
+      box-shadow: 0 0 30px rgba(255, 2, 102, 0.8);
+      animation: pulse 1.5s infinite;
+    }
+    
+    
+
+    
+    /* ANIMÁCIA PRE NADPIS */
+    @keyframes pulseGlow {
+      0% {
+        color: #0f6d93;
+        text-shadow: 0 0 10px #0f6d93, 0 0 20px #0f6d93;
+      }
+      50% {
+        color: #ff0266;
+        text-shadow: 0 0 20px #ff0266, 0 0 40px #ff0266;
+      }
+      100% {
+        color:#0f6d93;
+        text-shadow: 0 0 10px #0f6d93, 0 0 20px #0f6d93;
+      }
+    }
+    
+    /* ANIMÁCIA PRE PODNADPIS */
+    @keyframes subtitleGlow {
+      0% {
+        color: #faebd7;
+        text-shadow: 0 0 5px #faebd7;
+      }
+      50% {
+        color: #ff0266;
+        text-shadow: 0 0 15px #ff0266;
+      }
+      100% {
+        color: #faebd7;
+        text-shadow: 0 0 5px #faebd7;
+      }
+    }
+    
+    
+    /* RESPONSIVE DESIGN PRE MOBILY */
+    @media (max-width: 768px) {
+      .site-nav {
+        display: none; /* Skryje menu */
+        flex-direction: column;
+        background-color: #0f6d93; /* Farba menu na mobile */
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+    
+      .site-nav.active {
+        display: flex; /* Zobrazí menu pri kliknutí na hamburger */
+      }
+    
+      .hamburger {
+        display: block; /* Zobrazí ikonku hamburger menu */
+      }
+    }
+    
+    /* KONTAKT FORMULÁR - DOLU NA STRÁNKE */
+    .contact-form-section {
+      padding: 80px 20px; /* Odstup okolo formulára */
+      background-color: #f4f4f4; /* Farba pozadia formulára */
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #333; /* Farba textu */
+      text-align: center;
+    }
+    
+    .contact-form-section h2 {
+      font-size: 2.5rem; /* Veľkosť nadpisu */
+      margin-bottom: 10px;
+    }
+    
+    .contact-form-section p {
+      margin-bottom: 40px;
+    }
+    
+    #email-form {
+      max-width: 600px; /* Šírka formulára */
+      margin: 0 auto; /* Zarovnanie na stred */
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    
+    #email-form button[type="submit"] {
+      background-color: #0f6d93; /* Farba tlačidla */
+      color: #fff; /* Farba textu na tlačidle */
+      padding: 15px 25px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    
+    #email-form button[type="submit"]:hover {
+      background-color: #159bea; /* Farba tlačidla po prejdení myšou */
+    }
+    
+    .back-to-top {
+    position: fixed; /* Tlačidlo sa vždy drží na jednom mieste (pravý dolný roh) */
+    bottom: 40px; /* Odspodu 40px */
+    right: 40px; /* Sprava 40px */
+    background-color: #0f6d93; /* Farba tlačidla */
+    color: #fff; /* Farba šípky */
+    padding: 10px 15px; /* Vnútorné okraje tlačidla */
+    border-radius: 50%; /* Tlačidlo bude kruhové */
+    text-align: center; /* Text (šípka) zarovnaný na stred */
+    text-decoration: none; /* Žiadna linka pod textom */
+    font-size: 20px; /* Veľkosť šípky */
+    display: none; /* Skryté na začiatku, zobrazí sa neskôr cez JS */
+    z-index: 999; /* Bude nad všetkým ostatným */
     transition: background-color 0.3s ease; /* Plynulá zmena farby pri hoveri */
   }
-  
-  .site-nav ul li a:hover {
-    background-color: #0077BE; /* Farba pozadia po prejdení myšou */
-    border-radius: 5px; /* Zaoblené rohy */
+
+  .back-to-top:hover {
+    background-color: #28abf7; /* Tmavšia modrá pri prejdení myšou */
   }
-  
-  /* DROPDOWN MENU (skryté menu) */
-  .dropdown-menu {
-    position: absolute; /* Poloha vzhľadom na li element */
-    top: 100%; /* Pod hlavným menu */
-    left: 0;
-    background: linear-gradient(135deg, #0077BE, #00ADEF); /* Tu zmeníš gradient pozadie dropdown menu */
-    display: none; /* Skryté štandardne */
-    flex-direction: column;
-    min-width: 220px; /* Minimálna šírka menu */
-    border-radius: 8px; /* Zaoblené rohy menu */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Tieň pod menu */
-    opacity: 0; /* Neviditeľné štandardne */
-    visibility: hidden; /* Skryté štandardne */
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Plynulé zobrazenie */
-    transform: translateY(10px); /* Posunuté dole o 10px keď je skryté */
-    z-index: 100;
-  }
-  
-  /* Ak je menu otvorené */
-  .dropdown.open .dropdown-menu {
-    display: flex; /* Zobrazí sa ako flexbox */
-    opacity: 1; /* Viditeľné */
-    visibility: visible; /* Viditeľné */
-    transform: translateY(0); /* Posunie na pôvodnú pozíciu */
-  }
-  
-  /* ODKAZY V DROPDOWNE */
-  .dropdown-menu li a {
-    color: #fff; /* Farba textu */
-    padding: 12px 20px; /* Priestor okolo textu */
-    text-decoration: none; /* Žiadne podčiarknutie */
-    display: block;
-    transition: background-color 0.3s ease, padding-left 0.3s ease;
-    font-size: 14px; /* Veľkosť písma v dropdown menu */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Čiara medzi položkami */
-  }
-  
-  .dropdown-menu li:last-child a {
-    border-bottom: none; /* Posledná položka nemá spodnú čiaru */
-  }
-  
-  .dropdown-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Svetlejšie pozadie pri hoveri */
-    padding-left: 30px; /* Posunie text doprava pri hoveri */
-  }
-  
-  /* ŠIPKA PRI DROPDOWNE */
-  .arrow {
-    display: inline-block;
-    margin-left: 8px; /* Medzera medzi textom a šipkou */
-    transition: transform 0.3s ease; /* Plynulá animácia */
-    font-size: 0.6em; /* Veľkosť šipky */
-  }
-  
-  /* OTOČENÁ ŠIPKA AK JE MENU OTVORENÉ */
-  .dropdown.open .arrow {
-    transform: rotate(180deg); /* Otočí šipku hore nohami */
-  }
-  
-  .arrow::after {
-    content: '▼'; /* Symbol šipky, môžeš zmeniť na ► alebo ⌄ */
-    font-size: 0.8em;
-    color: #fff; /* Farba šipky */
-  }
-  
-  /* ZAFARBENIE TLAČIDLA PRI AKTÍVNOM MENU */
-  .dropdown.open > .dropdown-toggle {
-    background-color: rgba(0, 0, 0, 0.2); /* Polopriesvitné čierne pozadie */
-    border-radius: 5px;
-  }
-  
-  /* HAMBURGER MENU PRE MOBIL */
-  .hamburger {
-    display: none; /* Skryté na veľkých obrazovkách */
-    font-size: 24px; /* Veľkosť ikonky */
-    color: #fff; /* Farba ikonky */
-    cursor: pointer; /* Kurzor ruky pri hoveri */
-  }
-  
-  /* HLAVNÁ SEKCIA (HERO) */
-  .hero {
-    position: relative;
-    height: 100vh; /* Na výšku obrazovky */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertikálne na stred */
-    align-items: center; /* Horizontálne na stred */
-    text-align: center;
-    margin-top: 80px; /* Odstup od vrchu (hlavička) */
-  }
-  
-  #particles-js {
-    position: absolute; /* Umieštenie pozadia */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-  
-  /* HLAVNÝ NADPIS */
+
+  /* Hero Title - Hover efekt */
   .hero-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 5vw; /* Dynamická veľkosť podľa šírky obrazovky */
-    color: #0f6d93; /* Farba nadpisu */
-    letter-spacing: 0.5rem; /* Medzery medzi písmenami */
-    animation: pulseGlow 3s ease-in-out infinite; /* Animácia svietenia */
-    z-index: 1;
+    cursor: pointer; /* Mení kurzor na ruku pri prechode */
   }
-  
-  /* PODNADPIS */
-  .hero-subtitle {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2vw; /* Dynamická veľkosť */
-    color: #ff0266; /* Farba textu */
-    margin-top: 20px; /* Medzera hore */
-    animation: subtitleGlow 3s ease-in-out infinite; /* Animácia svietenia */
-    z-index: 1;
-  }
-  
-  /* ANIMÁCIA PRE NADPIS */
-  @keyframes pulseGlow {
-    0% {
-      color: #0f6d93;;
-      text-shadow: 0 0 10px #0f6d93, 0 0 20px #0f6d93;
-    }
-    50% {
-      color: #ff0266;
-      text-shadow: 0 0 20px #ff0266, 0 0 40px #ff0266;
-    }
-    100% {
-      color:#0f6d93;
-      text-shadow: 0 0 10px #0f6d93, 0 0 20px #0f6d93;
-    }
-  }
-  
-  /* ANIMÁCIA PRE PODNADPIS */
-  @keyframes subtitleGlow {
-    0% {
-      color: #faebd7;
-      text-shadow: 0 0 5px #faebd7;
-    }
-    50% {
-      color: #ff0266;
-      text-shadow: 0 0 15px #ff0266;
-    }
-    100% {
-      color: #faebd7;
-      text-shadow: 0 0 5px #faebd7;
-    }
-  }
-  
-  /* RESPONSIVE DESIGN PRE MOBILY */
-  @media (max-width: 768px) {
-    .site-nav {
-      display: none; /* Skryje menu */
-      flex-direction: column;
-      background-color: #00ADEF; /* Farba menu na mobile */
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-    }
-  
-    .site-nav.active {
-      display: flex; /* Zobrazí menu pri kliknutí na hamburger */
-    }
-  
-    .hamburger {
-      display: block; /* Zobrazí ikonku hamburger menu */
-    }
-  }
-  
-  /* KONTAKT FORMULÁR - DOLU NA STRÁNKE */
-  .contact-form-section {
-    padding: 80px 20px; /* Odstup okolo formulára */
-    background-color: #f4f4f4; /* Farba pozadia formulára */
-    color: #333; /* Farba textu */
-    text-align: center;
-  }
-  
-  .contact-form-section h2 {
-    font-size: 2.5rem; /* Veľkosť nadpisu */
-    margin-bottom: 10px;
-  }
-  
-  .contact-form-section p {
-    margin-bottom: 40px;
-  }
-  
-  #email-form {
-    max-width: 600px; /* Šírka formulára */
-    margin: 0 auto; /* Zarovnanie na stred */
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-  }
-  
-  .form-group textarea {
-    height: 150px;
-    resize: vertical;
-  }
-  
-  #email-form button[type="submit"] {
-    background-color: #00ADEF; /* Farba tlačidla */
-    color: #fff; /* Farba textu na tlačidle */
-    padding: 15px 25px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  #email-form button[type="submit"]:hover {
-    background-color: #0077BE; /* Farba tlačidla po prejdení myšou */
-  }
-  
-  .back-to-top {
-  position: fixed; /* Tlačidlo sa vždy drží na jednom mieste (pravý dolný roh) */
-  bottom: 40px; /* Odspodu 40px */
-  right: 40px; /* Sprava 40px */
-  background-color: #00ADEF; /* Farba tlačidla */
-  color: #fff; /* Farba šípky */
-  padding: 10px 15px; /* Vnútorné okraje tlačidla */
-  border-radius: 50%; /* Tlačidlo bude kruhové */
-  text-align: center; /* Text (šípka) zarovnaný na stred */
-  text-decoration: none; /* Žiadna linka pod textom */
-  font-size: 20px; /* Veľkosť šípky */
-  display: none; /* Skryté na začiatku, zobrazí sa neskôr cez JS */
-  z-index: 999; /* Bude nad všetkým ostatným */
-  transition: background-color 0.3s ease; /* Plynulá zmena farby pri hoveri */
+
+  /* Hero Title */
+.hero-title {
+  cursor: pointer; /* Mení kurzor na ruku pri hoveri */
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 5vw;
+  letter-spacing: 0.5rem;
+  background: linear-gradient(90deg, #03dac6, #ff0266);
+background-clip: text;                /* <----- pridané! */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transition: all 0.4s ease;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  animation: pulseGlow 3s ease-in-out infinite;
+  z-index: 1;
 }
 
-.back-to-top:hover {
-  background-color: #0077BE; /* Tmavšia modrá pri prejdení myšou */
+
+
+.hero-title:hover {
+  transform: scale(1.2); /* Zväčší text */
+  box-shadow: 0 0 30px rgba(15, 109, 147, 0.6); /* Pridá bublinový tieň */
 }
+
+
+  /* Hero Subtitle - Hover efekt */
+  .hero-subtitle {
+    cursor: pointer;
+  }
+
+  .hero-subtitle:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px #ff0266;
+    transition: all 0.3s ease;
+  }
+
+  .scroll-down-arrow {
+    display: inline-block;
+    margin-top: 80px;
+    
+    font-size: 2.5rem; /* veľkosť šípky */
+    color: #ffffff;    /* farba šípky */
+    
+    animation: bounce 2s infinite; /* animácia */
+    cursor: pointer;   /* kurzor ruka */
+    
+    transition: transform 0.3s ease;
+  }
+  /* SIPKA NA DOL - SCROLL*/
+  .scroll-down-arrow:hover {
+    transform: scale(1.3); /* zväčšenie pri hoveri */
+    color: #ff0266;        /* zmena farby pri hoveri */
+  }
+  
+  /* animácia bounce */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(8px);
+    }
+    60% {
+      transform: translateY(4px);
+    }
+  }
+  
+  
+/* Info Section - LASERS */
+.info-section {
+  background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0bd 100%);
+  color: #333;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.info-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.info-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0f6d93;
+}
+
+.info-container p {
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+
+  .info-container {
+    max-width: 900px; /* Zúženie textového bloku, aby bol ľahšie čitateľný */
+    margin: 0 auto; /* Zarovnanie bloku na stred */
+  }
+
+  .info-container h1 {
+    font-size: 2.5rem; /* Veľký nadpis */
+    margin-bottom: 20px; /* Medzera pod nadpisom */
+    color: #0f6d93; /* Môžeš zmeniť farbu nadpisu, ak chceš */
+  }
+
+  .info-container p {
+    font-size: 1rem; /* Štandardná veľkosť písma */
+    line-height: 1.8; /* Výška riadkov na ľahšie čítanie */
+    text-align: justify; /* Text bude zarovnaný do bloku */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1.01);
+      box-shadow: 0 0 8px rgba(255, 2, 102, 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 12px rgba(255, 2, 102, 0.6);
+    }
+    100% {
+      transform: scale(1.01);
+      box-shadow: 0 0 8px rgba(255, 2, 102, 0.4);
+    }
+  }
+  
+  
