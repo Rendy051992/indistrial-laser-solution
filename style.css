@@ -1,4 +1,5 @@
-  /* RESET */
+
+/* RESET */
   /* Tento blok nastavuje, že všetky okraje a výplne budú nulové
     a všetky elementy budú mať rovnaký výpočet veľkostí (box-sizing).
     Nemusíš tu nič meniť. */
@@ -7,6 +8,13 @@
       padding: 0;
       box-sizing: border-box;
     }
+    /*SCROLLING WEB*/
+    html, body {
+      scroll-behavior: smooth; /* Ak chceš plynulý scroll */
+      overflow-x: hidden;      /* Povolené len horizontálne, zakáže len posun doprava/doľava */
+    }
+    
+  
     
     /* HLAVNÉ TELO STRÁNKY */
     body {
@@ -16,7 +24,7 @@
       overflow-x: hidden; /* Zabráni horizontálnemu posúvaniu stránky, ak niečo presahuje */
     }
     
-    /* HLAVIČKA STRÁNKY */
+    /* HEADER STRÁNKY */
     .site-header {
       position: fixed; /* Hlavička je stále hore, aj keď scrolluješ */
       top: 0; /* Od vrchu stránky */
@@ -48,7 +56,7 @@
       align-items: center;
     }
     
-    /* LOGO TEXT */
+    /* LOGO LTD... TEXT */
     .logo-text {
       font-size: 24px; /* Veľkosť písma loga */
       font-weight: bold; /* Tučné písmo */
@@ -156,21 +164,9 @@
       color: #fff; /* Farba ikonky */
       cursor: pointer; /* Kurzor ruky pri hoveri */
     }
-    
-    /* HLAVNÁ SEKCIA (HERO) */
-    .hero {
-      position: relative;
-      height: 70vh; /*  Výšku hlavnej obrazovky (animacia) */
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Vertikálne na stred */
-      align-items: center; /* Horizontálne na stred */
-      text-align: center;
-      margin-top: 80px; /* Odstup od vrchu (hlavička) */
-    }
 
-    
-    
+    /*CASTICE*/
+
     #particles-js {
       position: absolute;
       width: 100%;
@@ -181,82 +177,66 @@
       overflow: hidden; /* ZABRÁNI presahu častíc */
     }
     
+    .hero {
+      position: relative;
+      height: 70vh; /* Zachovávaš pôvodnú výšku hero sekcie */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 80px; /* Rezerva na hlavičku (ak treba), alebo odstráň */
+    }
+    
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;  /* Pekná medzera medzi nadpismi */
+      z-index: 1;
+      position: relative;
+    }
+    
+    /* TEXT- INDUSTRIAL */
+    .hero-subtitle.top {
+      font-size: 2vw;
+      color: #ff0266;
+      font-weight: bold;
+    
+      /* Zväčšíme priestor medzi INDUSTRIAL a LASER CLEANING */
+      margin-bottom: 40px; /* Pôvodne si mal -20px, teraz väčší rozostup */
+    }
+    
+    .hero-title {
+      font-size: 5vw;
+      letter-spacing: 0.5rem;
+      margin: 0;
+    
+      /* Ak potrebuješ, môžeš pridať aj extra padding alebo margin */
+      margin-bottom: 40px; /* Vytvorí väčší priestor medzi LASER CLEANING a SOLUTIONS */
+    }
+    
+    .hero-subtitle.bottom {
+      font-size: 2vw;
+      color: #ff0266;
+      font-weight: bold;
+    
+      /* Ak chceš, môžeš pridať margin-top, ale keď už máme margin-bottom na hero-title, nemusíš */
+    }
     
     
-    /* HLAVNÝ NADPIS */
-    /* HLAVNÝ NADPIS */
-.hero-title {
-  cursor: pointer;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 5vw;
-  letter-spacing: 0.5rem;
-  
-  background: linear-gradient(90deg, #03dac6, #ff0266);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    /* Hover efekty ostávajú rovnaké */
+    .hero-subtitle:hover {
+      padding: 15px 30px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50px;
+      transform: scale(1.2);
+      box-shadow: 0 0 30px rgba(255, 2, 102, 0.8);
+      animation: pulse 1.5s infinite;
+    }
+    
 
-  opacity: 0;
-  transform: translateY(50px); /* počiatočná pozícia */
-  
-  animation: fadeSlideIn 1s ease-out forwards; /* animácia */
-  animation-delay: 0.2s; /* kedy začať */
 
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
-  animation-name: pulseGlow, fadeSlideIn; /* glow + fade-in */
-  animation-duration: 3s, 1s;
-  animation-delay: 0s, 0.2s;
-  animation-timing-function: ease-in-out, ease-out;
-  animation-iteration-count: infinite, 1;
-
-  z-index: 1;
-}
-
-.hero-title:hover {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  
-  padding: 20px 40px;
-  height: auto;
-  
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 50px;
-  
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(15, 109, 147, 0.6);
-  
-  animation: pulse 1.5s infinite;
-  transition: all 0.3s ease;
-}
-
-/* PODNADPIS */
-.hero-subtitle {
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2vw;
-  color: #ff0266;
-  margin-top: 60px;
-
-  opacity: 0;
-  transform: translateY(50px);
-
-  animation: fadeSlideIn 1s ease-out forwards;
-  animation-delay: 1.4s; /* Čaká na koniec hlavného nadpisu */
-
-  transition: all 0.3s ease;
-  z-index: 1;
-}
-
-.hero-subtitle:hover {
-  padding: 15px 30px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 50px;
-
-  transform: scale(1.2);
-  box-shadow: 0 0 30px rgba(255, 2, 102, 0.8);
-  animation: pulse 1.5s infinite;
-}
 
 /* ANIMÁCIE */
 @keyframes fadeSlideIn {

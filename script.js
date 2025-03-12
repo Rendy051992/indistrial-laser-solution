@@ -282,6 +282,22 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Posunie stránku na vrch pri načítaní
+window.onload = function() {
+    window.scrollTo(0, 0); // Posunie stránku na súradnice (x=0, y=0)
+};
+
+window.addEventListener('load', function() {
+  document.body.style.overflow = "visible"; // Po načítaní zobrazí scrollbar
+  window.scrollTo(0, 0); // Posunie stránku na vrch
+});
+
+// Pri načítaní alebo reloade posunie stránku na vrch
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
+
 
 new NavigationPage();
 /* Credit and Thanks:
