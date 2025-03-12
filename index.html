@@ -9,9 +9,15 @@
 
   <!-- Google Fonts - tu si pridávaš písma, ktoré sa načítajú z Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- AOS - Animate On Scroll CSS štýly -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
   <!-- Odkaz na tvoj CSS súbor, tu meníš vzhľad stránky -->
   <link rel="stylesheet" href="style.css" />
+  <!-- Lightbox2 CSS štýly -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
 </head>
 
 <body> <!-- Telo stránky, tu sa zobrazuje všetok obsah -->
@@ -54,7 +60,7 @@
             </ul>
           </li>
 
-          <li><a href="#">Gallery</a></li> <!-- Odkaz na galériu (môžeš doplniť link) -->
+          <li><a href="gallery.html" target="_blank">Gallery</a></li> <!-- Odkaz na galériu (môžeš doplniť link) -->
 
           <!-- Kontakt odkaz, keď klikneš, posunie ťa dolu na formulár -->
           <li><a href="#contact-form">Contact Us</a></li>
@@ -70,8 +76,10 @@
   <!-- HLAVNÁ SEKCIA - HERO BANNER -->
   <section class="hero"> <!-- Toto je sekcia v strede stránky, najviac viditeľná -->
     <div id="particles-js"></div> <!-- Toto je pozadie s pohybujúcimi sa čiastočkami (particles) -->
-    <h1 class="hero-title">INDUSTRIAL LASER</h1> <!-- Hlavný nadpis na stránke -->
-    <h3 class="hero-subtitle">CLEANING SOLUTIONS</h3> <!-- Podnadpis na stránke -->
+    <h1 class="hero-title" data-aos="fade-up">INDUSTRIAL LASER</h1> <!-- Efekt fade-up -->
+<h3 class="hero-subtitle" data-aos="fade-right">CLEANING SOLUTIONS</h3> <!-- Efekt fade-right -->
+
+    
   </section>
 
   <!-- PRIPOJENIE JAVASCRIPT KNIZNICE -->
@@ -102,6 +110,30 @@
       <button type="submit">Send Message</button> <!-- Tlačidlo na odoslanie formulára -->
     </form>
   </section>
+  <!-- AOS - Animate On Scroll JavaScript -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+// Tento kód spustí animácie AOS na stránke
+AOS.init(); // Inicializácia AOS (spustí všetky animácie, ktoré si nastavíš nižšie)
+</script>
+<!-- Lightbox2 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+<section class="gallery">
+  <!-- Prvý obrázok -->
+  <a href="images/photo1.jpg" data-lightbox="mygallery" data-title="Popis obrázku 1">
+    <img src="images/thumb1.jpg" alt="Náhľad obrázku 1">
+  </a>
+
+  <!-- Druhý obrázok -->
+  <a href="images/photo2.jpg" data-lightbox="mygallery" data-title="Popis obrázku 2">
+    <img src="images/thumb2.jpg" alt="Náhľad obrázku 2">
+  </a>
+</section>
+<!-- Tlačidlo "Späť hore" -->
+<a href="#" class="back-to-top">↑</a>
+
 
 </body>
 

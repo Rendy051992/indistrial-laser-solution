@@ -29,6 +29,16 @@
     align-items: center; /* Zarovná zvisle na stred */
     z-index: 1000; /* Vrchná vrstva, aby bolo menu nad ostatným obsahom */
   }
+
+  .site-header {
+    background-color: transparent; /* Transparentná na začiatku */
+    transition: background-color 0.3s ease; /* Plynulá zmena farby */
+  }
+  
+  .site-header.scrolled {
+    background-color: #0f6d93; /* Po scrollnutí sa hlavicka zmení na modrú */
+  }
+  
   
   /* KONTAJNER V HLAVIČKE */
   .header-container {
@@ -172,9 +182,9 @@
   .hero-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 5vw; /* Dynamická veľkosť podľa šírky obrazovky */
-    color: #03dac6; /* Farba nadpisu */
+    color: #0f6d93; /* Farba nadpisu */
     letter-spacing: 0.5rem; /* Medzery medzi písmenami */
-    animation: pulseGlow 2s ease-in-out infinite; /* Animácia svietenia */
+    animation: pulseGlow 3s ease-in-out infinite; /* Animácia svietenia */
     z-index: 1;
   }
   
@@ -191,16 +201,16 @@
   /* ANIMÁCIA PRE NADPIS */
   @keyframes pulseGlow {
     0% {
-      color: #03dac6;
-      text-shadow: 0 0 10px #03dac6, 0 0 20px #03dac6;
+      color: #0f6d93;;
+      text-shadow: 0 0 10px #0f6d93, 0 0 20px #0f6d93;
     }
     50% {
       color: #ff0266;
       text-shadow: 0 0 20px #ff0266, 0 0 40px #ff0266;
     }
     100% {
-      color: #03dac6;
-      text-shadow: 0 0 10px #03dac6, 0 0 20px #03dac6;
+      color:#0f6d93;
+      text-shadow: 0 0 10px #0f6d93, 0 0 20px #0f6d93;
     }
   }
   
@@ -303,3 +313,22 @@
     background-color: #0077BE; /* Farba tlačidla po prejdení myšou */
   }
   
+  .back-to-top {
+  position: fixed; /* Tlačidlo sa vždy drží na jednom mieste (pravý dolný roh) */
+  bottom: 40px; /* Odspodu 40px */
+  right: 40px; /* Sprava 40px */
+  background-color: #00ADEF; /* Farba tlačidla */
+  color: #fff; /* Farba šípky */
+  padding: 10px 15px; /* Vnútorné okraje tlačidla */
+  border-radius: 50%; /* Tlačidlo bude kruhové */
+  text-align: center; /* Text (šípka) zarovnaný na stred */
+  text-decoration: none; /* Žiadna linka pod textom */
+  font-size: 20px; /* Veľkosť šípky */
+  display: none; /* Skryté na začiatku, zobrazí sa neskôr cez JS */
+  z-index: 999; /* Bude nad všetkým ostatným */
+  transition: background-color 0.3s ease; /* Plynulá zmena farby pri hoveri */
+}
+
+.back-to-top:hover {
+  background-color: #0077BE; /* Tmavšia modrá pri prejdení myšou */
+}

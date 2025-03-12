@@ -81,3 +81,27 @@ document.addEventListener("click", function(event) {
     });
   }
 });
+
+// TLAČIDLO "SPÄŤ HORE"
+// Nájde tlačidlo podľa triedy .back-to-top
+const backToTopButton = document.querySelector('.back-to-top');
+
+// Počas scrollovania skontroluje, či stránka je viac ako 300px dole
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { // Ak je scroll viac ako 300px
+    backToTopButton.style.display = 'block'; // Zobrazí tlačidlo
+  } else {
+    backToTopButton.style.display = 'none'; // Inak ho skryje
+  }
+});
+
+// HLAVIČKA: Transparentná na začiatku, modrá po scrolle
+window.addEventListener('scroll', function () {
+  const header = document.querySelector('.site-header'); // Nájde element hlavičky
+
+  if (window.scrollY > 50) { // Ak užívateľ scrolne aspoň 50px
+    header.classList.add('scrolled'); // Pridá triedu, ktorá zmení farbu na modrú
+  } else {
+    header.classList.remove('scrolled'); // Zmizne trieda = bude transparentná
+  }
+});
