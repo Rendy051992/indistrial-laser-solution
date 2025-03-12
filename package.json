@@ -1,0 +1,21 @@
+{
+  "name": "clean-web",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rendy051992/indistrial-laser-solution.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rendy051992/indistrial-laser-solution/issues"
+  },
+  "homepage": "https://github.com/Rendy051992/indistrial-laser-solution#readme",
+  "description": ""
+}

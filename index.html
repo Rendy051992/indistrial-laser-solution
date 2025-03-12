@@ -2,20 +2,23 @@
 <html lang="en">
 
 <head>
+  <!-- Nastavenie znakovej sady na správne zobrazovanie -->
   <meta charset="UTF-8" />
+  <!-- Optimalizácia pre mobilné zariadenia -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ILCS LTD - Frontend Trends</title>
+  <!-- Názov stránky v záložke prehliadača -->
+  <title>ILCS LTD</title>
 
-  <!-- Google Fonts -->
+  <!-- Pripojenie fontov z Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- AOS - Animate On Scroll CSS -->
+  <!-- Knižnica AOS: efekty pri scrollovaní (napr. keď sa niečo zobrazí pri posúvaní stránky) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Lightbox2 CSS -->
+  <!-- Lightbox2: zobrazovanie galérie obrázkov s efektom vyskakovacieho okna -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- Tvoj CSS -->
+  <!-- CSS súbor so štýlmi -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -24,11 +27,14 @@
   <!-- HLAVIČKA -->
   <header class="site-header">
     <div class="header-container">
+      <!-- Logo text -->
       <h1 class="logo-text">ILCS LTD</h1>
+      <!-- Hlavné navigačné menu -->
       <nav class="site-nav" id="nav-menu">
         <ul>
           <li><a href="#">Home</a></li>
           <li class="dropdown">
+            <!-- Rozbaľovacie menu pre "Services" -->
             <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
               Services <span class="arrow"></span>
             </a>
@@ -40,6 +46,7 @@
             </ul>
           </li>
           <li class="dropdown">
+            <!-- Rozbaľovacie menu pre "Lenses" -->
             <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
               Lenses <span class="arrow"></span>
             </a>
@@ -50,50 +57,53 @@
               <li><a href="#">Lens Repair</a></li>
             </ul>
           </li>
+          <!-- Odkaz na galériu -->
           <li><a href="gallery.html" target="_blank">Gallery</a></li>
+          <!-- Odkaz na kontakt -->
           <li><a href="#contact-form">Contact Us</a></li>
         </ul>
       </nav>
+      <!-- Ikona hamburger menu pre mobilné zariadenia -->
       <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
-  <!-- HERO SEKCIA -->
-  <!-- HERO SEKCIA -->
-<section class="hero">
-  <div id="particles-js"></div>
-  
-  <h1 class="hero-title" data-aos="fade-up">INDUSTRIAL LASER</h1>
-  <h3 class="hero-subtitle" data-aos="fade-right">CLEANING SOLUTIONS</h3>
+  <!-- HLAVNÁ SEKCIA HERO -->
+  <section class="hero">
+    <!-- Miesto, kde sa vykreslia častice -->
+    <div id="particles-js"></div>
 
-  <!-- ŠIPKA TU! -->
-  <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="12" y1="5" x2="12" y2="19"></line>
-      <polyline points="19 12 12 19 5 12"></polyline>
-    </svg>
-  </a>
-</section>
+    <!-- Hlavný nadpis v strede stránky -->
+    <h1 class="hero-title" data-aos="fade-up">LASER CLEANING</h1>
+    <!-- Podnadpis -->
+    <h3 class="hero-subtitle" data-aos="fade-right">SOLUTIONS</h3>
 
+    <!-- Šípka na scrollovanie dole (po kliknutí zroluje stránku) -->
+    <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </a>
+  </section>
 
-  <!-- INFO SEKCIU O LASEROCH (BIELE POZADIE) -->
+  <!-- INFO SEKCIU O LASEROCH -->
   <section id="info" class="info-section white-background">
-
-
     <div class="info-container" data-aos="fade-up">
-      <h1>LASERS</h1>
+      <!-- Nadpis sekcie -->
+      <h1>LASERS CLEANING</h1>
+      <!-- Popisné odstavce o laserovej technológii -->
       <p>
-        Precision and Efficiency with CNC Laser Technology. CNC laser machines have revolutionized modern manufacturing by offering unparalleled precision and efficiency. Using a focused beam of light controlled by computer software, these machines can cut, engrave, and mark a wide range of materials, including metals, plastics, wood, and composites.<br><br>
-        One of the key advantages of CNC laser technology is its ability to create complex shapes and intricate designs with minimal material waste. Modern CNC laser systems are equipped with advanced motion control and high-speed processing, making them ideal for both prototyping and large-scale production.<br><br>
-        Industries such as automotive, aerospace, electronics, and medical device manufacturing rely on CNC lasers for their accuracy and consistency. Additionally, the non-contact process ensures there is no physical wear on tools, reducing maintenance costs and downtime. Whether used for cutting thin sheets of stainless steel or engraving detailed graphics on acrylic surfaces, CNC laser machines offer flexibility and speed, helping businesses improve productivity and deliver high-quality products to their customers.
+        Laser cleaning is a modern technology that uses intense pulsed laser beams to remove unwanted layers, contaminants, or corrosion from surfaces. It is commonly used for surface preparation before further processing, coating, or for the restoration of historical monuments. The technique involves precisely targeting a laser beam, which, through energy absorption, causes localized heating and subsequent sublimation or peeling of contaminants. Key parameters such as wavelength, pulse energy, and frequency ensure efficiency and minimize damage to the base material. The advantages include high precision, low abrasiveness, environmental sustainability, speed, and the possibility of process automation, allowing cleaning in hard-to-reach areas without the use of chemicals while minimizing secondary waste production. On the other hand, laser cleaning requires high initial investments and strict adherence to safety protocols, including the use of specialized protective goggles and operator training, as improper parameter settings can lead to material damage or pose risks to operators. In industry, it is used for cleaning machinery, removing corrosion from metal surfaces, and preparing surfaces before welding and painting. In the field of cultural heritage and artworks, it helps protect the original material layer without physical intervention. Technological development brings innovations such as more powerful and precise lasers, the integration of artificial intelligence for process optimization, and the expansion of applications to a wider range of materials, with an increasing focus on ecological aspects and sustainability. Laser cleaning represents an effective and gentle alternative to traditional methods such as mechanical grinding or chemical cleaning, and although it may be more costly, its advantages in precision, speed, and environmental friendliness make it an attractive choice for modern industrial and artistic applications.
       </p>
     </div>
   </section>
 
-  <!-- KONTAKT FORMULÁR -->
+  <!-- KONTAKTNÝ FORMULÁR -->
   <section class="contact-form-section" id="contact-form">
     <h2>Contact Us</h2>
     <p>Fill out the form and we will get back to you soon!</p>
+    <!-- Formulár na odoslanie správy -->
     <form id="email-form">
       <div class="form-group">
         <label for="name">Your Name</label>
@@ -111,19 +121,60 @@
     </form>
   </section>
 
-  <!-- TLAČIDLO SPÄŤ HORE -->
+  <!-- TLAČIDLO "SPÄŤ HORE" -->
   <a href="#" class="back-to-top">↑</a>
 
   <!-- SCRIPTY -->
+
+  <!-- knižnica particles.js (staršia verzia, už ju nepoužívaš) -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Tvoj vlastný súbor s JavaScriptom -->
   <script src="script.js"></script>
+
+  <!-- AOS knižnica: efekty pri scrollovaní -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Inicializácia knižnice AOS (bez nej by animácie nefungovali)
     AOS.init();
   </script>
-  
+
+  <!-- Lightbox knižnica: zobrazenie obrázkov v galérii ako vyskakovacie okno -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-  
+
+  <!-- tParticles: knižnica na animáciu častíc -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <!-- Konfigurácia tParticles: nastavuje, ako sa majú častice správať -->
+  <script>
+    // Načítanie častíc do elementu s ID "particles-js"
+    tsParticles.load("particles-js", {
+      fullScreen: { enable: false }, // Zakáže rozšírenie častíc na celú obrazovku
+      particles: {
+        number: { value: 80 }, // Počet častíc
+        color: { value: ["#ff0266", "#03dac6", "#ffffff"] }, // Farby častíc (ružová, tyrkysová, biela)
+        shape: { type: "circle" }, // Tvar častíc (kruh)
+        opacity: { value: 0.5 }, // Priehľadnosť častíc
+        size: { value: 3 }, // Veľkosť častíc
+        links: {
+          enable: true, // Povolenie spájania častíc čiarami
+          distance: 150, // Maximálna vzdialenosť medzi časticami, pri ktorej sa spájajú
+          color: { value: ["#ff0266", "#03dac6"] }, // Farby spojovacích čiar
+          opacity: 0.6, // Priehľadnosť spojovacích čiar
+          width: 1.5 // Hrúbka spojovacích čiar
+        },
+        move: {
+          enable: true, // Povolenie pohybu častíc
+          speed: 2 // Rýchlosť pohybu
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" } // Efekt: keď prejdeš myšou, častice sa rozídu
+        }
+      }
+    });
+  </script>
 
 </body>
 
