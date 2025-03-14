@@ -36,62 +36,79 @@ body {
 }
 
 .header-container {
-  width: 100%;
-  max-width: 1400px;
   display: flex;
-  justify-content: space-between;  /* logo vľavo, menu vpravo */
+  justify-content: flex-start;  /* všetko ide zľava doprava */
   align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
 }
+
+
 
 .logo-text {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
 
-  /* OVAL / BUBBLINE STYLE */
-  padding: 10px 20px; /* priestor okolo textu */
-  border: 2px solid #ffffff; /* biela čiara */
-  border-radius: 50px; /* spraví ovál */
+  margin-left: -60px; /* Alebo prispôsobiť */
+  margin-right: auto;
+
+  padding: 10px 20px;
+  border: 2px solid #ffffff;   /* Biela čiara bubliny */
+  border-radius: 50px;         /* Ovál */
+
+  background-color: #b10707;   /* ← Background bubble - rovnaká farba ako hlavička */
   
-  background-color: transparent; /* pozadie bubliny priehľadné */
-  
-  display: inline-block; /* aby ovál objal text */
+  display: inline-block;
+  transition: box-shadow 0.3s ease;
 }
 
+
+/* Hover efekt */
 .logo-text:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   cursor: pointer;
 }
 
 
+.site-nav {
+  margin-left: 0px; /* sem píš hodnoty podľa potreby */
+}
+
 
 .site-nav ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 40px;
+
+  margin-right: 0;
+  padding-right: 40px;
 }
+
+
 
 .site-nav ul li {
   position: relative;
 }
 
 .site-nav ul li a {
-  color: #fff;
+  color: #fff; /* farba textu */
   text-decoration: none;
   padding: 10px 15px;
   transition: background-color 0.3s ease;
 }
 
 .site-nav ul li a:hover {
-  background-color: rgb(39, 70, 209);
+  background-color: rgb(76, 117, 205); /* farba po najazdení myšou */
   border-radius: 5px;
 }
-
+ /*dropdown menu*/
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background: linear-gradient(135deg, #0077BE, #00ADEF);
+  background: linear-gradient(135deg, #0077BE, #00ADEF); /*drobdown menu background color */
   display: none;
   flex-direction: column;
   min-width: 220px;
@@ -104,7 +121,7 @@ body {
   z-index: 1000;
 }
 
-.dropdown.open .dropdown-menu {
+.dropdown.open .dropdown-menu { 
   display: flex;
   opacity: 1;
   visibility: visible;
@@ -117,7 +134,7 @@ body {
 }
 
 .dropdown-menu li a {
-  color: #fff;
+  color: #fff; /* farba textu */
   padding: 12px 20px;
   text-decoration: none;
   display: block;
@@ -154,7 +171,7 @@ body {
   position: absolute;     /* !!! Kľúčové na centrovanie !!! */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  /* !!! Toto ťa vycentruje úplne na stred !!! */
+  transform: translate(-50%, -50%);  /* !!! Toto vycentruje úplne na stred !!! */
   z-index: 2;
   width: 100%;
   padding: 0 20px;
