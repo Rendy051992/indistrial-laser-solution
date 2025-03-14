@@ -1,43 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Nastavenie znakovej sady na správne zobrazovanie -->
   <meta charset="UTF-8" />
-  <!-- Optimalizácia pre mobilné zariadenia -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Názov stránky v záložke prehliadača -->
   <title>ILCS LTD</title>
 
-  <!-- Pripojenie fontov z Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Knižnica AOS: efekty pri scrollovaní (napr. keď sa niečo zobrazí pri posúvaní stránky) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Lightbox2: zobrazovanie galérie obrázkov s efektom vyskakovacieho okna -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- CSS súbor so štýlmi -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <!-- HLAVIČKA -->
   <header class="site-header">
     <div class="header-container">
-      <!-- Logo text -->
-      <h1 class="logo-text">ILCS           Ltd</h1>
-      <!-- Hlavné navigačné menu -->
+      <h1 class="logo-text">ILCS Ltd</h1>
       <nav class="site-nav" id="nav-menu">
         <ul>
           <li><a href="#">Home</a></li>
+  
+          <!-- Services Dropdown -->
           <li class="dropdown">
-            <!-- Rozbaľovacie menu pre "Services" -->
-            <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
-              Services <span class="arrow"></span>
-            </a>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">Services <span class="arrow">▼</span></a>
             <ul class="dropdown-menu">
               <li><a href="#">Laser Rust Removal</a></li>
               <li><a href="#">Industrial Equipment Cleaning</a></li>
@@ -45,141 +31,88 @@
               <li><a href="#">Eco-Friendly Solutions</a></li>
             </ul>
           </li>
+  
+          <!-- Lenses Dropdown -->
           <li class="dropdown">
-            <!-- Rozbaľovacie menu pre "Lenses" -->
-            <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
-              Lenses <span class="arrow"></span>
-            </a>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">Lenses <span class="arrow">▼</span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Precision Lenses</a></li>
-              <li><a href="#">Coated Lenses</a></li>
-              <li><a href="#">Cleaning Kits</a></li>
-              <li><a href="#">Lens Repair</a></li>
+              <li><a href="#">Protective Lenses</a></li>
+              <li><a href="#">Cutting Lenses</a></li>
+              <li><a href="#">Focusing Lenses</a></li>
+              <li><a href="#">Collimating Lenses</a></li>
+              <li><a href="#">Scanning Lenses</a></li>
             </ul>
           </li>
-          <!-- Odkaz na galériu -->
-          <li><a href="gallery.html" target="_blank">Gallery</a></li>
-          <!-- Odkaz na kontakt -->
-          <li><a href="#contact-form">Contact Us</a></li>
+  
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
-      <!-- Ikona hamburger menu pre mobilné zariadenia -->
+  
+      <!-- Hamburger pre mobil -->
       <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
   </header>
+  
 
-  <!-- HLAVNÁ SEKCIA HERO -->
+  <!-- HERO -->
   <section class="hero">
-    <div id="particles-js"></div>
+    <canvas id="laserCanvas"></canvas>
   
-    <!-- Pridaj túto obalovaciu divku -->
     <div class="hero-content">
-      <h3 class="hero-subtitle top" data-aos="fade-left">INDUSTRIAL</h3>
-      <h1 class="hero-title" data-aos="fade-up">LASER CLEANING</h1>
-      <h3 class="hero-subtitle bottom" data-aos="fade-right">SOLUTIONS</h3>
+      <h3 class="hero-subtitle top">INDUSTRIAL</h3>
+      <h1 class="hero-title">LASER CLEANING</h1>
+      <h3 class="hero-subtitle bottom">SOLUTIONS</h3>
     </div>
-  
+
     <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="5" x2="12" y2="19"></line>
         <polyline points="19 12 12 19 5 12"></polyline>
       </svg>
     </a>
+    
+    
+  </section>
+
+  <!-- INFO -->
+  <section id="info" class="info-section">
+    <h1>LASERS CLEANING</h1>
+
+    <p>What Is Laser Cleaning? Laser cleaning is a non-contact, environmentally friendly technology used to remove contaminants, coatings, rust, and other unwanted materials from the surface of objects. This method utilizes high-intensity laser beams to vaporize, burn, or blow off impurities without damaging the underlying material. Key Features of Laser Cleaning: Precision - Targets only the contaminants. Eco-Friendly - No chemicals or abrasive media are used. Non-Abrasive - Doesn't wear down the substrate. Low Maintenance - Minimal waste, no need for consumables.
+
+      How Laser Cleaning Works: Laser cleaning works through a process called laser ablation. A high-powered laser beam is directed at the surface that needs cleaning. The energy from the laser beam heats up the contaminant layer very rapidly, causing it to evaporate or sublimate. Some materials, like rust or paint, absorb the laser energy faster than metals, so they are removed without damaging the base material. Steps in the Laser Cleaning Process: 1. Emission - The laser generates a concentrated beam of light. 2. Absorption - The surface contaminants absorb the energy. 3. Vaporization - The contaminant is vaporized or turned into plasma. 4. Blasting Off - A small burst of gas can be used to blow away the particles.
+      
+      Types of Laser Cleaning Technologies: Pulsed Lasers - Delivers laser energy in short, powerful bursts. Common Use-Cases: Precision cleaning, delicate surfaces. Continuous Lasers - Constant laser beam for ongoing cleaning. Common Use-Cases: Large surfaces, fast cleaning processes. Fiber Lasers - Compact, energy-efficient, long lifespan. Common Use-Cases: Industrial cleaning, rust removal. CO2 Lasers - Infrared lasers often used in cutting and engraving. Less common for cleaning, more for marking.
+      
+      Applications of Laser Cleaning: 1. Industrial Maintenance - Rust removal from metal parts and machinery. Cleaning of oil, grease, and dirt buildup. 2. Aerospace and Aviation - Removing coatings from aircraft parts without damaging the material. Cleaning of welds and surfaces for inspection. 3. Automotive Industry - Preparing surfaces for welding and painting. Removing paint, adhesives, and rust from vehicle parts. 4. Cultural Heritage and Restoration - Gentle cleaning of stone monuments, sculptures, and paintings. Restoring historical buildings by removing grime and pollutants. 5. Electronics and Precision Engineering - Cleaning semiconductor parts, printed circuit boards, and molds. Removing micro-scale contaminants without affecting the product.
+      
+      Advantages of Laser Cleaning: Eco-Friendly - No chemicals, no secondary waste like sandblasting. Cost-Effective - Low operating costs after initial investment, no consumables needed. Safe for Operators - Minimal operator exposure to dust, debris, or chemicals. Highly Accurate - Cleans precisely, even in hard-to-reach places, without damaging materials. Low Maintenance Equipment - Long lifespan of fiber lasers, minimal wear and tear.
+      
+      Disadvantages of Laser Cleaning: High Initial Cost - Equipment can be expensive to purchase. Power Supply Requirement - Needs stable electricity and often high power. Slower for Large Surfaces - Less effective for huge cleaning areas compared to some traditional methods.
+      
+      Laser Cleaning vs. Traditional Methods: Eco Impact - Laser Cleaning: No chemicals, minimal waste. Traditional Methods: Chemical waste, dust, contaminants. Precision - Laser Cleaning: High, non-abrasive. Traditional Methods: Can damage surfaces. Operator Safety - Laser Cleaning: High, less exposure. Traditional Methods: More hazardous conditions. Surface Impact - Laser Cleaning: No abrasion, gentle cleaning. Traditional Methods: Often abrasive and damaging. Speed - Laser Cleaning: Slower on large surfaces. Traditional Methods: Can be faster on large areas. Setup Cost - Laser Cleaning: Higher investment. Traditional Methods: Lower initial cost but more consumables.
+      
+      Future of Laser Cleaning: The future of laser cleaning looks promising with ongoing advancements in laser technology, including: Higher power lasers for faster cleaning speeds. Automated systems for robotic laser cleaning. Portable laser cleaners for on-site work. Increasing affordability as technology matures.
+      
+      Conclusion: Laser cleaning is a revolutionary technology that offers a safe, efficient, and eco-friendly way to clean and maintain equipment, restore artifacts, and prepare surfaces in a wide range of industries. While the initial investment can be high, the long-term benefits make it an attractive option for companies looking for a sustainable cleaning solution.
+      
+      </p>
+  </section>
+
+  <section id="contact-form" class="contact-form-section">
+    <h2>Contact Us</h2>
+    <p>Fill out the form and we will get back to you soon!</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
   
 
-
-
-  <!-- INFO SEKCIU O LASEROCH -->
-  <section id="info" class="info-section white-background">
-    <div class="info-container" data-aos="fade-up">
-      <!-- Nadpis sekcie -->
-      <h1>LASERS CLEANING</h1>
-
-      <!-- Popisné odstavce o laserovej technológii -->
-      <p>
-        Laser cleaning is a modern technology that uses intense pulsed laser beams to remove unwanted layers, contaminants, or corrosion from surfaces. It is commonly used for surface preparation before further processing, coating, or for the restoration of historical monuments. The technique involves precisely targeting a laser beam, which, through energy absorption, causes localized heating and subsequent sublimation or peeling of contaminants. Key parameters such as wavelength, pulse energy, and frequency ensure efficiency and minimize damage to the base material. The advantages include high precision, low abrasiveness, environmental sustainability, speed, and the possibility of process automation, allowing cleaning in hard-to-reach areas without the use of chemicals while minimizing secondary waste production. On the other hand, laser cleaning requires high initial investments and strict adherence to safety protocols, including the use of specialized protective goggles and operator training, as improper parameter settings can lead to material damage or pose risks to operators. In industry, it is used for cleaning machinery, removing corrosion from metal surfaces, and preparing surfaces before welding and painting. In the field of cultural heritage and artworks, it helps protect the original material layer without physical intervention. Technological development brings innovations such as more powerful and precise lasers, the integration of artificial intelligence for process optimization, and the expansion of applications to a wider range of materials, with an increasing focus on ecological aspects and sustainability. Laser cleaning represents an effective and gentle alternative to traditional methods such as mechanical grinding or chemical cleaning, and although it may be more costly, its advantages in precision, speed, and environmental friendliness make it an attractive choice for modern industrial and artistic applications.
-      </p>
-    </div>
-  </section>
-
-  <!-- KONTAKTNÝ FORMULÁR -->
-  <section class="contact-form-section" id="contact-form">
-    <h2>Contact Us</h2>
-    <p>Fill out the form and we will get back to you soon!</p>
-    <!-- Formulár na odoslanie správy -->
-    <form id="email-form">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name..." required />
-      </div>
-      <div class="form-group">
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email..." required />
-      </div>
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <!-- TLAČIDLO "SPÄŤ HORE" -->
-  <a href="#" class="back-to-top">↑</a>
-
-  <!-- SCRIPTY -->
-
-  <!-- knižnica particles.js (staršia verzia, už ju nepoužívaš) -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-  <!-- Tvoj vlastný súbor s JavaScriptom -->
+  <!-- SCRIPT -->
   <script src="script.js"></script>
-
-  <!-- AOS knižnica: efekty pri scrollovaní -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Inicializácia knižnice AOS (bez nej by animácie nefungovali)
-    AOS.init();
-  </script>
-
-  <!-- Lightbox knižnica: zobrazenie obrázkov v galérii ako vyskakovacie okno -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
-  <!-- tParticles: knižnica na animáciu častíc -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
-  <!-- Konfigurácia tParticles: nastavuje, ako sa majú častice správať -->
-  <script>
-    // Načítanie častíc do elementu s ID "particles-js"
-    tsParticles.load("particles-js", {
-      fullScreen: { enable: false }, // Zakáže rozšírenie častíc na celú obrazovku
-      particles: {
-        number: { value: 80 }, // Počet častíc
-        color: { value: ["#ff0266", "#03dac6", "#ffffff"] }, // Farby častíc (ružová, tyrkysová, biela)
-        shape: { type: "circle" }, // Tvar častíc (kruh)
-        opacity: { value: 0.5 }, // Priehľadnosť častíc
-        size: { value: 3 }, // Veľkosť častíc
-        links: {
-          enable: true, // Povolenie spájania častíc čiarami
-          distance: 150, // Maximálna vzdialenosť medzi časticami, pri ktorej sa spájajú
-          color: { value: ["#ff0266", "#03dac6"] }, // Farby spojovacích čiar
-          opacity: 0.6, // Priehľadnosť spojovacích čiar
-          width: 1.5 // Hrúbka spojovacích čiar
-        },
-        move: {
-          enable: true, // Povolenie pohybu častíc
-          speed: 2 // Rýchlosť pohybu
-        }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" } // Efekt: keď prejdeš myšou, častice sa rozídu
-        }
-      }
-    });
-  </script>
-
 </body>
-
 </html>
