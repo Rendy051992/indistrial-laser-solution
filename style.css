@@ -47,8 +47,22 @@ body {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
-  margin-right: auto; /* Pošle logo úplne doľava */
+
+  /* OVAL / BUBBLINE STYLE */
+  padding: 10px 20px; /* priestor okolo textu */
+  border: 2px solid #ffffff; /* biela čiara */
+  border-radius: 50px; /* spraví ovál */
+  
+  background-color: transparent; /* pozadie bubliny priehľadné */
+  
+  display: inline-block; /* aby ovál objal text */
 }
+
+.logo-text:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
 
 
 .site-nav ul {
@@ -201,26 +215,43 @@ body {
 }
 
 
-
+/*POZICIA SCROLL DOWN ARROW*/
 .scroll-down-arrow {
   position: absolute;
-  bottom: 30px;
   left: 50%;
+  bottom: 20px; /* Zvýšime hodnotu, aby šla vyššie na stránke */
   transform: translateX(-50%);
+
+  width: 60px;
+  height: 60px;
+
+  background-color: rgba(40, 40, 50, 0.9);
+  border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 70px; /* veľkosť kruhu */
-  height: 70px;
-  border-radius: 50%;
-  
-  background-color: rgba(255, 255, 255, 0.05); /* tmavé pozadie kruhu */
-  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4); /* jemná žiara */
-  
+  font-size: 40px;
+  color: #ffffff;
+
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
+  text-decoration: none;
+
   transition: all 0.3s ease;
-  cursor: pointer;
+  z-index: 10;
 }
+
+.scroll-down-arrow:hover {
+  background-color: rgba(255, 0, 80, 0.2);
+  box-shadow: 0 0 30px rgba(255, 0, 80, 0.9);
+  transform: translateX(-50%) translateY(5px);
+}
+
+
+
+
+
 
 .arrow-icon {
   width: 50px;  /* veľkosť šípky */
