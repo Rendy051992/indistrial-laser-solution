@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'BubbleLetters';
+  src: url('fonts/Adia_Demo.ttf') format('truetype');
+}
+
 
 html, body {
   scroll-behavior: smooth;
@@ -47,6 +52,7 @@ body {
 
 
 .logo-text {
+  font-family: 'BubbleLetters', cursive;
   font-size: 28px;
   font-weight: bold;
   color: #fff;
