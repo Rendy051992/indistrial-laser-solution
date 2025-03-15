@@ -4,9 +4,13 @@
   box-sizing: border-box;
 }
 @font-face {
-  font-family: 'BubbleLetters';
-  src: url('fonts/Adia_Demo.ttf') format('truetype');
+  font-family: 'FlameSans';
+  src: url(fonts/Flame-Regular.woff);/* ← TTF má format 'truetype' */
+  font-weight: normal;
+  font-style: normal;
 }
+
+
 
 
 html, body {
@@ -16,9 +20,29 @@ html, body {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #1e1f26;
+  background-color: #050f55;
   color: #fff;
 }
+
+.logo-text {
+  font-family: 'FlameSans', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+
+  margin-left: -60px; /* Alebo prispôsobiť */
+  margin-right: auto;
+
+  padding: 10px 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+
+  background-color: #b10707;
+
+  display: inline-block;
+  transition: box-shadow 0.3s ease;
+}
+
 
 /* HLAVIČKA */
 .site-header {
@@ -50,25 +74,6 @@ body {
 }
 
 
-
-.logo-text {
-  font-family: 'BubbleLetters', cursive;
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-
-  margin-left: -60px; /* Alebo prispôsobiť */
-  margin-right: auto;
-
-  padding: 10px 20px;
-  border: 2px solid #ffffff;   /* Biela čiara bubliny */
-  border-radius: 50px;         /* Ovál */
-
-  background-color: #b10707;   /* ← Background bubble - rovnaká farba ako hlavička */
-  
-  display: inline-block;
-  transition: box-shadow 0.3s ease;
-}
 
 
 /* Hover efekt */
@@ -171,44 +176,39 @@ body {
   overflow: hidden;
 }
 
+
+
 #laserCanvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  pointer-events: none; /*  kliknúť na ostatné veci cez canvas */
-}
-
-
-.laser-beam {
-  position: absolute;
-  top: 50%;
-  left: -100px;
-  width: 4px;
-  height: 100%;
-  background: red;
-  box-shadow: 0 0 20px red, 0 0 40px red;
+  pointer-events: none;
   z-index: 5;
-  opacity: 0;
-  transition: opacity 0.2s ease;
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;    /* Vodorovné centrovanie */
-  text-align: center;
-  position: absolute;     /* !!! Kľúčové na centrovanie !!! */
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  /* !!! Toto vycentruje úplne na stred !!! */
-  z-index: 2;
-  width: 100%;
-  padding: 0 20px;
+  transform: translate(-50%, -50%); /* Centrovanie do stredu */
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
+
+.hero-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* zabezpečí korektnú polohu */
+}
+
 
 /* Nadpisy */
 .hero-subtitle.top,
@@ -437,8 +437,8 @@ body {
 /* ---- ISKRY ---- */
 .spark {
   position: absolute;
-  width: 4px;                 /* predvolená veľkosť (override cez JS) */
-  height: 4px;
+  width: 2px;                 /* predvolená veľkosť (override cez JS) */
+  height: 2px;
   background-color: orange;   /* predvolená farba (override cez JS) */
   border-radius: 50%;
   pointer-events: none;
@@ -461,20 +461,39 @@ body {
 
 /* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
 .hero-title span {
-  display: inline-block;
-  font-size: 5vw;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-
-  color: #8b0000; /* tmavočervená pred vypálením */
+  color: darkred; /* Pred vypálením */
   opacity: 0.6;
   transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease;
 }
 
 .hero-title span.active {
-  color: #ff0000; /* žiarivo červená */
+  color: red; /* Po vypálení */
   opacity: 1;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
 
+
+
+
+/* Canvas laser dot */
+.laser-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 10px red, 0 0 20px red;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Canvas spark element */
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: orange;
+  border-radius: 50%;
+  z-index: 9;
+}
