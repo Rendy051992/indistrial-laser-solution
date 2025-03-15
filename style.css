@@ -167,6 +167,29 @@ body {
   overflow: hidden;
 }
 
+#laserCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /*  kliknúť na ostatné veci cez canvas */
+}
+
+
+.laser-beam {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  width: 4px;
+  height: 100%;
+  background: red;
+  box-shadow: 0 0 20px red, 0 0 40px red;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
 
 .hero-content {
   display: flex;
@@ -272,10 +295,6 @@ body {
 }
 
 
-
-
-
-
 .arrow-icon {
   width: 50px;  /* veľkosť šípky */
   height: 50px;
@@ -326,6 +345,10 @@ body {
 }
 
 /* ANIMÁCIA */
+.glow-pulse {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
 @keyframes pulseGlow {
   0% {
     text-shadow: 0 0 10px #ff0266;
@@ -337,6 +360,7 @@ body {
     text-shadow: 0 0 10px #ff0266;
   }
 }
+
 /*CONTACT US FORM */
 
 .contact-form-section {
