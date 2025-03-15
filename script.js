@@ -65,15 +65,18 @@ document.body.appendChild(laserDot);
 
 // Parametre pre iskry
 let sparks = [];
-const sparkCount = 30;      // Počet iskier
-const sparkSize = 4;        // Veľkosť iskry
-const sparkSpeed = 5;       // Rýchlosť iskry
+const sparkCount = 170;      // Počet iskier
+const sparkSize = 20;        // Veľkosť iskry
+const sparkSpeed = 30;       // Rýchlosť iskry
 const sparkLife = 40;       // Dĺžka života iskry (frame count)
 
 // Spustenie animácie po načítaní stránky
+// Spustenie animácie po načítaní stránky
 window.addEventListener('load', () => {
-  animateLetters(0);
+  animateLetters(0);    // vypaľovanie písmen
+  animateSparks();      // pohyb iskier - toto bolo doteraz chýbajúce!
 });
+
 
 // Funkcia: animuje každé písmeno po jednom
 function animateLetters(index) {
@@ -116,37 +119,37 @@ function createSparks(x, y) {
 
 // Animácia iskier
 function animateSparks() {
-  // Odstránime všetky predošlé iskry zo DOM
+  // Vymaž predchádzajúce spark elementy
   document.querySelectorAll('.spark').forEach(s => s.remove());
 
+  // Vykresli všetky sparks z pola
   for (let i = sparks.length - 1; i >= 0; i--) {
     const spark = sparks[i];
 
-    // Pohyb iskry
     spark.x += spark.vx;
     spark.y += spark.vy;
     spark.life--;
 
-    // Ak dožil, vymažeme ho
     if (spark.life <= 0) {
       sparks.splice(i, 1);
       continue;
     }
 
-    // Vytvorenie DOM prvku iskry
     const sparkElement = document.createElement('div');
     sparkElement.classList.add('spark');
     sparkElement.style.left = `${spark.x}px`;
     sparkElement.style.top = `${spark.y}px`;
+    sparkElement.style.width = `${spark.size}px`;
+    sparkElement.style.height = `${spark.size}px`;
+    sparkElement.style.backgroundColor = spark.color;
 
     document.body.appendChild(sparkElement);
   }
 
+  // Rekurzívne pokračuj
   requestAnimationFrame(animateSparks);
 }
 
-// Spusti animáciu iskier
-animateSparks();
 
 
 

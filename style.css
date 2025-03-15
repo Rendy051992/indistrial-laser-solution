@@ -427,7 +427,7 @@ body {
   position: absolute;
   width: 10px;             /* veľkosť laserového bodu */
   height: 10px;
-  background-color: red;   /* červený bod */
+  background-color: orange;   /* červený bod */
   border-radius: 50%;      /* kruhový tvar */
   box-shadow: 0 0 15px red;
   z-index: 3;              /* aby bol nad všetkým */
@@ -437,13 +437,27 @@ body {
 /* ---- ISKRY ---- */
 .spark {
   position: absolute;
-  width: 8px;                 /* veľkosť iskry */
-  height: 8px;
-  background-color: rgb(255, 111, 0);   /* farba iskry */
+  width: 4px;                 /* predvolená veľkosť (override cez JS) */
+  height: 4px;
+  background-color: orange;   /* predvolená farba (override cez JS) */
   border-radius: 50%;
   pointer-events: none;
-  z-index: 2;
+  z-index: 9;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.8);
+  animation: fadeOut 0.5s forwards;
 }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
 
 /* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
 .hero-title span {
