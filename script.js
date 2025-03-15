@@ -54,147 +54,110 @@ document.addEventListener('click', function(event) {
   }
 });
 
-/*LASER BEAM*/
+// --- Hero Title laser effect ---
+const heroTitle = document.querySelector('.hero-title');
+const letters = heroTitle.querySelectorAll('span');
 
-  window.addEventListener('load', () => {
-    const laser = document.querySelector('.laser-beam');
-    const heroTitle = document.querySelector('.hero-title');
+// Vytvorenie laserovej bodky
+const laserDot = document.createElement('div');
+laserDot.classList.add('laser-dot');
+document.body.appendChild(laserDot);
 
-    setTimeout(() => {
-      laser.style.opacity = '1';
-      laser.style.transition = 'transform 0.6s ease-out, opacity 0.3s ease 0.6s';
-      laser.style.transform = 'translateX(100vw)';
+// Parametre pre iskry
+let sparks = [];
+const sparkCount = 30;      // Počet iskier
+const sparkSize = 4;        // Veľkosť iskry
+const sparkSpeed = 5;       // Rýchlosť iskry
+const sparkLife = 40;       // Dĺžka života iskry (frame count)
 
-      setTimeout(() => {
-        laser.style.opacity = '0';
-        heroTitle.classList.add('glow-pulse');
-      }, 600);
-    }, 500); 
-  });
+// Spustenie animácie po načítaní stránky
+window.addEventListener('load', () => {
+  animateLetters(0);
+});
 
-// === LASER CANVAS ===
-const heroSection = document.querySelector('.hero'); 
-const canvas = document.getElementById('laserCanvas');
-const ctx = canvas.getContext('2d'); 
+// Funkcia: animuje každé písmeno po jednom
+function animateLetters(index) {
+  if (index >= letters.length) {
+    laserDot.style.display = 'none'; // skryje bodku po skončení
+    return;
+  }
 
-function resizeCanvas() {
-  canvas.width = heroSection.offsetWidth;
-  canvas.height = heroSection.offsetHeight;
+  const letter = letters[index];
+  const rect = letter.getBoundingClientRect();
+
+  // Nastavenie pozície laserovej bodky
+  laserDot.style.left = `${rect.left + rect.width / 2}px`;
+  laserDot.style.top = `${rect.top + rect.height / 2}px`;
+
+  // Zapneme animáciu písmena
+  letter.classList.add('active');
+
+  // Vytvoríme iskry
+  createSparks(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+  // Animujeme ďalšie písmeno po krátkej pauze
+  setTimeout(() => {
+    animateLetters(index + 1);
+  }, 400); // rýchlosť prechodu na ďalšie písmeno
 }
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
 
-let laserX = -50;         // Počiatočná pozícia lasera
-let speed = 5;            // Rýchlosť pohybu lasera
-let particles = [];       // Pole pre iskry
-let smokeParticles = [];  // Pole pre dym
-
-// Funkcia pre vytvorenie iskier
-function createParticles(x, y) {
-  for (let i = 0; i < 30; i++) { // Počet iskier
-    particles.push({
+// Funkcia: vytvorí iskry na zadaných súradniciach
+function createSparks(x, y) {
+  for (let i = 0; i < sparkCount; i++) {
+    sparks.push({
       x: x,
       y: y,
-      vx: (Math.random() - 0.5) * 2, // Rýchlosť iskier
-      vy: Math.random() * -9,  // Smer iskier
-      alpha: 1 // Priehľadnosť iskier
+      vx: (Math.random() - 0.5) * sparkSpeed * 2,
+      vy: (Math.random() - 0.5) * sparkSpeed * 2,
+      life: sparkLife
     });
   }
 }
 
-// Funkcia pre vytvorenie dymu
-function createSmoke(x, y) {
-  smokeParticles.push({
-    x: x,
-    y: y,
-    alpha: 1,
-    size: Math.random() * 5 + 5 // Veľkosť dymu
-  });
-}
+// Animácia iskier
+function animateSparks() {
+  // Odstránime všetky predošlé iskry zo DOM
+  document.querySelectorAll('.spark').forEach(s => s.remove());
 
-// Kreslenie iskier
-function drawParticles() {
-  for (let i = particles.length - 1; i >= 0; i--) { // Prechádzanie všetkými iskrami
-    const p = particles[i];
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 165, 0, ${p.alpha})`; // Oranžové iskry
-    ctx.fill();
-    p.x += p.vx;
-    p.y += p.vy;
-    p.alpha -= 0.02;
-    if (p.alpha <= 0) { // Odstránenie iskier z poľa ak je priehľadnosť 0
-      particles.splice(i, 1);
+  for (let i = sparks.length - 1; i >= 0; i--) {
+    const spark = sparks[i];
+
+    // Pohyb iskry
+    spark.x += spark.vx;
+    spark.y += spark.vy;
+    spark.life--;
+
+    // Ak dožil, vymažeme ho
+    if (spark.life <= 0) {
+      sparks.splice(i, 1);
+      continue;
     }
+
+    // Vytvorenie DOM prvku iskry
+    const sparkElement = document.createElement('div');
+    sparkElement.classList.add('spark');
+    sparkElement.style.left = `${spark.x}px`;
+    sparkElement.style.top = `${spark.y}px`;
+
+    document.body.appendChild(sparkElement);
   }
+
+  requestAnimationFrame(animateSparks);
 }
 
-// Kreslenie dymu
-function drawSmoke() {
-  for (let i = smokeParticles.length - 1; i >= 0; i--) {  // Prechádzanie všetkými dymami
-    const s = smokeParticles[i]; 
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); // Kruhový tvar dymu
-    ctx.fillStyle = `rgba(200, 200, 200, ${s.alpha})`; // Sivý dym
-    ctx.fill();
-    s.y -= 0.3;
-    s.alpha -= 0.005; // Zmenšovanie priehľadnosti dymu
-    if (s.alpha <= 0) { 
-      smokeParticles.splice(i, 1); // Odstránenie dymu z poľa ak je priehľadnosť 0
-    }
-  }
-}
+// Spusti animáciu iskier
+animateSparks();
 
-// Hlavná funkcia animácie lasera
-function animateLaser() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Vymazanie canvasu
 
-  const centerY = canvas.height / 2;
 
-  // Gradient lasera
-  const gradient = ctx.createLinearGradient(laserX, centerY, laserX + 100, centerY); 
-  gradient.addColorStop(0, 'rgba(255, 0, 0, 0)'); 
-  gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.8)'); 
-  gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');  
 
-  ctx.beginPath();
-  ctx.moveTo(laserX, centerY);
-  ctx.lineTo(laserX + 10, centerY); // Dĺžka lasera
-  ctx.strokeStyle = gradient;
-  ctx.lineWidth = 4; // Šírka lasera
-  ctx.shadowColor = 'red'; // Farba tieňa
-  ctx.shadowBlur = 20; // Rozostrenie tieňa
-  ctx.stroke();
 
-  // Pridanie efektov na konci lasera
-  createParticles(laserX + 100, centerY);   
-  createSmoke(laserX + 100, centerY);  
 
-  // Kreslenie iskier a dymu
-  drawParticles();
-  drawSmoke();
 
-  // Pohyb lasera
-  laserX += speed;
 
-  if (laserX < canvas.width + 100) {
-    requestAnimationFrame(animateLaser);
-  } else {
-    // Keď laser dokončí pohyb, spustí sa glow efekt
-    const heroTitle = document.querySelector('.hero-title');
-    heroTitle.classList.add('glow-pulse');
-  }
-}
 
-// Spustenie animácie pri načítaní stránky
-window.addEventListener('load', () => {
-  animateLaser();
-});
 
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
 
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
-});
+
+
+

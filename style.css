@@ -143,8 +143,6 @@ body {
 }
 
 
-
-
 .dropdown-menu li a {
   color: #fff; /* farba textu */
   padding: 12px 20px;
@@ -223,12 +221,12 @@ body {
 .hero-title {
   font-size: 5vw;
   letter-spacing: 0.5rem;
-  color: #a60404;
-  text-shadow: 0 0 10px #dd0606;
-  animation: pulseGlow 3s ease-in-out infinite;
-  cursor: pointer;
   margin: 20px 0;
+  display: flex;               /* Pridáme na centrovanie */
+  justify-content: center;     /* Vycentruje písmená */
+  gap: 0.3em;                  /* Medzera medzi písmenami */
 }
+
 
 
 
@@ -271,7 +269,7 @@ body {
 .scroll-down-arrow {
   position: absolute;
   left: 50%;
-  bottom: 20px; /* Zvýšime hodnotu, aby šla vyššie na stránke */
+  bottom: 250px; /* Zvýšime hodnotu, aby šla vyššie na stránke */
   transform: translateX(-50%);
 
   width: 60px;
@@ -293,6 +291,11 @@ body {
   transition: all 0.3s ease;
   z-index: 10;
 }
+.arrow-icon {
+  width: 20px;  /* veľkosť šípky */
+  height: 20px;
+  stroke: #fff; /* farba šípky */
+}
 
 .scroll-down-arrow:hover {
   background-color: rgba(255, 0, 80, 0.2);
@@ -300,12 +303,6 @@ body {
   transform: translateX(-50%) translateY(5px);
 }
 
-/*/ BIG SCROLL DOWN ARROW */
-.arrow-icon {
-  width: 50px;  /* veľkosť šípky */
-  height: 50px;
-  stroke: #fff; /* farba šípky */
-}
 
 
 /* Hover efekt na šípke */
@@ -424,4 +421,46 @@ body {
   background-color: #ff0000;
   transform: scale(1.05); /* Jemný efekt po najazdení myšou */
 }
+
+/* ---- LASER POINT ---- */
+.laser-point {
+  position: absolute;
+  width: 10px;             /* veľkosť laserového bodu */
+  height: 10px;
+  background-color: red;   /* červený bod */
+  border-radius: 50%;      /* kruhový tvar */
+  box-shadow: 0 0 15px red;
+  z-index: 3;              /* aby bol nad všetkým */
+  pointer-events: none;    /* neklikateľný */
+}
+
+/* ---- ISKRY ---- */
+.spark {
+  position: absolute;
+  width: 8px;                 /* veľkosť iskry */
+  height: 8px;
+  background-color: rgb(255, 111, 0);   /* farba iskry */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
+.hero-title span {
+  display: inline-block;
+  font-size: 5vw;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+
+  color: #8b0000; /* tmavočervená pred vypálením */
+  opacity: 0.6;
+  transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease;
+}
+
+.hero-title span.active {
+  color: #ff0000; /* žiarivo červená */
+  opacity: 1;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
 
