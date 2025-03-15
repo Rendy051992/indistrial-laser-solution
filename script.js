@@ -1,3 +1,6 @@
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
 
 // === DROPDOWN MENU ===
@@ -120,7 +123,7 @@ function drawParticles() {
     p.x += p.vx;
     p.y += p.vy;
     p.alpha -= 0.02;
-    if (p.alpha <= 0) {
+    if (p.alpha <= 0) { // Odstránenie iskier z poľa ak je priehľadnosť 0
       particles.splice(i, 1);
     }
   }
@@ -128,15 +131,15 @@ function drawParticles() {
 
 // Kreslenie dymu
 function drawSmoke() {
-  for (let i = smokeParticles.length - 1; i >= 0; i--) { 
-    const s = smokeParticles[i];
+  for (let i = smokeParticles.length - 1; i >= 0; i--) {  // Prechádzanie všetkými dymami
+    const s = smokeParticles[i]; 
     ctx.beginPath();
     ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); // Kruhový tvar dymu
     ctx.fillStyle = `rgba(200, 200, 200, ${s.alpha})`; // Sivý dym
     ctx.fill();
     s.y -= 0.3;
     s.alpha -= 0.005; // Zmenšovanie priehľadnosti dymu
-    if (s.alpha <= 0) {
+    if (s.alpha <= 0) { 
       smokeParticles.splice(i, 1); // Odstránenie dymu z poľa ak je priehľadnosť 0
     }
   }
@@ -144,15 +147,15 @@ function drawSmoke() {
 
 // Hlavná funkcia animácie lasera
 function animateLaser() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Vymazanie canvasu
 
   const centerY = canvas.height / 2;
 
   // Gradient lasera
   const gradient = ctx.createLinearGradient(laserX, centerY, laserX + 100, centerY); 
-  gradient.addColorStop(0, 'rgba(255, 0, 0, 0)');
-  gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.8)');
-  gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
+  gradient.addColorStop(0, 'rgba(255, 0, 0, 0)'); 
+  gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.8)'); 
+  gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');  
 
   ctx.beginPath();
   ctx.moveTo(laserX, centerY);
@@ -165,7 +168,7 @@ function animateLaser() {
 
   // Pridanie efektov na konci lasera
   createParticles(laserX + 100, centerY);   
-  createSmoke(laserX + 100, centerY); 
+  createSmoke(laserX + 100, centerY);  
 
   // Kreslenie iskier a dymu
   drawParticles();
@@ -186,4 +189,12 @@ function animateLaser() {
 // Spustenie animácie pri načítaní stránky
 window.addEventListener('load', () => {
   animateLaser();
+});
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
 });

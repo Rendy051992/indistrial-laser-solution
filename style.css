@@ -137,7 +137,13 @@ body {
 .arrow {
   display: inline-block;
   margin-left: 8px;
+  font-size: 0.8em; /* Zmenšuje veľkosť šípky */
+  color: #ffffff;   /* Biela farba */
+  transition: transform 0.3s ease;
 }
+
+
+
 
 .dropdown-menu li a {
   color: #fff; /* farba textu */
@@ -294,7 +300,7 @@ body {
   transform: translateX(-50%) translateY(5px);
 }
 
-
+/*/ BIG SCROLL DOWN ARROW */
 .arrow-icon {
   width: 50px;  /* veľkosť šípky */
   height: 50px;
