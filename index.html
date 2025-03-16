@@ -1,36 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ILCS LTD</title>
+<!DOCTYPE html> <!-- Definuje typ dokumentu ako HTML5 -->
+<html lang="en"> <!-- Začiatok HTML dokumentu, jazyk je angličtina -->
 
-  <!-- Google Fonts -->
+<head> <!-- Hlavička stránky, sem dávame meta údaje a odkazy -->
+  <meta charset="UTF-8" /> <!-- Kódovanie znakov, podporuje všetky znaky -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Zabezpečí správne zobrazovanie na mobiloch -->
+  <title>ILCS LTD</title> <!-- Názov stránky, zobrazí sa na karte prehliadača -->
+
+  <!-- Google Fonts - pridáva špeciálne písma z Google -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Načítanie vlastného CSS súboru, kde sú všetky štýly -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body> <!-- Telo stránky, čo sa zobrazuje používateľovi -->
 
   <!-- HLAVIČKA -->
-  <header class="site-header">
-    <div class="header-container">
-      <h1 class="logo-text">ILCS Ltd</h1>
+  <header class="site-header"> <!-- Horná lišta, obsahuje logo a menu -->
+    <div class="header-container"> <!-- Kontajner pre logo a navigáciu -->
+
+      <h1 class="logo-text">ILCS Ltd</h1> <!-- Logo text (názov firmy) -->
+
+      <!-- Navigácia v hlavičke -->
       <nav class="site-nav" id="nav-menu">
-        <ul>
+        <ul> <!-- Zoznam položiek menu -->
+
+          <!-- Prvá položka menu -->
           <li><a href="#">Home</a></li>
+
+          <!-- Druhá položka s dropdown menu pre Services -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">Services <span class="arrow">▼</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Laser Rust Removal</a></li>
-              <li><a href="#">Industrial Equipment Cleaning</a></li>
-              <li><a href="#">Surface Preparation</a></li>
-              <li><a href="#">Eco-Friendly Solutions</a></li>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)"> <!-- Kliknutím sa otvorí/zavrie menu -->
+              Services <span class="arrow">▼</span> <!-- Text s ikonou šípky -->
+            </a>
+            <ul class="dropdown-menu"> <!-- Skrytý zoznam pod službami -->
+              <li><a href="#">Laser Rust Removal</a></li> <!-- Prvá služba -->
+              <li><a href="#">Industrial Equipment Cleaning</a></li> <!-- Druhá služba -->
+              <li><a href="#">Surface Preparation</a></li> <!-- Tretia služba -->
+              <li><a href="#">Eco-Friendly Solutions</a></li> <!-- Štvrtá služba -->
             </ul>
           </li>
+
+          <!-- Tretia položka s dropdown menu pre Lenses -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">Lenses <span class="arrow">▼</span></a>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
+              Lenses <span class="arrow">▼</span>
+            </a>
             <ul class="dropdown-menu">
               <li><a href="#">Protective Lenses</a></li>
               <li><a href="#">Cutting Lenses</a></li>
@@ -39,30 +54,46 @@
               <li><a href="#">Scanning Lenses</a></li>
             </ul>
           </li>
+
+          <!-- Odkaz na galériu -->
           <li><a href="#">Gallery</a></li>
+
+          <!-- Odkaz na kontakt -->
           <li><a href="#contact-form">Contact Us</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger menu pre mobilné zariadenia -->
       <div class="hamburger" onclick="toggleMenu()">☰</div>
-    </div>
+
+    </div> <!-- Koniec header-container -->
   </header>
 
-  <!-- HERO -->
+  <!-- HERO sekcia - hlavný nadpis s animáciou -->
   <section class="hero">
     <div class="hero-content">
-      <canvas id="laserCanvas"></canvas> <!-- ← musí byť pred alebo za textom -->
+
+      <canvas id="laserCanvas"></canvas> <!-- Plátno pre animáciu laserového efektu -->
+
+      <!-- Podnadpis hore -->
       <h3 class="hero-subtitle top">INDUSTRIAL</h3>
+
+      <!-- Hlavný nadpis, každé písmeno má svoj vlastný element kvôli animáciám -->
       <h1 class="hero-title">
         <span>L</span><span>A</span><span>S</span><span>E</span><span>R</span>
-        &nbsp;
+        &nbsp; <!-- Medzera medzi slovami -->
         <span>C</span><span>L</span><span>E</span><span>A</span><span>N</span><span>I</span><span>N</span><span>G</span>
       </h1>
-      <h3 class="hero-subtitle bottom">SOLUTIONS</h3>
-    </div>
-  </section>
-  
 
+      <!-- Podnadpis dole -->
+      <h3 class="hero-subtitle bottom">SOLUTIONS</h3>
+
+    </div> <!-- Koniec hero-content -->
+  </section>
+
+  <!-- Šípka, ktorá presunie používateľa na ďalšiu sekciu -->
   <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
+    <!-- SVG obrázok šípky -->
     <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <line x1="12" y1="5" x2="12" y2="19"></line>
       <polyline points="19 12 12 19 5 12"></polyline>
@@ -71,23 +102,27 @@
 
   <!-- INFO SECTION - ABOUT -->
   <section id="info" class="info-section">
-    <h1>LASERS CLEANING</h1>
-    <p>Your laser cleaning description...</p>
+    <h1>LASERS CLEANING</h1> <!-- Nadpis sekcie s informáciami -->
+    <p>Your laser cleaning description...</p> <!-- Popis alebo info o službách -->
   </section>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT FORM sekcia -->
   <section id="contact-form" class="contact-form-section">
-    <h2>Contact Us</h2>
-    <p>Fill out the form and we will get back to you soon!</p>
+    <h2>Contact Us</h2> <!-- Nadpis kontaktnej sekcie -->
+    <p>Fill out the form and we will get back to you soon!</p> <!-- Popis pre používateľa -->
+
+    <!-- Formulár pre kontaktovanie -->
     <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <input type="text" placeholder="Your Name" required /> <!-- Meno -->
+      <input type="email" placeholder="Your Email" required /> <!-- Email -->
+      <textarea placeholder="Your Message" required></textarea> <!-- Správa -->
+      <button type="submit">Send</button> <!-- Tlačidlo na odoslanie -->
     </form>
   </section>
 
-  <!-- JS -->
+  <!-- Pripojenie JS súboru -->
   <script src="script.js"></script>
+
 </body>
+
 </html>
