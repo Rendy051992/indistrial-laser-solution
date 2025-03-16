@@ -1,3 +1,5 @@
+console.log("Je to mobil? ", window.innerWidth <= 768);
+
 // === SCROLL RESTORATION ===
 // Ak obnovíš stránku, pozícia scrollu sa nenastaví automaticky
 if ('scrollRestoration' in history) {
@@ -42,7 +44,7 @@ window.addEventListener('scroll', () => {
 // Ak klikneme hocikde mimo dropdownu, zatvoríme všetky otvorené dropdown menu
 document.addEventListener('click', function(event) {
   const isDropdownClick = event.target.closest('.dropdown'); // zistí, či klikol na dropdown
-  const isToggleClick = event.target.closest('.dropdown-toggle'); // zistí, či klikol na tlačidlo dropdownu
+  const isToggleClick = event.target.closest('.dropdown-toggle'); // zistí, či si klikla na prepínač menu (hamburger
 
   // Ak sme neklikli ani na jedno z toho, zatvárame všetky otvorené menu
   if (!isDropdownClick && !isToggleClick) {
@@ -66,7 +68,10 @@ window.addEventListener('load', () => {
   const sparkCount = 50; // počet iskier, ktoré sa vygenerujú pre jedno písmeno
 
   // Zisti veľkosť obrazovky
-const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
+  
+  
+
 
 // Príklad podmienky pre sparks:
 const sparkSizeMin = isMobile ? 0.5 : 1.5;
@@ -100,13 +105,14 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
     // Vygenerujeme iskry na aktuálnej pozícii písmena
     for (let i = 0; i < sparkCount; i++) {
       sparks.push({
-        x: x, // pozícia iskry X
-        y: y, // pozícia iskry Y
-        vx: (Math.random() - 0.5) * 4, // rýchlosť v smere X (-2 až 2)
-        vy: (Math.random() - 0.5) * 4, // rýchlosť v smere Y (-2 až 2)
-        alpha: 1, // priehľadnosť, ktorá sa bude znižovať
-        size: Math.random() * 3 + 1 // veľkosť iskry (1 až 4 pixely)
-      });
+  x: x,
+  y: y,
+  vx: (Math.random() - 0.5) * 4,
+  vy: (Math.random() - 0.5) * 4,
+  alpha: 1,
+  size: Math.random() * (sparkSizeMax - sparkSizeMin) + sparkSizeMin // TOTO sme upravili
+});
+
     }
 
     laserIndex++; // posunieme sa na ďalšie písmeno

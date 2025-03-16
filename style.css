@@ -5,11 +5,16 @@
 }
 
 @font-face {
-  font-family: 'FlameSans'; /* názov vlastného fontu */
-  src: url(fonts/Flame-Regular.woff); /* cesta k fontu ( doplniť názov súboru) */
-  /* ← TTF má format 'truetype' */
-
+  font-family: 'Insaniburger'; /* názov fontu */
+  src: url('fonts/Insaniburger-0OZ9.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'next-sunday';
+  src: url('fonts/NextSunday.ttf') format('truetype');
+}
+
+
 
 html, body {
   scroll-behavior: smooth; /* plynulé skrolovanie po kliknutí na odkazy */
@@ -22,23 +27,37 @@ body {
   color: #fff; /* biela farba textu */
 }
 
+
 /* LOGO - ILCS Ltd */
 .logo-text {
-  font-family: 'FlameSans', sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-
-  margin-left: -60px; /* posunutie loga doľava */
-  margin-right: auto;
-
-  padding: 10px 20px;
-  border: 2px solid #ffffff; /* biely okraj loga */
-  border-radius: 50px; /* zaoblené rohy */
-  background-color: #b10707; /* červené pozadie */
-  display: inline-block; /* zobrazí sa ako blok v riadku */
-  transition: box-shadow 0.3s ease; /* plynulý efekt pri hoveri */
+  display: flex; /* Položky vedľa seba */
+  align-items: center; /* Vertikálne v strede */
+  justify-content: flex-start; /* Zarovnané naľavo */
+  padding: 10px 20px; /* Vnútorné medzery */
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  background-color: #b10707;
+  margin-left: -65px; 
 }
+
+
+.ilcs {
+  
+  font-family: 'Insaniburger', sans-serif;
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px; /* pridať medzery medzi písmenami */
+}
+
+.ltd {
+  font-family: 'next-sunday', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  margin-left: 15px; /* pridaj medzeru medzi ILCS a Ltd */
+}
+
+
 
 /* HLAVIČKA */
 .site-header {
@@ -62,7 +81,8 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: flex-start; /* zarovná obsah doľava */
+  justify-content: space-between;
+ /* zarovná obsah doľava */
   align-items: center;
   padding-left: 40px;
   padding-right: 40px;
@@ -75,8 +95,11 @@ body {
 }
 
 .site-nav {
-  margin-left: 0px; /* môžeš upraviť podľa potreby */
+  display: flex;
+  justify-content: flex-end; /* tlačí menu doprava */
+  align-items: center; /* aby menu sedelo v strede vertikálne */
 }
+
 
 .site-nav ul {
   display: flex; /* horizontálne rozloženie */
@@ -306,27 +329,6 @@ body {
   }
 }
 
-/* RESPONSIVE DESIGN */
-/* Pravidlá pre zobrazenie na menších obrazovkách, ako sú tablety a mobily */
-@media (max-width: 768px) {
-  .site-nav ul {
-    display: none; /* menu sa skryje (bude cez hamburger menu) */
-    flex-direction: column; /* usporiadanie položiek pod seba */
-    background-color: #b10707; /* červené pozadie menu */
-    position: absolute; /* umiestnenie menu */
-    top: 60px; /* od vrchu */
-    right: 0; /* zarovnané vpravo */
-    width: 100%; /* na šírku celej obrazovky */
-  }
-
-  .site-nav.active ul {
-    display: flex; /* zobrazí menu pri kliknutí na hamburger */
-  }
-
-  .hamburger {
-    display: block; /* zobrazí hamburger menu */
-  }
-}
 
 /* ANIMÁCIA - glow pulse */
 /* Pridáva efekt pulzujúceho žiarenia na text */
@@ -481,61 +483,102 @@ body {
   z-index: 9;
 }
 
-/* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
 @media (max-width: 768px) {
 
-    /* ZMENŠENIE LOGA ILCS LTD */
-    .logo-text {
-      font-size: 20px;     /* zmenšíme veľkosť textu loga */
-      padding: 8px 16px;   /* zmenšíme padding loga */
-      margin-left: 0;      /* zrušíme -60px offset */
-    }
-  
-    /* POSUN HAMBURGER MENU DOĽAVA */
-    .hamburger {
-      position: absolute;
-      right: 20px;     /* posunie hamburger 20px od pravého okraja */
-      top: 25px;       /* nastavíme vzdialenosť od vrchu (prispôsob ak treba) */
-      font-size: 24px; /* veľkosť ikonky */
-    }
+  /* HEADER + LOGO */
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
 
-  /* Úprava veľkosti nadpisu a spacingu */
+  .logo-text {
+    font-size: 20px;
+    padding: 8px 6px;
+    margin-left: -43px;
+  }
+
+ .ilcs {
+  font-family: 'Insaniburger', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  margin-left: -0px;
+  letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
+}
+
+
+  .ltd {
+    font-size: 14px;
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 24px;
+  }
+
+  .site-nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #b10707;
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-nav.active ul {
+    display: flex;
+  }
+
+  /* HERO SEKCIA */
   .hero {
-    height: 400px;
+    height: 300px;
   }
 
   .hero-title {
-    font-size: 7vw;
+    font-size: 6vw;
     letter-spacing: 0.1rem;
   }
 
   .hero-subtitle.top,
   .hero-subtitle.bottom {
-    font-size: 4vw;
-    margin: 5px 0;
+    font-size: 5vw;
   }
 
-  .scroll-down-arrow {
-    bottom: 3680px;
-    width: 40px;
-    height: 40px;
-  }
-
+  /* CONTACT FORM */
   .contact-form-section input,
   .contact-form-section textarea,
   .contact-form-section button {
     width: 90%;
   }
 
-  .site-nav ul {
-    flex-direction: column;
-    background-color: #b10707;
+  /* ŠÍPKA */
+  .scroll-down-arrow {
+    width: 40px;
+    height: 40px;
+    bottom: 470px;
   }
-
-  .site-header {
-    padding: 10px 20px;
-  }
-
 }
-
