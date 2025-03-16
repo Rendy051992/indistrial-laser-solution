@@ -4,6 +4,8 @@
   box-sizing: border-box; /* zabezpečí správne výpočty veľkosti elementu */
 }
 
+
+
 @font-face {
   font-family: 'Insaniburger'; /* názov fontu */
   src: url('fonts/Insaniburger-0OZ9.ttf') format('truetype');
@@ -20,6 +22,8 @@
 }
 
 
+/* -----------------------------------------------------------------------------------------------------------*/
+
 html, body {
   scroll-behavior: smooth; /* plynulé skrolovanie po kliknutí na odkazy */
   overflow-x: hidden; /* zakáže horizontálny scroll */
@@ -31,6 +35,7 @@ body {
   color: #fff; /* biela farba textu */
 }
 
+/* -----------------------------------------------------------------------------------------------------------*/
 
 /* LOGO - ILCS Ltd */
 .logo-text {
@@ -43,7 +48,6 @@ body {
   background-color: #b10707;
   margin-left: -65px; 
 }
-
 
 .ilcs {
   
@@ -62,6 +66,7 @@ body {
 }
 
 
+/* -----------------------------------------------------------------------------------------------------------*/
 
 /* HLAVIČKA */
 .site-header {
@@ -93,6 +98,7 @@ body {
   width: 100%;
 }
 /* LOGO ILCS Ltd HOVER*/
+
 .logo-text:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* efekt svietenia pri hoveri */
   cursor: pointer; /* kurzor ruky */
@@ -118,6 +124,7 @@ body {
 }
 
 /* MENU Home,SERVICE...*/
+
 .site-nav ul li a {
   color: #fff; /* biela farba textu */
   text-decoration: none; /* bez podčiarknutia */
@@ -181,6 +188,9 @@ body {
   cursor: pointer;
 }
 
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* HERO SEKCIA HLAVNA CAST STRANKY */
 
 .hero {
@@ -235,6 +245,8 @@ body {
   color: #dd0606; /* červená farba textu */
   font-weight: bold; /* tučné písmo */
 }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* INFO SEKCIA */
 /* Sekcia, ktorá zobrazuje informácie o službách */
@@ -351,6 +363,8 @@ body {
     text-shadow: 0 0 10px #ff0266; /* späť na slabšie žiarenie */
   }
 }
+
+/* -----------------------------------------------------------------------------------------------------*/
 
 /* CONTACT US FORM */
 /* Celá sekcia kontaktu */
@@ -488,6 +502,113 @@ body {
 }
 
 
+
+
+/* === COMPARISON TABLE === */
+.comparison-table {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.comparison-table h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #b10707;
+  font-size: 28px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+/* Header tabuľky */
+thead {
+  background-color: rgb(76, 117, 205); 
+  color: #fff;
+}
+
+thead th {
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  color: #fdf8f8; /* text color - Top */
+  
+  
+
+}
+/* Riadky tabuľky */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+ 
+/* Obsah tabuľky - left */
+tbody td {
+  padding: 12px;
+  text-align: center;
+  color: #1c1b1b; /*text color*/
+}
+
+tbody td:first-child {
+  text-align: left;
+}
+/* Zvýraznenie prvých stĺpcov */
+.category td {
+  background-color: #ececec;
+  font-weight: bold;
+  text-align: left;
+  padding: 15px;
+}
+
+.yes {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.no {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.maybe {
+  color: orange;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.legend {
+  margin-top: 20px;
+}
+
+.legend p {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(11, 11, 11); /* text color - legenda  */
+}
+
+.legend .yes {
+  color: green;
+}
+
+.legend .no {
+  color: red;
+}
+
+.legend .maybe {
+  color: orange;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------*/
 
 
 
