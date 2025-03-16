@@ -65,6 +65,14 @@ window.addEventListener('load', () => {
   let sparks = []; // pole, kde budeme ukladať jednotlivé iskry
   const sparkCount = 50; // počet iskier, ktoré sa vygenerujú pre jedno písmeno
 
+  // Zisti veľkosť obrazovky
+const isMobile = window.innerWidth <= 768;
+
+// Príklad podmienky pre sparks:
+const sparkSizeMin = isMobile ? 0.5 : 1.5;
+const sparkSizeMax = isMobile ? 1.5 : 4;
+
+
   // Funkcia, ktorá nastaví veľkosť canvasu podľa veľkosti nadpisu
   function resizeCanvas() {
     canvas.width = heroTitle.offsetWidth; // šírka podľa veľkosti nadpisu
@@ -130,3 +138,4 @@ window.addEventListener('load', () => {
   moveLaserAndCreateSparks(); // spustíme laser na prvé písmeno
   animate(); // spustíme animáciu iskier
 });
+

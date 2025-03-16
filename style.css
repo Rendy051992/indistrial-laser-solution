@@ -480,3 +480,62 @@ body {
   border-radius: 50%;
   z-index: 9;
 }
+
+/* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
+
+@media (max-width: 768px) {
+
+    /* ZMENŠENIE LOGA ILCS LTD */
+    .logo-text {
+      font-size: 20px;     /* zmenšíme veľkosť textu loga */
+      padding: 8px 16px;   /* zmenšíme padding loga */
+      margin-left: 0;      /* zrušíme -60px offset */
+    }
+  
+    /* POSUN HAMBURGER MENU DOĽAVA */
+    .hamburger {
+      position: absolute;
+      right: 20px;     /* posunie hamburger 20px od pravého okraja */
+      top: 25px;       /* nastavíme vzdialenosť od vrchu (prispôsob ak treba) */
+      font-size: 24px; /* veľkosť ikonky */
+    }
+
+  /* Úprava veľkosti nadpisu a spacingu */
+  .hero {
+    height: 400px;
+  }
+
+  .hero-title {
+    font-size: 7vw;
+    letter-spacing: 0.1rem;
+  }
+
+  .hero-subtitle.top,
+  .hero-subtitle.bottom {
+    font-size: 4vw;
+    margin: 5px 0;
+  }
+
+  .scroll-down-arrow {
+    bottom: 3680px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-form-section input,
+  .contact-form-section textarea,
+  .contact-form-section button {
+    width: 90%;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    background-color: #b10707;
+  }
+
+  .site-header {
+    padding: 10px 20px;
+  }
+
+}
+
