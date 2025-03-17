@@ -45,7 +45,16 @@ body {
 /* ============================= */
 /* BLUE HEADER -  HLAVIČKA */
 /* ============================= */
-
+#nav-menu {
+  display: flex;
+  justify-content: flex-end; /* Zarovnanie doprava */
+  align-items: center; /* Vertikálne centrovanie */
+  position: static;
+  top: auto;
+  left: auto;
+  width: auto;
+  /* ... ďalšie štýly pre desktopové menu ... */
+}
 
 /* LOGO - ILCS Ltd */
 .logo-text {
@@ -752,6 +761,27 @@ tbody td:first-child {
   .ltd {
     font-size: 14px;
   }
+
+  /* Pôvodné štýly pre skryté menu (pravdepodobne už existujú) */
+.site-nav {
+  display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
+  /* ... ďalšie štýly ... */
+}
+
+/* Štýly pre zobrazenie menu po kliknutí na hamburger */
+ #nav-menu.active { /* Používam ID, lebo to máš v HTML */
+  display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
+  flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
+  position: absolute; /* Umiestnenie cez ostatný obsah */
+  top: 100%; /* Umiestnenie pod hlavičku (ak je hlavička 100%) */
+  left: 0;
+  width: 100%; /* Rozšírenie na celú šírku obrazovky */
+  background-color: #fff; /* Pozadie menu */
+  /* ... ďalšie štýly pre vzhľad menu ... */
+}
+
+/* ... ďalšie existujúce štýly pre mobil ... */
+
 
     /* HEADER BLUE - MOBILE */
   .site-header {
