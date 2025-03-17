@@ -145,3 +145,13 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
   animate(); // spustíme animáciu iskier
 });
 
+// Vyberieme hamburger ikonku
+const hamburger = document.querySelector('.hamburger');
+
+// Vyberieme navigačné menu (ul)
+const navMenu = document.querySelector('.site-nav ul');
+
+// Po kliknutí na hamburger prepne triedu "active" na menu
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});

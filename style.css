@@ -190,7 +190,10 @@ body {
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------*/
 
+/* ============================= */
 /* HERO SEKCIA HLAVNA CAST STRANKY */
+/* ============================= */
+
 
 .hero {
   position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
@@ -249,7 +252,11 @@ body {
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+
+/* ============================= */
 /* ---- LASER POINT ---- */
+/* ============================= */
+
 
 /* Malá bodka simulujúca laserový bod */
 .laser-point {
@@ -263,19 +270,9 @@ body {
   pointer-events: none; /* neinteraktívny */
 }
 
+/* ============================= */
 /* ---- ISKRY (SPARKS) ---- */
-/* Malé bodky simulujúce iskry od lasera */
-.spark {
-  position: absolute; /* presná pozícia (generuje JS) */
-  width: 2px; /* malá veľkosť iskry */
-  height: 2px;
-  background-color: orange; /* oranžová farba iskry */
-  border-radius: 50%; /* kruhový tvar */
-  pointer-events: none; /* neinteraktívny */
-  z-index: 9; /* pod laserom */
-  box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* svetelný efekt okolo iskry */
-  animation: fadeOut 0.5s forwards; /* iskra po čase zmizne */
-}
+/* ============================= */
 
 @keyframes fadeOut {
   from {
@@ -287,21 +284,18 @@ body {
     transform: scale(0.5); /* zmenší sa */
   }
 }
-
-/* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
-/* Pred vypálením */
-.hero-title span {
-  color: darkred; /* tmavočervené písmená pred vypálením */
-  opacity: 0.6; /* znížená priehľadnosť */
-  transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
+.spark {
+  position: absolute; /* presná pozícia, určuje JS */
+  width: 3px;  /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
+  height: 3px;
+  background-color: rgb(231, 150, 51); /* oranžová farba iskry */
+  border-radius: 50%; /* kruhový tvar */
+  z-index: 9; /* pod laserovým bodom */
+  pointer-events: none; /* neklikateľná, neinteraktívna */
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* svetelný efekt okolo iskry */
+  animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
 }
 
-/* Po vypálení - keď sa aktivuje trieda 'active' cez JS */
-.hero-title span.active {
-  color: red; /* jasne červené */
-  opacity: 1; /* plná viditeľnosť */
-  text-shadow: 0 0 10px red, 0 0 20px red; /* svetelný efekt */
-}
 
 /* ---- Canvas laser dot ---- */
 /* Malá červená bodka simulujúca laser na canvas */
@@ -316,21 +310,34 @@ body {
   pointer-events: none;
 }
 
-/* ---- Canvas spark element ---- */
-/* Malé iskry na canvas ploche */
-.spark {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background-color: rgb(231, 150, 51);
-  border-radius: 50%;
-  z-index: 9;
+
+/* ==================================== */
+/*  LETTERS-LASER CLEANING ANIMATION*/
+/* ==================================== */
+
+/* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
+
+/* PRED CISTENIM LETTERS */
+.hero-title span {
+  color: darkred; /* tmavočervené písmená pred vypálením */
+  opacity: 0.6; /* znížená priehľadnosť */
+  transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
 }
+
+/* PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS */
+
+.hero-title span.active {
+  color: red; /* jasne červené */
+  opacity: 1; /* plná viditeľnosť */
+  text-shadow: 0 0 10px red, 0 0 20px red; /* svetelný efekt */
+}
+
+
 
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-/* ŠÍPKA, KTORÁ POSÚVA DOLE  SEKCIU */
+
 /* ============================= */
 /* KRUHOVÉ TLAČIDLO - SCROLL DOWN ARROW */
 /* ============================= */
@@ -419,7 +426,7 @@ body {
 }
 
 /* ============================= */
-/* ANIMÁCIA bounce */
+/* ANIMÁCIA bounce ARROW */
 /* ============================= */
 
 /* Definuje, ako bude vyzerať animácia bounce */
@@ -474,8 +481,10 @@ body {
 /* ---------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-
+/* ============================= */
 /* CONTACT US FORM */
+/* ============================= */
+
 /* Celá sekcia kontaktu */
 .contact-form-section {
   background-color: #1e1f26; /* tmavé pozadie sekcie */
@@ -535,10 +544,9 @@ body {
 
 
  /* -------------------------------------------------------------------------------------------------------------------------------------------
-
+/* ============================= */
 /* === COMPARISON TABLE === */
-
-
+/* ============================= */
 
 .comparison-table {
   width: 100%;
@@ -690,21 +698,6 @@ tbody td:first-child {
 /* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
 
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  color: #fff;
-  position: absolute;
-  right: 20px;
-  top: 25px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-
-
 /* LOGO ILCS Ltd MOBILE */
   .logo-text {
     font-size: 20px;
@@ -734,15 +727,39 @@ tbody td:first-child {
   }
 
 
+  /* Vždy skryté na desktope */
+.hamburger {
+  display: none; /* skryté štandardne */
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000; /* vyššie než menu */
+}
+
+/* Iba na mobiloch zobrazíme */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* zobrazí sa iba na mobiloch */
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 24px;
+    z-index: 1000;
+  }
+
+
   .site-nav ul {
     display: none;
     flex-direction: column;
     background-color: #b10707;
     width: 100%;
     text-align: center;
+    position: absolute;
+    top: 60px; /* pod headerom */
+    left: 0;
   }
 
-  .site-nav.active ul {
+  .site-nav ul.active {
     display: flex;
   }
 
@@ -761,17 +778,17 @@ tbody td:first-child {
     font-size: 5vw;
   }
 
-  /* CONTACT FORM */
-  .contact-form-section input,
-  .contact-form-section textarea,
-  .contact-form-section button {
-    width: 90%;
-  }
-
   /* ŠÍPKA */
   .scroll-down-arrow {
     width: 40px;
     height: 40px;
     bottom: 470px;
   }
+
+   /* CONTACT FORM */
+   .contact-form-section input,
+   .contact-form-section textarea,
+   .contact-form-section button {
+     width: 90%;
+   }
 }
