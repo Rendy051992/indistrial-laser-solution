@@ -1,3 +1,19 @@
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0); // Vždy nastaví stránku na vrch pred opustením/načítaním
+});
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0); // Vždy načíta stránku od vrchu
+});
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual'; // Nepamätá poslednú pozíciu skrolovania
+}
+
+
+
+
+
 console.log("Je to mobil? ", window.innerWidth <= 768);
 
 // === SCROLL RESTORATION ===
@@ -155,3 +171,6 @@ const navMenu = document.querySelector('.site-nav ul');
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
+
+
+
