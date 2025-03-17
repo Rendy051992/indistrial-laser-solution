@@ -37,6 +37,10 @@ body {
   color: #fff; /* biela farba textu */
 }
 
+.hamburger {
+  display: none; /* skryté na PC */
+}
+
 /* ---------------------------------------------------------------------------------------------------------------------------------------------*/
 /* ============================= */
 /* BLUE HEADER -  HLAVIČKA */
@@ -701,6 +705,31 @@ tbody td:first-child {
 
 
 /* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
+/* Normálny stav - menu sa skryje na mobile */
+@media (max-width: 768px) {
+  .site-nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #b10707;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Keď je aktívne, zobrazí sa menu */
+  #nav-menu.active ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
 
 
 /* LOGO ILCS Ltd MOBILE */
@@ -734,72 +763,10 @@ tbody td:first-child {
 
 
   /* Vždy skryté na desktope */
-.hamburger {
-  display: none; /* skryté štandardne */
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1000; /* vyššie než menu */
-}
+
 
 /* Iba na mobiloch zobrazíme */
-@media (max-width: 768px) {
 
-
-  .hamburger {
-    display: block; /* zobrazí sa iba na mobiloch */
-    position: absolute;
-    right: 20px;
-    top: 25px;
-    font-size: 24px;
-    z-index: 1000;
-  }
-
-
-  .site-nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #b10707;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 60px; /* pod headerom */
-    left: 0;
-  }
-
-  .site-nav ul.active {
-    display: flex;
-  }
-
-  /* HERO SEKCIA */
-  .hero {
-    height: 500px;
-  }
-
-  .hero-title {
-    font-size: 6vw;
-    letter-spacing: 0.1rem;
-  }
-
-  .hero-subtitle.top,
-  .hero-subtitle.bottom {
-    font-size: 5vw;
-  }
-
-  /* ŠÍPKA */
-  .scroll-down-arrow {
-    width: 40px;
-    height: 40px;
-    bottom: 470px;
-  }
-
-   /* CONTACT FORM */
-   .contact-form-section input,
-   .contact-form-section textarea,
-   .contact-form-section button {
-     width: 90%;
-   }
-}
 
  /* Upravené ikony len pre mobil */
  .icon {

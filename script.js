@@ -1,26 +1,20 @@
+// Scroll vždy na začiatok
 window.addEventListener('beforeunload', () => {
-  window.scrollTo(0, 0); // Vždy nastaví stránku na vrch pred opustením/načítaním
+  window.scrollTo(0, 0);
 });
 
 window.addEventListener('load', () => {
-  window.scrollTo(0, 0); // Vždy načíta stránku od vrchu
+  window.scrollTo(0, 0);
 });
 
 if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual'; // Nepamätá poslednú pozíciu skrolovania
+  history.scrollRestoration = 'manual';
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  window.scrollTo(0, 0);
+});
 
-
-
-
-console.log("Je to mobil? ", window.innerWidth <= 768);
-
-// === SCROLL RESTORATION ===
-// Ak obnovíš stránku, pozícia scrollu sa nenastaví automaticky
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual'; // nastavíme, aby sa stránka po obnovení vždy načítala od vrchu
-}
 
 // === DROPDOWN MENU ===
 // Funkcia na otváranie a zatváranie rozbaľovacích menu (dropdown)
@@ -41,9 +35,10 @@ function toggleDropdown(event, element) {
 // === HAMBURGER MENU ===
 // Funkcia na otvorenie/zatvorenie navigácie v mobilnom zobrazení
 function toggleMenu() {
-  const navMenu = document.getElementById("nav-menu"); // nájde menu podľa ID
-  navMenu.classList.toggle("active"); // ak má aktívne, vypne; ak nie, zapne (zobrazí/skryje menu)
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.toggle("active");
 }
+
 
 // === SCROLL HEADER ===
 // Keď používateľ skroluje, pridáme alebo odstránime triedu 'scrolled' na hlavičke
@@ -129,6 +124,7 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
   size: Math.random() * (sparkSizeMax - sparkSizeMin) + sparkSizeMin // TOTO sme upravili
 });
 
+
     }
 
     laserIndex++; // posunieme sa na ďalšie písmeno
@@ -161,6 +157,26 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
   animate(); // spustíme animáciu iskier
 });
 
+// Detekujeme, či je mobilné zariadenie
+const isMobile = window.innerWidth <= 768;
+
+// Funkcia na vytvorenie iskier
+for (let i = 0; i < sparkCount; i++) {
+  sparks.push({
+    x: x,
+    y: y,
+    vx: (Math.random() - 0.5) * 4,
+    vy: (Math.random() - 0.5) * 4,
+    alpha: 1,
+
+    // Nastavíme veľkosť iskier podľa zariadenia
+    size: isMobile
+      ? Math.random() * (0.8 - 0.3) + 0.3    // Mobil: 0.3 až 0.8 px
+      : Math.random() * (2.5 - 1) + 1        // PC: 1 až 2.5 px
+  });
+}
+
+
 // Vyberieme hamburger ikonku
 const hamburger = document.querySelector('.hamburger');
 
@@ -173,4 +189,21 @@ hamburger.addEventListener('click', () => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE WEB */
 
