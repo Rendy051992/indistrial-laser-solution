@@ -217,6 +217,13 @@ body {
   justify-content: center; /* horizontálne vycentrovanie obsahu */
   align-items: center; /* vertikálne vycentrovanie obsahu */
   overflow: hidden; /* skryje všetko, čo presahuje sekciu */
+
+   /* Parallax efekt pre pozadie */
+   background-image: url('images/your-background.jpg'); /* sem si daj vlastný obrázok */
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 /* Plátno pre animáciu lasera */

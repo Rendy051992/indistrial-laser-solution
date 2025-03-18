@@ -1,17 +1,20 @@
 // Scroll vždy na začiatok
-window.addEventListener('beforeunload', () => {
+window.addEventListener('beforeunload', () => { /* beforeunload */
   window.scrollTo(0, 0);
 });
 
-window.addEventListener('load', () => {
+/* === SCROLL TO TOP === */
+
+window.addEventListener('load', () => { /* load */
   window.scrollTo(0, 0);
 });
 
-if ('scrollRestoration' in history) {
+if ('scrollRestoration' in history) { /* scrollRestoration */
   history.scrollRestoration = 'manual';
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+
+document.addEventListener("DOMContentLoaded", function() { /* DOMContentLoaded */
   window.scrollTo(0, 0);
 });
 
@@ -126,6 +129,7 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
 
 
     }
+/*    sparks.push({*/
 
     laserIndex++; // posunieme sa na ďalšie písmeno
     setTimeout(moveLaserAndCreateSparks, 250); // oneskorenie pred vypálením ďalšieho písmena (0,25s)
@@ -188,8 +192,13 @@ hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
 
+/* PARALAX HERO */
 
-
+window.addEventListener('scroll', function() {
+  const parallax = document.querySelector('.hero');
+  let offset = window.pageYOffset;
+  parallax.style.backgroundPositionY = offset * 0.5 + "px";
+});
 
 
 
