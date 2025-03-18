@@ -1,8 +1,27 @@
+// ====================================================
+// PO NACITANIE STRANKY - NACITANIE OD ZACIATKU WEB */
+// ====================================================
+
+// TOTO zabezpečí, že stránka po reload/reštarte vždy začne hore a nie v strede
+if ('scrollRestoration' in history) {
+  // Nastavujeme, že manuálne budeme riadiť správanie scrollovania po obnovení stránky
+  history.scrollRestoration = 'manual';
+}
+
+//  Keď sa stránka načíta, nastavíme scroll na úplný začiatok (len pre istotu)
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+
+
+
+
+
 // =============================
 // HAMBURGER MENU TOGGLE
 // =============================
 
-// Táto funkcia sa spustí, keď klikneš na hamburger ikonu (na mobile).
+// Táto funkcia sa spustí, keď click na hamburger ikonu (na mobile).
 // Účel: zobrazí alebo skryje hlavné menu (navigáciu) podľa toho, či už je otvorené alebo zatvorené.
 function toggleMenu() {
   // Nájde element navigácie podľa ID, ktoré si nastavil v HTML ako "nav-menu".
@@ -15,9 +34,11 @@ function toggleMenu() {
 }
 
 
-// =============================
+
+
+// =====================================================
 // CLOSE ON CLICK OUTSIDE (FOR MOBILE AND DESKTOP)
-// =============================
+// =====================================================
 
 // Táto funkcia sa spustí, keď klikneš hocikde na stránku.
 // Účel: zatvoriť menu a dropdowny, ak klikneš mimo navigácie alebo hamburger menu.
@@ -25,7 +46,7 @@ document.addEventListener('click', function(event) {
   // Znova si vyberáme navigačné menu.
   const navMenu = document.getElementById("nav-menu");
 
-  // Vyberáme hamburger menu (ikonu s tromi čiarami).
+  // Vyberáme hamburger menu
   const hamburger = document.querySelector('.hamburger');
 
   // Skontrolujeme, či kliknutie prebehlo vo vnútri navigácie (menu).
@@ -45,6 +66,8 @@ document.addEventListener('click', function(event) {
     });
   }
 });
+
+
 
 
 // =============================
@@ -70,6 +93,7 @@ function toggleDropdown(event, element) {
     }
   });
 
+
   // Prepni triedu 'open' na kliknutom dropdown menu:
   // - Ak nebolo otvorené → otvorí ho.
   // - Ak bolo otvorené → zavrie ho.
@@ -77,9 +101,12 @@ function toggleDropdown(event, element) {
 }
 
 
-// =============================
+
+
+// ===========================================
 // SCROLL EFFECTS (hlavička a zatváranie menu)
-// =============================
+// ===========================================
+
 
 // Táto funkcia sa spustí vždy, keď používateľ scrolluje (posúva stránku).
 window.addEventListener('scroll', () => {
@@ -109,7 +136,10 @@ window.addEventListener('scroll', () => {
 
 
 
-// === HERO TITLE LASER & SPARKS ANIMATION ===
+
+// =========================================
+// === HERO TITLE LASER & SPARKS ANIMATION 
+// =========================================
 
 window.addEventListener('load', () => {
 
@@ -126,7 +156,6 @@ window.addEventListener('load', () => {
   const isMobile = window.innerWidth <= 768;
   
   
-
 
 // Príklad podmienky pre sparks:
 const sparkSizeMin = isMobile ? 0.5 : 1.5;
@@ -202,6 +231,8 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
   animate(); // spustíme animáciu iskier
 });
 
+
+
 // Detekujeme, či je mobilné zariadenie
 const isMobile = window.innerWidth <= 768;
 
@@ -222,16 +253,9 @@ for (let i = 0; i < sparkCount; i++) {
 }
 
 
-// Vyberieme hamburger ikonku
-const hamburger = document.querySelector('.hamburger');
 
-// Vyberieme navigačné menu (ul)
-const navMenu = document.querySelector('.site-nav ul');
 
-// Po kliknutí na hamburger prepne triedu "active" na menu
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
+
 
 /* PARALAX HERO */
 
@@ -247,46 +271,5 @@ window.addEventListener('scroll', function() {
 
 
 
-// === CLOSE MENUS WHEN CLICKING OUTSIDE ===
-document.addEventListener('click', function(event) {
-  const navMenu = document.getElementById("nav-menu");
-  const hamburger = document.querySelector('.hamburger');
-  const clickedInsideMenu = navMenu.contains(event.target);
-  const clickedHamburger = hamburger.contains(event.target);
-
-  // Ak klikneš mimo menu aj mimo hamburger
-  if (!clickedInsideMenu && !clickedHamburger) {
-    // Zatvoríme hamburger menu, ak je otvorené
-    if (navMenu.classList.contains("active")) {
-      navMenu.classList.remove("active");
-    }
-
-    // Zatvoríme všetky dropdowny (ak sú nejaké otvorené)
-    document.querySelectorAll('.dropdown').forEach((drop) => {
-      drop.classList.remove('open');
-    });
-  }
-});
 
 
-window.addEventListener('scroll', () => {
-  const navMenu = document.getElementById("nav-menu");
-
-  if (navMenu.classList.contains("active")) {
-    navMenu.classList.remove("active");
-  }
-
-  // Zavrie dropdowny pri skrolovaní
-  document.querySelectorAll('.dropdown').forEach((drop) => {
-    drop.classList.remove('open');
-  });
-});
-
-
-
-
-
-
-
-
-/* RESPONSIVE WEB */

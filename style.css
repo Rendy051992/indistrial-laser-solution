@@ -42,6 +42,8 @@ body {
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
 /* ============================= */
 /* BLUE HEADER -  HLAVIČKA */
 /* ============================= */
@@ -53,10 +55,14 @@ body {
   top: auto;
   left: auto;
   width: auto;
-  /* ... ďalšie štýly pre desktopové menu ... */
+  
 }
 
+
+/* ============================= */
 /* LOGO - ILCS Ltd */
+/* ============================= */
+
 .logo-text {
   display: flex; /* Položky vedľa seba */
   align-items: center; /* Vertikálne v strede */
@@ -84,7 +90,9 @@ body {
   margin-left: 15px; /* pridaj medzeru medzi ILCS a Ltd */
 }
 
+/* ============================= */
 /* LOGO ILCS Ltd HOVER*/
+/* ============================= */
 
 .logo-text:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* efekt svietenia pri hoveri */
@@ -92,9 +100,11 @@ body {
 }
 
 
-/* ---------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/* ============================= */
 /* HEADER - HLAVIČKA (BLUE) */
+/* ============================= */
+
 .site-header {
   position: fixed; /* zostane hore aj pri skrolovaní */
   top: 0;
@@ -109,7 +119,11 @@ body {
   z-index: 1000; /* bude vždy navrchu */
 }
 
+/* ============================= */
+/*  HEADER PRI SCROLLOVANI
+/* ============================= */
 .site-header.scrolled {
+
   background-color: #b10707; /* červené pozadie pri skrolovaní */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* tieň */
 }
@@ -157,7 +171,10 @@ body {
   border-radius: 5px; /* zaoblenie rohov */
 }
 
-/* DROPDOWN MENU */
+/* =============================  */
+/*        DROPDOWN MENU  
+/* =============================  */
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -272,8 +289,20 @@ body {
 
 }
 
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+/* ============================= */
+/* CANVAS PRE ANIMACIU LASERA    */
+/* ============================= */
+
+#laserCanvas {
+  position: absolute; /* umiestni plátno nad celú sekciu hero */
+  top: 0;
+  left: 0;
+  width: 100%; /* natiahne na celú šírku */
+  height: 100%; /* natiahne na celú výšku */
+  pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
+  z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
+}
 
 /* ============================= */
 /* ---- LASER POINT ---- */
@@ -293,7 +322,7 @@ body {
 }
 
 /* ============================= */
-/* ---- ISKRY (SPARKS) ---- */
+/* ---- ISKRY (SPARKS) ---- 
 /* ============================= */
 
 @keyframes fadeOut {
@@ -318,9 +347,10 @@ body {
   animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
 }
 
+/* ============================= */
+/* ---- LASER DOT ---- 
+/* ============================= */
 
-/* ---- Canvas laser dot ---- */
-/* Malá červená bodka simulujúca laser na canvas */
 .laser-dot {
   position: absolute;
   width: 8px;
@@ -357,117 +387,81 @@ body {
 
 
 
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-
-/* ============================= */
+/* ==================================== */
 /* KRUHOVÉ TLAČIDLO - SCROLL DOWN ARROW */
-/* ============================= */
+/* ==================================== */
 
 .scroll-down-arrow {
-  /* Absolútne umiestnenie prvku voči jeho rodičovi */
-  position: absolute;
-
-  /* Horizontálne umiestnenie - presne na stred */
-  left: 50%;
-
-  /* Zvislá vzdialenosť od spodného okraja (môžeš upraviť podľa potreby) */
-  bottom: 250px;
-
-  /* Posun prvku o polovicu jeho šírky späť, aby bol presne vycentrovaný */
-  transform: translateX(-50%);
-
-  /* Veľkosť tlačidla (šírka a výška rovnaká) */
-  width: 60px;
+  
+  position: absolute;  /* Absolútne umiestnenie prvku voči jeho rodičovi */
+  left: 50%; /* Horizontálne umiestnenie - presne na stred */
+  bottom: 250px;  /* Zvislá vzdialenosť od spodného okraja (môžeš upraviť podľa potreby) */
+  transform: translateX(-50%); /* Posun prvku o polovicu jeho šírky späť, aby bol presne vycentrovaný */
+  width: 60px; /* Veľkosť tlačidla (šírka a výška rovnaká) */
   height: 60px;
-
-  /* Farba pozadia s miernou priehľadnosťou */
-  background-color: rgba(40, 40, 50, 0.9);
-
-  /* Zaoblené rohy - 50% vytvorí dokonalý kruh */
-  border-radius: 50%;
-
-  /* Použitie flexboxu na centrovanie obsahu (šípky) do stredu */
+  background-color: rgba(40, 40, 50, 0.9); /* Farba pozadia s miernou priehľadnosťou */
+  border-radius: 50%; /* Zaoblené rohy - 50% vytvorí dokonalý kruh */
   display: flex;
-  justify-content: center;
+  justify-content: center;   /* Použitie flexboxu na centrovanie obsahu (šípky) do stredu */
   align-items: center;
-
-  /* Tieň okolo tlačidla pre efekt svietenia */
-  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
-
-  /* Odstráni podčiarknutie textu alebo odkazov */
-  text-decoration: none;
-
-  /* Vrstva - zabezpečí, že tento prvok bude nad ostatnými */
-  z-index: 10;
-
-  /* Plynulá zmena farby a tieňa pri hoveri */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Tieň okolo tlačidla pre efekt svietenia */
+  text-decoration: none; /* Odstráni podčiarknutie textu alebo odkazov */
+  z-index: 10; /* Vrstva - zabezpečí, že tento prvok bude nad ostatnými */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Plynulá zmena farby a tieňa pri hoveri */
 }
 
-/* Efekt po prejdení myšou nad tlačidlo */
-.scroll-down-arrow:hover {
-  /* Zmení farbu pozadia na priesvitnejšiu */
-  background-color: rgba(255, 0, 80, 0.2);
 
-  /* Zvýši intenzitu tieňa - tlačidlo viac žiari */
-  box-shadow: 0 0 30px rgba(255, 0, 80, 0.9);
-}
+
+/* ============================= */
+/* SCROLL DOWN ARROW - HOVER */
+/* ============================= */
+
 
 /* ============================= */
 /* ŠÍPKA VO VNÚTRI KRUHU - PC */
 /* ============================= */
 
 .arrow-icon {
-  /* Nastaví veľkosť šípky */
-  width: 30px;
+  
+  width: 30px; /* Nastaví veľkosť šípky */
   height: 30px;
+  stroke: #fff;  /* Farba čiar (len pre SVG)  */
+  transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease; /* Pridáva plynulú zmenu pri hoveri - veľkosť, farba a žiarenie */
 
-  /* Farba čiar (len pre SVG) - biela */
-  stroke: #fff;
 
-  /* Pridáva plynulú zmenu pri hoveri - veľkosť, farba a žiarenie */
-  transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
-
-  /* Žiadna animácia bounce predvolene - pridáme ju pri hoveri */
 }
 
-/* Efekty na šípke pri hoveri na tlačidlo */
+/* ============================= */
+/*  -  HOVER */
+/* ============================= */
+
 .scroll-down-arrow:hover .arrow-icon {
-  /* Spustí animáciu bounce, keď je hover aktívny */
+  
   animation: bounce 1s infinite;
-
-  /* Zväčší šípku o 10% */
-  transform: scale(1.1);
-
-  /* Zmení farbu čiar na svetlejšiu červenú */
-  stroke: #ff4d4d;
-
-  /* Pridá efekt žiarenia okolo šípky */
-  filter: drop-shadow(0 0 10px #ff4d4d);
+  transform: scale(1.1); /* Zväčší šípku o 10% */
+  stroke: #ff4d4d; /* Zmení farbu čiar na svetlejšiu červenú */
+  filter: drop-shadow(0 0 10px #ff4d4d);   /* Pridá efekt žiarenia okolo šípky */
+  background-color: rgba(255, 0, 80, 0.2); /* Zmení farbu pozadia na priesvitnejšiu */
+  box-shadow: 0 0 30px rgba(255, 0, 80, 0.9);  /* Zvýši intenzitu tieňa - tlačidlo viac žiari */
 }
 
 /* ============================= */
 /* ANIMÁCIA bounce ARROW */
 /* ============================= */
 
-/* Definuje, ako bude vyzerať animácia bounce */
-@keyframes bounce {
-  /* Tieto fázy zabezpečujú plynulé odskakovanie hore a späť */
 
-  /* Východisková poloha - žiadny posun */
-  0%, 20%, 50%, 80%, 100% {
+  @keyframes bounce { /* Definuje, ako bude vyzerať animácia bounce */
+
+
+  0%, 20%, 50%, 80%, 100% { /* Východisková poloha - žiadny posun */
     transform: translateY(0);
   }
-
-  /* Šípka sa posunie nahor o 10px */
   40% {
-    transform: translateY(-10px);
+    transform: translateY(-10px);  /* Šípka sa posunie nahor o 10px */
   }
-
-  /* Šípka sa jemne vráti späť nahor o 5px (tlmí pohyb) */
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Šípka sa jemne vráti späť nahor o 5px (tlmí pohyb) */
   }
 }
 
@@ -601,7 +595,7 @@ table {
 }
 
 thead {
-  background-color: rgb(76, 117, 205);
+  background-color: rgb(76, 117, 205); /* modré pozadie */
   color: #fff;
 }
 
@@ -870,10 +864,28 @@ tbody td:first-child {
 }
 
 
+/* Nadpis v sekcii INFO */
+
+.info-section h1 {
+  color: #0f6d93; /* modrý nadpis */
+  font-size: 2.5rem; /* veľkosť nadpisu */
+  margin-bottom: 20px; /* medzera pod nadpisom */
+}
+
+/* Text v sekcii INFO */
+
+.info-section p {
+  max-width: 900px; /* maximálna šírka textového bloku */
+  margin: 0 auto; /* vycentruje text blok horizontálne */
+  text-align: justify; /* text zarovnaný zľava aj sprava */
+  line-height: 1.8; /* medzera medzi riadkami pre čitateľnosť */
+  font-size: 1rem; /* veľkosť písma */
+}
+
+
+
   /* TABLE*/ 
 
-
- /* Upravené ikony len pre mobil */
  .icon {
   width: 28px;        /* menší kruh */
   height: 28px;
