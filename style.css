@@ -78,7 +78,7 @@ body {
 }
 
 .ltd {
-  font-family: 'KGCorneroftheSky', sans-serif;
+  font-family: 'Insaniburger', sans-serif;
   font-size: 20px;
   color: #fff;
   margin-left: 15px; /* pridaj medzeru medzi ILCS a Ltd */
@@ -408,7 +408,7 @@ body {
 }
 
 /* ============================= */
-/* ŠÍPKA VO VNÚTRI KRUHU */
+/* ŠÍPKA VO VNÚTRI KRUHU - PC */
 /* ============================= */
 
 .arrow-icon {
@@ -474,11 +474,14 @@ body {
 
 /* Sekcia, ktorá zobrazuje informácie o službách */
 .info-section {
-  background-color: #f4f4f4; /* svetlosivé pozadie sekcie */
+  background: linear-gradient(to bottom, #d1d1d1 0%, #f4f4f4 100%);
+  /* zhora #d1d1d1 (tmavšia sivá), dole #f4f4f4 (svetlejšia sivá) */
+  
   color: #333; /* tmavosivá farba textu */
   padding: 80px 20px; /* priestor okolo obsahu sekcie */
   text-align: center; /* zarovnanie textu do stredu */
 }
+
 
 /* Nadpis v sekcii INFO */
 .info-section h1 {
@@ -714,7 +717,10 @@ tbody td:first-child {
 
 
 /* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
+
+
 /* Normálny stav - menu sa skryje na mobile */
+
 @media (max-width: 768px) {
   .site-nav ul {
     display: none;
@@ -737,38 +743,43 @@ tbody td:first-child {
     font-size: 24px;
     cursor: pointer;
   }
-}
-
 
 
 /* LOGO ILCS Ltd MOBILE */
   .logo-text {
-    font-size: 20px;
+    
     padding: 8px 6px;
     margin-left: -43px;
   }
+
 /* ILCS */
+
  .ilcs {
   font-family: 'Insaniburger', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   font-weight: bold;
   margin-left: -0px;
   letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
 }
 
-/*Ltd */
+/* LTD MOBILE */
+
   .ltd {
-    font-size: 14px;
+    font-size: 10px;
   }
 
-  /* Pôvodné štýly pre skryté menu (pravdepodobne už existujú) */
+
+
+  /* HEADER - MOBILE */
+
 .site-nav {
   display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
-  /* ... ďalšie štýly ... */
+
 }
 
 /* Štýly pre zobrazenie menu po kliknutí na hamburger */
+
  #nav-menu.active { /* Používam ID, lebo to máš v HTML */
   display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
   flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
@@ -777,13 +788,12 @@ tbody td:first-child {
   left: 0;
   width: 100%; /* Rozšírenie na celú šírku obrazovky */
   background-color: #fff; /* Pozadie menu */
-  /* ... ďalšie štýly pre vzhľad menu ... */
+  
 }
-
-/* ... ďalšie existujúce štýly pre mobil ... */
 
 
     /* HEADER BLUE - MOBILE */
+
   .site-header {
     flex-direction: row;
     justify-content: space-between;
@@ -792,10 +802,68 @@ tbody td:first-child {
   }
 
 
-  /* Vždy skryté na desktope */
 
 
-/* Iba na mobiloch zobrazíme */
+  
+  /* HERO - MOBILE */
+
+  .hero {
+    position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
+    height: 390px; /* výška sekcie, môžeš zmeniť podľa potreby */
+    display: flex; /* použijeme flexbox na centrovanie obsahu */
+    justify-content: center; /* horizontálne vycentrovanie obsahu */
+    align-items: center; /* vertikálne vycentrovanie obsahu */
+    overflow: hidden; /* skryje všetko, čo presahuje sekciu */
+  }
+
+
+  /* HERO TITTLE - MOBILE */
+
+  .hero-title {
+    display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
+    justify-content: center; /* centrovanie písmen */
+    align-items: center; /* vertikálne centrovanie */
+    position: relative; /* umožňuje pozicionovanie detí voči tomuto elementu */
+    font-size: 5vw; /* veľkosť textu závisí od šírky okna */
+    letter-spacing: 0.5rem; /* medzera medzi písmenami */
+    margin: 23px 0; /* okraje nad a pod nadpisom */
+    gap: 0.3em; /* medzera medzi jednotlivými písmenami */
+  }
+
+
+  /* HERO SUBTITLE - MOBILE */
+
+  .hero-subtitle.top,
+  .hero-subtitle.bottom {
+    font-size: 3vw; /* veľkosť podnadpisu */
+    color: #dd0606; /* červená farba textu */
+    font-weight: bold; /* tučné písmo */
+  
+  }
+
+  /* SCROLL DOWN ARROW - MOBILE */
+  
+.arrow-icon {
+
+  /* Nastaví veľkosť bielej inside šípky */
+  width: 20px;
+  height: 20px;
+  stroke: #fff;  /* Farba čiar (len pre SVG) - biela */
+  transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease; /* Pridáva plynulú zmenu pri hoveri - veľkosť, farba a žiarenie */
+
+
+} 
+
+/* SCROLL DOWN ARROW KRUH - MOBILE */
+
+.scroll-down-arrow {
+  width: 40px;   /* zväčšené z 60px */
+  height: 40px;  /* zväčšené z 60px */
+  bottom: 400px;
+}
+
+
+  /* TABLE*/ 
 
 
  /* Upravené ikony len pre mobil */
@@ -827,4 +895,4 @@ tbody td:first-child {
 thead th, tbody td {
   padding: 8px 5px;
   font-size: 12px; /*  zmeníš veľkosť písma hl. table */
-}
+}}
