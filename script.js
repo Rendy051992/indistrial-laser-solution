@@ -253,17 +253,33 @@ for (let i = 0; i < sparkCount; i++) {
 }
 
 
+const scrollArrow = document.querySelector('.scroll-down-arrow');
+
+// Ak je šírka okna väčšia ako 768px = PC
+if (window.innerWidth > 768) {
+  scrollArrow.addEventListener('click', (event) => {
+    // Môžeš tu mať animáciu pri kliknutí
+    scrollArrow.classList.add('clicked');
+
+    setTimeout(() => {
+      scrollArrow.classList.remove('clicked');
+    }, 1000);
+  });
+} else {
+  // Na mobile chceme len scroll bez animácií
+  scrollArrow.addEventListener('click', (event) => {
+    // Ak nechceš robiť nič, tento blok môže byť prázdny.
+    // Ale zabezpečujeme, že NIKDY nepridáme triedu "clicked".
+    // Ak chceš, môžeš aj prescrollovať ručne (ale href="#info" to rieši)
+  });
+}
 
 
 
 
-/* PARALAX HERO */
 
-window.addEventListener('scroll', function() {
-  const parallax = document.querySelector('.hero');
-  let offset = window.pageYOffset;
-  parallax.style.backgroundPositionY = offset * 0.5 + "px";
-});
+
+
 
 
 

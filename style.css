@@ -5,7 +5,8 @@
 }
 
 
-
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 
 @font-face {
@@ -24,7 +25,8 @@
 }
 
 
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 html, body {
   scroll-behavior: smooth; /* plynulé skrolovanie po kliknutí na odkazy */
@@ -33,7 +35,7 @@ html, body {
 
 body {
   font-family: "Roboto", sans-serif; /* hlavný font textu */
-  background-color: #050f55; /* tmavomodré pozadie stránky */
+  background: linear-gradient(to bottom, #050f55, #0f2b80, #3f5faf);
   color: #fff; /* biela farba textu */
 }
 
@@ -41,23 +43,17 @@ body {
   display: none; /* skryté na PC */
 }
 
-/* ---------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 
 /* ============================= */
 /* BLUE HEADER -  HLAVIČKA */
 /* ============================= */
-#nav-menu {
-  display: flex;
-  justify-content: flex-end; /* Zarovnanie doprava */
-  align-items: center; /* Vertikálne centrovanie */
-  position: static;
-  top: auto;
-  left: auto;
-  width: auto;
-  
-}
 
+
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 /* ============================= */
 /* LOGO - ILCS Ltd */
@@ -83,12 +79,17 @@ body {
   letter-spacing: 2px; /* pridať medzery medzi písmenami */
 }
 
+
+
 .ltd {
-  font-family: 'Insaniburger', sans-serif;
-  font-size: 20px;
-  color: #fff;
-  margin-left: 15px; /* pridaj medzeru medzi ILCS a Ltd */
+  font-family: 'Quicksand', sans-serif; /* Použijeme Google font Quicksand */
+  font-weight: 700; /* Hrúbka, ktorú si zvolil z Google Fonts */
+  font-size: 11px;  /* Môžeš si dať inú veľkosť ak chceš */
+  color: #fff;      /* Zachováme farbu písma ak je potrebná */
+  margin-left: 3px; /* Prípadne ponechaj tvoju medzeru medzi logom a Ltd */
+  margin-top: 7px;
 }
+
 
 /* ============================= */
 /* LOGO ILCS Ltd HOVER*/
@@ -98,6 +99,9 @@ body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* efekt svietenia pri hoveri */
   cursor: pointer; /* kurzor ruky */
 }
+
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 
 
@@ -122,6 +126,18 @@ body {
 /* ============================= */
 /*  HEADER PRI SCROLLOVANI
 /* ============================= */
+#nav-menu {
+  display: flex;
+  justify-content: flex-end; /* Zarovnanie doprava */
+  align-items: center; /* Vertikálne centrovanie */
+  position: static;
+  top: auto;
+  left: auto;
+  width: auto;
+  
+}
+
+
 .site-header.scrolled {
 
   background-color: #b10707; /* červené pozadie pri skrolovaní */
@@ -170,6 +186,10 @@ body {
   background-color: rgb(76, 117, 205); /* modré pozadie pri hoveri */
   border-radius: 5px; /* zaoblenie rohov */
 }
+
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
+
 
 /* =============================  */
 /*        DROPDOWN MENU  
@@ -220,7 +240,9 @@ body {
 }
 
 
-/* -----------------------------------------------------------------------------------------------------------------------------------------*/
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
+
 
 /* ============================= */
 /* HERO SEKCIA HLAVNA CAST STRANKY */
@@ -235,12 +257,7 @@ body {
   align-items: center; /* vertikálne vycentrovanie obsahu */
   overflow: hidden; /* skryje všetko, čo presahuje sekciu */
 
-   /* Parallax efekt pre pozadie */
-   background-image: url('images/your-background.jpg'); /* sem si daj vlastný obrázok */
-   background-attachment: fixed;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+  
 }
 
 /* Plátno pre animáciu lasera */
@@ -288,6 +305,9 @@ body {
   font-weight: bold; /* tučné písmo */
 
 }
+
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 
 /* ============================= */
@@ -363,20 +383,21 @@ body {
 }
 
 
+
 /* ==================================== */
 /*  LETTERS-LASER CLEANING ANIMATION*/
 /* ==================================== */
 
 /* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
 
-/* PRED CISTENIM LETTERS */
+/* LETTERS PRED CISTENIM LETTERS */
 .hero-title span {
   color: darkred; /* tmavočervené písmená pred vypálením */
   opacity: 0.6; /* znížená priehľadnosť */
   transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
 }
 
-/* PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS */
+/* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS */
 
 .hero-title span.active {
   color: red; /* jasne červené */
@@ -385,37 +406,43 @@ body {
 }
 
 
-
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 
 /* ==================================== */
 /* KRUHOVÉ TLAČIDLO - SCROLL DOWN ARROW */
 /* ==================================== */
 
+
+
 .scroll-down-arrow {
-  
-  position: absolute;  /* Absolútne umiestnenie prvku voči jeho rodičovi */
-  left: 50%; /* Horizontálne umiestnenie - presne na stred */
-  bottom: 250px;  /* Zvislá vzdialenosť od spodného okraja (môžeš upraviť podľa potreby) */
-  transform: translateX(-50%); /* Posun prvku o polovicu jeho šírky späť, aby bol presne vycentrovaný */
-  width: 60px; /* Veľkosť tlačidla (šírka a výška rovnaká) */
+  position: absolute;
+  left: 50%;
+  bottom: 250px;
+  transform: translateX(-50%);
+  width: 60px;
   height: 60px;
-  background-color: rgba(40, 40, 50, 0.9); /* Farba pozadia s miernou priehľadnosťou */
-  border-radius: 50%; /* Zaoblené rohy - 50% vytvorí dokonalý kruh */
+  background-color: rgba(40, 40, 50, 0.9);
+  border-radius: 50%;
+
   display: flex;
-  justify-content: center;   /* Použitie flexboxu na centrovanie obsahu (šípky) do stredu */
+  justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Tieň okolo tlačidla pre efekt svietenia */
-  text-decoration: none; /* Odstráni podčiarknutie textu alebo odkazov */
-  z-index: 10; /* Vrstva - zabezpečí, že tento prvok bude nad ostatnými */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Plynulá zmena farby a tieňa pri hoveri */
+
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
+
+  text-decoration: none;
+  color: transparent;
+  font-size: 0;
+
+  outline: none;  /* voliteľné, ale pomáha */
+  border: none;   /* voliteľné, ale pomáha */
+
+  z-index: 10;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
-/* ============================= */
-/* SCROLL DOWN ARROW - HOVER */
-/* ============================= */
 
 
 /* ============================= */
@@ -438,6 +465,9 @@ body {
 
 .scroll-down-arrow:hover .arrow-icon {
   
+  
+  
+  
   animation: bounce 1s infinite;
   transform: scale(1.1); /* Zväčší šípku o 10% */
   stroke: #ff4d4d; /* Zmení farbu čiar na svetlejšiu červenú */
@@ -447,7 +477,7 @@ body {
 }
 
 /* ============================= */
-/* ANIMÁCIA bounce ARROW */
+/* ANIMÁCIA BOUNCE ARROW */
 /* ============================= */
 
 
@@ -465,9 +495,23 @@ body {
   }
 }
 
+.scroll-down-arrow {
+  text-decoration: none;  /* Zruší podčiarknutie na odkaze */
+  display: flex;          /* Flex kvôli centrovaniu (alebo podľa tvojho dizajnu) */
+  justify-content: center; /* Centrovanie obsahu horizontálne */
+  align-items: center;     /* Centrovanie obsahu vertikálne */
+}
+
+.scroll-down-arrow::before,
+.scroll-down-arrow::after {
+  content: none; /* Zruší prípadné pseudo-elementy, ktoré by robili štvorec */
+}
 
 
-/* ---------------------------------------------------------------------------------------------------------------------------------------*/
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
+
+
 /* ============================= */
 /* INFO SEKCIA */
 /* ============================= */
@@ -500,7 +544,8 @@ body {
   font-size: 1rem; /* veľkosť písma */
 }
 
-/* ---------------------------------------------------------------------------------------------------------------------------------------*/
+/* ==================================================================================================================================== */
+/* ==================================================================================================================================== */
 
 
 /* ============================= */
@@ -565,140 +610,155 @@ body {
 }
 
 
- /* -------------------------------------------------------------------------------------------------------------------------------------------
-/* ============================= */
-/* === COMPARISON TABLE === */
-/* ============================= */
 
+/* ====================================== */
+/* === COMPARISON TABLE STYLES ========= */
+/* ====================================== */
+
+/* === HLAVNÁ SEKCIA S TABUĽKOU === */
 .comparison-table {
-  width: 100%;
-  padding: 40px 20px;
-  background-color: #ffffff;
+  width: 100%;                   /* Zaberá celú šírku kontajnera */
+  padding: 40px 20px;            /* Vnútorné odsadenie: hore/dole 40px, vľavo/vpravo 20px */
+  background-color: #ffffff;     /* Biele pozadie celej sekcie */
 }
 
+/* === HLAVIČKA SEKCIe === */
 .comparison-table h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #b10707;
-  font-size: 28px;
+  text-align: center;            /* Zarovnanie textu na stred */
+  margin-bottom: 30px;           /* Spodná medzera pod nadpisom */
+  color: #b10707;                /* Červená farba nadpisu */
+  font-size: 28px;               /* Veľkosť písma */
 }
 
+/* === WRAPPER PRE TABUĽKU === */
 .table-wrapper {
-  overflow-x: auto;
+  overflow-x: auto;              /* Pridá horizontálny scroll, ak je tabuľka širšia ako kontajner */
 }
 
+/* === ZÁKLADNÉ ŠTÝLY TABUĽKY === */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px;
-  background-color: #fff;
+  width: 100%;                   /* Tabuľka sa roztiahne na celú šírku */
+  border-collapse: collapse;     /* Spojí hrany buniek (bez medzier) */
+  min-width: 600px;              /* Minimálna šírka tabuľky - ak je menšia, objaví sa horizontálny scroll */
+  background-color: #fff;        /* Biele pozadie tabuľky */
 }
 
+/* === HLAVIČKA TABUĽKY (PRVÝ RIADOK) === */
 thead {
-  background-color: rgb(76, 117, 205); /* modré pozadie */
-  color: #fff;
+  background: linear-gradient(to bottom, #050f55, #0f2b80, #3f5faf);
+  color: #fff;                         /* Biele písmo v hlavičke */
 }
 
 thead th {
-  padding: 15px;
-  text-align: center;
-  font-size: 16px;
+  padding: 15px;               /* Vnútorné odsadenie buniek hlavičky */
+  text-align: center;          /* Text v bunkách hlavičky zarovnaný na stred */
+  font-size: 16px;             /* Veľkosť písma hlavičky */
 }
 
+/* === TELO TABUĽKY (DÁTA) === */
 tbody tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;  /* Spodný okraj riadku, oddelenie medzi riadkami */
 }
 
 tbody td {
-  padding: 12px 8px;
-  text-align: center;
-  color: #333;
-  font-size: 14px;
+  padding: 12px 8px;             /* Vnútorné odsadenie v bunkách (hore/dole 12px, vľavo/vpravo 8px) */
+  text-align: center;            /* Text v bunkách zarovnaný na stred */
+  color: #333;                   /* Tmavosivý text */
+  font-size: 14px;               /* Veľkosť písma v bunkách tela tabuľky */
 }
 
+/* === PRVÝ STĹPEC - TEXTY KATEGÓRIÍ === */
 tbody td:first-child {
-  text-align: left;
-  font-weight: 500;
+  text-align: left;              /* Text zarovnaný naľavo */
+  font-weight: 500;              /* Polotučné písmo (silnejší dôraz) */
 }
 
+/* === KATEGORICKÉ RIADKY (SAVING TIME, ENVIRONMENT...) === */
 .category td {
-  background-color: #ececec;
-  font-weight: bold;
-  text-align: left;
-  padding: 12px;
-  font-size: 16px;
+  background-color: #ececec;     /* Svetlosivé pozadie kategórie */
+  font-weight: bold;             /* Tučné písmo */
+  text-align: left;              /* Zarovnanie textu naľavo */
+  padding: 12px;                 /* Odsadenie v bunkách */
+  font-size: 16px;               /* Veľkosť písma */
 }
 
-.icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;   /* šírka ikonky */
-  height: 36px;  /* výška ikonky */
-  margin: 4px;   /* TOTO JE MEDZERA MEDZI IKONAMI */
-  border-radius: 50%;
-  font-size: 20px;
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border: 2px solid #eee;
-}
+/* ====================================== */
+/* === IKONY V TABUĽKE A LEGENDE ======= */
+/* ====================================== */
 
-
+/* === ŠTÝLY SPOLOČNÉ PRE IKONY AJ LEGENDU === */
 .icon, .legend-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px; /* veľkosť ikony */
-  height: 30px; /* veľkosť ikony */
-  margin: 4px;   /* TOTO JE MEDZERA MEDZI IKONAMI */
-  border-radius: 50%;
-  font-size: 20px;
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border: 2px solid #eee;
+  display: inline-flex;               /* Flexbox - horizontálne a vertikálne zarovnanie v strede */
+  align-items: center;                /* Vertikálne centrovanie obsahu */
+  justify-content: center;            /* Horizontálne centrovanie obsahu */
+  width: 30px;                        /* Šírka kruhu (uprav podľa potreby) */
+  height: 30px;                       /* Výška kruhu */
+  margin: 4px;                        /* Medzera medzi ikonami */
+  border-radius: 50%;                 /* Zaoblenie - z kruhu spraví kruh */
+  font-size: 20px;                    /* Veľkosť ikony (symbolu vo vnútri) */
+  color: #fff;                        /* Farba symbolu (biela) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Tieň pre plastický efekt */
+  border: 2px solid #eee;             /* Svetlý rámček okolo ikonky */
 }
 
+
+/* === RÔZNE STAVY IKON (ÁNO, NIE, MOŽNO) === */
+
+/* IKONY "YES" - ZELENÁ */
 .icon.yes, .legend-icon.yes {
-  background: linear-gradient(145deg, #28a745, #218838);
+  background: linear-gradient(145deg, #28a745, #218838); /* Zelený gradient */
 }
 
+/* IKONY "NO" - ČERVENÁ */
 .icon.no, .legend-icon.no {
-  background: linear-gradient(145deg, #dc3545, #c82333);
+  background: linear-gradient(145deg, #dc3545, #c82333); /* Červený gradient */
 }
 
+/* IKONY "MAYBE" - ŽLTÁ */
 .icon.maybe, .legend-icon.maybe {
-  background: linear-gradient(145deg, #ffc107, #e0a800);
+  background: linear-gradient(145deg, #ffc107, #e0a800); /* Žltý gradient */
 }
 
+/* === SYMBOLY V IKONÁCH === */
+
+/* ZELENÁ - HÁČIK */
 .icon.yes::before, .legend-icon.yes::before {
-  content: "\2714"; /* ✔ */
+  content: "\2714"; /* Unicode pre ✔ */
 }
 
+/* ČERVENÁ - KRÍŽIK */
 .icon.no::before, .legend-icon.no::before {
-  content: "\2716"; /* ✖ */
+  content: "\2716"; /* Unicode pre ✖ */
 }
 
+/* ŽLTÁ - MÍNUS */
 .icon.maybe::before, .legend-icon.maybe::before {
-  content: "\2796"; /* ➖ */
+  content: "\2796"; /* Unicode pre ➖ */
 }
 
+/* ====================================== */
+/* === LEGENDA POD TABUĽKOU ============ */
+/* ====================================== */
+
+/* KONTAJNER PRE LEGENDU (EXPLANATION OF ICONS) */
 .legend {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+  font-size: 42px;
+  margin-top: 30px;            /* Horná medzera od tabuľky */
+  display: flex;               /* Flexbox na zarovnanie položiek */
+  justify-content: center;     /* Centrovanie obsahu */
+  gap: 40px;                   /* Medzera medzi položkami legendy */
 }
 
+/* TEXTY PRI IKONÁCH V LEGENDE */
 .legend p {
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #333;
+  font-size: 14px;             /* Veľkosť písma */
+  display: flex;               /* Flexbox pre zarovnanie ikon a textu */
+  align-items: center;         /* Vertikálne centrovanie */
+  gap: 10px;                   /* Medzera medzi ikonou a textom */
+  color: #333;                 /* Farba textu - tmavosivá */
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -714,15 +774,16 @@ tbody td:first-child {
 
 
 
+                                                  /* ====================================== */
+                                                   /* === !!!!!!!!! RESPONSIVE DESIG!!!!!!!!! 
+                                                  /* ====================================== */
 
+                                                  /* ====================================== */
+                                                       @media (max-width: 768px) {
+                                                  /* ====================================== */
 
-
-/* === !!!!!!!!! RESPONSIVE DESIGN !!!!!!!!!!!! === */
-
-
-/* Normálny stav - menu sa skryje na mobile */
-
-@media (max-width: 768px) {
+ /* ==================================================================================================================================== */
+ /* ==================================================================================================================================== */
   .site-nav ul {
     display: none;
     flex-direction: column;
@@ -745,34 +806,40 @@ tbody td:first-child {
     cursor: pointer;
   }
 
-
-/* LOGO ILCS Ltd MOBILE */
+ /* ====================================== */
+ /* LOGO ILCS Ltd - MOBILE */
+ /* ====================================== */
   .logo-text {
     
     padding: 8px 6px;
     margin-left: -43px;
   }
 
-/* ILCS */
-
+   /* ====================================== */
+   /* ILCS - MOBILE */
+   /* ====================================== */
  .ilcs {
+
   font-family: 'Insaniburger', sans-serif;
   font-size: 25px;
   color: #fff;
   font-weight: bold;
-  margin-left: -0px;
+  margin-left: 2px;
   letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
 }
 
-/* LTD MOBILE */
+ /* ====================================== */
+ /* LTD -  MOBILE */
+ /* ====================================== */
 
   .ltd {
     font-size: 10px;
   }
 
 
-
+  /* ====================================== */
   /* HEADER - MOBILE */
+   /* ====================================== */
 
 .site-nav {
   display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
@@ -792,8 +859,9 @@ tbody td:first-child {
   
 }
 
-
+     /* ====================================== */
     /* HEADER BLUE - MOBILE */
+     /* ====================================== */
 
   .site-header {
     flex-direction: row;
@@ -803,10 +871,9 @@ tbody td:first-child {
   }
 
 
-
-
-  
-  /* HERO - MOBILE */
+   /* ====================================== */
+   /* HERO - MOBILE */
+   /* ====================================== */
 
   .hero {
     position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
@@ -817,62 +884,117 @@ tbody td:first-child {
     overflow: hidden; /* skryje všetko, čo presahuje sekciu */
   }
 
-
-  /* HERO TITTLE - MOBILE */
+   /* ====================================== */
+   /* HERO TITTLE - MOBILE */
+   /* ====================================== */
 
   .hero-title {
     display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
     justify-content: center; /* centrovanie písmen */
     align-items: center; /* vertikálne centrovanie */
     position: relative; /* umožňuje pozicionovanie detí voči tomuto elementu */
-    font-size: 5vw; /* veľkosť textu závisí od šírky okna */
+    font-size: 5.4vw; /* veľkosť textu závisí od šírky okna */
     letter-spacing: 0.5rem; /* medzera medzi písmenami */
     margin: 23px 0; /* okraje nad a pod nadpisom */
     gap: 0.3em; /* medzera medzi jednotlivými písmenami */
   }
 
-
+  /* ====================================== */
   /* HERO SUBTITLE - MOBILE */
+  /* ====================================== */
 
   .hero-subtitle.top,
   .hero-subtitle.bottom {
-    font-size: 3vw; /* veľkosť podnadpisu */
+    font-size: 3.4vw; /* veľkosť podnadpisu */
     color: #dd0606; /* červená farba textu */
     font-weight: bold; /* tučné písmo */
   
   }
 
+  /* ====================================== */
   /* SCROLL DOWN ARROW - MOBILE */
+  /* ====================================== */
+  .scroll-down-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 380px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   
-.arrow-icon {
-
-  /* Nastaví veľkosť bielej inside šípky */
-  width: 20px;
-  height: 20px;
-  stroke: #fff;  /* Farba čiar (len pre SVG) - biela */
-  transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease; /* Pridáva plynulú zmenu pri hoveri - veľkosť, farba a žiarenie */
-
-
-} 
-
-/* SCROLL DOWN ARROW KRUH - MOBILE */
-
-.scroll-down-arrow {
-  width: 40px;   /* zväčšené z 60px */
-  height: 40px;  /* zväčšené z 60px */
-  bottom: 400px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
+  
+    text-decoration: none;
+    color: transparent;
+    font-size: 0;
+  
+    outline: none;  /* voliteľné, ale pomáha */
+    border: none;   /* voliteľné, ale pomáha */
+  
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
 
 
-/* Nadpis v sekcii INFO */
+  .scroll-down-arrow:hover .arrow-icon {
+  
+
+    animation: bounce 1s infinite;
+    transform: scale(1.1); /* Zväčší šípku o 10% */
+    stroke: rgba(40, 40, 50, 0.9);/* Zmení farbu čiar na svetlejšiu červenú */
+    filter: none;
+    background-color: transparent; /* HELPED REMOVE SQUARE*/
+    box-shadow: none;
+  }
+
+    /* Zrušíme bounce efekt pri hoveri */
+    .scroll-down-arrow:hover .arrow-icon {
+      animation: none;       /* žiadna animácia */
+      transform: none;       /* žiadne posúvanie */
+      stroke: #fff;          /* farba šípky */
+      filter: none;          /* žiadny tieň */
+    }
+  
+     
+    /* Ak by sa trieda .clicked pridala, zrušíme efekt */
+    .scroll-down-arrow.clicked {
+      animation: none;
+    }
+  
+    /* Zrušenie pseudo-elementov pre prípad, že by tam niečo bolo */
+  .scroll-down-arrow::before,
+  .scroll-down-arrow::after {
+    content: none !important;
+    display: none !important;
+  }
+
+
+
+
+ 
+  
+ 
+
+ /* ==================================================================================================================================== */
+ /* ==================================================================================================================================== */
+
+/* ====================================== */
+/* Nadpis v sekcii INFO - MOBILE */
+/* ====================================== */
 
 .info-section h1 {
   color: #0f6d93; /* modrý nadpis */
-  font-size: 2.5rem; /* veľkosť nadpisu */
+  font-size: 1.5rem; /* veľkosť nadpisu */
   margin-bottom: 20px; /* medzera pod nadpisom */
 }
 
-/* Text v sekcii INFO */
+/* ====================================== */
+/* Text v sekcii INFO  - MOBILE */ 
+/* ====================================== */
 
 .info-section p {
   max-width: 900px; /* maximálna šírka textového bloku */
@@ -883,35 +1005,98 @@ tbody td:first-child {
 }
 
 
+ /* ==================================================================================================================================== */
+ /* ==================================================================================================================================== */
 
-  /* TABLE*/ 
 
- .icon {
-  width: 28px;        /* menší kruh */
-  height: 28px;
-  font-size: 14px;    /* menší symbol vnútri kruhu */
-  margin: 3px;        /* prípadne menšia medzera medzi ikonami */
+/* =============================================== */
+/* === SEKCIA PRE POROVNÁVACIU TABUĽKU - MOBILE === */
+/* ============================================== */
+
+/* Kontajner pre celú tabuľku - mobile  */
+.comparison-table {
+  width: 100%;               /* Zaberie celú dostupnú šírku stránky */
+  padding: 40px 20px;        /* Vnútorné odsadenie (hore/dole 40px, vľavo/vpravo 20px) */
+  background-color: #ffffff; /* Biele pozadie sekcie */
 }
 
-/* Ak chceš zmenšiť legendu s ikonami */
-.legend-icon {
-  width: 24px;
-  height: 24px;
-  font-size: 12px;
+/* Nadpis tabuľky (H2) */
+.comparison-table h2 {
+  text-align: center;        /* Vycentrovaný text */
+  margin-bottom: 30px;       /* Medzera pod nadpisom */
+  color: #b10707;            /* Červená farba nadpisu */
+  font-size: 28px;           /* Veľkosť nadpisu */
 }
 
-/* Prípadne aj šírku stĺpcov tabuľky */
+/* Obal tabuľky, ktorý umožňuje horizontálne scrollovanie na menších zariadeniach */
+.table-wrapper {
+  overflow-x: auto;          /* Ak je tabuľka širšia ako obrazovka, pridá posúvanie do strán */
+}
+
+/* ========================================== */
+/* === ŠTÝLY PRE HLAVNÚ TABUĽKU - MOBILE === */
+/* ========================================= */
+
+/* Samotná tabuľka */
 table {
-  min-width: 100%;
+  width: 100%;               /* Rozšíri tabuľku na celú šírku svojho kontajnera */
+  border-collapse: collapse; /* Odstráni medzery medzi bunkami tabuľky */
+  min-width: 600px;          /* Minimálna šírka tabuľky (dôležité pre menšie zariadenia) */
+  background-color: #fff;    /* Biele pozadie tabuľky */
 }
 
-  
+/* Hlavička tabuľky (prvý riadok s názvami stĺpcov) */
+thead th {
+  padding: 15px;             /* Vnútorné odsadenie (všetky smery 15px) */
+  text-align: center;        /* Text je vycentrovaný */
+  font-size: 16px;           /* Veľkosť písma hlavičiek */
+}
 
+/* Bunky v tele tabuľky */
+tbody td {
+  padding: 12px 8px;         /* Hore/dole 12px, vľavo/vpravo 8px */
+  text-align: center;        /* Vycentrovaný text v bunkách */
+  color: #333;               /* Tmavošedý text */
+  font-size: 14px;           /* Veľkosť písma */
+}
+
+/* Prvý stĺpec v každom riadku (názvy výhod a kategórií) */
 tbody td:first-child {
-  padding-left: 3px; /* nastavíš si podľa potreby */
+  padding-left: 3px;         /* Malé odsadenie zľava */
 }
 
-thead th, tbody td {
-  padding: 8px 5px;
-  font-size: 12px; /*  zmeníš veľkosť písma hl. table */
-}}
+/* Riadiaci riadok (napríklad "SAVING TIME" alebo "ENVIRONMENTALLY FRIENDLY") */
+.category td {
+  background-color: #ececec; /* Svetlošedé pozadie na odlíšenie */
+  font-weight: bold;         /* Tučné písmo */
+  text-align: left;          /* Text zarovnaný naľavo */
+  padding: 12px;             /* Rovnaké vnútorné odsadenie z každej strany */
+  font-size: 16px;           /* Väčšia veľkosť písma pre dôraz */
+}
+
+
+
+/* ============================================ */
+/* === SEKCIA LEGENDA POD TABUĽKOU - MOBILE === */
+/* ============================================ */
+
+/* Kontajner pre popisy ikon */
+.legend {
+  
+  margin-top: 30px;              /* Medzera nad legendou */
+  display: flex;                 /* Flexbox na zobrazenie vedľa seba */
+  justify-content: center;       /* Centrovanie legendy na stred */
+  gap: 30px;                     /* Medzera medzi jednotlivými položkami legendy */
+
+}
+
+  .contact-form-section {
+    
+    background-color: #1e1f26; /* tmavé pozadie sekcie */
+    color: #fff; /* biela farba textu */
+    padding: 80px 20px; /* priestor okolo obsahu */
+    text-align: center; /* vycentrovaný text */
+  }
+}
+
+
