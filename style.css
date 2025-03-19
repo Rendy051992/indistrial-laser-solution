@@ -4,31 +4,29 @@
   box-sizing: border-box; /* zabezpečí správne výpočty veľkosti elementu */
 }
 
-
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
-
 
 @font-face {
-  font-family: 'Insaniburger'; /* názov fontu */
-  src: url('fonts/Insaniburger-0OZ9.ttf') format('truetype');
+  font-family: "Insaniburger"; /* názov fontu */
+  src: url("fonts/Insaniburger-0OZ9.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'next-sunday';
-  src: url('fonts/NextSunday.ttf') format('truetype');
+  font-family: "next-sunday";
+  src: url("fonts/NextSunday.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'KGCorneroftheSky';
-  src: url('fonts/KGCorneroftheSky.ttf') format('truetype');
+  font-family: "KGCorneroftheSky";
+  src: url("fonts/KGCorneroftheSky.ttf") format("truetype");
 }
 
-
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-html, body {
+html,
+body {
   scroll-behavior: smooth; /* plynulé skrolovanie po kliknutí na odkazy */
   overflow-x: hidden; /* zakáže horizontálny scroll */
 }
@@ -46,17 +44,15 @@ body {
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
 /* ============================= */
-/* BLUE HEADER -  HLAVIČKA */
+/* BLUE HEADER -  HLAVIČKA - PC */
 /* ============================= */
-
 
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
 /* ============================= */
-/* LOGO - ILCS Ltd */
+/* LOGO - ILCS Ltd - PC  */
 /* ============================= */
 
 .logo-text {
@@ -67,32 +63,28 @@ body {
   border: 2px solid #ffffff;
   border-radius: 50px;
   background-color: #b10707;
-  margin-left: -65px; 
+  margin-left: -65px;
 }
 
 .ilcs {
-  
-  font-family: 'Insaniburger', sans-serif;
+  font-family: "Insaniburger", sans-serif;
   font-size: 26px;
   color: #fff;
   font-weight: bold;
   letter-spacing: 2px; /* pridať medzery medzi písmenami */
 }
 
-
-
 .ltd {
-  font-family: 'Quicksand', sans-serif; /* Použijeme Google font Quicksand */
+  font-family: "Quicksand", sans-serif; /* Použijeme Google font Quicksand */
   font-weight: 700; /* Hrúbka, ktorú si zvolil z Google Fonts */
-  font-size: 11px;  /* Môžeš si dať inú veľkosť ak chceš */
-  color: #fff;      /* Zachováme farbu písma ak je potrebná */
+  font-size: 11px; /* Môžeš si dať inú veľkosť ak chceš */
+  color: #fff; /* Zachováme farbu písma ak je potrebná */
   margin-left: 3px; /* Prípadne ponechaj tvoju medzeru medzi logom a Ltd */
   margin-top: 7px;
 }
 
-
 /* ============================= */
-/* LOGO ILCS Ltd HOVER*/
+/* LOGO ILCS Ltd HOVER - PC */
 /* ============================= */
 
 .logo-text:hover {
@@ -103,10 +95,8 @@ body {
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
-
 /* ============================= */
-/* HEADER - HLAVIČKA (BLUE) */
+/* HEADER - HLAVIČKA (BLUE)  - PC */
 /* ============================= */
 
 .site-header {
@@ -124,7 +114,7 @@ body {
 }
 
 /* ============================= */
-/*  HEADER PRI SCROLLOVANI
+/*  HEADER PRI SCROLLOVANI - PC 
 /* ============================= */
 #nav-menu {
   display: flex;
@@ -134,12 +124,9 @@ body {
   top: auto;
   left: auto;
   width: auto;
-  
 }
 
-
 .site-header.scrolled {
-
   background-color: #b10707; /* červené pozadie pri skrolovaní */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* tieň */
 }
@@ -147,7 +134,7 @@ body {
 .header-container {
   display: flex;
   justify-content: space-between;
- /* zarovná obsah doľava */
+  /* zarovná obsah doľava */
   align-items: center;
   padding-left: 40px;
   padding-right: 40px;
@@ -159,7 +146,6 @@ body {
   justify-content: flex-end; /* tlačí menu doprava */
   align-items: center; /* aby menu sedelo v strede vertikálne */
 }
-
 
 .site-nav ul {
   display: flex; /* horizontálne rozloženie */
@@ -190,16 +176,19 @@ body {
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
 /* =============================  */
-/*        DROPDOWN MENU  
+/*        DROPDOWN MENU   - PC 
 /* =============================  */
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background: linear-gradient(135deg, #0077BE, #00ADEF); /* modrý gradient pozadia */
+  background: linear-gradient(
+    135deg,
+    #0077be,
+    #00adef
+  ); /* modrý gradient pozadia */
   display: none; /* skryté kým nie je otvorené */
   flex-direction: column; /* vertikálne položky */
   min-width: 220px;
@@ -212,12 +201,11 @@ body {
   z-index: 1000;
 }
 
-.dropdown.open .dropdown-menu { 
+.dropdown.open .dropdown-menu {
   display: flex; /* zobrazí menu */
   opacity: 1;
   visibility: visible;
   transform: translateY(0); /* vráti späť do polohy */
-
 }
 /* SERVICES & LENSES ARROES DOWN*/
 .arrow {
@@ -239,26 +227,21 @@ body {
   background-color: rgba(255, 255, 255, 0.1); /* mierne zosvetlenie pozadia */
 }
 
-
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
-/* ============================= */
-/* HERO SEKCIA HLAVNA CAST STRANKY */
-/* ============================= */
-
+/* ===================================== */
+/* HERO SEKCIA HLAVNA CAST STRANKY  - PC */
+/* ===================================== */
 
 .hero {
-  background: linear-gradient(to bottom, #050f55, #0f2b80, #214399);
+  background: linear-gradient(to bottom, #050f55, #030f31, #214399);
   position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
   height: 500px; /* výška sekcie, môžeš zmeniť podľa potreby */
   display: flex; /* použijeme flexbox na centrovanie obsahu */
   justify-content: center; /* horizontálne vycentrovanie obsahu */
   align-items: center; /* vertikálne vycentrovanie obsahu */
   overflow: hidden; /* skryje všetko, čo presahuje sekciu */
-
-  
 }
 
 /* Plátno pre animáciu lasera */
@@ -297,23 +280,20 @@ body {
   gap: 0.3em; /* medzera medzi jednotlivými písmenami */
 }
 
-
 /* Podnadpisy v hero sekcii - hore aj dole */
 .hero-subtitle.top,
 .hero-subtitle.bottom {
   font-size: 2vw; /* veľkosť podnadpisu */
   color: #dd0606; /* červená farba textu */
   font-weight: bold; /* tučné písmo */
-
 }
 
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
-/* ============================= */
-/* CANVAS PRE ANIMACIU LASERA    */
-/* ============================= */
+/* =================================== */
+/* CANVAS PRE ANIMACIU LASERA - PC     */
+/* =================================== */
 
 #laserCanvas {
   position: absolute; /* umiestni plátno nad celú sekciu hero */
@@ -326,9 +306,8 @@ body {
 }
 
 /* ============================= */
-/* ---- LASER POINT ---- */
+/* ---- LASER POINT ----  - PC   */
 /* ============================= */
-
 
 /* Malá bodka simulujúca laserový bod */
 .laser-point {
@@ -343,7 +322,7 @@ body {
 }
 
 /* ============================= */
-/* ---- ISKRY (SPARKS) ---- 
+/* ---- ISKRY (SPARKS) ---- - PC  
 /* ============================= */
 
 @keyframes fadeOut {
@@ -358,7 +337,7 @@ body {
 }
 .spark {
   position: absolute; /* presná pozícia, určuje JS */
-  width: 3px;  /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
+  width: 3px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
   height: 3px;
   background-color: rgb(231, 150, 51); /* oranžová farba iskry */
   border-radius: 50%; /* kruhový tvar */
@@ -369,7 +348,7 @@ body {
 }
 
 /* ============================= */
-/* ---- LASER DOT ---- 
+/* ---- LASER DOT ---- - PC 
 /* ============================= */
 
 .laser-dot {
@@ -383,39 +362,30 @@ body {
   pointer-events: none;
 }
 
+/* ====================================== */
+/*  LETTERS-LASER CLEANING ANIMATION - PC */
+/* ===================================== */
 
-
-/* ==================================== */
-/*  LETTERS-LASER CLEANING ANIMATION*/
-/* ==================================== */
-
-/* ---- PÍSMENÁ PRED A PO VYPAĽOVANÍ ---- */
-
-/* LETTERS PRED CISTENIM LETTERS */
+/* LETTERS PRED CISTENIM LETTERS  - PC */
 .hero-title span {
-  color: darkred; /* tmavočervené písmená pred vypálením */
+  color: rgb(129, 1, 1); /* tmavočervené písmená pred vypálením */
   opacity: 0.6; /* znížená priehľadnosť */
   transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
 }
 
-/* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS */
-
+/* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - PC */
 .hero-title span.active {
-  color: red; /* jasne červené */
+  color: rgb(134, 8, 8); /* jasne červené */
   opacity: 1; /* plná viditeľnosť */
-  text-shadow: 0 0 10px red, 0 0 20px red; /* svetelný efekt */
+  text-shadow: 0 0 10px red, 0 0 20px rgb(199, 7, 7); /* svetelný efekt */
 }
 
-
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
-/* ==================================== */
-/* KRUHOVÉ TLAČIDLO - SCROLL DOWN ARROW */
-/* ==================================== */
-
-
+/* ========================================== */
+/* KRUHOVÉ TLAČIDLO - SCROLL DOWN ARROW - PC  */
+/* ========================================== */
 
 .scroll-down-arrow {
   position: absolute;
@@ -437,70 +407,73 @@ body {
   color: transparent;
   font-size: 0;
 
-  outline: none;  /* voliteľné, ale pomáha */
-  border: none;   /* voliteľné, ale pomáha */
+  outline: none; /* voliteľné, ale pomáha */
+  border: none; /* voliteľné, ale pomáha */
 
   z-index: 10;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 /* ============================= */
 /* ŠÍPKA VO VNÚTRI KRUHU - PC */
 /* ============================= */
 
 .arrow-icon {
-  
   width: 30px; /* Nastaví veľkosť šípky */
   height: 30px;
-  stroke: #fff;  /* Farba čiar (len pre SVG)  */
+  stroke: #fff; /* Farba čiar (len pre SVG)  */
   transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease; /* Pridáva plynulú zmenu pri hoveri - veľkosť, farba a žiarenie */
-
-
 }
 
 /* ============================= */
-/*  -  HOVER */
+/*  - SCROLL DOWN HOVER - PC  */
 /* ============================= */
 
 .scroll-down-arrow:hover .arrow-icon {
-  
-  
-  
   border-radius: 50px;
   animation: bounce 1s infinite;
   transform: scale(1.1); /* Zväčší šípku o 10% */
   stroke: #ff4d4d; /* Zmení farbu čiar na svetlejšiu červenú */
-  filter: drop-shadow(0 0 10px #ff4d4d);   /* Pridá efekt žiarenia okolo šípky */
-  background-color: rgba(255, 0, 80, 0.2); /* Zmení farbu pozadia na priesvitnejšiu */
-  box-shadow: 0 0 30px rgba(255, 0, 80, 0.9);  /* Zvýši intenzitu tieňa - tlačidlo viac žiari */
+  filter: drop-shadow(0 0 10px #ff4d4d); /* Pridá efekt žiarenia okolo šípky */
+  background-color: rgba(
+    255,
+    0,
+    80,
+    0.2
+  ); /* Zmení farbu pozadia na priesvitnejšiu */
+  box-shadow: 0 0 30px rgba(255, 0, 80, 0.9); /* Zvýši intenzitu tieňa - tlačidlo viac žiari */
 }
 
 /* ============================= */
-/* ANIMÁCIA BOUNCE ARROW */
+/* ANIMÁCIA BOUNCE ARROW - PC  */
 /* ============================= */
 
+@keyframes bounce {
+  /* Definuje, ako bude vyzerať animácia bounce */
 
-  @keyframes bounce { /* Definuje, ako bude vyzerať animácia bounce */
-
-
-  0%, 20%, 50%, 80%, 100% { /* Východisková poloha - žiadny posun */
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    /* Východisková poloha - žiadny posun */
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-10px);  /* Šípka sa posunie nahor o 10px */
+    transform: translateY(-10px); /* Šípka sa posunie nahor o 10px */
   }
   60% {
-    transform: translateY(-5px); /* Šípka sa jemne vráti späť nahor o 5px (tlmí pohyb) */
+    transform: translateY(
+      -5px
+    ); /* Šípka sa jemne vráti späť nahor o 5px (tlmí pohyb) */
   }
 }
 
 .scroll-down-arrow {
-  text-decoration: none;  /* Zruší podčiarknutie na odkaze */
-  display: flex;          /* Flex kvôli centrovaniu (alebo podľa tvojho dizajnu) */
+  text-decoration: none; /* Zruší podčiarknutie na odkaze */
+  display: flex; /* Flex kvôli centrovaniu (alebo podľa tvojho dizajnu) */
   justify-content: center; /* Centrovanie obsahu horizontálne */
-  align-items: center;     /* Centrovanie obsahu vertikálne */
+  align-items: center; /* Centrovanie obsahu vertikálne */
 }
 
 .scroll-down-arrow::before,
@@ -508,35 +481,31 @@ body {
   content: none; /* Zruší prípadné pseudo-elementy, ktoré by robili štvorec */
 }
 
-
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-
 /* ============================= */
-/* INFO SEKCIA */
+/* INFO SEKCIA  - PC  */
 /* ============================= */
-
 
 /* Sekcia, ktorá zobrazuje informácie o službách */
 .info-section {
   background: linear-gradient(to bottom, #d1d1d1 0%, #f4f4f4 100%);
   /* zhora #d1d1d1 (tmavšia sivá), dole #f4f4f4 (svetlejšia sivá) */
-  
+
   color: #333; /* tmavosivá farba textu */
   padding: 80px 20px; /* priestor okolo obsahu sekcie */
   text-align: center; /* zarovnanie textu do stredu */
 }
 
-
-/* Nadpis v sekcii INFO */
+/* Nadpis v sekcii INFO - PC  */
 .info-section h1 {
   color: #0f6d93; /* modrý nadpis */
   font-size: 2.5rem; /* veľkosť nadpisu */
   margin-bottom: 20px; /* medzera pod nadpisom */
 }
 
-/* Text v sekcii INFO */
+/* Text v sekcii INFO - PC  */
 .info-section p {
   max-width: 900px; /* maximálna šírka textového bloku */
   margin: 0 auto; /* vycentruje text blok horizontálne */
@@ -545,12 +514,8 @@ body {
   font-size: 1rem; /* veľkosť písma */
 }
 
-/* ==================================================================================================================================== */
-/* ==================================================================================================================================== */
-
-
 /* ============================= */
-/* CONTACT US FORM */
+/* CONTACT US FORM - PC  */
 /* ============================= */
 
 /* Celá sekcia kontaktu */
@@ -610,118 +575,118 @@ body {
   transform: scale(1.05); /* mierne zväčšenie tlačidla */
 }
 
-
-
-/* ====================================== */
-/* === COMPARISON TABLE STYLES ========= */
-/* ====================================== */
-
+/* =========================================== */
+/* === COMPARISON TABLE STYLES  - PC ========= */
+/* =========================================== */
 
 /* === HLAVNÁ SEKCIA S TABUĽKOU === */
 .comparison-table {
-  width: 100%;                   /* Zaberá celú šírku kontajnera */
-  padding: 40px 20px;            /* Vnútorné odsadenie: hore/dole 40px, vľavo/vpravo 20px */
-  background-color: #ffffff;     /* Biele pozadie celej sekcie */
+  width: 100%; /* Zaberá celú šírku kontajnera */
+  padding: 40px 20px; /* Vnútorné odsadenie: hore/dole 40px, vľavo/vpravo 20px */
+  background-color: #ffffff; /* Biele pozadie celej sekcie */
 }
 
-/* === HLAVIČKA SEKCIe === */
+/* === HLAVIČKA SEKCIE - PC  === */
 .comparison-table h2 {
-  text-align: center;            /* Zarovnanie textu na stred */
-  margin-bottom: 30px;           /* Spodná medzera pod nadpisom */
-  color: #b10707;                /* Červená farba nadpisu */
-  font-size: 28px;               /* Veľkosť písma */
+  text-align: center; /* Zarovnanie textu na stred */
+  margin-bottom: 30px; /* Spodná medzera pod nadpisom */
+  color: #b10707; /* Červená farba nadpisu */
+  font-size: 28px; /* Veľkosť písma */
 }
 
-/* === WRAPPER PRE TABUĽKU === */
+/* === WRAPPER PRE TABUĽKU - PC === */
 .table-wrapper {
-  overflow-x: auto;              /* Pridá horizontálny scroll, ak je tabuľka širšia ako kontajner */
+  overflow-x: auto; /* Pridá horizontálny scroll, ak je tabuľka širšia ako kontajner */
 }
 
-/* === ZÁKLADNÉ ŠTÝLY TABUĽKY === */
+/* === ZÁKLADNÉ ŠTÝLY TABUĽKY - PC  === */
 table {
-  width: 100%;                   /* Tabuľka sa roztiahne na celú šírku */
-  border-collapse: collapse;     /* Spojí hrany buniek (bez medzier) */
-  min-width: 600px;              /* Minimálna šírka tabuľky - ak je menšia, objaví sa horizontálny scroll */
-  background-color: #fff;        /* Biele pozadie tabuľky */
+  width: 100%; /* Tabuľka sa roztiahne na celú šírku */
+  border-collapse: collapse; /* Spojí hrany buniek (bez medzier) */
+  min-width: 600px; /* Minimálna šírka tabuľky - ak je menšia, objaví sa horizontálny scroll */
+  background-color: #fff; /* Biele pozadie tabuľky */
 }
 
-/* === HLAVIČKA TABUĽKY (PRVÝ RIADOK) === */
+/* === HLAVIČKA TABUĽKY (PRVÝ RIADOK)- PC  === */
 thead {
   background: linear-gradient(to bottom, #050f55, #0f2b80, #3f5faf);
-  color: #fff;                         /* Biele písmo v hlavičke */
+  color: #fff; /* Biele písmo v hlavičke */
 }
 
 thead th {
-  padding: 15px;               /* Vnútorné odsadenie buniek hlavičky */
-  text-align: center;          /* Text v bunkách hlavičky zarovnaný na stred */
-  font-size: 16px;             /* Veľkosť písma hlavičky */
+  padding: 15px; /* Vnútorné odsadenie buniek hlavičky */
+  text-align: center; /* Text v bunkách hlavičky zarovnaný na stred */
+  font-size: 16px; /* Veľkosť písma hlavičky */
 }
 
-/* === TELO TABUĽKY (DÁTA) === */
+/* === TELO TABUĽKY (DÁTA) - PC  === */
 tbody tr {
-  border-bottom: 1px solid #ddd;  /* Spodný okraj riadku, oddelenie medzi riadkami */
+  border-bottom: 1px solid #ddd; /* Spodný okraj riadku, oddelenie medzi riadkami */
 }
 
 tbody td {
-  padding: 12px 8px;             /* Vnútorné odsadenie v bunkách (hore/dole 12px, vľavo/vpravo 8px) */
-  text-align: center;            /* Text v bunkách zarovnaný na stred */
-  color: #333;                   /* Tmavosivý text */
-  font-size: 14px;               /* Veľkosť písma v bunkách tela tabuľky */
+  padding: 12px 8px; /* Vnútorné odsadenie v bunkách (hore/dole 12px, vľavo/vpravo 8px) */
+  text-align: center; /* Text v bunkách zarovnaný na stred */
+  color: #333; /* Tmavosivý text */
+  font-size: 14px; /* Veľkosť písma v bunkách tela tabuľky */
 }
 
-/* === PRVÝ STĹPEC - TEXTY KATEGÓRIÍ === */
+/* === PRVÝ STĹPEC - TEXTY KATEGÓRIÍ - PC === */
 tbody td:first-child {
-  text-align: left;              /* Text zarovnaný naľavo */
-  font-weight: 500;              /* Polotučné písmo (silnejší dôraz) */
+  text-align: left; /* Text zarovnaný naľavo */
+  font-weight: 500; /* Polotučné písmo (silnejší dôraz) */
 }
 
-/* === KATEGORICKÉ RIADKY (SAVING TIME, ENVIRONMENT...) === */
+/* === KATEGORICKÉ RIADKY (SAVING TIME, ENVIRONMENT...) ===  - PC */
 .category td {
-  background-color: #ececec;     /* Svetlosivé pozadie kategórie */
-  font-weight: bold;             /* Tučné písmo */
-  text-align: left;              /* Zarovnanie textu naľavo */
-  padding: 12px;                 /* Odsadenie v bunkách */
-  font-size: 16px;               /* Veľkosť písma */
+  background-color: #ececec; /* Svetlosivé pozadie kategórie */
+  font-weight: bold; /* Tučné písmo */
+  text-align: left; /* Zarovnanie textu naľavo */
+  padding: 12px; /* Odsadenie v bunkách */
+  font-size: 16px; /* Veľkosť písma */
 }
 
 /* ====================================== */
-/* === IKONY V TABUĽKE A LEGENDE ======= */
+/* === IKONY V TABUĽKE A LEGENDE - PC  ======= */
 /* ====================================== */
 
 /* === ŠTÝLY SPOLOČNÉ PRE IKONY AJ LEGENDU === */
-.icon, .legend-icon {
-  display: inline-flex;               /* Flexbox - horizontálne a vertikálne zarovnanie v strede */
-  align-items: center;                /* Vertikálne centrovanie obsahu */
-  justify-content: center;            /* Horizontálne centrovanie obsahu */
-  width: 30px;                        /* Šírka kruhu (uprav podľa potreby) */
-  height: 30px;                       /* Výška kruhu */
-  margin: 4px;                        /* Medzera medzi ikonami */
-  border-radius: 50%;                 /* Zaoblenie - z kruhu spraví kruh */
-  font-size: 20px;                    /* Veľkosť ikony (symbolu vo vnútri) */
-  color: #fff;                        /* Farba symbolu (biela) */
+.icon,
+.legend-icon {
+  display: inline-flex; /* Flexbox - horizontálne a vertikálne zarovnanie v strede */
+  align-items: center; /* Vertikálne centrovanie obsahu */
+  justify-content: center; /* Horizontálne centrovanie obsahu */
+  width: 30px; /* Šírka kruhu (uprav podľa potreby) */
+  height: 30px; /* Výška kruhu */
+  margin: 4px; /* Medzera medzi ikonami */
+  border-radius: 50%; /* Zaoblenie - z kruhu spraví kruh */
+  font-size: 20px; /* Veľkosť ikony (symbolu vo vnútri) */
+  color: #fff; /* Farba symbolu (biela) */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Tieň pre plastický efekt */
-  border: 2px solid #eee;             /* Svetlý rámček okolo ikonky */
+  border: 2px solid #eee; /* Svetlý rámček okolo ikonky */
 }
 
+/* === RÔZNE STAVY IKON (ÁNO, NIE, MOŽNO) ===  - PC */
 
-/* === RÔZNE STAVY IKON (ÁNO, NIE, MOŽNO) === */
-
-/* IKONY "YES" - ZELENÁ */
-.icon.yes, .legend-icon.yes {
+/* IKONY "YES" - ZELENÁ  - PC */
+.icon.yes,
+.legend-icon.yes {
   background: linear-gradient(145deg, #28a745, #218838); /* Zelený gradient */
 }
 
-/* IKONY "NO" - ČERVENÁ */
-.icon.no, .legend-icon.no {
+/* IKONY "NO" - ČERVENÁ - PC */
+.icon.no,
+.legend-icon.no {
   background: linear-gradient(145deg, #dc3545, #c82333); /* Červený gradient */
 }
 
-/* IKONY "MAYBE" - ŽLTÁ */
-.icon.maybe, .legend-icon.maybe {
+/* IKONY "MAYBE" - ŽLTÁ  - PC */
+.icon.maybe,
+.legend-icon.maybe {
   background: linear-gradient(145deg, #ffc107, #e0a800); /* Žltý gradient */
 }
 
-/* === SYMBOLY V IKONÁCH === */
+/* === SYMBOLY V IKONÁCH ===  - PC */
 .icon.yes::before {
   content: "\2714"; /* ✔ */
 }
@@ -734,32 +699,30 @@ tbody td:first-child {
   content: "\2796"; /* ➖ */
 }
 
-
 /* ====================================== */
-/* === LEGENDA POD TABUĽKOU ============ */
+/* === LEGENDA POD TABUĽKOU - PC          */
 /* ====================================== */
 
-/* KONTAJNER PRE LEGENDU (EXPLANATION OF ICONS) */
+/* KONTAJNER PRE LEGENDU (EXPLANATION OF ICONS) - PC */
 .legend {
   font-size: 42px;
-  margin-top: 30px;            /* Horná medzera od tabuľky */
-  display: flex;               /* Flexbox na zarovnanie položiek */
-  justify-content: center;     /* Centrovanie obsahu */
-  gap: 40px;                   /* Medzera medzi položkami legendy */
+  margin-top: 30px; /* Horná medzera od tabuľky */
+  display: flex; /* Flexbox na zarovnanie položiek */
+  justify-content: center; /* Centrovanie obsahu */
+  gap: 40px; /* Medzera medzi položkami legendy */
 }
 
-/* TEXTY PRI IKONÁCH V LEGENDE */
+/* TEXTY PRI IKONÁCH V LEGENDE - PC  */
 .legend p {
-  font-size: 14px;             /* Veľkosť písma */
-  display: flex;               /* Flexbox pre zarovnanie ikon a textu */
-  align-items: center;         /* Vertikálne centrovanie */
-  gap: 10px;                   /* Medzera medzi ikonou a textom */
-  color: #333;                 /* Farba textu - tmavosivá */
+  font-size: 14px; /* Veľkosť písma */
+  display: flex; /* Flexbox pre zarovnanie ikon a textu */
+  align-items: center; /* Vertikálne centrovanie */
+  gap: 10px; /* Medzera medzi ikonou a textom */
+  color: #333; /* Farba textu - tmavosivá */
 }
-
 
 /* ============================= */
-/* BACK TO TOP BUTTON            */
+/* BACK TO TOP BUTTON - PC            */
 /* ============================= */
 
 /* 
@@ -769,22 +732,27 @@ keď sa posunieš nižšie na stránke.
 */
 
 .back-to-top {
-  position: fixed;  /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
-  right: 30px;      /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
-  bottom: 30px;     /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
-  width:40px;      /* Šírka gombíka je40 pixelov (taký menší krúžok). */
-  height:40px;     /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
-  background-color: rgba(40, 40, 50, 0.9); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
+  position: fixed; /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
+  right: 30px; /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
+  bottom: 30px; /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
+  width: 40px; /* Šírka gombíka je40 pixelov (taký menší krúžok). */
+  height: 40px; /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
+  background-color: rgba(
+    40,
+    40,
+    50,
+    0.9
+  ); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
   border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
-  display: flex;    /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
+  display: flex; /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
   justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
-  align-items: center;     /* Vycentruje šípku zvislo (hore a dole). */
+  align-items: center; /* Vycentruje šípku zvislo (hore a dole). */
   box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
-  text-decoration: none;   /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
-  z-index: 999;            /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
-  opacity: 0;              /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
-  visibility: hidden;      /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
-  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  text-decoration: none; /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
+  z-index: 999; /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
+  opacity: 0; /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
+  visibility: hidden; /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
 }
 
@@ -795,8 +763,8 @@ Tento blok určuje, ako šípka vyzerá a ako sa bude správať pri zmene.
 */
 
 .back-to-top svg {
-  stroke: #ffffff;  /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
-  transition: transform 0.3s ease, stroke 0.3s ease; 
+  stroke: #ffffff; /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
+  transition: transform 0.3s ease, stroke 0.3s ease;
   /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
 }
 
@@ -806,12 +774,14 @@ Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.
 */
 
 .back-to-top:hover svg {
-  transform: scale(1.2); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
-  stroke: #ff4d4d;       /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
+  transform: scale(
+    1.2
+  ); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
+  stroke: #ff4d4d; /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
 }
 
 /* 
-Toto spôsobí, že sa gombík objaví, keď je čas (keď sa posunieme dolu na stránke).  
+Toto spôsobí, že sa button objaví, keď je čas (keď sa posunieme dolu na stránke).  
 Trieda "show" sa pridá pomocou JavaScriptu.  
 Tým sa zmení jeho vlastnosti:  
 - z neviditeľného (opacity 0) → na viditeľný (opacity 1)  
@@ -819,129 +789,121 @@ Tým sa zmení jeho vlastnosti:
 */
 
 .back-to-top.show {
-  opacity: 1;        /* Už ho vidíme, pretože je plne nepriehľadný. */
+  opacity: 1; /* Už ho vidíme, pretože je plne nepriehľadný. */
   visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
 }
 
+/* ======================================================================================================================================== */
+/* ======================================================================================================================================== */
+/* ======================================================================================================================================== */
+/* ======================================================================================================================================== */
 
+/* ====================================== */
+/* === !!!!!!!!! RESPONSIVE DESIG!!!!!!!!! 
 
+/* ====================================== */
+@media (max-width: 768px) {
+  /* ====================================== */
 
+  /* ==================================================================================================================================== */
+  /* ==================================================================================================================================== */
 
+  /* ================================== */
+  /* ŠTÝL PRE NAVIGAČNÉ MENU - MOBIL   */
+  /* =================================== */
 
+  /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU - MOBIL */
 
-
-
-
-
-
-
-
-
-
-
-
-                                                  /* ====================================== */
-                                                   /* === !!!!!!!!! RESPONSIVE DESIG!!!!!!!!! 
-                                                  /* ====================================== */
-
-                                                  /* ====================================== */
-                                                       @media (max-width: 768px) {
-                                                  /* ====================================== */
-
- /* ==================================================================================================================================== */
- /* ==================================================================================================================================== */
   .site-nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #b10707;
-    width: 100%;
-    text-align: center;
+    display: none; /* Na začiatku je menu skryté */
+    flex-direction: column; /* Položky budú zoradené vertikálne */
+    background-color: #b10707; /* Pozadie menu - tmavočervená farba */
+    width: 100%; /* Menu zaberie celú šírku rodiča */
+    text-align: center; /* Text v položkách menu bude na stred */
   }
 
-  /* Keď je aktívne, zobrazí sa menu */
+  /* Ak je pridaná trieda 'active' na #nav-menu, zobrazí sa zoznam menu */
+
   #nav-menu.active ul {
-    display: flex;
+    display: flex; /* Zobrazí menu a aktivuje flex layout */
   }
 
+  /* Štýl pre hamburger ikonu (ikonka na otvorenie menu) - MOBIL */
   .hamburger {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-    font-size: 24px;
-    cursor: pointer;
+    display: block; /* Zobrazí hamburger ako blokový prvok */
+    position: absolute; /* Umiestnenie vzhľadom k rodiču s position: relative */
+    right: 20px; /* Vzdialenosť od pravého okraja */
+    top: 25px; /* Vzdialenosť od vrchného okraja */
+    font-size: 24px; /* Veľkosť ikony hamburger menu */
+    cursor: pointer; /* Zmení kurzor na ruku, keď prejdeš myšou */
   }
 
- /* ====================================== */
- /* LOGO ILCS Ltd - MOBILE */
- /* ====================================== */
+  /* ====================================== */
+  /* LOGO ILCS Ltd - MOBILE */
+  /* ====================================== */
   .logo-text {
-    
     padding: 8px 6px;
     margin-left: -43px;
   }
 
-   /* ====================================== */
-   /* ILCS - MOBILE */
-   /* ====================================== */
- .ilcs {
+  /* ====================================== */
+  /* ILCS - MOBILE */
+  /* ====================================== */
+  .ilcs {
+    font-family: "Insaniburger", sans-serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 2px;
+    letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
+  }
 
-  font-family: 'Insaniburger', sans-serif;
-  font-size: 25px;
-  color: #fff;
-  font-weight: bold;
-  margin-left: 2px;
-  letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
-}
-
- /* ====================================== */
- /* LTD -  MOBILE */
- /* ====================================== */
+  /* ====================================== */
+  /* LTD -  MOBILE */
+  /* ====================================== */
 
   .ltd {
     font-size: 10px;
   }
 
-
   /* ====================================== */
   /* HEADER - MOBILE */
-   /* ====================================== */
+  /* ====================================== */
 
-.site-nav {
-  display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
+  .site-nav {
+    display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
+  }
 
-}
+  /* Štýly pre zobrazenie menu po kliknutí na hamburger - MOBIL */
 
-/* Štýly pre zobrazenie menu po kliknutí na hamburger */
+  #nav-menu.active {
+    /* Používam ID, lebo to máš v HTML */
+    display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
+    flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
+    position: absolute; /* Umiestnenie cez ostatný obsah */
+    top: 100%; /* Umiestnenie pod hlavičku (ak je hlavička 100%) */
+    left: 0;
+    width: 100%; /* Rozšírenie na celú šírku obrazovky */
+    background-color: #fff; /* Pozadie menu */
+  }
 
- #nav-menu.active { /* Používam ID, lebo to máš v HTML */
-  display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
-  flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
-  position: absolute; /* Umiestnenie cez ostatný obsah */
-  top: 100%; /* Umiestnenie pod hlavičku (ak je hlavička 100%) */
-  left: 0;
-  width: 100%; /* Rozšírenie na celú šírku obrazovky */
-  background-color: #fff; /* Pozadie menu */
-  
-}
-
-     /* ====================================== */
-    /* HEADER BLUE - MOBILE */
-     /* ====================================== */
+  /* ====================================== */
+  /* HEADER BLUE - MOBILE */
+  /* ====================================== */
 
   .site-header {
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 20px;
-    height: auto
+    height: auto;
   }
 
-
-   /* ====================================== */
-   /* HERO - MOBILE */
-   /* ====================================== */
+  /* ====================================== */
+  /* HERO - MOBILE */
+  /* ====================================== */
 
   .hero {
+    background: rgb(11, 11, 63);
     position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
     height: 390px; /* výška sekcie, môžeš zmeniť podľa potreby */
     display: flex; /* použijeme flexbox na centrovanie obsahu */
@@ -950,9 +912,9 @@ Tým sa zmení jeho vlastnosti:
     overflow: hidden; /* skryje všetko, čo presahuje sekciu */
   }
 
-   /* ====================================== */
-   /* HERO TITTLE - MOBILE */
-   /* ====================================== */
+  /* ====================================== */
+  /* HERO TITTLE - MOBILE */
+  /* ====================================== */
 
   .hero-title {
     display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
@@ -971,10 +933,24 @@ Tým sa zmení jeho vlastnosti:
 
   .hero-subtitle.top,
   .hero-subtitle.bottom {
-    font-size: 3.4vw; /* veľkosť podnadpisu */
-    color: #dd0606; /* červená farba textu */
+    font-size: 3.5vw; /* veľkosť podnadpisu */
+    color: rgb(134, 13, 13); /* červená farba textu */
     font-weight: bold; /* tučné písmo */
-  
+  }
+
+  /* LETTERS PRED CISTENIM LETTERS - MOBIL */
+  .hero-title span {
+    color: darkred; /* tmavočervené písmená pred vypálením */
+    opacity: 0.6; /* znížená priehľadnosť */
+    transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
+  }
+
+  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - MOBIL */
+
+  .hero-title span.active {
+    color: rgb(134, 8, 8); /* jasne červené */
+    opacity: 1; /* plná viditeľnosť */
+    text-shadow: 0 0 10px rgb(74, 17, 17), 0 0 20px rgb(134, 13, 13); /* svetelný efekt */
   }
 
   /* ====================================== */
@@ -987,296 +963,288 @@ Tým sa zmení jeho vlastnosti:
     width: 50px;
     height: 50px;
     border-radius: 50%;
-  
+
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
-  
+
     text-decoration: none;
     color: transparent;
     font-size: 0;
-  
-    outline: none;  /* voliteľné, ale pomáha */
-    border: none;   /* voliteľné, ale pomáha */
-  
+
+    outline: none; /* voliteľné, ale pomáha */
+    border: none; /* voliteľné, ale pomáha */
+
     z-index: 10;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
+  /* ====================================== */
+  /* SCROLL DOWN ARROW HOVER - MOBILE */
+  /* ====================================== */
 
   .scroll-down-arrow:hover .arrow-icon {
-  
-    
     animation: bounce 1s infinite;
     transform: scale(1.1); /* Zväčší šípku o 10% */
-    stroke: rgba(40, 40, 50, 0.9);/* Zmení farbu čiar na svetlejšiu červenú */
+    stroke: rgba(40, 40, 50, 0.9); /* Zmení farbu čiar na svetlejšiu červenú */
     filter: none;
     background-color: transparent; /* HELPED REMOVE SQUARE*/
     box-shadow: none;
   }
 
-    /* Zrušíme bounce efekt pri hoveri */
-    .scroll-down-arrow:hover .arrow-icon {
-      animation: none;       /* žiadna animácia */
-      transform: none;       /* žiadne posúvanie */
-      stroke: #fff;          /* farba šípky */
-      filter: none;          /* žiadny tieň */
-    }
-  
-     
-    /* Ak by sa trieda .clicked pridala, zrušíme efekt */
-    .scroll-down-arrow.clicked {
-      animation: none;
-    }
-  
-    /* Zrušenie pseudo-elementov pre prípad, že by tam niečo bolo */
+  /* Zrušíme bounce efekt pri hoveri MOBILE */
+
+  .scroll-down-arrow:hover .arrow-icon {
+    animation: none; /* žiadna animácia */
+    transform: none; /* žiadne posúvanie */
+    stroke: #fff; /* farba šípky */
+    filter: none; /* žiadny tieň */
+  }
+
+  /* Ak by sa trieda .clicked pridala, zrušíme efekt */
+  .scroll-down-arrow.clicked {
+    animation: none;
+  }
+
+  /* Zrušenie pseudo-elementov pre prípad, že by tam niečo bolo */
   .scroll-down-arrow::before,
   .scroll-down-arrow::after {
     content: none !important;
     display: none !important;
   }
 
+  /* ==================================================================================================================================== */
+  /* ==================================================================================================================================== */
 
+  /* ====================================== */
+  /* Nadpis v sekcii INFO - MOBILE */
+  /* ====================================== */
 
+  .info-section h1 {
+    color: #0f6d93; /* modrý nadpis */
+    font-size: 1.5rem; /* veľkosť nadpisu */
+    margin-bottom: 20px; /* medzera pod nadpisom */
+  }
 
- 
-  
- 
+  /* ====================================== */
+  /* Text v sekcii INFO  - MOBILE */
+  /* ====================================== */
 
- /* ==================================================================================================================================== */
- /* ==================================================================================================================================== */
+  .info-section p {
+    max-width: 900px; /* maximálna šírka textového bloku */
+    margin: 0 auto; /* vycentruje text blok horizontálne */
+    text-align: justify; /* text zarovnaný zľava aj sprava */
+    line-height: 1.8; /* medzera medzi riadkami pre čitateľnosť */
+    font-size: 1rem; /* veľkosť písma */
+  }
 
-/* ====================================== */
-/* Nadpis v sekcii INFO - MOBILE */
-/* ====================================== */
+  /* ==================================================================================================================================== */
+  /* ==================================================================================================================================== */
 
-.info-section h1 {
-  color: #0f6d93; /* modrý nadpis */
-  font-size: 1.5rem; /* veľkosť nadpisu */
-  margin-bottom: 20px; /* medzera pod nadpisom */
-}
+  /* ============================= */
+  /* === POROVNÁVACIA TABUĽKA === */
+  /* ============================= */
 
-/* ====================================== */
-/* Text v sekcii INFO  - MOBILE */ 
-/* ====================================== */
+  /* HLAVNÝ KONTAJNER SEKCIE */
+  .comparison-table {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #ffffff; /* Biele pozadie sekcie */
+  }
 
-.info-section p {
-  max-width: 900px; /* maximálna šírka textového bloku */
-  margin: 0 auto; /* vycentruje text blok horizontálne */
-  text-align: justify; /* text zarovnaný zľava aj sprava */
-  line-height: 1.8; /* medzera medzi riadkami pre čitateľnosť */
-  font-size: 1rem; /* veľkosť písma */
-}
+  .comparison-table h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #b10707; /* Farba nadpisu */
+    font-size: 28px; /* VEĽKOSŤ NADPISU */
+  }
 
+  /* WRAPPER TABUĽKY PRE SCROLL NA MOBILE */
+  .table-wrapper {
+    overflow-x: auto;
+  }
 
- /* ==================================================================================================================================== */
- /* ==================================================================================================================================== */
+  /* ============================= */
+  /* === ŠTÝL TABUĽKY (table) === */
+  /* ============================= */
+  table {
+    width: 100%;
+    min-width: 600px; /* Minimálna šírka tabuľky */
+    border-collapse: collapse; /* Odstráni medzery medzi bunkami */
+    background-color: #fff; /* Biele pozadie tabuľky */
+  }
 
+  /* HLAVIČKA TABUĽKY */
+  thead {
+    background-color: rgb(76, 117, 205); /* Modré pozadie hlavičky */
+    color: #fff; /* Text vo farbe bielej */
+  }
 
-/* ============================= */
-/* === POROVNÁVACIA TABUĽKA === */
-/* ============================= */
+  thead th {
+    padding: 15px; /* Vnútorné odsadenie buniek */
+    text-align: center;
+    font-size: 16px; /* VEĽKOSŤ PÍSMA HLAVIČKY */
+  }
 
-/* HLAVNÝ KONTAJNER SEKCIE */
-.comparison-table {
-  width: 100%;
-  padding: 40px 20px;
-  background-color: #ffffff; /* Biele pozadie sekcie */
-}
+  /* RIADKY V TELE TABUĽKY */
+  tbody tr {
+    border-bottom: 1px solid #ddd; /* Oddelenie riadkov */
+  }
 
-.comparison-table h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #b10707;            /* Farba nadpisu */
-  font-size: 28px;           /* VEĽKOSŤ NADPISU */
-}
+  tbody td {
+    padding: 12px 8px; /* Odsadenie v bunkách */
+    text-align: center;
+    color: #333; /* Farba textu */
+    font-size: 14px; /* VEĽKOSŤ PÍSMA V TELE TABUĽKY */
+  }
 
-/* WRAPPER TABUĽKY PRE SCROLL NA MOBILE */
-.table-wrapper {
-  overflow-x: auto;
-}
+  /* PRVÝ STĹPEC V RIADKU */
+  tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+    padding-left: 3px; /* Odsadenie zľava */
+  }
 
-/* ============================= */
-/* === ŠTÝL TABUĽKY (table) === */
-/* ============================= */
-table {
-  width: 100%;
-  min-width: 600px;                /* Minimálna šírka tabuľky */
-  border-collapse: collapse;       /* Odstráni medzery medzi bunkami */
-  background-color: #fff;          /* Biele pozadie tabuľky */
-}
+  /* KATEGORIE (SKUPINY RIADKOV) */
+  .category td {
+    background-color: #ececec;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+  }
 
-/* HLAVIČKA TABUĽKY */
-thead {
-  background-color: rgb(76, 117, 205); /* Modré pozadie hlavičky */
-  color: #fff;                         /* Text vo farbe bielej */
-}
+  /* ============================= */
+  /* === ŠTÝLY IKON V TABUĽKE === */
+  /* ============================= */
 
-thead th {
-  padding: 15px;            /* Vnútorné odsadenie buniek */
-  text-align: center;
-  font-size: 16px;          /* VEĽKOSŤ PÍSMA HLAVIČKY */
-}
+  /* Spoločné štýly pre všetky ikony (YES, NO, MAYBE) */
+  /* ============================= */
+  /* === IKONY V TABUĽKE (.icon) === */
+  /* ============================= */
+  .icon {
+    display: inline-flex; /* Flex kvôli centrovaniu obsahu */
+    align-items: center;
+    justify-content: center;
+    width: 36px; /* VEĽKOSŤ IKONY V TABUĽKE */
+    height: 36px;
+    margin: 4px; /* Medzera medzi ikonami v tabuľke */
+    border-radius: 50%; /* Okrúhly tvar */
+    font-size: 18px; /* VEĽKOSŤ SYMBOLU (✔ ✖ ➖) */
+    color: #fff; /* Farba symbolu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid #eee;
+  }
 
-/* RIADKY V TELE TABUĽKY */
-tbody tr {
-  border-bottom: 1px solid #ddd; /* Oddelenie riadkov */
-}
+  /* ================================================= */
+  /* === IKONY V LEGENDE (.legend-icon) - MOBILE === */
+  /* ================================================ */
+  .legend-icon {
+    display: inline-flex; /* aby bol symbol centrovaný */
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* rovnaká šírka a výška */
+    height: 30px;
+    background-color: #ffc107; /* žltá ako príklad */
+    color: #fff; /* farba symbolu */
+    font-size: 12px; /* veľkosť symbolu (✔ ✖ ➖) */
+    line-height: 0; /* zabráni vertikálnemu rozťahovaniu */
+    border-radius: 50%; /* kruhový tvar */
+    padding: 0; /* bez paddingu */
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* tiene (voliteľné) */
+  }
 
-tbody td {
-  padding: 12px 8px;        /* Odsadenie v bunkách */
-  text-align: center;
-  color: #333;              /* Farba textu */
-  font-size: 14px;          /* VEĽKOSŤ PÍSMA V TELE TABUĽKY */
-}
+  /* ============================= */
+  /* === LEGENDA POD TABUĽKOU - MOBILE === */
+  /* ============================= */
+  .legend {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
 
-/* PRVÝ STĹPEC V RIADKU */
-tbody td:first-child {
-  text-align: left;
-  font-weight: 500;
-  padding-left: 3px;        /* Odsadenie zľava */
-}
+  .legend p {
+    font-size: 14px; /* VEĽKOSŤ TEXTU V LEGENDE */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* VZDIALENOSŤ medzi ikonou a textom */
+    color: #333;
+  }
 
-/* KATEGORIE (SKUPINY RIADKOV) */
-.category td {
-  background-color: #ececec;
-  font-weight: bold;
-  text-align: left;
-  padding: 12px;
-  font-size: 16px;
-}
-
-/* ============================= */
-/* === ŠTÝLY IKON V TABUĽKE === */
-/* ============================= */
-
-/* Spoločné štýly pre všetky ikony (YES, NO, MAYBE) */
-/* ============================= */
-/* === IKONY V TABUĽKE (.icon) === */
-/* ============================= */
-.icon {
-  display: inline-flex;           /* Flex kvôli centrovaniu obsahu */
-  align-items: center;
-  justify-content: center;
-  width: 36px;                    /* VEĽKOSŤ IKONY V TABUĽKE */
-  height: 36px;
-  margin: 4px;                    /* Medzera medzi ikonami v tabuľke */
-  border-radius: 50%;             /* Okrúhly tvar */
-  font-size: 18px;                /* VEĽKOSŤ SYMBOLU (✔ ✖ ➖) */
-  color: #fff;                    /* Farba symbolu */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border: 2px solid #eee;
-}
-
-/* ================================================= */
-/* === IKONY V LEGENDE (.legend-icon) - MOBILE === */
-/* ================================================ */
-.legend-icon {
-  display: inline-flex;              /* aby bol symbol centrovaný */
-  justify-content: center;
-  align-items: center;
-  width: 30px;                      /* rovnaká šírka a výška */
-  height: 30px;
-  background-color: #ffc107;        /* žltá ako príklad */
-  color: #fff;                      /* farba symbolu */
-  font-size: 12px;                  /* veľkosť symbolu (✔ ✖ ➖) */
-  line-height: 0;                   /* zabráni vertikálnemu rozťahovaniu */
-  border-radius: 50%;               /* kruhový tvar */
-  padding: 0;                       /* bez paddingu */
-  box-sizing: border-box;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* tiene (voliteľné) */
-}
-
-
-
-/* ============================= */
-/* === LEGENDA POD TABUĽKOU - MOBILE === */
-/* ============================= */
-.legend {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.legend p {
-  font-size: 14px;         /* VEĽKOSŤ TEXTU V LEGENDE */
-  display: flex;
-  align-items: center;
-  gap: 10px;               /* VZDIALENOSŤ medzi ikonou a textom */
-  color: #333;
-}
-
-
-
-/* ============================================ */
-/* CONTACT US - MOBILE */
-/* ============================================ */
-
+  /* ============================================ */
+  /* CONTACT US - MOBILE */
+  /* ============================================ */
 
   .contact-form-section {
-    
     background-color: #1e1f26; /* tmavé pozadie sekcie */
     color: #fff; /* biela farba textu */
     padding: 80px 20px; /* priestor okolo obsahu */
     text-align: center; /* vycentrovaný text */
-  
-  
-  /* ============================= */
-/* BACK TO TOP BUTTON - MOBILE           */
-/* ============================= */
 
-/* 
+    /* ============================= */
+    /* BACK TO TOP BUTTON - MOBILE           */
+    /* ============================= */
+
+    /* 
 Toto je ten okrúhly gombík (šipka hore), 
 ktorý sa zobrazí v pravom dolnom rohu obrazovky, 
 keď sa posunieš nižšie na stránke.
 */
 
-.back-to-top {
-  position: fixed;  /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
-  right: 30px;      /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
-  bottom: 30px;     /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
-  width: 60px;      /* Šírka gombíka je 60 pixelov (taký menší krúžok). */
-  height: 60px;     /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
-  background-color: rgba(40, 40, 50, 0.9); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
-  border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
-  display: flex;    /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
-  justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
-  align-items: center;     /* Vycentruje šípku zvislo (hore a dole). */
-  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
-  text-decoration: none;   /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
-  z-index: 999;            /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
-  opacity: 0;              /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
-  visibility: hidden;      /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
-  transition: opacity 0.3s ease, visibility 0.3s ease; 
-  /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
-}
+    .back-to-top {
+      position: fixed; /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
+      right: 30px; /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
+      bottom: 30px; /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
+      width: 60px; /* Šírka gombíka je 60 pixelov (taký menší krúžok). */
+      height: 60px; /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
+      background-color: rgba(
+        40,
+        40,
+        50,
+        0.9
+      ); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
+      border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
+      display: flex; /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
+      justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
+      align-items: center; /* Vycentruje šípku zvislo (hore a dole). */
+      box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
+      text-decoration: none; /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
+      z-index: 999; /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
+      opacity: 0; /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
+      visibility: hidden; /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
+    }
 
-/* 
+    /* 
 Toto je šípka vo vnútri toho gombíka.  
 Používame SVG obrázok (nie bežný obrázok, ale čiarový grafický obrázok).  
 Tento blok určuje, ako šípka vyzerá a ako sa bude správať pri zmene.
 */
 
-.back-to-top svg {
-  stroke: #ffffff;  /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
-  transition: transform 0.3s ease, stroke 0.3s ease; 
-  /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
-}
+    .back-to-top svg {
+      stroke: #ffffff; /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
+      transition: transform 0.3s ease, stroke 0.3s ease;
+      /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
+    }
 
-/* 
+    /* 
 Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.  
 Šípka sa jemne zväčší a zmení farbu. 
 */
 
-.back-to-top:hover svg {
-  transform: scale(1.2); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
-  stroke: #ff4d4d;       /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
-}
+    .back-to-top:hover svg {
+      transform: scale(
+        1.2
+      ); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
+      stroke: #ff4d4d; /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
+    }
 
-/* 
+    /* 
 Toto spôsobí, že sa gombík objaví, keď je čas (keď sa posunieme dolu na stránke).  
 Trieda "show" sa pridá pomocou JavaScriptu.  
 Tým sa zmení jeho vlastnosti:  
@@ -1284,16 +1252,9 @@ Tým sa zmení jeho vlastnosti:
 - z hidden → na visible  
 */
 
-.back-to-top.show {
-  opacity: 1;        /* Už ho vidíme, pretože je plne nepriehľadný. */
-  visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
-}
-
-  
-  
-  
-  
+    .back-to-top.show {
+      opacity: 1; /* Už ho vidíme, pretože je plne nepriehľadný. */
+      visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
+    }
   }
 }
-
-

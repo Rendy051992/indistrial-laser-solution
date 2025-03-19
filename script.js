@@ -3,19 +3,36 @@
 // ====================================================
 
 // TOTO zabezpečí, že stránka po reload/reštarte vždy začne hore a nie v strede
-if ('scrollRestoration' in history) {
+if ("scrollRestoration" in history) {
   // Nastavujeme, že manuálne budeme riadiť správanie scrollovania po obnovení stránky
-  history.scrollRestoration = 'manual';
+  history.scrollRestoration = "manual";
 }
 
 //  Keď sa stránka načíta, nastavíme scroll na úplný začiatok (len pre istotu)
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
+  // Odstráni hash z URL bez reloadu stránky
+  history.replaceState(
+    null,
+    "",
+    window.location.pathname + window.location.search
+  );
+
+  // Pre istotu nastavíme scroll hore
   window.scrollTo(0, 0);
 });
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
 
-
-
+window.addEventListener("pageshow", function (event) {
+  // Ak bola stránka načítaná z cache
+  if (event.persisted) {
+    setTimeout(() => {
+      window.scrollTo(0, 0); // Alebo iná pozícia
+    }, 0);
+  }
+});
 
 // =============================
 // HAMBURGER MENU TOGGLE
@@ -33,21 +50,18 @@ function toggleMenu() {
   navMenu.classList.toggle("active");
 }
 
-
-
-
 // =====================================================
 // CLOSE ON CLICK OUTSIDE (FOR MOBILE AND DESKTOP)
 // =====================================================
 
 // Táto funkcia sa spustí, keď klikneš hocikde na stránku.
 // Účel: zatvoriť menu a dropdowny, ak klikneš mimo navigácie alebo hamburger menu.
-document.addEventListener('click', function(event) {
+document.addEventListener("click", function (event) {
   // Znova si vyberáme navigačné menu.
   const navMenu = document.getElementById("nav-menu");
 
   // Vyberáme hamburger menu
-  const hamburger = document.querySelector('.hamburger');
+  const hamburger = document.querySelector(".hamburger");
 
   // Skontrolujeme, či kliknutie prebehlo vo vnútri navigácie (menu).
   const clickedInsideMenu = navMenu.contains(event.target);
@@ -61,14 +75,11 @@ document.addEventListener('click', function(event) {
     navMenu.classList.remove("active");
 
     // A zatvoríme aj všetky otvorené dropdown menu (tie podponuky).
-    document.querySelectorAll('.dropdown').forEach((drop) => {
-      drop.classList.remove('open');
+    document.querySelectorAll(".dropdown").forEach((drop) => {
+      drop.classList.remove("open");
     });
   }
 });
-
-
-
 
 // =============================
 // DROPDOWN MENU TOGGLE
@@ -85,33 +96,28 @@ function toggleDropdown(event, element) {
   const dropdown = element.parentElement;
 
   // Prejdeme všetky elementy s triedou .dropdown (všetky menu s podponukami).
-  document.querySelectorAll('.dropdown').forEach((drop) => {
+  document.querySelectorAll(".dropdown").forEach((drop) => {
     // Ak aktuálny dropdown NIE JE ten, na ktorý si klikol...
     if (drop !== dropdown) {
       // ... tak ho zavrieme (odstránime triedu 'open').
-      drop.classList.remove('open');
+      drop.classList.remove("open");
     }
   });
-
 
   // Prepni triedu 'open' na kliknutom dropdown menu:
   // - Ak nebolo otvorené → otvorí ho.
   // - Ak bolo otvorené → zavrie ho.
-  dropdown.classList.toggle('open');
+  dropdown.classList.toggle("open");
 }
-
-
-
 
 // ===========================================
 // SCROLL EFFECTS (hlavička a zatváranie menu)
 // ===========================================
 
-
 // Táto funkcia sa spustí vždy, keď používateľ scrolluje (posúva stránku).
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   // Nájdeme hlavičku stránky, aby sme ju vedeli upraviť pri scrollovaní.
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector(".site-header");
 
   // Nájdeme navigačné menu (hlavné menu).
   const navMenu = document.getElementById("nav-menu");
@@ -119,178 +125,231 @@ window.addEventListener('scroll', () => {
   // Ak používateľ scrollol o viac ako 50 pixelov smerom dole...
   if (window.scrollY > 50) {
     // ... pridáme triedu 'scrolled' → väčšinou sa zmení pozadie, pridá tieň atď.
-    header.classList.add('scrolled');
+    header.classList.add("scrolled");
   } else {
     // ... ak sme zase hore → odstránime triedu 'scrolled'.
-    header.classList.remove('scrolled');
+    header.classList.remove("scrolled");
   }
 
   // Každým scrollom zatvoríme mobilné menu (odstránime triedu 'active').
   navMenu.classList.remove("active");
 
   // Zatvoríme tiež všetky otvorené dropdown menu.
-  document.querySelectorAll('.dropdown').forEach((drop) => {
-    drop.classList.remove('open');
+  document.querySelectorAll(".dropdown").forEach((drop) => {
+    drop.classList.remove("open");
   });
 });
 
-
-
-
 // =========================================
-// === HERO TITLE LASER & SPARKS ANIMATION 
+// === HERO TITLE LASER & SPARKS ANIMATION
 // =========================================
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
+  // Toto čaká na načítanie celej stránky, aby bol HTML obsah pripravený.
 
-  const canvas = document.getElementById('laserCanvas'); // plátno, kde sa budú vykresľovať efekty
-  const ctx = canvas.getContext('2d'); // získame 2D kresliaci kontext
+  // === 1. VYBERIEME ELEMENTY Z HTML ===
 
-  const heroTitle = document.querySelector('.hero-title'); // nájdeme hlavičkový text (LASER CLEANING)
-  const letters = heroTitle.querySelectorAll('span'); // všetky písmená ako jednotlivé elementy
+  const canvas = document.getElementById("laserCanvas");
+  // Zoberieme si <canvas> element, do ktorého budeme kresliť iskry.
 
-  let sparks = []; // pole, kde budeme ukladať jednotlivé iskry
-  const sparkCount = 50; // počet iskier, ktoré sa vygenerujú pre jedno písmeno
+  const ctx = canvas.getContext("2d");
+  // Nastavíme si "kresliaci priestor" (2D kontext), aby sme mohli kresliť kruhy (iskry).
 
-  // Zisti veľkosť obrazovky
+  const heroTitle = document.querySelector(".hero-title");
+  // Vyberieme hlavný nadpis, napríklad LASER CLEANING. Tento nadpis obsahuje jednotlivé písmená.
+
+  const letters = heroTitle.querySelectorAll("span");
+  // Získame všetky písmená v nadpise. Každé písmeno je v elemente <span>.
+
+  let sparks = [];
+  // Pole, kde budeme ukladať všetky aktuálne iskry na obrazovke.
+
+  let laserIndex = 0;
+  // Ktoré písmeno sa práve "vypaľuje" laserom (začína na prvom).
+
+  // === 2. DETEKUJEME, ČI JE ZARIADENIE MOBIL ALEBO PC ===
+
   const isMobile = window.innerWidth <= 768;
-  
-  
+  // Ak je šírka okna menšia alebo rovná 768 pixelov, považujeme to za mobil.
+  // Môžeš zmeniť číslo 768 podľa svojho dizajnu (napr. 600 pre menšie telefóny).
 
-// Príklad podmienky pre sparks:
-const sparkSizeMin = isMobile ? 0.5 : 1.5;
-const sparkSizeMax = isMobile ? 1.5 : 4;
+  // === 3. NASTAVÍME PARAMETRE PODĽA ZARIADENIA ===
 
+  const settings = {
+    sparkCount: isMobile ? 20 : 50,
+    // Počet iskier, ktoré sa vygenerujú pri jednom písmeni.
+    // Mobil: 30, PC: 50 → môžeš si meniť čísla podľa výkonu.
 
-  // Funkcia, ktorá nastaví veľkosť canvasu podľa veľkosti nadpisu
+    sparkSizeMin: isMobile ? 0.5 : 1.5,
+    // Minimálna veľkosť iskier.
+    // Na mobile menšie, na PC väčšie. Menšie hodnoty = menšie iskry.
+
+    sparkSizeMax: isMobile ? 0.9 : 4,
+    // Maximálna veľkosť iskier.
+    // Čím väčšie číslo, tým väčšie iskry.
+
+    sparkSpeed: isMobile ? 2 : 4,
+    // Rýchlosť, akou sa iskry pohybujú.
+    // Vyššia hodnota = rýchlejší pohyb iskier od stredu písmena.
+
+    alphaDecay: 0.03,
+    // Ako rýchlo miznú iskry. Číslo 0.03 znamená, že pri každom frame sa iskra viac stráca.
+    // Vyššie číslo = iskry zmiznú rýchlejšie. Nižšie číslo = iskry budú na obrazovke dlhšie.
+  };
+
+  // === 4. PRISPÔSOBÍME VEĽKOSŤ CANVASU PODĽA VEĽKOSTI NADPISU ===
+
   function resizeCanvas() {
-    canvas.width = heroTitle.offsetWidth; // šírka podľa veľkosti nadpisu
-    canvas.height = heroTitle.offsetHeight; // výška podľa veľkosti nadpisu
+    canvas.width = heroTitle.offsetWidth;
+    // Nastaví šírku plátna presne podľa šírky nadpisu LASER CLEANING.
+
+    canvas.height = heroTitle.offsetHeight;
+    // Nastaví výšku plátna podľa výšky nadpisu.
   }
-  resizeCanvas(); // spustíme hneď pri načítaní
-  window.addEventListener('resize', resizeCanvas); // ak zmeníme veľkosť okna, prispôsobíme canvas
 
-  let laserIndex = 0; // index aktuálneho písmena, ktoré "vypaľujeme"
+  resizeCanvas();
+  // Spustíme túto funkciu hneď pri načítaní stránky.
 
-  // Funkcia, ktorá sa volá na vypálenie jedného písmena a vytvorenie iskier
+  window.addEventListener("resize", resizeCanvas);
+  // Ak niekto zmení veľkosť okna (napríklad otočí mobil), canvas sa automaticky prispôsobí.
+
+  // === 5. LASER IDE OD PÍSMENA K PÍSMENU A VYTVÁRA ISKRY ===
+
   function moveLaserAndCreateSparks() {
-    if (laserIndex >= letters.length) return; // ak sme prešli všetky písmená, skončíme
+    if (laserIndex >= letters.length) return;
+    // Ak sme už na konci nadpisu (za posledným písmenom), nič nerobíme.
 
-    const letter = letters[laserIndex]; // vyberieme aktuálne písmeno
-    const rect = letter.getBoundingClientRect(); // zistíme jeho pozíciu na stránke
-    const parentRect = heroTitle.getBoundingClientRect(); // zistíme pozíciu celého nadpisu
+    const letter = letters[laserIndex];
+    // Vyberieme aktuálne písmeno, na ktoré "mieri laser".
 
-    // Vypočítame súradnice stredu písmena (voči heroTitle)
+    const rect = letter.getBoundingClientRect();
+    const parentRect = heroTitle.getBoundingClientRect();
+    // Získame presné súradnice písmena a celého nadpisu.
+
     const x = rect.left - parentRect.left + rect.width / 2;
     const y = rect.top - parentRect.top + rect.height / 2;
+    // Vypočítame stred písmena X a Y, kde budeme generovať iskry.
 
-    letter.classList.add('active'); // písmeno sa rozsvieti (dostane triedu active)
+    letter.classList.add("active");
+    // Pridáme triedu, aby sa písmeno vizuálne zmenilo (rozsvietilo).
 
-    // Vygenerujeme iskry na aktuálnej pozícii písmena
-    for (let i = 0; i < sparkCount; i++) {
+    // === VYTVORÍME NOVÉ ISKRY ===
+    for (let i = 0; i < settings.sparkCount; i++) {
       sparks.push({
-  x: x,
-  y: y,
-  vx: (Math.random() - 0.5) * 4,
-  vy: (Math.random() - 0.5) * 4,
-  alpha: 1,
-  size: Math.random() * (sparkSizeMax - sparkSizeMin) + sparkSizeMin // TOTO sme upravili
-});
+        x: x, // Štartovacia X pozícia iskry (stred písmena)
+        y: y, // Štartovacia Y pozícia iskry (stred písmena)
 
+        vx: (Math.random() - 0.5) * settings.sparkSpeed,
+        // Horizontálna rýchlosť. Čím väčšie settings.sparkSpeed, tým rýchlejšie sa rozpŕchnu.
 
+        vy: (Math.random() - 0.5) * settings.sparkSpeed,
+        // Vertikálna rýchlosť.
+
+        alpha: 1,
+        // Nepriehľadnosť (1 = úplne viditeľná). Toto číslo budeme postupne znižovať, aby iskra zmizla.
+
+        size:
+          Math.random() * (settings.sparkSizeMax - settings.sparkSizeMin) +
+          settings.sparkSizeMin,
+        // Náhodná veľkosť iskry v rozsahu od sparkSizeMin po sparkSizeMax.
+      });
     }
-/*    sparks.push({*/
 
-    laserIndex++; // posunieme sa na ďalšie písmeno
-    setTimeout(moveLaserAndCreateSparks, 250); // oneskorenie pred vypálením ďalšieho písmena (0,25s)
+    laserIndex++;
+    // Presunieme laser na ďalšie písmeno.
+
+    setTimeout(moveLaserAndCreateSparks, 250);
+    // O koľko milisekúnd sa presunie na ďalšie písmeno.
+    // Zmeň 250 na viac/menej, ak chceš rýchlejší/pomalší laser.
   }
 
-  // Funkcia, ktorá vykresľuje animáciu (iskry)
+  // === 6. HLAVNÁ ANIMÁCIA SPARKOV ===
+
   function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // vymaže predchádzajúci frame
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Vymažeme predchádzajúci frame (inak by sa iskry kreslili stále na seba).
 
-    // Prejdeme každú iskru a vykreslíme ju
+    // Prejdeme všetky iskry v poli "sparks"
     for (let i = sparks.length - 1; i >= 0; i--) {
-      const s = sparks[i]; // vezmeme aktuálnu iskru
+      const s = sparks[i];
+
       ctx.beginPath();
-      ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); // nakreslíme kruh
-      ctx.fillStyle = `rgba(255, 165, 0, ${s.alpha})`; // oranžová farba + priehľadnosť
+      // Začíname kreslenie novej cesty (každej iskry).
+
+      ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+      // Nakreslíme kruh, ktorý reprezentuje iskru.
+      // s.x a s.y sú pozície
+      // s.size je polomer kruhu
+
+      ctx.fillStyle = `rgba(255, 165, 0, ${s.alpha})`;
+      // Farba iskry. 255, 165, 0 je oranžová (RGB), s.alpha riadi priehľadnosť.
+
       ctx.fill();
+      // Vyplníme kruh farbou.
 
-      s.x += s.vx; // posunieme iskru X smerom
-      s.y += s.vy; // posunieme iskru Y smerom
-      s.alpha -= 0.03; // postupne znižujeme priehľadnosť (iskra mizne)
+      s.x += s.vx;
+      // Posunieme iskru horizontálne podľa jej rýchlosti.
 
-      if (s.alpha <= 0) sparks.splice(i, 1); // ak je priehľadná, odstránime ju z poľa
+      s.y += s.vy;
+      // Posunieme iskru vertikálne.
+
+      s.alpha -= settings.alphaDecay;
+      // Znížime priehľadnosť iskry. Čím vyššia settings.alphaDecay, tým rýchlejšie zmizne.
+
+      if (s.alpha <= 0) {
+        sparks.splice(i, 1);
+        // Ak je iskra úplne priehľadná, vymažeme ju z poľa (ušetrenie výkonu).
+      }
     }
 
-    requestAnimationFrame(animate); // plynulé vykresľovanie (60fps)
+    requestAnimationFrame(animate);
+    // Znova spustí funkciu animate() → vytvára plynulú animáciu (cca 60 FPS).
   }
 
-  moveLaserAndCreateSparks(); // spustíme laser na prvé písmeno
-  animate(); // spustíme animáciu iskier
+  // === 7. SPUSTENIE CELEJ ANIMÁCIE ===
+
+  moveLaserAndCreateSparks();
+  // Spustíme laser na prvé písmeno.
+
+  animate();
+  // Spustíme animáciu, ktorá bude neustále vykresľovať iskry.
 });
 
-
-
-
-
-// Detekujeme, či je mobilné zariadenie
-const isMobile = window.innerWidth <= 768;
-
-
-
-
-const scrollArrow = document.querySelector('.scroll-down-arrow');
+const scrollArrow = document.querySelector(".scroll-down-arrow");
 
 // Ak je šírka okna väčšia ako 768px = PC
 if (window.innerWidth > 768) {
-  scrollArrow.addEventListener('click', (event) => {
+  scrollArrow.addEventListener("click", (event) => {
     // Môžeš tu mať animáciu pri kliknutí
-    scrollArrow.classList.add('clicked');
+    scrollArrow.classList.add("clicked");
 
     setTimeout(() => {
-      scrollArrow.classList.remove('clicked');
+      scrollArrow.classList.remove("clicked");
     }, 1000);
   });
 } else {
   // Na mobile chceme len scroll bez animácií
-  scrollArrow.addEventListener('click', (event) => {
+  scrollArrow.addEventListener("click", (event) => {
     // Ak nechceš robiť nič, tento blok môže byť prázdny.
     // Ale zabezpečujeme, že NIKDY nepridáme triedu "clicked".
     // Ak chceš, môžeš aj prescrollovať ručne (ale href="#info" to rieši)
   });
 }
 
+const backToTopBtn = document.querySelector(".back-to-top");
 
-
-
-
-const backToTopBtn = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
-    backToTopBtn.classList.add('show');
+    backToTopBtn.classList.add("show");
   } else {
-    backToTopBtn.classList.remove('show');
+    backToTopBtn.classList.remove("show");
   }
 });
 
-backToTopBtn.addEventListener('click', (e) => {
+backToTopBtn.addEventListener("click", (e) => {
   e.preventDefault();
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 });
-
-
-
-
-
-
-
-
-
-
-

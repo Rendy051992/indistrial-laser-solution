@@ -1,353 +1,395 @@
-<!DOCTYPE html> <!-- Definuje typ dokumentu ako HTML5 -->
-<html lang="en"> <!-- Začiatok HTML dokumentu, jazyk je angličtina -->
+<!DOCTYPE html>
+<!-- Definuje typ dokumentu ako HTML5 -->
+<html lang="en">
+  <!-- Začiatok HTML dokumentu, jazyk je angličtina -->
 
-<head> <!-- Hlavička stránky, sem dávame meta údaje a odkazy -->
-  <meta charset="UTF-8" /> <!-- Kódovanie znakov, podporuje všetky znaky -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Zabezpečí správne zobrazovanie na mobiloch -->
-  <title>ILCS LTD</title> <!-- Názov stránky, zobrazí sa na karte prehliadača -->
+  <head>
+    <!-- Hlavička stránky, sem dávame meta údaje a odkazy -->
+    <meta charset="UTF-8" />
+    <!-- Kódovanie znakov, podporuje všetky znaky -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Zabezpečí správne zobrazovanie na mobiloch -->
+    <title>ILCS LTD</title>
+    <!-- Názov stránky, zobrazí sa na karte prehliadača -->
 
-  <!-- Google Fonts - pridáva špeciálne písma z Google -->
-   <!-- Pripojenie Google Fontu Quicksand -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - pridáva špeciálne písma z Google -->
+    <!-- Pripojenie Google Fontu Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Načítanie vlastného CSS súboru, kde sú všetky štýly -->
-  <link rel="stylesheet" href="style.css">
-</head>
+    <!-- Načítanie vlastného CSS súboru, kde sú všetky štýly -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body> <!-- Telo stránky, čo sa zobrazuje používateľovi -->
+  <body>
+    <!-- Telo stránky, čo sa zobrazuje používateľovi -->
 
-  <!-- HLAVIČKA -->
-  <header class="site-header"> <!-- Horná lišta, obsahuje logo a menu -->
-    <div class="header-container"> <!-- Kontajner pre logo a navigáciu -->
+    <!-- HLAVIČKA -->
+    <header class="site-header">
+      <!-- Horná lišta, obsahuje logo a menu -->
+      <div class="header-container">
+        <!-- Kontajner pre logo a navigáciu -->
 
-      <!-- LOGO ILCS Ltd -->
-      <div class="logo-text">
-      
-      <span class="ilcs">
-        <span class="letter">I</span>
-        <span class="letter" style="margin-left: -7px;">L</span>
-        <span class="letter" style="margin-left: -8px;">C</span>
-        <span class="letter" style="margin-left: -7px;">S</span>
-      </span>
-      
-        <span class="ltd">Ltd</span>
-      </div>
-      
-       
+        <!-- LOGO ILCS Ltd -->
+        <div class="logo-text">
+          <span class="ilcs">
+            <span class="letter">I</span>
+            <span class="letter" style="margin-left: -7px">L</span>
+            <span class="letter" style="margin-left: -8px">C</span>
+            <span class="letter" style="margin-left: -7px">S</span>
+          </span>
 
-      <!-- Navigácia v hlavičke -->
-      <nav class="site-nav" id="nav-menu">
-        <ul> <!-- Zoznam položiek menu -->
-
-          <!-- Prvá položka menu -->
-          <li><a href="#">Home</a></li>
-
-          <!-- Druhá položka s dropdown menu pre Services -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)"> <!-- Kliknutím sa otvorí/zavrie menu -->
-              Services <span class="arrow">▼</span> <!-- Text s ikonou šípky -->
-            </a>
-            <ul class="dropdown-menu"> <!-- Skrytý zoznam pod službami -->
-              <li><a href="#">Laser Rust Removal</a></li> <!-- Prvá služba -->
-              <li><a href="#">Industrial Equipment Cleaning</a></li> <!-- Druhá služba -->
-              <li><a href="#">Surface Preparation</a></li> <!-- Tretia služba -->
-              <li><a href="#">Eco-Friendly Solutions</a></li> <!-- Štvrtá služba -->
-            </ul>
-          </li>
-
-          <!-- LENSES položka s dropdown menu pre Lenses -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
-              Lenses <span class="arrow">▼</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Protective Lenses</a></li>
-              <li><a href="#">Cutting Lenses</a></li>
-              <li><a href="#">Focusing Lenses</a></li>
-              <li><a href="#">Collimating Lenses</a></li>
-              <li><a href="#">Scanning Lenses</a></li>
-            </ul>
-          </li>
-
-          <!-- Odkaz na galériu -->
-          <li><a href="#">Gallery</a></li>
-
-          <!-- Odkaz na kontakt -->
-          <li><a href="#contact-form">Contact Us</a></li>
-        </ul>
-      </nav>
-
-      <!-- Hamburger menu pre mobilné zariadenia -->
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-    </div> <!-- Koniec header-container -->
-  </header>
-
-  <!-- HERO sekcia - hlavný nadpis s animáciou -->
-  <section class="hero">
-    <div class="hero-content">
-
-      <canvas id="laserCanvas"></canvas> <!-- Plátno pre animáciu laserového efektu -->
-
-      <!-- Podnadpis hore -->
-      <h3 class="hero-subtitle top">INDUSTRIAL</h3>
-
-      <!-- Hlavný nadpis, každé písmeno má svoj vlastný element kvôli animáciám -->
-      <h1 class="hero-title">
-        <span>L</span><span>A</span><span>S</span><span>E</span><span>R</span>
-        &nbsp; <!-- Medzera medzi slovami -->
-        <span>C</span><span>L</span><span>E</span><span>A</span><span>N</span><span>I</span><span>N</span><span>G</span>
-      </h1>
-
-      <!-- Podnadpis dole -->
-      <h3 class="hero-subtitle bottom">SOLUTIONS</h3>
-
-    </div> <!-- Koniec hero-content -->
-  </section>
-
-  <!-- Šípka, ktorá presunie používateľa na ďalšiu sekciu -->
-  <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
-    <!-- SVG obrázok šípky -->
-    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" 
-    fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="12" y1="5" x2="12" y2="19"></line>
-      <polyline points="19 12 12 19 5 12"></polyline>
-    </svg>
-  </a>
-
-  <!-- INFO SECTION - ABOUT -->
-  <section id="info" class="info-section">
-    <h1>LASERS CLEANING</h1> <!-- Nadpis sekcie s informáciami -->
-    <p>
-      Laser cleaning is a revolutionary technology used for the removal of contaminants, impurities, and unwanted materials
-      from the surface of metals and other materials. It is an eco-friendly and highly efficient process that utilizes laser
-      beams to vaporize and remove layers of rust, paint, oil, and other substances without damaging the underlying material.
-    </p>
-    <p>
-      Our industrial laser cleaning solutions are designed to provide precision cleaning for a variety of applications, including
-      automotive restoration, aerospace maintenance, heritage conservation, and industrial manufacturing. By using our advanced
-      laser cleaning systems, you can significantly reduce the need for chemical solvents and abrasive blasting methods,
-      resulting in a safer, cleaner, and more sustainable work environment.
-    </p>
-    <p>
-      The process works by directing a focused laser beam at the contaminated surface. The energy from the laser heats and
-      vaporizes the unwanted layer, turning it into dust or gas, which is then extracted by a vacuum system. This method
-      ensures that the base material remains untouched, making it ideal for delicate and high-precision surfaces.
-    </p>
-    <p>
-      Benefits of our laser cleaning technology include:
-    </p> <!-- Popis alebo info o službách -->
-    <ul>
-      <li>No use of chemicals or abrasive materials</li>
-      <li>Minimal maintenance and operating costs</li>
-      <li>Environmentally friendly and safe for operators</li>
-      <li>High precision and selective cleaning</li>
-      <li>Suitable for complex shapes and hard-to-reach areas</li>
-    </ul>
-    <p>
-      Whether you need to clean metal surfaces before welding, remove corrosion from industrial equipment, or restore historical artifacts,
-      our laser cleaning solutions offer an effective and reliable method to meet your needs.
-    </p>
-  </section>
-
-      <!-- BACK TO TOP ARROW -->
-<a href="#" class="back-to-top" aria-label="Back to top">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</a>
-
-   <!-- TU MÔŽEŠ PRIDAŤ TABUĽKU -->
-   <section id="comparison" class="comparison-table">
-    <h2>Advantages of Laser Cleaning Over Other Methods</h2>
-  
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Advantages</th>
-            <th>Laser Cleaning</th>
-            <th>Sand Cleaning</th>
-            <th>Chemical Cleaning</th>
-            <th>High Pressure Cleaning</th>
-            <th>Steam Cleaning</th>
-            <th>Manual Cleaning</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="category">
-            <td colspan="7">SAVING TIME</td>
-          </tr>
-  
-          <tr>
-            <td>Possibility to clean in a production environment</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-          </tr>
-  
-          <tr>
-            <td>Quick cleaning method</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-          </tr>
-  
-          <tr>
-            <td>Short or no production cessation</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-          </tr>
-  
-          <tr class="category">
-            <td colspan="7">ENVIRONMENTALLY FRIENDLY</td>
-          </tr>
-  
-          <tr>
-            <td>It does not produce any added waste</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-          </tr>
-  
-          <tr>
-            <td>It makes no noise</td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon yes"></span></td>
-          </tr>
-  
-          <tr>
-            <td>No need to discard / decontaminate the cleaning medium</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-          </tr>
-  
-          <tr>
-            <td>Environmentally friendly</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon yes"></span></td>
-          </tr>
-  
-          <tr class="category">
-            <td colspan="7">ANOTHER BENEFITS</td>
-          </tr>
-  
-          <tr>
-            <td>Economical</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon yes"></span></td>
-          </tr>
-  
-          <tr>
-            <td>It does not damage the surface material</td>
-            <td><span class="icon yes"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-            <td><span class="icon no"></span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <div class="legend">
-  
-      <div class="legend-item">
-        <div class="legend-icon yes">
-          <span class="symbol">✔</span>
+          <span class="ltd">Ltd</span>
         </div>
-        <p>It's the advantage of this method</p>
+
+        <!-- Navigácia v hlavičke -->
+        <nav class="site-nav" id="nav-menu">
+          <ul>
+            <!-- Zoznam položiek menu -->
+
+            <!-- Prvá položka menu -->
+            <li><a href="#">Home</a></li>
+
+            <!-- Druhá položka s dropdown menu pre Services -->
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                onclick="toggleDropdown(event, this)"
+              >
+                <!-- Kliknutím sa otvorí/zavrie menu -->
+                Services <span class="arrow">▼</span>
+                <!-- Text s ikonou šípky -->
+              </a>
+              <ul class="dropdown-menu">
+                <!-- Skrytý zoznam pod službami -->
+                <li><a href="#">Laser Rust Removal</a></li>
+                <!-- Prvá služba -->
+                <li><a href="#">Industrial Equipment Cleaning</a></li>
+                <!-- Druhá služba -->
+                <li><a href="#">Surface Preparation</a></li>
+                <!-- Tretia služba -->
+                <li><a href="#">Eco-Friendly Solutions</a></li>
+                <!-- Štvrtá služba -->
+              </ul>
+            </li>
+
+            <!-- LENSES položka s dropdown menu pre Lenses -->
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                onclick="toggleDropdown(event, this)"
+              >
+                Lenses <span class="arrow">▼</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Protective Lenses</a></li>
+                <li><a href="#">Cutting Lenses</a></li>
+                <li><a href="#">Focusing Lenses</a></li>
+                <li><a href="#">Collimating Lenses</a></li>
+                <li><a href="#">Scanning Lenses</a></li>
+              </ul>
+            </li>
+
+            <!-- Odkaz na galériu -->
+            <li><a href="#">Gallery</a></li>
+
+            <!-- Odkaz na kontakt -->
+            <li><a href="#contact-form">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger menu pre mobilné zariadenia -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
       </div>
-    
-      <div class="legend-item">
-        <div class="legend-icon maybe">
-          <span class="symbol">➖</span>
+      <!-- Koniec header-container -->
+    </header>
+
+    <!-- HERO sekcia - hlavný nadpis s animáciou -->
+    <section class="hero">
+      <div class="hero-content">
+        <canvas id="laserCanvas"></canvas>
+        <!-- Plátno pre animáciu laserového efektu -->
+
+        <!-- Podnadpis hore -->
+        <h3 class="hero-subtitle top">INDUSTRIAL</h3>
+
+        <!-- Hlavný nadpis, každé písmeno má svoj vlastný element kvôli animáciám -->
+        <h1 class="hero-title">
+          <span>L</span><span>A</span><span>S</span><span>E</span
+          ><span>R</span> &nbsp;
+          <!-- Medzera medzi slovami -->
+          <span>C</span><span>L</span><span>E</span><span>A</span><span>N</span
+          ><span>I</span><span>N</span><span>G</span>
+        </h1>
+
+        <!-- Podnadpis dole -->
+        <h3 class="hero-subtitle bottom">SOLUTIONS</h3>
+      </div>
+      <!-- Koniec hero-content -->
+    </section>
+
+    <!-- Šípka, ktorá presunie používateľa na ďalšiu sekciu -->
+    <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
+      <!-- SVG obrázok šípky -->
+      <svg
+        class="arrow-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#fff"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </a>
+
+    <!-- INFO SECTION - ABOUT -->
+    <section id="info" class="info-section">
+      <h1>LASERS CLEANING</h1>
+      <!-- Nadpis sekcie s informáciami -->
+      <p>
+        Laser cleaning is a revolutionary technology used for the removal of
+        contaminants, impurities, and unwanted materials from the surface of
+        metals and other materials. It is an eco-friendly and highly efficient
+        process that utilizes laser beams to vaporize and remove layers of rust,
+        paint, oil, and other substances without damaging the underlying
+        material.
+      </p>
+      <p>
+        Our industrial laser cleaning solutions are designed to provide
+        precision cleaning for a variety of applications, including automotive
+        restoration, aerospace maintenance, heritage conservation, and
+        industrial manufacturing. By using our advanced laser cleaning systems,
+        you can significantly reduce the need for chemical solvents and abrasive
+        blasting methods, resulting in a safer, cleaner, and more sustainable
+        work environment.
+      </p>
+      <p>
+        The process works by directing a focused laser beam at the contaminated
+        surface. The energy from the laser heats and vaporizes the unwanted
+        layer, turning it into dust or gas, which is then extracted by a vacuum
+        system. This method ensures that the base material remains untouched,
+        making it ideal for delicate and high-precision surfaces.
+      </p>
+      <p>Benefits of our laser cleaning technology include:</p>
+      <!-- Popis alebo info o službách -->
+      <ul>
+        <li>No use of chemicals or abrasive materials</li>
+        <li>Minimal maintenance and operating costs</li>
+        <li>Environmentally friendly and safe for operators</li>
+        <li>High precision and selective cleaning</li>
+        <li>Suitable for complex shapes and hard-to-reach areas</li>
+      </ul>
+      <p>
+        Whether you need to clean metal surfaces before welding, remove
+        corrosion from industrial equipment, or restore historical artifacts,
+        our laser cleaning solutions offer an effective and reliable method to
+        meet your needs.
+      </p>
+    </section>
+
+    <!-- BACK TO TOP ARROW -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#fff"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </a>
+
+    <!-- TU MÔŽEŠ PRIDAŤ TABUĽKU -->
+    <section id="comparison" class="comparison-table">
+      <h2>Advantages of Laser Cleaning Over Other Methods</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Advantages</th>
+              <th>Laser Cleaning</th>
+              <th>Sand Cleaning</th>
+              <th>Chemical Cleaning</th>
+              <th>High Pressure Cleaning</th>
+              <th>Steam Cleaning</th>
+              <th>Manual Cleaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="category">
+              <td colspan="7">SAVING TIME</td>
+            </tr>
+
+            <tr>
+              <td>Possibility to clean in a production environment</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+            </tr>
+
+            <tr>
+              <td>Quick cleaning method</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+            </tr>
+
+            <tr>
+              <td>Short or no production cessation</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+            </tr>
+
+            <tr class="category">
+              <td colspan="7">ENVIRONMENTALLY FRIENDLY</td>
+            </tr>
+
+            <tr>
+              <td>It does not produce any added waste</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+            </tr>
+
+            <tr>
+              <td>It makes no noise</td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon yes"></span></td>
+            </tr>
+
+            <tr>
+              <td>No need to discard / decontaminate the cleaning medium</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+            </tr>
+
+            <tr>
+              <td>Environmentally friendly</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon yes"></span></td>
+            </tr>
+
+            <tr class="category">
+              <td colspan="7">ANOTHER BENEFITS</td>
+            </tr>
+
+            <tr>
+              <td>Economical</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon yes"></span></td>
+            </tr>
+
+            <tr>
+              <td>It does not damage the surface material</td>
+              <td><span class="icon yes"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+              <td><span class="icon no"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-icon yes">
+            <span class="symbol">✔</span>
+          </div>
+          <p>It's the advantage of this method</p>
         </div>
-        <p>It can be the advantage of this method</p>
-      </div>
-    
-      <div class="legend-item">
-        <div class="legend-icon no">
-          <span class="symbol">✖</span>
+
+        <div class="legend-item">
+          <div class="legend-icon maybe">
+            <span class="symbol">➖</span>
+          </div>
+          <p>It can be the advantage of this method</p>
         </div>
-        <p>No, it's not the advantage of this method</p>
+
+        <div class="legend-item">
+          <div class="legend-icon no">
+            <span class="symbol">✖</span>
+          </div>
+          <p>No, it's not the advantage of this method</p>
+        </div>
       </div>
-    
-    </div>
-  </section>
+    </section>
 
-  
-  
-  
+    <!-- CONTACT FORM sekcia -->
+    <section id="contact-form" class="contact-form-section">
+      <h2>Contact Us</h2>
+      <!-- Nadpis kontaktnej sekcie -->
+      <p>Fill out the form and we will get back to you soon!</p>
+      <!-- Popis pre používateľa -->
 
-  <!-- CONTACT FORM sekcia -->
-  <section id="contact-form" class="contact-form-section">
-    <h2>Contact Us</h2> <!-- Nadpis kontaktnej sekcie -->
-    <p>Fill out the form and we will get back to you soon!</p> <!-- Popis pre používateľa -->
+      <!-- Formulár pre kontaktovanie -->
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <!-- Meno -->
+        <input type="email" placeholder="Your Email" required />
+        <!-- Email -->
+        <textarea placeholder="Your Message" required></textarea>
+        <!-- Správa -->
+        <button type="submit">Send</button>
+        <!-- Tlačidlo na odoslanie -->
+      </form>
+    </section>
 
-    <!-- Formulár pre kontaktovanie -->
-    <form>
-      <input type="text" placeholder="Your Name" required />
- <!-- Meno -->
-      <input type="email" placeholder="Your Email" required /> <!-- Email -->
-      <textarea placeholder="Your Message" required></textarea> <!-- Správa -->
-      <button type="submit">Send</button> <!-- Tlačidlo na odoslanie -->
-    </form>
-  </section>
-
-
-  <!-- BACK TO TOP ARROW -->
-<a href="#" class="back-to-top" aria-label="Back to top">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5 12 12 5 19 12"></polyline>
-  </svg>
-</a>
-
-
-
-
-
-
-
-  <!-- Pripojenie JS súboru -->
-  <script src="script.js"></script>
-
-</body>
-
+    <!-- Pripojenie JS súboru -->
+    <script src="script.js"></script>
+  </body>
 </html>
