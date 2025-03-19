@@ -35,7 +35,7 @@ html, body {
 
 body {
   font-family: "Roboto", sans-serif; /* hlavný font textu */
-  background: linear-gradient(to bottom, #050f55, #0f2b80, #3f5faf);
+  background: white;
   color: #fff; /* biela farba textu */
 }
 
@@ -250,6 +250,7 @@ body {
 
 
 .hero {
+  background: linear-gradient(to bottom, #050f55, #0f2b80, #214399);
   position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
   height: 500px; /* výška sekcie, môžeš zmeniť podľa potreby */
   display: flex; /* použijeme flexbox na centrovanie obsahu */
@@ -467,7 +468,7 @@ body {
   
   
   
-  
+  border-radius: 50px;
   animation: bounce 1s infinite;
   transform: scale(1.1); /* Zväčší šípku o 10% */
   stroke: #ff4d4d; /* Zmení farbu čiar na svetlejšiu červenú */
@@ -615,6 +616,7 @@ body {
 /* === COMPARISON TABLE STYLES ========= */
 /* ====================================== */
 
+
 /* === HLAVNÁ SEKCIA S TABUĽKOU === */
 .comparison-table {
   width: 100%;                   /* Zaberá celú šírku kontajnera */
@@ -720,21 +722,18 @@ tbody td:first-child {
 }
 
 /* === SYMBOLY V IKONÁCH === */
-
-/* ZELENÁ - HÁČIK */
-.icon.yes::before, .legend-icon.yes::before {
-  content: "\2714"; /* Unicode pre ✔ */
+.icon.yes::before {
+  content: "\2714"; /* ✔ */
 }
 
-/* ČERVENÁ - KRÍŽIK */
-.icon.no::before, .legend-icon.no::before {
-  content: "\2716"; /* Unicode pre ✖ */
+.icon.no::before {
+  content: "\2716"; /* ✖ */
 }
 
-/* ŽLTÁ - MÍNUS */
-.icon.maybe::before, .legend-icon.maybe::before {
-  content: "\2796"; /* Unicode pre ➖ */
+.icon.maybe::before {
+  content: "\2796"; /* ➖ */
 }
+
 
 /* ====================================== */
 /* === LEGENDA POD TABUĽKOU ============ */
@@ -942,7 +941,7 @@ tbody td:first-child {
 
   .scroll-down-arrow:hover .arrow-icon {
   
-
+    
     animation: bounce 1s infinite;
     transform: scale(1.1); /* Zväčší šípku o 10% */
     stroke: rgba(40, 40, 50, 0.9);/* Zmení farbu čiar na svetlejšiu červenú */
@@ -1009,86 +1008,146 @@ tbody td:first-child {
  /* ==================================================================================================================================== */
 
 
-/* =============================================== */
-/* === SEKCIA PRE POROVNÁVACIU TABUĽKU - MOBILE === */
-/* ============================================== */
+/* ============================= */
+/* === POROVNÁVACIA TABUĽKA === */
+/* ============================= */
 
-/* Kontajner pre celú tabuľku - mobile  */
+/* HLAVNÝ KONTAJNER SEKCIE */
 .comparison-table {
-  width: 100%;               /* Zaberie celú dostupnú šírku stránky */
-  padding: 40px 20px;        /* Vnútorné odsadenie (hore/dole 40px, vľavo/vpravo 20px) */
+  width: 100%;
+  padding: 40px 20px;
   background-color: #ffffff; /* Biele pozadie sekcie */
 }
 
-/* Nadpis tabuľky (H2) */
 .comparison-table h2 {
-  text-align: center;        /* Vycentrovaný text */
-  margin-bottom: 30px;       /* Medzera pod nadpisom */
-  color: #b10707;            /* Červená farba nadpisu */
-  font-size: 28px;           /* Veľkosť nadpisu */
+  text-align: center;
+  margin-bottom: 30px;
+  color: #b10707;            /* Farba nadpisu */
+  font-size: 28px;           /* VEĽKOSŤ NADPISU */
 }
 
-/* Obal tabuľky, ktorý umožňuje horizontálne scrollovanie na menších zariadeniach */
+/* WRAPPER TABUĽKY PRE SCROLL NA MOBILE */
 .table-wrapper {
-  overflow-x: auto;          /* Ak je tabuľka širšia ako obrazovka, pridá posúvanie do strán */
+  overflow-x: auto;
 }
 
-/* ========================================== */
-/* === ŠTÝLY PRE HLAVNÚ TABUĽKU - MOBILE === */
-/* ========================================= */
-
-/* Samotná tabuľka */
+/* ============================= */
+/* === ŠTÝL TABUĽKY (table) === */
+/* ============================= */
 table {
-  width: 100%;               /* Rozšíri tabuľku na celú šírku svojho kontajnera */
-  border-collapse: collapse; /* Odstráni medzery medzi bunkami tabuľky */
-  min-width: 600px;          /* Minimálna šírka tabuľky (dôležité pre menšie zariadenia) */
-  background-color: #fff;    /* Biele pozadie tabuľky */
+  width: 100%;
+  min-width: 600px;                /* Minimálna šírka tabuľky */
+  border-collapse: collapse;       /* Odstráni medzery medzi bunkami */
+  background-color: #fff;          /* Biele pozadie tabuľky */
 }
 
-/* Hlavička tabuľky (prvý riadok s názvami stĺpcov) */
+/* HLAVIČKA TABUĽKY */
+thead {
+  background-color: rgb(76, 117, 205); /* Modré pozadie hlavičky */
+  color: #fff;                         /* Text vo farbe bielej */
+}
+
 thead th {
-  padding: 15px;             /* Vnútorné odsadenie (všetky smery 15px) */
-  text-align: center;        /* Text je vycentrovaný */
-  font-size: 16px;           /* Veľkosť písma hlavičiek */
+  padding: 15px;            /* Vnútorné odsadenie buniek */
+  text-align: center;
+  font-size: 16px;          /* VEĽKOSŤ PÍSMA HLAVIČKY */
 }
 
-/* Bunky v tele tabuľky */
+/* RIADKY V TELE TABUĽKY */
+tbody tr {
+  border-bottom: 1px solid #ddd; /* Oddelenie riadkov */
+}
+
 tbody td {
-  padding: 12px 8px;         /* Hore/dole 12px, vľavo/vpravo 8px */
-  text-align: center;        /* Vycentrovaný text v bunkách */
-  color: #333;               /* Tmavošedý text */
-  font-size: 14px;           /* Veľkosť písma */
+  padding: 12px 8px;        /* Odsadenie v bunkách */
+  text-align: center;
+  color: #333;              /* Farba textu */
+  font-size: 14px;          /* VEĽKOSŤ PÍSMA V TELE TABUĽKY */
 }
 
-/* Prvý stĺpec v každom riadku (názvy výhod a kategórií) */
+/* PRVÝ STĹPEC V RIADKU */
 tbody td:first-child {
-  padding-left: 3px;         /* Malé odsadenie zľava */
+  text-align: left;
+  font-weight: 500;
+  padding-left: 3px;        /* Odsadenie zľava */
 }
 
-/* Riadiaci riadok (napríklad "SAVING TIME" alebo "ENVIRONMENTALLY FRIENDLY") */
+/* KATEGORIE (SKUPINY RIADKOV) */
 .category td {
-  background-color: #ececec; /* Svetlošedé pozadie na odlíšenie */
-  font-weight: bold;         /* Tučné písmo */
-  text-align: left;          /* Text zarovnaný naľavo */
-  padding: 12px;             /* Rovnaké vnútorné odsadenie z každej strany */
-  font-size: 16px;           /* Väčšia veľkosť písma pre dôraz */
+  background-color: #ececec;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* ============================= */
+/* === ŠTÝLY IKON V TABUĽKE === */
+/* ============================= */
+
+/* Spoločné štýly pre všetky ikony (YES, NO, MAYBE) */
+/* ============================= */
+/* === IKONY V TABUĽKE (.icon) === */
+/* ============================= */
+.icon {
+  display: inline-flex;           /* Flex kvôli centrovaniu obsahu */
+  align-items: center;
+  justify-content: center;
+  width: 36px;                    /* VEĽKOSŤ IKONY V TABUĽKE */
+  height: 36px;
+  margin: 4px;                    /* Medzera medzi ikonami v tabuľke */
+  border-radius: 50%;             /* Okrúhly tvar */
+  font-size: 18px;                /* VEĽKOSŤ SYMBOLU (✔ ✖ ➖) */
+  color: #fff;                    /* Farba symbolu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid #eee;
+}
+
+/* ================================================= */
+/* === IKONY V LEGENDE (.legend-icon) - MOBILE === */
+/* ================================================ */
+.legend-icon {
+  display: inline-flex;              /* aby bol symbol centrovaný */
+  justify-content: center;
+  align-items: center;
+  width: 30px;                      /* rovnaká šírka a výška */
+  height: 30px;
+  background-color: #ffc107;        /* žltá ako príklad */
+  color: #fff;                      /* farba symbolu */
+  font-size: 12px;                  /* veľkosť symbolu (✔ ✖ ➖) */
+  line-height: 0;                   /* zabráni vertikálnemu rozťahovaniu */
+  border-radius: 50%;               /* kruhový tvar */
+  padding: 0;                       /* bez paddingu */
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* tiene (voliteľné) */
 }
 
 
 
-/* ============================================ */
-/* === SEKCIA LEGENDA POD TABUĽKOU - MOBILE === */
-/* ============================================ */
-
-/* Kontajner pre popisy ikon */
+/* ============================= */
+/* === LEGENDA POD TABUĽKOU === */
+/* ============================= */
 .legend {
-  
-  margin-top: 30px;              /* Medzera nad legendou */
-  display: flex;                 /* Flexbox na zobrazenie vedľa seba */
-  justify-content: center;       /* Centrovanie legendy na stred */
-  gap: 30px;                     /* Medzera medzi jednotlivými položkami legendy */
-
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
+
+.legend p {
+  font-size: 14px;         /* VEĽKOSŤ TEXTU V LEGENDE */
+  display: flex;
+  align-items: center;
+  gap: 10px;               /* VZDIALENOSŤ medzi ikonou a textom */
+  color: #333;
+}
+
+
+
+/* ============================================ */
+/* CONTACT US*/
+/* ============================================ */
+
 
   .contact-form-section {
     
