@@ -233,24 +233,12 @@ const sparkSizeMax = isMobile ? 1.5 : 4;
 
 
 
+
+
 // Detekujeme, či je mobilné zariadenie
 const isMobile = window.innerWidth <= 768;
 
-// Funkcia na vytvorenie iskier
-for (let i = 0; i < sparkCount; i++) {
-  sparks.push({
-    x: x,
-    y: y,
-    vx: (Math.random() - 0.5) * 4,
-    vy: (Math.random() - 0.5) * 4,
-    alpha: 1,
 
-    // Nastavíme veľkosť iskier podľa zariadenia
-    size: isMobile
-      ? Math.random() * (0.8 - 0.3) + 0.3    // Mobil: 0.3 až 0.8 px
-      : Math.random() * (2.5 - 1) + 1        // PC: 1 až 2.5 px
-  });
-}
 
 
 const scrollArrow = document.querySelector('.scroll-down-arrow');
@@ -278,6 +266,23 @@ if (window.innerWidth > 768) {
 
 
 
+const backToTopBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
+
+backToTopBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
 
 

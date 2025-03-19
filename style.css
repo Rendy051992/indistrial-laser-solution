@@ -758,6 +758,73 @@ tbody td:first-child {
 }
 
 
+/* ============================= */
+/* BACK TO TOP BUTTON            */
+/* ============================= */
+
+/* 
+Toto je ten okrúhly gombík (šipka hore), 
+ktorý sa zobrazí v pravom dolnom rohu obrazovky, 
+keď sa posunieš nižšie na stránke.
+*/
+
+.back-to-top {
+  position: fixed;  /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
+  right: 30px;      /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
+  bottom: 30px;     /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
+  width:40px;      /* Šírka gombíka je40 pixelov (taký menší krúžok). */
+  height:40px;     /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
+  background-color: rgba(40, 40, 50, 0.9); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
+  border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
+  display: flex;    /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
+  justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
+  align-items: center;     /* Vycentruje šípku zvislo (hore a dole). */
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
+  text-decoration: none;   /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
+  z-index: 999;            /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
+  opacity: 0;              /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
+  visibility: hidden;      /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
+}
+
+/* 
+Toto je šípka vo vnútri toho gombíka.  
+Používame SVG obrázok (nie bežný obrázok, ale čiarový grafický obrázok).  
+Tento blok určuje, ako šípka vyzerá a ako sa bude správať pri zmene.
+*/
+
+.back-to-top svg {
+  stroke: #ffffff;  /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
+  transition: transform 0.3s ease, stroke 0.3s ease; 
+  /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
+}
+
+/* 
+Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.  
+Šípka sa jemne zväčší a zmení farbu. 
+*/
+
+.back-to-top:hover svg {
+  transform: scale(1.2); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
+  stroke: #ff4d4d;       /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
+}
+
+/* 
+Toto spôsobí, že sa gombík objaví, keď je čas (keď sa posunieme dolu na stránke).  
+Trieda "show" sa pridá pomocou JavaScriptu.  
+Tým sa zmení jeho vlastnosti:  
+- z neviditeľného (opacity 0) → na viditeľný (opacity 1)  
+- z hidden → na visible  
+*/
+
+.back-to-top.show {
+  opacity: 1;        /* Už ho vidíme, pretože je plne nepriehľadný. */
+  visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
+}
+
+
+
 
 
 
@@ -1125,7 +1192,7 @@ tbody td:first-child {
 
 
 /* ============================= */
-/* === LEGENDA POD TABUĽKOU === */
+/* === LEGENDA POD TABUĽKOU - MOBILE === */
 /* ============================= */
 .legend {
   margin-top: 30px;
@@ -1145,7 +1212,7 @@ tbody td:first-child {
 
 
 /* ============================================ */
-/* CONTACT US*/
+/* CONTACT US - MOBILE */
 /* ============================================ */
 
 
@@ -1155,6 +1222,77 @@ tbody td:first-child {
     color: #fff; /* biela farba textu */
     padding: 80px 20px; /* priestor okolo obsahu */
     text-align: center; /* vycentrovaný text */
+  
+  
+  /* ============================= */
+/* BACK TO TOP BUTTON - MOBILE           */
+/* ============================= */
+
+/* 
+Toto je ten okrúhly gombík (šipka hore), 
+ktorý sa zobrazí v pravom dolnom rohu obrazovky, 
+keď sa posunieš nižšie na stránke.
+*/
+
+.back-to-top {
+  position: fixed;  /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
+  right: 30px;      /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
+  bottom: 30px;     /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
+  width: 60px;      /* Šírka gombíka je 60 pixelov (taký menší krúžok). */
+  height: 60px;     /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
+  background-color: rgba(40, 40, 50, 0.9); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
+  border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
+  display: flex;    /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
+  justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
+  align-items: center;     /* Vycentruje šípku zvislo (hore a dole). */
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
+  text-decoration: none;   /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
+  z-index: 999;            /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
+  opacity: 0;              /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
+  visibility: hidden;      /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
+}
+
+/* 
+Toto je šípka vo vnútri toho gombíka.  
+Používame SVG obrázok (nie bežný obrázok, ale čiarový grafický obrázok).  
+Tento blok určuje, ako šípka vyzerá a ako sa bude správať pri zmene.
+*/
+
+.back-to-top svg {
+  stroke: #ffffff;  /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
+  transition: transform 0.3s ease, stroke 0.3s ease; 
+  /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
+}
+
+/* 
+Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.  
+Šípka sa jemne zväčší a zmení farbu. 
+*/
+
+.back-to-top:hover svg {
+  transform: scale(1.2); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
+  stroke: #ff4d4d;       /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
+}
+
+/* 
+Toto spôsobí, že sa gombík objaví, keď je čas (keď sa posunieme dolu na stránke).  
+Trieda "show" sa pridá pomocou JavaScriptu.  
+Tým sa zmení jeho vlastnosti:  
+- z neviditeľného (opacity 0) → na viditeľný (opacity 1)  
+- z hidden → na visible  
+*/
+
+.back-to-top.show {
+  opacity: 1;        /* Už ho vidíme, pretože je plne nepriehľadný. */
+  visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
+}
+
+  
+  
+  
+  
   }
 }
 
