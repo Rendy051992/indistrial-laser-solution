@@ -83,149 +83,113 @@ body {
   margin-top: 7px;
 }
 
-/* ============================= */
-/* LOGO ILCS Ltd HOVER - PC */
-/* ============================= */
-
-.logo-text:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* efekt svietenia pri hoveri */
-  cursor: pointer; /* kurzor ruky */
-}
-
-/* ==================================================================================================================================== */
-/* ==================================================================================================================================== */
-
-/* ============================= */
-/* HEADER - HLAVIČKA (BLUE)  - PC */
-/* ============================= */
-
+/* === HLAVIČKA === */
+/* === HLAVIČKA === */
 .site-header {
-  position: fixed; /* zostane hore aj pri skrolovaní */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent; /* priehľadné pozadie na začiatku */
-  padding: 20px 40px;
-  display: flex; /* rozloženie pomocou flexboxu */
-  justify-content: center; /* zarovná obsah do stredu */
-  align-items: center; /* vertikálne vycentrované */
-  transition: background-color 0.4s ease, box-shadow 0.4s ease; /* plynulé zmeny */
-  z-index: 1000; /* bude vždy navrchu */
-}
-
-/* ============================= */
-/*  HEADER PRI SCROLLOVANI - PC 
-/* ============================= */
-#nav-menu {
-  display: flex;
-  justify-content: flex-end; /* Zarovnanie doprava */
-  align-items: center; /* Vertikálne centrovanie */
-  position: static;
-  top: auto;
-  left: auto;
-  width: auto;
+  position: fixed; /* Hlavička zostane hore na obrazovke aj pri scrollovaní */
+  top: 0; /* Umiestnenie hore na stránke */
+  left: 0; /* Umiestnenie úplne vľavo */
+  width: 100%; /* Hlavička bude široká na 100% celej stránky */
+  background-color: transparent; /* Začiatočné pozadie je priehľadné */
+  padding: 20px 40px; /* Odsadenie vo vnútri hlavičky: hore/dole 20px, vľavo/vpravo 40px */
+  display: flex; /* Flexbox usporiadanie vnútorných elementov (logo, menu) */
+  justify-content: center; /* Centrovanie obsahu vodorovne */
+  align-items: center; /* Centrovanie obsahu zvisle */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Plynulá animácia zmeny pozadia a tieňa pri skrolovaní */
+  z-index: 1000; /* Hlavička bude na vrchnej vrstve, nad ostatnými elementami */
 }
 
 .site-header.scrolled {
-  background-color: #b10707; /* červené pozadie pri skrolovaní */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* tieň */
+  background-color: #b10707; /* Farba pozadia hlavičky, keď stránka scrolluje (pridá sa class scrolled) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Tieň pod hlavičkou: posun 4px dole, rozmazanie 10px, tmavosť 30% */
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  /* zarovná obsah doľava */
-  align-items: center;
-  padding-left: 40px;
-  padding-right: 40px;
-  width: 100%;
+  display: flex; /* Flexbox usporiadanie obsahu vo vnútri kontajnera */
+  justify-content: space-between; /* Obsah sa zarovná na dve strany (logo vľavo, menu vpravo) */
+  align-items: center; /* Vertikálne centrovanie prvkov */
+  padding-left: 40px; /* Odsadenie vnútri kontajnera zľava o 40px */
+  padding-right: 40px; /* Odsadenie vnútri kontajnera sprava o 40px */
+  width: 100%; /* Kontajner sa natiahne na celú šírku */
 }
 
-.site-nav {
-  display: flex;
-  justify-content: flex-end; /* tlačí menu doprava */
-  align-items: center; /* aby menu sedelo v strede vertikálne */
-}
-
+/* === NAVIGÁCIA === */
 .site-nav ul {
-  display: flex; /* horizontálne rozloženie */
-  list-style: none; /* bez odrážok */
-  gap: 40px; /* medzery medzi položkami */
-  margin-right: 0;
-  padding-right: 40px;
+  display: flex; /* Položky zoznamu sa zobrazia vedľa seba (horizontálne) */
+  list-style: none; /* Odstráni predvolené odrážky zoznamu (body pred textom) */
+  gap: 40px; /* Medzera medzi jednotlivými položkami menu je 40px */
+  margin: 0; /* Žiadny vonkajší okraj (predvolený margin odstránený) */
+  padding: 0; /* Žiadne vnútorné odsadenie (padding odstránený) */
 }
 
 .site-nav ul li {
-  position: relative; /* kvôli dropdown menu */
+  position: relative; /* Poloha relatívna - kvôli správnemu umiestneniu dropdown menu (bude mať absolútnu pozíciu voči tomuto elementu) */
 }
 
-/* MENU Home,SERVICE...*/
-
 .site-nav ul li a {
-  color: #fff; /* biela farba textu */
-  text-decoration: none; /* bez podčiarknutia */
-  padding: 10px 15px;
-  transition: background-color 0.3s ease; /* plynulá zmena pozadia */
+  color: #fff; /* Farba textu je biela */
+  text-decoration: none; /* Odstráni podčiarknutie textu (štandardné pre odkazy) */
+  padding: 10px 15px; /* Odsadenie textu v odkazoch: hore/dole 10px, vľavo/vpravo 15px */
+  display: block; /* Odkaz zaberie celú šírku svojho rodiča (li), čo zlepší klikateľnosť */
+  transition: background-color 0.3s ease; /* Plynulá animácia zmeny pozadia pri hoveri */
 }
 
 .site-nav ul li a:hover {
-  background-color: rgb(76, 117, 205); /* modré pozadie pri hoveri */
-  border-radius: 5px; /* zaoblenie rohov */
+  background-color: rgb(76, 117, 205); /* Farba pozadia odkazu pri prechode myšou */
 }
 
-/* ==================================================================================================================================== */
-/* ==================================================================================================================================== */
 
-/* =============================  */
-/*        DROPDOWN MENU   - PC 
-/* =============================  */
-
+/* === DROPDOWN MENU === */
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: linear-gradient(
-    135deg,
-    #0077be,
-    #00adef
-  ); /* modrý gradient pozadia */
-  display: none; /* skryté kým nie je otvorené */
-  flex-direction: column; /* vertikálne položky */
-  min-width: 220px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 1000;
+  position: absolute; /* Poloha absolútna voči rodičovskému elementu (li s position: relative) */
+  top: 100%; /* Dropdown menu sa zobrazí priamo pod rodičovskou položkou */
+  left: 0; /* Zarovnáva dropdown menu naľavo pod rodiča */
+  background: linear-gradient(135deg, #0077be, #00adef); /* Modrý gradient ako pozadie dropdown menu */
+  display: none; /* Dropdown je na začiatku skrytý (neviditeľný) */
+  flex-direction: column; /* Položky v menu budú zoradené vertikálne (z hora dole) */
+  min-width: 220px; /* Minimálna šírka dropdown menu bude 220px */
+  border-radius: 8px; /* Zaoblené rohy dropdown menu */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Tieň okolo dropdown menu */
+  opacity: 0; /* Úplne priehľadné (neviditeľné) - na začiatku */
+  visibility: hidden; /* Dropdown je neviditeľný a nezaberá miesto v layout-e */
+  transform: translateY(10px); /* Dropdown menu je mierne posunuté dolu pre efekt */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Plynulý prechod pri zobrazovaní a schovávaní menu */
+  z-index: 999; /* Dropdown menu sa zobrazí nad ostatným obsahom stránky */
 }
 
 .dropdown.open .dropdown-menu {
-  display: flex; /* zobrazí menu */
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0); /* vráti späť do polohy */
+  display: flex; /* Keď má rodičovský element triedu 'open', zobrazí menu ako flexbox */
+  opacity: 1; /* Menu bude plne nepriehľadné (viditeľné) */
+  visibility: visible; /* Menu sa zobrazí (už nie je skryté) */
+  transform: translateY(0); /* Menu sa posunie na svoju pôvodnú pozíciu (bez vertikálneho odsadenia) */
 }
-/* SERVICES & LENSES ARROES DOWN*/
-.arrow {
-  display: inline-block;
-  margin-left: 8px;
-  font-size: 0.8em;
-  color: #ffffff;
-  transition: transform 0.3s ease;
+
+
+.dropdown-menu li {
+  width: 100%; /* Každá položka dropdown menu zaberie celú šírku svojho kontajnera */
 }
 
 .dropdown-menu li a {
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
-  display: block;
+  box-sizing: border-box; /* Do celkovej šírky elementu sa ráta aj padding a border */
+  display: block; /* Odkaz zaberie celú šírku svojho rodiča (li) */
+  width: 100%; /* Odkaz bude na šírku 100% rodiča */
+  padding: 12px 20px; /* Odsadenie textu v odkaze: hore/dole 12px, vľavo/vpravo 20px */
+  color: #fff; /* Farba textu je biela */
 }
 
 .dropdown-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* mierne zosvetlenie pozadia */
+  background-color: rgba(255, 255, 255, 0.1); /* Pri prechode myšou sa pozadie zmení na mierne biely priehľadný odtieň */
 }
+
+
+.arrow {
+  display: inline-block; /* Zobrazí šípku ako inline-block element, takže sa dá nastaviť veľkosť a margin */
+  margin-left: 8px; /* Medzera medzi textom a šípkou vpravo */
+  font-size: 0.8em; /* Veľkosť šípky je o niečo menšia ako bežný text */
+  color: #ffffff; /* Farba šípky je biela */
+  transition: transform 0.3s ease; /* Pridáva animáciu pre prípad, že sa šípka bude otáčať (napr. pri otvorení menu) */
+}
+
 
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
@@ -268,7 +232,7 @@ body {
   align-items: center; /* centrovanie obsahu */
 }
 
-/* Hlavný názov LASER CLEANING */
+/* Hlavný názov LASER CLEANING - PC */
 .hero-title {
   display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
   justify-content: center; /* centrovanie písmen */
@@ -280,11 +244,11 @@ body {
   gap: 0.3em; /* medzera medzi jednotlivými písmenami */
 }
 
-/* Podnadpisy v hero sekcii - hore aj dole */
+/* Podnadpisy v hero sekcii - hore aj dole - PC */
 .hero-subtitle.top,
 .hero-subtitle.bottom {
   font-size: 2vw; /* veľkosť podnadpisu */
-  color: #dd0606; /* červená farba textu */
+  color: #b50101; /* červená farba textu */
   font-weight: bold; /* tučné písmo */
 }
 
@@ -377,7 +341,7 @@ body {
 .hero-title span.active {
   color: rgb(134, 8, 8); /* jasne červené */
   opacity: 1; /* plná viditeľnosť */
-  text-shadow: 0 0 10px red, 0 0 20px rgb(199, 7, 7); /* svetelný efekt */
+  text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
 }
 
 /* ==================================================================================================================================== */
@@ -738,16 +702,15 @@ keď sa posunieš nižšie na stránke.
   width: 40px; /* Šírka gombíka je40 pixelov (taký menší krúžok). */
   height: 40px; /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
   background-color: rgba(
-    40,
-    40,
-    50,
+    32,
+    32,
+    188,
     0.9
   ); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
   border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
   display: flex; /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
   justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
   align-items: center; /* Vycentruje šípku zvislo (hore a dole). */
-  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
   text-decoration: none; /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
   z-index: 999; /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
   opacity: 0; /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
@@ -934,7 +897,7 @@ Tým sa zmení jeho vlastnosti:
   .hero-subtitle.top,
   .hero-subtitle.bottom {
     font-size: 3.5vw; /* veľkosť podnadpisu */
-    color: rgb(134, 13, 13); /* červená farba textu */
+    color: rgb(113, 9, 9); /* červená farba textu */
     font-weight: bold; /* tučné písmo */
   }
 
@@ -960,8 +923,8 @@ Tým sa zmení jeho vlastnosti:
     position: absolute;
     left: 50%;
     bottom: 380px;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 
     display: flex;

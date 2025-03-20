@@ -43,6 +43,7 @@
         <div class="logo-text">
           <span class="ilcs">
             <span class="letter">I</span>
+            <!-- medzera medzi letter ILCS -->
             <span class="letter" style="margin-left: -7px">L</span>
             <span class="letter" style="margin-left: -8px">C</span>
             <span class="letter" style="margin-left: -7px">S</span>
@@ -58,32 +59,21 @@
 
             <!-- Prvá položka menu -->
             <li><a href="#">Home</a></li>
+<!-- SERVICES DROPDOWN -->
+<li class="dropdown"> <!-- ⚠️ ODSTRÁNENÁ trieda 'open' -->
+  <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
+    Services <span class="arrow">▼</span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="laser-rust-removal.html">Laser Rust Removal</a></li>
+    <li><a href="industrial-equipment-cleaning.html">Industrial Equipment Cleaning</a></li>
+    <li><a href="surface-preparation.html">Surface Preparation</a></li>
+    <li><a href="eco-friendly-solutions.html">Eco-Friendly Solutions</a></li>
+  </ul>
+</li>
 
-            <!-- Druhá položka s dropdown menu pre Services -->
-            <li class="dropdown">
-              <a
-                href="#"
-                class="dropdown-toggle"
-                onclick="toggleDropdown(event, this)"
-              >
-                <!-- Kliknutím sa otvorí/zavrie menu -->
-                Services <span class="arrow">▼</span>
-                <!-- Text s ikonou šípky -->
-              </a>
-              <ul class="dropdown-menu">
-                <!-- Skrytý zoznam pod službami -->
-                <li><a href="#">Laser Rust Removal</a></li>
-                <!-- Prvá služba -->
-                <li><a href="#">Industrial Equipment Cleaning</a></li>
-                <!-- Druhá služba -->
-                <li><a href="#">Surface Preparation</a></li>
-                <!-- Tretia služba -->
-                <li><a href="#">Eco-Friendly Solutions</a></li>
-                <!-- Štvrtá služba -->
-              </ul>
-            </li>
 
-            <!-- LENSES položka s dropdown menu pre Lenses -->
+            <!-- LENSES DROPDOWN -->
             <li class="dropdown">
               <a
                 href="#"
@@ -93,16 +83,22 @@
                 Lenses <span class="arrow">▼</span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="#">Protective Lenses</a></li>
-                <li><a href="#">Cutting Lenses</a></li>
-                <li><a href="#">Focusing Lenses</a></li>
-                <li><a href="#">Collimating Lenses</a></li>
-                <li><a href="#">Scanning Lenses</a></li>
+                <li><a href="protective-lenses.html">Protective Lenses</a></li>
+                <li><a href="cutting-lenses.html">Cutting Lenses</a></li>
+                <li><a href="focusing-lenses.html">Focusing Lenses</a></li>
+                <li>
+                  <a href="collimating-lenses.html">Collimating Lenses</a>
+                </li>
+                <li><a href="scanning-lenses.html">Scanning Lenses</a></li>
               </ul>
             </li>
 
             <!-- Odkaz na galériu -->
-            <li><a href="#">Gallery</a></li>
+            <li>
+              <a href="gallery.html" target="_blank" rel="noopener noreferrer"
+                >Gallery</a
+              >
+            </li>
 
             <!-- Odkaz na kontakt -->
             <li><a href="#contact-form">Contact Us</a></li>
@@ -126,11 +122,21 @@
 
         <!-- Hlavný nadpis, každé písmeno má svoj vlastný element kvôli animáciám -->
         <h1 class="hero-title">
-          <span>L</span><span>A</span><span>S</span><span>E</span
-          ><span>R</span> &nbsp;
+          <span>L</span>
+          <span>A</span>
+          <span>S</span>
+          <span>E</span>
+          <span>R</span>
+          &nbsp;
           <!-- Medzera medzi slovami -->
-          <span>C</span><span>L</span><span>E</span><span>A</span><span>N</span
-          ><span>I</span><span>N</span><span>G</span>
+          <span>C</span>
+          <span>L</span>
+          <span>E</span>
+          <span>A</span>
+          <span>N</span>
+          <span>I</span>
+          <span>N</span>
+          <span>G</span>
         </h1>
 
         <!-- Podnadpis dole -->
