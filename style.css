@@ -111,6 +111,7 @@ body {
   padding-left: 40px; /* Odsadenie vnútri kontajnera zľava o 40px */
   padding-right: 40px; /* Odsadenie vnútri kontajnera sprava o 40px */
   width: 100%; /* Kontajner sa natiahne na celú šírku */
+  
 }
 
 /* === NAVIGÁCIA === */
@@ -120,10 +121,12 @@ body {
   gap: 40px; /* Medzera medzi jednotlivými položkami menu je 40px */
   margin: 0; /* Žiadny vonkajší okraj (predvolený margin odstránený) */
   padding: 0; /* Žiadne vnútorné odsadenie (padding odstránený) */
+  
 }
 
 .site-nav ul li {
   position: relative; /* Poloha relatívna - kvôli správnemu umiestneniu dropdown menu (bude mať absolútnu pozíciu voči tomuto elementu) */
+  
 }
 
 .site-nav ul li a {
@@ -132,10 +135,12 @@ body {
   padding: 10px 15px; /* Odsadenie textu v odkazoch: hore/dole 10px, vľavo/vpravo 15px */
   display: block; /* Odkaz zaberie celú šírku svojho rodiča (li), čo zlepší klikateľnosť */
   transition: background-color 0.3s ease; /* Plynulá animácia zmeny pozadia pri hoveri */
+  border-radius: 24px; /*zaoblene pred hover effect malo by byt to iste ako a:hover radius */
 }
 
 .site-nav ul li a:hover {
   background-color: rgb(76, 117, 205); /* Farba pozadia odkazu pri prechode myšou */
+  border-radius: 24px;
 }
 
 
@@ -424,7 +429,7 @@ body {
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-10px); /* Šípka sa posunie nahor o 10px */
+    transform: translateY(-8px); /* Šípka sa posunie nahor o 10px */
   }
   60% {
     transform: translateY(
