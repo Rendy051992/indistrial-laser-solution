@@ -146,6 +146,7 @@ body {
 
 /* === DROPDOWN MENU === */
 .dropdown-menu {
+  
   position: absolute; /* Poloha absolútna voči rodičovskému elementu (li s position: relative) */
   top: 100%; /* Dropdown menu sa zobrazí priamo pod rodičovskou položkou */
   left: 0; /* Zarovnáva dropdown menu naľavo pod rodiča */
@@ -359,7 +360,7 @@ body {
 .scroll-down-arrow {
   position: absolute;
   left: 50%;
-  bottom: 250px;
+  bottom: -90px;
   transform: translateX(-50%);
   width: 60px;
   height: 60px;
@@ -774,7 +775,6 @@ Tým sa zmení jeho vlastnosti:
   /* ====================================== */
 
   /* ==================================================================================================================================== */
-  /* ==================================================================================================================================== */
 
   /* ================================== */
   /* ŠTÝL PRE NAVIGAČNÉ MENU - MOBIL   */
@@ -925,9 +925,9 @@ Tým sa zmení jeho vlastnosti:
   /* SCROLL DOWN ARROW - MOBILE */
   /* ====================================== */
   .scroll-down-arrow {
-    position: absolute;
+    position: flex;
     left: 50%;
-    bottom: 380px;
+    bottom: -80px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -1107,7 +1107,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ================================================= */
-  /* === IKONY V LEGENDE (.legend-icon) - MOBILE === */
+  /* === IKONY V LEGENDE (.legend-icon) - LANDSCAPE === */
   /* ================================================ */
   .legend-icon {
     display: inline-flex; /* aby bol symbol centrovaný */
@@ -1126,7 +1126,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ============================= */
-  /* === LEGENDA POD TABUĽKOU - MOBILE === */
+  /* === LEGENDA POD TABUĽKOU - LANDSCAPE === */
   /* ============================= */
   .legend {
     margin-top: 30px;
@@ -1144,7 +1144,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ============================================ */
-  /* CONTACT US - MOBILE */
+  /* CONTACT US - LANDSCAPE */
   /* ============================================ */
 
   .contact-form-section {
@@ -1154,7 +1154,7 @@ Tým sa zmení jeho vlastnosti:
     text-align: center; /* vycentrovaný text */
 
     /* ============================= */
-    /* BACK TO TOP BUTTON - MOBILE           */
+    /* BACK TO TOP BUTTON - LANDSCAPE           */
     /* ============================= */
 
     /* 
@@ -1225,4 +1225,355 @@ Tým sa zmení jeho vlastnosti:
       visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
     }
   }
+}
+
+  /* =========================================================================================================================================== */
+ /* =========================================================================================================================================== */
+ /* =========================================================================================================================================== */
+ /* =========================================================================================================================================== */
+ /* =========================================================================================================================================== */
+
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  /* tvoje štýly */
+
+
+
+  /* ================================== */
+  /* ŠTÝL PRE NAVIGAČNÉ MENU - LANDSCAPE   */
+  /* =================================== */
+
+  /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU - MOBIL */
+
+  .site-nav ul {
+    display: none; /* Na začiatku je menu skryté */
+    flex-direction: column; /* Položky budú zoradené vertikálne */
+    background-color: #b10707; /* Pozadie menu - tmavočervená farba */
+    width: 100%; /* Menu zaberie celú šírku rodiča */
+    text-align: center; /* Text v položkách menu bude na stred */
+  }
+
+  /* Ak je pridaná trieda 'active' na #nav-menu, zobrazí sa zoznam menu */
+
+  #nav-menu.active ul {
+    display: flex; /* Zobrazí menu a aktivuje flex layout */
+  }
+
+  /* Štýl pre hamburger ikonu (ikonka na otvorenie menu) - MOBIL */
+  .hamburger {
+    display: block; /* Zobrazí hamburger ako blokový prvok */
+    position: absolute; /* Umiestnenie vzhľadom k rodiču s position: relative */
+    right: 20px; /* Vzdialenosť od pravého okraja */
+    top: 25px; /* Vzdialenosť od vrchného okraja */
+    font-size: 24px; /* Veľkosť ikony hamburger menu */
+    cursor: pointer; /* Zmení kurzor na ruku, keď prejdeš myšou */
+  }
+
+  /* ====================================== */
+  /* LOGO ILCS Ltd - LANDSCAPE */
+  /* ====================================== */
+  .logo-text {
+    padding: 8px 6px;
+    margin-left: -43px;
+  }
+
+  /* ====================================== */
+  /* ILCS - LANDSCAPE */
+  /* ====================================== */
+  .ilcs {
+    font-family: "Insaniburger", sans-serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 2px;
+    letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
+  }
+
+  /* ====================================== */
+  /* LTD -  LANDSCAPE */
+  /* ====================================== */
+
+  .ltd {
+    font-size: 10px;
+  }
+
+  /* ====================================== */
+  /* HEADER - LANDSCAPE */
+  /* ====================================== */
+
+  .site-nav {
+    display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
+  }
+
+  /* Štýly pre zobrazenie menu po kliknutí na hamburger - MOBIL */
+
+  #nav-menu.active {
+    /* Používam ID, lebo to máš v HTML */
+    display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
+    flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
+    position: absolute; /* Umiestnenie cez ostatný obsah */
+    top: 100%; /* Umiestnenie pod hlavičku (ak je hlavička 100%) */
+    left: 0;
+    width: 100%; /* Rozšírenie na celú šírku obrazovky */
+    background-color: #fff; /* Pozadie menu */
+  }
+
+  /* ====================================== */
+  /* HEADER BLUE - LANDSCAPE */
+  /* ====================================== */
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: auto;
+  }
+  
+ .site-nav ul {
+    gap: 10px;            /* menší medzera medzi položkami */
+  }
+
+  .site-nav li {
+    margin: 0;            /* odstráni nadbytočný margin */
+  }
+
+  /* Položky menu (text) */
+  .site-nav a {
+    font-size: 16px;      /* zmenši veľkosť písma */
+    padding: 8px 12px;    /* menší padding */
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    max-height: 200px;    /* aby sa dalo scrollovať, ak je veľa položiek */
+    overflow-y: auto;
+  }
+
+  /* Celé navigačné menu */
+  #nav-menu {
+    max-height: 90vh;    /* menu nebude väčšie ako 90% výšky obrazovky */
+    overflow-y: auto;    /* pridá scroll ak treba */
+  }
+
+  /* Aby hamburger menu bolo nižšie ak treba */
+  .hamburger {
+    top: 10px;
+  }
+
+ /*HERO SWCTION - LANDSCAPE */
+
+
+  .hero {
+    background: linear-gradient(to bottom, #050f55, #030f31, #214399);
+    position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
+    height: 500px; /* výška sekcie, môžeš zmeniť podľa potreby */
+    display: flex; /* použijeme flexbox na centrovanie obsahu */
+    justify-content: center; /* horizontálne vycentrovanie obsahu */
+    align-items: center; /* vertikálne vycentrovanie obsahu */
+    overflow: hidden; /* skryje všetko, čo presahuje sekciu */
+  }
+  
+  /* Plátno pre animáciu lasera */
+  #laserCanvas {
+    position: absolute; /* umiestni plátno nad celú sekciu hero */
+    top: 0;
+    left: 0;
+    width: 100%; /* natiahne na celú šírku */
+    height: 100%; /* natiahne na celú výšku */
+    pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
+    z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
+  }
+  
+  /* Obsah v hero sekcii (názvy, titulky) */
+  .hero-content {
+    position: absolute; /* presné pozicionovanie v strede sekcie */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centrovanie na stred */
+    text-align: center; /* zarovnanie textov na stred */
+    z-index: 10; /* vyššia vrstva, aby bol text nad animáciou */
+    display: flex; /* použijeme flexbox */
+    flex-direction: column; /* usporiadanie obsahu zhora nadol */
+    align-items: center; /* centrovanie obsahu */
+  }
+  
+  /* Hlavný názov LASER CLEANING - PC */
+  .hero-title {
+    display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
+    justify-content: center; /* centrovanie písmen */
+    align-items: center; /* vertikálne centrovanie */
+    position: relative; /* umožňuje pozicionovanie detí voči tomuto elementu */
+    font-size: 5vw; /* veľkosť textu závisí od šírky okna */
+    letter-spacing: 0.5rem; /* medzera medzi písmenami */
+    margin: 20px 0; /* okraje nad a pod nadpisom */
+    gap: 0.3em; /* medzera medzi jednotlivými písmenami */
+  }
+  
+  /* Podnadpisy v hero sekcii - hore aj dole - PC */
+  .hero-subtitle.top,
+  .hero-subtitle.bottom {
+    font-size: 2vw; /* veľkosť podnadpisu */
+    color: #b50101; /* červená farba textu */
+    font-weight: bold; /* tučné písmo */
+  }
+  
+  /* ==================================================================================================================================== */
+  /* ==================================================================================================================================== */
+  
+  /* =================================== */
+  /* CANVAS PRE ANIMACIU LASERA - PC     */
+  /* =================================== */
+  
+  #laserCanvas {
+    position: absolute; /* umiestni plátno nad celú sekciu hero */
+    top: 0;
+    left: 0;
+    width: 100%; /* natiahne na celú šírku */
+    height: 100%; /* natiahne na celú výšku */
+    pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
+    z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
+  }
+  
+  /* ============================= */
+  /* ---- LASER POINT ----  - PC   */
+  /* ============================= */
+  
+  /* Malá bodka simulujúca laserový bod */
+  .laser-point {
+    position: absolute; /* presná pozícia podľa JS */
+    width: 10px; /* veľkosť bodky */
+    height: 10px;
+    background-color: orange; /* oranžová bodka */
+    border-radius: 50%; /* kruhový tvar */
+    box-shadow: 0 0 15px red; /* efekt žiarenia */
+    z-index: 3; /* nad väčšinou elementov */
+    pointer-events: none; /* neinteraktívny */
+  }
+  
+  /* ============================= */
+  /* ---- ISKRY (SPARKS) ---- - PC  
+  /* ============================= */
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1; /* plne viditeľná iskra na začiatku */
+      transform: scale(1); /* pôvodná veľkosť */
+    }
+    to {
+      opacity: 0; /* zmizne */
+      transform: scale(0.5); /* zmenší sa */
+    }
+  }
+  .spark {
+    position: absolute; /* presná pozícia, určuje JS */
+    width: 3px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
+    height: 3px;
+    background-color: rgb(231, 150, 51); /* oranžová farba iskry */
+    border-radius: 50%; /* kruhový tvar */
+    z-index: 9; /* pod laserovým bodom */
+    pointer-events: none; /* neklikateľná, neinteraktívna */
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* svetelný efekt okolo iskry */
+    animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
+  }
+  
+  /* ============================= */
+  /* ---- LASER DOT ---- - PC 
+  /* ============================= */
+  
+  .laser-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 10px red, 0 0 20px red;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* ====================================== */
+  /*  LETTERS-LASER CLEANING ANIMATION - PC */
+  /* ===================================== */
+  
+  /* LETTERS PRED CISTENIM LETTERS  - PC */
+  .hero-title span {
+    color: rgb(129, 1, 1); /* tmavočervené písmená pred vypálením */
+    opacity: 0.6; /* znížená priehľadnosť */
+    transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
+  }
+  
+  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - PC */
+  .hero-title span.active {
+    color: rgb(134, 8, 8); /* jasne červené */
+    opacity: 1; /* plná viditeľnosť */
+    text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
+  }
+  
+
+
+
+
+  
+  /* ====================================== */
+  /* SCROLL DOWN ARROW - LANDSCAPE */
+  /* ====================================== */
+
+.scroll-down-arrow {
+  position: flex;
+  left: 50%;
+  bottom: -80px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
+
+  text-decoration: none;
+  color: transparent;
+  font-size: 0;
+
+  outline: none; /* voliteľné, ale pomáha */
+  border: none; /* voliteľné, ale pomáha */
+
+  z-index: 10;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ====================================== */
+/* SCROLL DOWN ARROW HOVER - LANDSCAPE */
+/* ====================================== */
+
+.scroll-down-arrow:hover .arrow-icon {
+  animation: bounce 1s infinite;
+  transform: scale(1.1); /* Zväčší šípku o 10% */
+  stroke: transparent;
+  filter: none;
+  background-color: transparent; /* HELPED REMOVE SQUARE*/
+  box-shadow: transparent;
+}
+
+/* Zrušíme bounce efekt pri hoveri MOBILE */
+
+.scroll-down-arrow:hover .arrow-icon {
+  animation: none; /* žiadna animácia */
+  transform: none; /* žiadne posúvanie */
+  stroke: #fff; /* farba šípky */
+  filter: none; /* žiadny tieň */
+}
+
+/* Ak by sa trieda .clicked pridala, zrušíme efekt */
+.scroll-down-arrow.clicked {
+  animation: none;
+}
+
+/* Zrušenie pseudo-elementov pre prípad, že by tam niečo bolo */
+.scroll-down-arrow::before,
+.scroll-down-arrow::after {
+  content: none !important;
+  display: none !important;
+}
 }

@@ -116,29 +116,25 @@ function toggleDropdown(event, element) {
 
 // Táto funkcia sa spustí vždy, keď používateľ scrolluje (posúva stránku).
 window.addEventListener("scroll", () => {
-  // Nájdeme hlavičku stránky, aby sme ju vedeli upraviť pri scrollovaní.
   const header = document.querySelector(".site-header");
-
-  // Nájdeme navigačné menu (hlavné menu).
   const navMenu = document.getElementById("nav-menu");
 
-  // Ak používateľ scrollol o viac ako 50 pixelov smerom dole...
   if (window.scrollY > 50) {
-    // ... pridáme triedu 'scrolled' → väčšinou sa zmení pozadie, pridá tieň atď.
     header.classList.add("scrolled");
   } else {
-    // ... ak sme zase hore → odstránime triedu 'scrolled'.
     header.classList.remove("scrolled");
   }
 
-  // Každým scrollom zatvoríme mobilné menu (odstránime triedu 'active').
-  navMenu.classList.remove("active");
+  // ZATVÁRANIE MENU IBA NA PC
+  if (window.innerWidth > 768) {
+    navMenu.classList.remove("active");
 
-  // Zatvoríme tiež všetky otvorené dropdown menu.
-  document.querySelectorAll(".dropdown").forEach((drop) => {
-    drop.classList.remove("open");
-  });
+    document.querySelectorAll(".dropdown").forEach((drop) => {
+      drop.classList.remove("open");
+    });
+  }
 });
+
 
 // =========================================
 // === HERO TITLE LASER & SPARKS ANIMATION
@@ -353,3 +349,4 @@ backToTopBtn.addEventListener("click", (e) => {
     behavior: "smooth",
   });
 });
+
