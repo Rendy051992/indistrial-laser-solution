@@ -59,19 +59,35 @@
 
             <!-- Prvá položka menu -->
             <li><a href="#">Home</a></li>
-<!-- SERVICES DROPDOWN -->
-<li class="dropdown"> <!-- ⚠️ ODSTRÁNENÁ trieda 'open' -->
-  <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event, this)">
-    Services <span class="arrow">▼</span>
-  </a>
-  <ul class="dropdown-menu">
-    <li><a href="laser-rust-removal.html">Laser Rust Removal</a></li>
-    <li><a href="industrial-equipment-cleaning.html">Industrial Equipment Cleaning</a></li>
-    <li><a href="surface-preparation.html">Surface Preparation</a></li>
-    <li><a href="eco-friendly-solutions.html">Eco-Friendly Solutions</a></li>
-  </ul>
-</li>
-
+            <!-- SERVICES DROPDOWN -->
+            <li class="dropdown">
+              <!-- ⚠️ ODSTRÁNENÁ trieda 'open' -->
+              <a
+                href="#"
+                class="dropdown-toggle"
+                onclick="toggleDropdown(event, this)"
+              >
+                Services <span class="arrow">▼</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="laser-rust-removal.html">Laser Rust Removal</a>
+                </li>
+                <li>
+                  <a href="industrial-equipment-cleaning.html"
+                    >Industrial Equipment Cleaning</a
+                  >
+                </li>
+                <li>
+                  <a href="surface-preparation.html">Surface Preparation</a>
+                </li>
+                <li>
+                  <a href="eco-friendly-solutions.html"
+                    >Eco-Friendly Solutions</a
+                  >
+                </li>
+              </ul>
+            </li>
 
             <!-- LENSES DROPDOWN -->
             <li class="dropdown">
@@ -113,24 +129,32 @@
 
     <!-- HERO sekcia - hlavný nadpis s animáciou -->
     <section class="hero">
+      <!-- Canvas patrí sem, mimo hero-content -->
+      <canvas id="laserCanvas"></canvas>
+    
       <div class="hero-content">
-    
-        <canvas id="laserCanvas"></canvas>
-    
-        <!-- Podnadpis hore -->
+        <!-- Ostatný obsah -->
         <h3 class="hero-subtitle top">INDUSTRIAL</h3>
     
-        <!-- Hlavný nadpis -->
         <h1 class="hero-title">
-          <span>L</span><span>A</span><span>S</span><span>E</span><span>R</span>
+          <span>L</span>
+          <span>A</span>
+          <span>S</span>
+          <span>E</span>
+          <span>R</span>
           &nbsp;
-          <span>C</span><span>L</span><span>E</span><span>A</span><span>N</span><span>I</span><span>N</span><span>G</span>
+          <span>C</span>
+          <span>L</span>
+          <span>E</span>
+          <span>A</span>
+          <span>N</span>
+          <span>I</span>
+          <span>N</span>
+          <span>G</span>
         </h1>
     
-        <!-- Podnadpis dole -->
         <h3 class="hero-subtitle bottom">SOLUTIONS</h3>
     
-        <!-- Šípka priamo pod podnadpisom SOLUTIONS -->
         <a href="#info" class="scroll-down-arrow" aria-label="Scroll down">
           <svg
             class="arrow-icon"
@@ -148,11 +172,8 @@
             <polyline points="19 12 12 19 5 12"></polyline>
           </svg>
         </a>
-    
-      </div> <!-- Koniec hero-content -->
+      </div>
     </section>
-    
-
     
 
     <!-- INFO SECTION - ABOUT -->

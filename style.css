@@ -205,49 +205,51 @@ body {
 /* ===================================== */
 
 .hero {
-  background: linear-gradient(to bottom, #050f55, #030f31, #214399);
-  position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
-  height: 500px; /* výška sekcie, môžeš zmeniť podľa potreby */
-  display: flex; /* použijeme flexbox na centrovanie obsahu */
-  justify-content: center; /* horizontálne vycentrovanie obsahu */
-  align-items: center; /* vertikálne vycentrovanie obsahu */
-  overflow: hidden; /* skryje všetko, čo presahuje sekciu */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* alebo si daj fixnú výšku ak chceš */
+  background: linear-gradient(to bottom, #000c4d, #002147); /* tmavý gradient ako predtým */
+  overflow: hidden;
 }
 
-/* Plátno pre animáciu lasera */
 #laserCanvas {
-  position: absolute; /* umiestni plátno nad celú sekciu hero */
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* natiahne na celú šírku */
-  height: 100%; /* natiahne na celú výšku */
-  pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
-  z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
 }
 
-/* Obsah v hero sekcii (názvy, titulky) */
 .hero-content {
-  position: absolute; /* presné pozicionovanie v strede sekcie */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* centrovanie na stred */
-  text-align: center; /* zarovnanie textov na stred */
-  z-index: 10; /* vyššia vrstva, aby bol text nad animáciou */
-  display: flex; /* použijeme flexbox */
-  flex-direction: column; /* usporiadanie obsahu zhora nadol */
-  align-items: center; /* centrovanie obsahu */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
 }
+
+
+
 
 /* Hlavný názov LASER CLEANING - PC */
 .hero-title {
-  display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
-  justify-content: center; /* centrovanie písmen */
-  align-items: center; /* vertikálne centrovanie */
-  position: relative; /* umožňuje pozicionovanie detí voči tomuto elementu */
-  font-size: 5vw; /* veľkosť textu závisí od šírky okna */
-  letter-spacing: 0.5rem; /* medzera medzi písmenami */
-  margin: 20px 0; /* okraje nad a pod nadpisom */
-  gap: 0.3em; /* medzera medzi jednotlivými písmenami */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  gap: 0.3em;
+  letter-spacing: 0.5rem;
+  margin: 20px 0;
+}
+
+
+.hero-subtitle {
+  font-size: 2vw;
+  color: red;
+  font-weight: bold;
 }
 
 /* Podnadpisy v hero sekcii - hore aj dole - PC */
@@ -261,19 +263,8 @@ body {
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-/* =================================== */
-/* CANVAS PRE ANIMACIU LASERA - PC     */
-/* =================================== */
 
-#laserCanvas {
-  position: absolute; /* umiestni plátno nad celú sekciu hero */
-  top: 0;
-  left: 0;
-  width: 100%; /* natiahne na celú šírku */
-  height: 100%; /* natiahne na celú výšku */
-  pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
-  z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
-}
+
 
 /* ============================= */
 /* ---- LASER POINT ----  - PC   */
@@ -338,16 +329,16 @@ body {
 
 /* LETTERS PRED CISTENIM LETTERS  - PC */
 .hero-title span {
-  color: rgb(129, 1, 1); /* tmavočervené písmená pred vypálením */
-  opacity: 0.6; /* znížená priehľadnosť */
-  transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
+  opacity: 0.6;
+  color: darkred;
+  transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease;
 }
 
 /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - PC */
 .hero-title span.active {
-  color: rgb(134, 8, 8); /* jasne červené */
-  opacity: 1; /* plná viditeľnosť */
-  text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
+  opacity: 1;
+  color: #ff0000;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
 /* ==================================================================================================================================== */
@@ -1397,7 +1388,7 @@ Tým sa zmení jeho vlastnosti:
     align-items: center; /* centrovanie obsahu */
   }
   
-  /* Hlavný názov LASER CLEANING - PC */
+  /* Hlavný názov LASER CLEANING - LANDSCAPE */
   .hero-title {
     display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
     justify-content: center; /* centrovanie písmen */
@@ -1421,7 +1412,7 @@ Tým sa zmení jeho vlastnosti:
   /* ==================================================================================================================================== */
   
   /* =================================== */
-  /* CANVAS PRE ANIMACIU LASERA - PC     */
+  /* CANVAS PRE ANIMACIU LASERA - LANDSCAPE     */
   /* =================================== */
   
   #laserCanvas {
@@ -1435,14 +1426,14 @@ Tým sa zmení jeho vlastnosti:
   }
   
   /* ============================= */
-  /* ---- LASER POINT ----  - PC   */
+  /* ---- LASER POINT ----  - LANDSCAPE   */
   /* ============================= */
   
   /* Malá bodka simulujúca laserový bod */
   .laser-point {
     position: absolute; /* presná pozícia podľa JS */
-    width: 10px; /* veľkosť bodky */
-    height: 10px;
+    width: 2px; /* veľkosť bodky */
+    height: px;
     background-color: orange; /* oranžová bodka */
     border-radius: 50%; /* kruhový tvar */
     box-shadow: 0 0 15px red; /* efekt žiarenia */
@@ -1451,7 +1442,7 @@ Tým sa zmení jeho vlastnosti:
   }
   
   /* ============================= */
-  /* ---- ISKRY (SPARKS) ---- - PC  
+  /* ---- ISKRY (SPARKS) ---- - LANDSCAPE  
   /* ============================= */
   
   @keyframes fadeOut {
@@ -1466,8 +1457,8 @@ Tým sa zmení jeho vlastnosti:
   }
   .spark {
     position: absolute; /* presná pozícia, určuje JS */
-    width: 3px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
-    height: 3px;
+    width: 1px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
+    height: 1px;
     background-color: rgb(231, 150, 51); /* oranžová farba iskry */
     border-radius: 50%; /* kruhový tvar */
     z-index: 9; /* pod laserovým bodom */
@@ -1477,13 +1468,13 @@ Tým sa zmení jeho vlastnosti:
   }
   
   /* ============================= */
-  /* ---- LASER DOT ---- - PC 
+  /* ---- LASER DOT ---- - LANDSCAPE 
   /* ============================= */
   
   .laser-dot {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 2px;
+    height: 2px;
     background-color: red;
     border-radius: 50%;
     box-shadow: 0 0 10px red, 0 0 20px red;
