@@ -17,5 +17,10 @@
     "url": "https://github.com/Rendy051992/indistrial-laser-solution/issues"
   },
   "homepage": "https://github.com/Rendy051992/indistrial-laser-solution#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0"
+  }
 }

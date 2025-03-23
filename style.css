@@ -36,7 +36,6 @@ body {
   background: white;
   color: #fff; /* biela farba textu */
 }
-
 .hamburger {
   display: none; /* skryté na PC */
 }
@@ -44,17 +43,19 @@ body {
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-/* ============================= */
-/* BLUE HEADER -  HLAVIČKA - PC */
-/* ============================= */
-
-/* ==================================================================================================================================== */
-/* ==================================================================================================================================== */
+/* ============================== */
+/* 💻 Notebooky (bežné displeje) */
+/* MacBook Air, Dell XPS, Surface Laptop */
+/* ============================== */
 
 /* ============================= */
-/* LOGO - ILCS Ltd - PC  */
+/* LOGO - ILCS Ltd -  💻 Notebooky (bežné displeje) */
 /* ============================= */
+.hamburger {
+  display: none; /* skryté na - 💻 Notebooky (bežné displeje) */
+}
 
+/* LOGO  - 💻 Notebooky (bežné displeje) */
 .logo-text {
   display: flex; /* Položky vedľa seba */
   align-items: center; /* Vertikálne v strede */
@@ -65,7 +66,7 @@ body {
   background-color: #b10707;
   margin-left: -65px;
 }
-
+/* ILCS 💻 Notebooky (bežné displeje) */
 .ilcs {
   font-family: "Insaniburger", sans-serif;
   font-size: 26px;
@@ -73,7 +74,7 @@ body {
   font-weight: bold;
   letter-spacing: 2px; /* pridať medzery medzi písmenami */
 }
-
+/* LRD - 💻 Notebooky (bežné displeje)*/
 .ltd {
   font-family: "Quicksand", sans-serif; /* Použijeme Google font Quicksand */
   font-weight: 700; /* Hrúbka, ktorú si zvolil z Google Fonts */
@@ -83,8 +84,7 @@ body {
   margin-top: 7px;
 }
 
-/* === HLAVIČKA === */
-/* === HLAVIČKA === */
+/* HEADER - 💻 Notebooky (bežné displeje) */
 .site-header {
   position: fixed; /* Hlavička zostane hore na obrazovke aj pri scrollovaní */
   top: 0; /* Umiestnenie hore na stránke */
@@ -98,12 +98,12 @@ body {
   transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Plynulá animácia zmeny pozadia a tieňa pri skrolovaní */
   z-index: 1000; /* Hlavička bude na vrchnej vrstve, nad ostatnými elementami */
 }
-
+/* SITE HEADER 💻 Notebooky (bežné displeje)*/
 .site-header.scrolled {
   background-color: #b10707; /* Farba pozadia hlavičky, keď stránka scrolluje (pridá sa class scrolled) */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Tieň pod hlavičkou: posun 4px dole, rozmazanie 10px, tmavosť 30% */
 }
-
+/* HEADER CONTAINER 💻 Notebooky (bežné displeje)*/
 .header-container {
   display: flex; /* Flexbox usporiadanie obsahu vo vnútri kontajnera */
   justify-content: space-between; /* Obsah sa zarovná na dve strany (logo vľavo, menu vpravo) */
@@ -111,24 +111,21 @@ body {
   padding-left: 40px; /* Odsadenie vnútri kontajnera zľava o 40px */
   padding-right: 40px; /* Odsadenie vnútri kontajnera sprava o 40px */
   width: 100%; /* Kontajner sa natiahne na celú šírku */
-  
 }
 
-/* === NAVIGÁCIA === */
+/* NAVIGÁCIA 💻 Notebooky (bežné displeje)  */
 .site-nav ul {
   display: flex; /* Položky zoznamu sa zobrazia vedľa seba (horizontálne) */
   list-style: none; /* Odstráni predvolené odrážky zoznamu (body pred textom) */
   gap: 40px; /* Medzera medzi jednotlivými položkami menu je 40px */
   margin: 0; /* Žiadny vonkajší okraj (predvolený margin odstránený) */
   padding: 0; /* Žiadne vnútorné odsadenie (padding odstránený) */
-  
 }
-
+/* POLOZKY V MENU 💻 Notebooky (bežné displeje) */
 .site-nav ul li {
   position: relative; /* Poloha relatívna - kvôli správnemu umiestneniu dropdown menu (bude mať absolútnu pozíciu voči tomuto elementu) */
-  
 }
-
+/* NAVIGACIA LINKS (HOME,GALLERY..) 💻 Notebooky (bežné displeje)*/
 .site-nav ul li a {
   color: #fff; /* Farba textu je biela */
   text-decoration: none; /* Odstráni podčiarknutie textu (štandardné pre odkazy) */
@@ -137,20 +134,26 @@ body {
   transition: background-color 0.3s ease; /* Plynulá animácia zmeny pozadia pri hoveri */
   border-radius: 24px; /*zaoblene pred hover effect malo by byt to iste ako a:hover radius */
 }
-
+/* MENU HOVER 💻 Notebooky (bežné displeje) */
 .site-nav ul li a:hover {
-  background-color: rgb(76, 117, 205); /* Farba pozadia odkazu pri prechode myšou */
+  background-color: rgb(
+    76,
+    117,
+    205
+  ); /* Farba pozadia odkazu pri prechode myšou */
   border-radius: 24px;
 }
 
-
-/* === DROPDOWN MENU === */
+/*  DROPDOWN MENU 💻 Notebooky (bežné displeje)  */
 .dropdown-menu {
-  
   position: absolute; /* Poloha absolútna voči rodičovskému elementu (li s position: relative) */
   top: 100%; /* Dropdown menu sa zobrazí priamo pod rodičovskou položkou */
   left: 0; /* Zarovnáva dropdown menu naľavo pod rodiča */
-  background: linear-gradient(135deg, #0077be, #00adef); /* Modrý gradient ako pozadie dropdown menu */
+  background: linear-gradient(
+    135deg,
+    #0077be,
+    #00adef
+  ); /* Modrý gradient ako pozadie dropdown menu */
   display: none; /* Dropdown je na začiatku skrytý (neviditeľný) */
   flex-direction: column; /* Položky v menu budú zoradené vertikálne (z hora dole) */
   min-width: 220px; /* Minimálna šírka dropdown menu bude 220px */
@@ -158,23 +161,26 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Tieň okolo dropdown menu */
   opacity: 0; /* Úplne priehľadné (neviditeľné) - na začiatku */
   visibility: hidden; /* Dropdown je neviditeľný a nezaberá miesto v layout-e */
-  transform: translateY(10px); /* Dropdown menu je mierne posunuté dolu pre efekt */
+  transform: translateY(
+    10px
+  ); /* Dropdown menu je mierne posunuté dolu pre efekt */
   transition: opacity 0.4s ease, transform 0.4s ease; /* Plynulý prechod pri zobrazovaní a schovávaní menu */
   z-index: 999; /* Dropdown menu sa zobrazí nad ostatným obsahom stránky */
 }
-
+/* DROPDOWN MENU OPEN 💻 Notebooky (bežné displeje) */
 .dropdown.open .dropdown-menu {
   display: flex; /* Keď má rodičovský element triedu 'open', zobrazí menu ako flexbox */
   opacity: 1; /* Menu bude plne nepriehľadné (viditeľné) */
   visibility: visible; /* Menu sa zobrazí (už nie je skryté) */
-  transform: translateY(0); /* Menu sa posunie na svoju pôvodnú pozíciu (bez vertikálneho odsadenia) */
+  transform: translateY(
+    0
+  ); /* Menu sa posunie na svoju pôvodnú pozíciu (bez vertikálneho odsadenia) */
 }
-
-
+/* DROPDOWN MENU OPEN 💻 Notebooky (bežné displeje) */
 .dropdown-menu li {
   width: 100%; /* Každá položka dropdown menu zaberie celú šírku svojho kontajnera */
 }
-
+/* DROPDOWN MENU LINKS 💻 Notebooky (bežné displeje) */
 .dropdown-menu li a {
   box-sizing: border-box; /* Do celkovej šírky elementu sa ráta aj padding a border */
   display: block; /* Odkaz zaberie celú šírku svojho rodiča (li) */
@@ -182,12 +188,16 @@ body {
   padding: 12px 20px; /* Odsadenie textu v odkaze: hore/dole 12px, vľavo/vpravo 20px */
   color: #fff; /* Farba textu je biela */
 }
-
+/* DROPDOWN MENU HOVER 💻 Notebooky (bežné displeje) */
 .dropdown-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Pri prechode myšou sa pozadie zmení na mierne biely priehľadný odtieň */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Pri prechode myšou sa pozadie zmení na mierne biely priehľadný odtieň */
 }
-
-
+/* MENU ARROWS 💻 Notebooky (bežné displeje) */
 .arrow {
   display: inline-block; /* Zobrazí šípku ako inline-block element, takže sa dá nastaviť veľkosť a margin */
   margin-left: 8px; /* Medzera medzi textom a šípkou vpravo */
@@ -196,13 +206,12 @@ body {
   transition: transform 0.3s ease; /* Pridáva animáciu pre prípad, že sa šípka bude otáčať (napr. pri otvorení menu) */
 }
 
+/* ========================================================================================================================================================== */
+/* ========================================================================================================================================================== */
 
-/* ==================================================================================================================================== */
-/* ==================================================================================================================================== */
-
-/* ===================================== */
-/* HERO SEKCIA HLAVNA CAST STRANKY  - PC */
-/* ===================================== */
+/* ================================================================== */
+/* HERO SEKCIA HLAVNA CAST STRANKY  - 💻 Notebooky (bežné displeje)  */
+/* ================================================================== */
 
 .hero {
   position: relative;
@@ -210,10 +219,51 @@ body {
   justify-content: center;
   align-items: center;
   height: 500px; /* alebo si daj fixnú výšku ak chceš */
-  background: linear-gradient(to bottom, #000c4d, #002147); /* tmavý gradient ako predtým */
+  background: linear-gradient(
+    to bottom,
+    #000c4d,
+    #002147
+  ); /* tmavý gradient ako predtým */
   overflow: hidden;
 }
 
+/* HERO CONTENT 💻 Notebooky (bežné displeje)*/
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+/* TITLE LASER CLEANING - 💻 Notebooky (bežné displeje) */
+.hero-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  gap: 0.3em;
+  letter-spacing: 0.5rem;
+  margin: 20px 0;
+}
+/* HERO SUBTITLE ZAKLAD 💻 Notebooky (bežné displeje) */
+.hero-subtitle {
+  font-size: 2vw;
+  color: red;
+  font-weight: bold;
+}
+/* HERO SUBTITLE 💻 Notebooky (bežné displeje) */
+
+/* Podnadpisy v hero sekcii - hore aj dole - PC */
+.hero-subtitle.top,
+.hero-subtitle.bottom {
+  font-size: 2vw; /* veľkosť podnadpisu */
+  color: #b50101; /* červená farba textu */
+  font-weight: bold; /* tučné písmo */
+}
+
+/* CELY LASER CANVAS ANIMACIE  💻 Notebooky (bežné displeje) */
+/* ===============================================================*/
 #laserCanvas {
   position: absolute;
   top: 0;
@@ -224,54 +274,11 @@ body {
   z-index: 3;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-}
+/*LASER POINT 💻 Notebooky (bežné displeje) */
+/* ======================================== */
 
-
-
-
-/* Hlavný názov LASER CLEANING - PC */
-.hero-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5vw;
-  gap: 0.3em;
-  letter-spacing: 0.5rem;
-  margin: 20px 0;
-}
-
-
-.hero-subtitle {
-  font-size: 2vw;
-  color: red;
-  font-weight: bold;
-}
-
-/* Podnadpisy v hero sekcii - hore aj dole - PC */
-.hero-subtitle.top,
-.hero-subtitle.bottom {
-  font-size: 2vw; /* veľkosť podnadpisu */
-  color: #b50101; /* červená farba textu */
-  font-weight: bold; /* tučné písmo */
-}
-
-/* ==================================================================================================================================== */
-/* ==================================================================================================================================== */
-
-
-
-
-/* ============================= */
-/* ---- LASER POINT ----  - PC   */
-/* ============================= */
-
-/* Malá bodka simulujúca laserový bod */
 .laser-point {
+  /* Malá bodka simulujúca laserový bod */
   position: absolute; /* presná pozícia podľa JS */
   width: 10px; /* veľkosť bodky */
   height: 10px;
@@ -282,20 +289,37 @@ body {
   pointer-events: none; /* neinteraktívny */
 }
 
-/* ============================= */
-/* ---- ISKRY (SPARKS) ---- - PC  
-/* ============================= */
+/* LASER DOT -💻 Notebooky (bežné displeje) */
+/* ========================================= */
+.laser-dot {
+  /*Dopadový bod na povrchu*/
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 10px red, 0 0 20px red;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ========================================== */
+/* ISKRY (SPARKS) 💻 Notebooky (bežné displeje)  
+/* ========================================== */
 
 @keyframes fadeOut {
   from {
-    opacity: 1; /* plne viditeľná iskra na začiatku */
-    transform: scale(1); /* pôvodná veľkosť */
+    opacity: 1;
+    transform: scale(1);
   }
   to {
-    opacity: 0; /* zmizne */
-    transform: scale(0.5); /* zmenší sa */
+    opacity: 0;
+    transform: scale(0.5);
   }
 }
+/* SPARKS 💻 Notebooky (bežné displeje) */
+/* ========================================== */
+
 .spark {
   position: absolute; /* presná pozícia, určuje JS */
   width: 3px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
@@ -308,33 +332,18 @@ body {
   animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
 }
 
-/* ============================= */
-/* ---- LASER DOT ---- - PC 
-/* ============================= */
+/* LETTERS PRED CISTENIM LETTERS 💻 Notebooky (bežné displeje)*/
+/* ================================================================== */
 
-.laser-dot {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: red;
-  border-radius: 50%;
-  box-shadow: 0 0 10px red, 0 0 20px red;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* ====================================== */
-/*  LETTERS-LASER CLEANING ANIMATION - PC */
-/* ===================================== */
-
-/* LETTERS PRED CISTENIM LETTERS  - PC */
 .hero-title span {
   opacity: 0.6;
   color: darkred;
   transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease;
 }
 
-/* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - PC */
+/* LETTERS PO CISTENI LETTERS  💻 Notebooky (bežné displeje) */
+/* ================================================================== */
+
 .hero-title span.active {
   opacity: 1;
   color: #ff0000;
@@ -345,7 +354,7 @@ body {
 /* ==================================================================================================================================== */
 
 /* ========================================== */
-/* KRUHOVÉ TLAČIDLO - SCROLL DOWN ARROW - PC  */
+/* BBUTTON- SCROLL DOWN ARROW 💻 Notebooky (bežné displeje) */
 /* ========================================== */
 
 .scroll-down-arrow {
@@ -358,13 +367,13 @@ body {
   background-color: rgba(40, 40, 50, 0.9);
   border-radius: 50%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Flex kvôli centrovaniu (alebo podľa tvojho dizajnu) */
+  justify-content: center; /* Centrovanie obsahu horizontálne */
+  align-items: center; /* Centrovanie obsahu vertikálne */
 
   box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
 
-  text-decoration: none;
+  text-decoration: none; /*Zruší podčiarknutie na odkaze */
   color: transparent;
   font-size: 0;
 
@@ -375,9 +384,16 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ============================= */
-/* ŠÍPKA VO VNÚTRI KRUHU - PC */
-/* ============================= */
+/* SCROLL DOWN ARROW BEFORE & AFTER 💻 Notebooky (bežné displeje) */
+/* ================================================================== */
+
+.scroll-down-arrow::before,
+.scroll-down-arrow::after {
+  content: none; /* Zruší prípadné pseudo-elementy, ktoré by robili štvorec */
+}
+
+/* ŠÍPKA VO VNÚTRI KRUHU 💻 Notebooky (bežné displeje) */
+/* ==================================================== */
 
 .arrow-icon {
   width: 30px; /* Nastaví veľkosť šípky */
@@ -386,9 +402,8 @@ body {
   transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease; /* Pridáva plynulú zmenu pri hoveri - veľkosť, farba a žiarenie */
 }
 
-/* ============================= */
-/*  - SCROLL DOWN HOVER - PC  */
-/* ============================= */
+/*  - SCROLL DOWN HOVER 💻 Notebooky (bežné displeje) */
+/* ==================================================== */
 
 .scroll-down-arrow:hover .arrow-icon {
   border-radius: 50px;
@@ -405,9 +420,8 @@ body {
   box-shadow: 0 0 30px rgba(255, 0, 80, 0.9); /* Zvýši intenzitu tieňa - tlačidlo viac žiari */
 }
 
-/* ============================= */
-/* ANIMÁCIA BOUNCE ARROW - PC  */
-/* ============================= */
+/* ANIMÁCIA BOUNCE ARROW 💻 Notebooky (bežné displeje) */
+/* ==================================================== */
 
 @keyframes bounce {
   /* Definuje, ako bude vyzerať animácia bounce */
@@ -430,43 +444,34 @@ body {
   }
 }
 
-.scroll-down-arrow {
-  text-decoration: none; /* Zruší podčiarknutie na odkaze */
-  display: flex; /* Flex kvôli centrovaniu (alebo podľa tvojho dizajnu) */
-  justify-content: center; /* Centrovanie obsahu horizontálne */
-  align-items: center; /* Centrovanie obsahu vertikálne */
-}
-
-.scroll-down-arrow::before,
-.scroll-down-arrow::after {
-  content: none; /* Zruší prípadné pseudo-elementy, ktoré by robili štvorec */
-}
-
 /* ==================================================================================================================================== */
 /* ==================================================================================================================================== */
 
-/* ============================= */
-/* INFO SEKCIA  - PC  */
-/* ============================= */
+/* ========================================== */
+/* INFO SEKCIA 💻 Notebooky (bežné displeje) */
+/* ========================================== */
 
-/* Sekcia, ktorá zobrazuje informácie o službách */
 .info-section {
-  background: linear-gradient(to bottom, #d1d1d1 0%, #f4f4f4 100%);
-  /* zhora #d1d1d1 (tmavšia sivá), dole #f4f4f4 (svetlejšia sivá) */
+  /* Sekcia, ktorá zobrazuje informácie o službách */
+  background: linear-gradient(
+    to bottom,
+    #d1d1d1 0%,
+    #f4f4f4 100%
+  ); /* zhora #d1d1d1 (tmavšia sivá), dole #f4f4f4 (svetlejšia sivá) */
 
   color: #333; /* tmavosivá farba textu */
   padding: 80px 20px; /* priestor okolo obsahu sekcie */
   text-align: center; /* zarovnanie textu do stredu */
 }
 
-/* Nadpis v sekcii INFO - PC  */
+/* NADPIS INFO 💻 Notebooky (bežné displeje) */
 .info-section h1 {
   color: #0f6d93; /* modrý nadpis */
   font-size: 2.5rem; /* veľkosť nadpisu */
   margin-bottom: 20px; /* medzera pod nadpisom */
 }
 
-/* Text v sekcii INFO - PC  */
+/* TEXT INFO 💻 Notebooky (bežné displeje)  */
 .info-section p {
   max-width: 900px; /* maximálna šírka textového bloku */
   margin: 0 auto; /* vycentruje text blok horizontálne */
@@ -476,34 +481,34 @@ body {
 }
 
 /* ============================= */
-/* CONTACT US FORM - PC  */
+/* CONTACT US FORM 💻 Notebooky (bežné displeje)
 /* ============================= */
 
-/* Celá sekcia kontaktu */
 .contact-form-section {
+  /* Celá sekcia kontaktu */
   background-color: #1e1f26; /* tmavé pozadie sekcie */
   color: #fff; /* biela farba textu */
   padding: 80px 20px; /* priestor okolo obsahu */
   text-align: center; /* vycentrovaný text */
 }
-
+/* TITLE CONTACT US 💻 Notebooky (bežné displeje) */
 .contact-form-section h2 {
   font-size: 3rem; /* veľký nadpis */
   margin-bottom: 30px; /* medzera pod nadpisom */
 }
-
+/* CONTACT SECTION TEXT (FILL OUT THE FORM...) 💻 Notebooky (bežné displeje) */
 .contact-form-section p {
   margin-bottom: 30px; /* medzera pod popisom */
   font-size: 1.2rem; /* veľkosť textu */
 }
-
+/* CONTACT SECTION 💻 Notebooky (bežné displeje) */
 .contact-form-section form {
   display: flex; /* flexbox pre usporiadanie formulárových polí */
   flex-direction: column; /* položky pod seba */
   align-items: center; /* vycentrované */
   gap: 20px; /* medzery medzi položkami */
 }
-
+/* CONTACT US INPUT & TEXTAREA 💻 Notebooky (bežné displeje)*/
 .contact-form-section input,
 .contact-form-section textarea {
   width: 500px; /* šírka inputov */
@@ -515,11 +520,11 @@ body {
   background-color: #fff; /* biele pozadie */
   color: #333; /* tmavá farba textu */
 }
-
+/* CONTACT US TEXT EMAIL 💻 Notebooky (bežné displeje)*/
 .contact-form-section textarea {
   min-height: 150px; /* vyššie textové pole */
 }
-
+/* BUTTON SEND 💻 Notebooky (bežné displeje)*/
 .contact-form-section button {
   padding: 15px 40px; /* veľké tlačidlo */
   background-color: #b10707; /* červené pozadie */
@@ -530,24 +535,24 @@ body {
   cursor: pointer; /* kurzor ruky pri hoveri */
   transition: background-color 0.3s ease, transform 0.3s ease; /* plynulý prechod farby a mierne zväčšenie */
 }
-
+/* BUTTON SEND HOVER 💻 Notebooky (bežné displeje)*/
 .contact-form-section button:hover {
   background-color: #ff0000; /* svetlejšia červená pri hoveri */
   transform: scale(1.05); /* mierne zväčšenie tlačidla */
 }
 
 /* =========================================== */
-/* === COMPARISON TABLE STYLES  - PC ========= */
+/* === COMPARISON TABLE STYLES 💻 Notebooky (bežné displeje) */
 /* =========================================== */
 
-/* === HLAVNÁ SEKCIA S TABUĽKOU === */
+/*  HLAVNÁ SEKCIA S TABUĽKOU 💻 Notebooky (bežné displeje) */
 .comparison-table {
   width: 100%; /* Zaberá celú šírku kontajnera */
   padding: 40px 20px; /* Vnútorné odsadenie: hore/dole 40px, vľavo/vpravo 20px */
   background-color: #ffffff; /* Biele pozadie celej sekcie */
 }
 
-/* === HLAVIČKA SEKCIE - PC  === */
+/* === HLAVIČKA SEKCIE 💻 Notebooky (bežné displeje)*/
 .comparison-table h2 {
   text-align: center; /* Zarovnanie textu na stred */
   margin-bottom: 30px; /* Spodná medzera pod nadpisom */
@@ -555,12 +560,12 @@ body {
   font-size: 28px; /* Veľkosť písma */
 }
 
-/* === WRAPPER PRE TABUĽKU - PC === */
+/*  WRAPPER PRE TABUĽKU 💻 Notebooky (bežné displeje) */
 .table-wrapper {
   overflow-x: auto; /* Pridá horizontálny scroll, ak je tabuľka širšia ako kontajner */
 }
 
-/* === ZÁKLADNÉ ŠTÝLY TABUĽKY - PC  === */
+/* ZÁKLADNÉ ŠTÝLY TABUĽKY 💻 Notebooky (bežné displeje)💻 Notebooky (bežné displeje) */
 table {
   width: 100%; /* Tabuľka sa roztiahne na celú šírku */
   border-collapse: collapse; /* Spojí hrany buniek (bez medzier) */
@@ -568,7 +573,7 @@ table {
   background-color: #fff; /* Biele pozadie tabuľky */
 }
 
-/* === HLAVIČKA TABUĽKY (PRVÝ RIADOK)- PC  === */
+/* === HLAVIČKA TABUĽKY (PRVÝ RIADOK) 💻 Notebooky (bežné displeje) */
 thead {
   background: linear-gradient(to bottom, #050f55, #0f2b80, #3f5faf);
   color: #fff; /* Biele písmo v hlavičke */
@@ -580,7 +585,7 @@ thead th {
   font-size: 16px; /* Veľkosť písma hlavičky */
 }
 
-/* === TELO TABUĽKY (DÁTA) - PC  === */
+/*  TELO TABUĽKY (DÁTA) 💻 Notebooky (bežné displeje)*/
 tbody tr {
   border-bottom: 1px solid #ddd; /* Spodný okraj riadku, oddelenie medzi riadkami */
 }
@@ -592,13 +597,13 @@ tbody td {
   font-size: 14px; /* Veľkosť písma v bunkách tela tabuľky */
 }
 
-/* === PRVÝ STĹPEC - TEXTY KATEGÓRIÍ - PC === */
+/* PRVÝ STĹPEC - TEXTY KATEGÓRIÍ 💻 Notebooky (bežné displeje) */
 tbody td:first-child {
   text-align: left; /* Text zarovnaný naľavo */
   font-weight: 500; /* Polotučné písmo (silnejší dôraz) */
 }
 
-/* === KATEGORICKÉ RIADKY (SAVING TIME, ENVIRONMENT...) ===  - PC */
+/* KATEGORICKÉ RIADKY (SAVING TIME, ENVIRONMENT...) 💻 Notebooky (bežné displeje) */
 .category td {
   background-color: #ececec; /* Svetlosivé pozadie kategórie */
   font-weight: bold; /* Tučné písmo */
@@ -608,10 +613,10 @@ tbody td:first-child {
 }
 
 /* ====================================== */
-/* === IKONY V TABUĽKE A LEGENDE - PC  ======= */
+/* IKONY V TABUĽKE A LEGENDE 💻 Notebooky (bežné displeje) */
 /* ====================================== */
 
-/* === ŠTÝLY SPOLOČNÉ PRE IKONY AJ LEGENDU === */
+/* ŠTÝLY SPOLOČNÉ PRE IKONY AJ LEGENDU 💻 Notebooky (bežné displeje)*/
 .icon,
 .legend-icon {
   display: inline-flex; /* Flexbox - horizontálne a vertikálne zarovnanie v strede */
@@ -627,27 +632,27 @@ tbody td:first-child {
   border: 2px solid #eee; /* Svetlý rámček okolo ikonky */
 }
 
-/* === RÔZNE STAVY IKON (ÁNO, NIE, MOŽNO) ===  - PC */
+/* === RÔZNE STAVY IKON (ÁNO, NIE, MOŽNO) 💻 Notebooky (bežné displeje)*/
 
-/* IKONY "YES" - ZELENÁ  - PC */
+/* IKONY "YES" - ZELENÁ  💻 Notebooky (bežné displeje) */
 .icon.yes,
 .legend-icon.yes {
   background: linear-gradient(145deg, #28a745, #218838); /* Zelený gradient */
 }
 
-/* IKONY "NO" - ČERVENÁ - PC */
+/* IKONY "NO" - ČERVENÁ 💻 Notebooky (bežné displeje) */
 .icon.no,
 .legend-icon.no {
   background: linear-gradient(145deg, #dc3545, #c82333); /* Červený gradient */
 }
 
-/* IKONY "MAYBE" - ŽLTÁ  - PC */
+/* IKONY "MAYBE" - ŽLTÁ 💻 Notebooky (bežné displeje) */
 .icon.maybe,
 .legend-icon.maybe {
   background: linear-gradient(145deg, #ffc107, #e0a800); /* Žltý gradient */
 }
 
-/* === SYMBOLY V IKONÁCH ===  - PC */
+/* SYMBOLY V IKONÁCH 💻 Notebooky (bežné displeje) */
 .icon.yes::before {
   content: "\2714"; /* ✔ */
 }
@@ -660,11 +665,10 @@ tbody td:first-child {
   content: "\2796"; /* ➖ */
 }
 
-/* ====================================== */
-/* === LEGENDA POD TABUĽKOU - PC          */
+/* === LEGENDA POD TABUĽKOU 💻 Notebooky (bežné displeje)        */
 /* ====================================== */
 
-/* KONTAJNER PRE LEGENDU (EXPLANATION OF ICONS) - PC */
+/* KONTAJNER PRE LEGENDU (EXPLANATION OF ICONS) 💻 Notebooky (bežné displeje) */
 .legend {
   font-size: 42px;
   margin-top: 30px; /* Horná medzera od tabuľky */
@@ -673,7 +677,7 @@ tbody td:first-child {
   gap: 40px; /* Medzera medzi položkami legendy */
 }
 
-/* TEXTY PRI IKONÁCH V LEGENDE - PC  */
+/* TEXTY PRI IKONÁCH V LEGENDE 💻 Notebooky (bežné displeje) */
 .legend p {
   font-size: 14px; /* Veľkosť písma */
   display: flex; /* Flexbox pre zarovnanie ikon a textu */
@@ -682,15 +686,9 @@ tbody td:first-child {
   color: #333; /* Farba textu - tmavosivá */
 }
 
-/* ============================= */
-/* BACK TO TOP BUTTON - PC            */
-/* ============================= */
-
-/* 
-Toto je ten okrúhly gombík (šipka hore), 
-ktorý sa zobrazí v pravom dolnom rohu obrazovky, 
-keď sa posunieš nižšie na stránke.
-*/
+/* ==========-----------------=================== */
+/* BACK TO TOP BUTTON 💻 Notebooky (bežné displeje)*/
+/* ============================================== */
 
 .back-to-top {
   position: fixed; /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
@@ -716,22 +714,14 @@ keď sa posunieš nižšie na stránke.
   /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
 }
 
-/* 
-Toto je šípka vo vnútri toho gombíka.  
-Používame SVG obrázok (nie bežný obrázok, ale čiarový grafický obrázok).  
-Tento blok určuje, ako šípka vyzerá a ako sa bude správať pri zmene.
-*/
-
 .back-to-top svg {
+  /* šípka vo vnútri toho button 💻 Notebooky (bežné displeje)*/
   stroke: #ffffff; /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
   transition: transform 0.3s ease, stroke 0.3s ease;
   /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
 }
 
-/* 
-Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.  
-Šípka sa jemne zväčší a zmení farbu. 
-*/
+/* ARROW HOVER 💻 Notebooky (bežné displeje)*/
 
 .back-to-top:hover svg {
   transform: scale(
@@ -740,15 +730,9 @@ Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.
   stroke: #ff4d4d; /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
 }
 
-/* 
-Toto spôsobí, že sa button objaví, keď je čas (keď sa posunieme dolu na stránke).  
-Trieda "show" sa pridá pomocou JavaScriptu.  
-Tým sa zmení jeho vlastnosti:  
-- z neviditeľného (opacity 0) → na viditeľný (opacity 1)  
-- z hidden → na visible  
-*/
+.back-to-top.show {   /*Toto spôsobí, že sa button objaví, keď je čas (keď sa posunieme dolu na stránke).  */
 
-.back-to-top.show {
+
   opacity: 1; /* Už ho vidíme, pretože je plne nepriehľadný. */
   visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
 }
@@ -758,37 +742,46 @@ Tým sa zmení jeho vlastnosti:
 /* ======================================================================================================================================== */
 /* ======================================================================================================================================== */
 
-/* ====================================== */
-/* === !!!!!!!!! RESPONSIVE DESIG!!!!!!!!! 
+/* ============================== */
+/* 📱 Mobily na výšku (portrait) */
+/* iPhone 15 Pro, Samsung S23     */
+/* ============================== */
 
-/* ====================================== */
-@media (max-width: 768px) {
+@media screen and (max-width: 600px) {
+
+    
+  /* HEADER BLUE  - 📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
-  /* ==================================================================================================================================== */
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: auto;
+  }
 
-  /* ================================== */
-  /* ŠTÝL PRE NAVIGAČNÉ MENU - MOBIL   */
-  /* =================================== */
-
-  /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU - MOBIL */
-
-  .site-nav ul {
+  /* ================================================= */
+  /* HAMBURGER MENU - 📱 Mobily na výšku (portrait)   */
+  /* ================================================= */
+  .site-nav ul { /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU  */
     display: none; /* Na začiatku je menu skryté */
     flex-direction: column; /* Položky budú zoradené vertikálne */
-    background-color: #b10707; /* Pozadie menu - tmavočervená farba */
+    background-color: #041871; /* Pozadie menu  */
     width: 100%; /* Menu zaberie celú šírku rodiča */
     text-align: center; /* Text v položkách menu bude na stred */
   }
+    /* ================================================= */
 
-  /* Ak je pridaná trieda 'active' na #nav-menu, zobrazí sa zoznam menu */
-
-  #nav-menu.active ul {
+  /* HAMBURGER ACTIVE - 📱 Mobily na výšku (portrait)   */
+  /* ======================================================= */
+  #nav-menu.active ul { /* Ak je pridaná trieda 'active' na #nav-menu, zobrazí sa zoznam menu */
     display: flex; /* Zobrazí menu a aktivuje flex layout */
   }
 
-  /* Štýl pre hamburger ikonu (ikonka na otvorenie menu) - MOBIL */
-  .hamburger {
+  
+/* HAMBURGER 📱 Mobily na výšku (portrait) */
+  /* ================================================= */
+  .hamburger { /* Štýl pre hamburger ikonu (ikonka na otvorenie menu)  */
     display: block; /* Zobrazí hamburger ako blokový prvok */
     position: absolute; /* Umiestnenie vzhľadom k rodiču s position: relative */
     right: 20px; /* Vzdialenosť od pravého okraja */
@@ -797,16 +790,15 @@ Tým sa zmení jeho vlastnosti:
     cursor: pointer; /* Zmení kurzor na ruku, keď prejdeš myšou */
   }
 
-  /* ====================================== */
-  /* LOGO ILCS Ltd - MOBILE */
-  /* ====================================== */
+  /* ============================================= */
+  /* LOGO ILCS Ltd 📱 Mobily na výšku (portrait)  */
+  /* ============================================ */
   .logo-text {
     padding: 8px 6px;
     margin-left: -43px;
   }
 
-  /* ====================================== */
-  /* ILCS - MOBILE */
+  /* ILCS 📱 Mobily na výšku (portrait)  */
   /* ====================================== */
   .ilcs {
     font-family: "Insaniburger", sans-serif;
@@ -817,8 +809,7 @@ Tým sa zmení jeho vlastnosti:
     letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
   }
 
-  /* ====================================== */
-  /* LTD -  MOBILE */
+  /* LTD -  📱 Mobily na výšku (portrait)  */
   /* ====================================== */
 
   .ltd {
@@ -826,17 +817,16 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* HEADER - MOBILE */
+  /* HEADER - 📱 Mobily na výšku (portrait)  */
   /* ====================================== */
 
   .site-nav {
     display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
   }
 
-  /* Štýly pre zobrazenie menu po kliknutí na hamburger - MOBIL */
+  /* HAMBURGER CLICK 📱 Mobily na výšku (portrait)*/
 
-  #nav-menu.active {
-    /* Používam ID, lebo to máš v HTML */
+  #nav-menu.active { /* Štýly pre zobrazenie menu po kliknutí na hamburger - MOBIL */
     display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
     flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
     position: absolute; /* Umiestnenie cez ostatný obsah */
@@ -846,19 +836,10 @@ Tým sa zmení jeho vlastnosti:
     background-color: #fff; /* Pozadie menu */
   }
 
-  /* ====================================== */
-  /* HEADER BLUE - MOBILE */
-  /* ====================================== */
 
-  .site-header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-    height: auto;
-  }
 
   /* ====================================== */
-  /* HERO - MOBILE */
+  /* HERO  📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
   .hero {
@@ -872,7 +853,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* HERO TITTLE - MOBILE */
+  /* HERO TITTLE 📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
   .hero-title {
@@ -887,7 +868,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* HERO SUBTITLE - MOBILE */
+  /* HERO SUBTITLE 📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
   .hero-subtitle.top,
@@ -897,14 +878,14 @@ Tým sa zmení jeho vlastnosti:
     font-weight: bold; /* tučné písmo */
   }
 
-  /* LETTERS PRED CISTENIM LETTERS - MOBIL */
+  /* LETTERS PRED CISTENIM LETTERS 📱 Mobily na výšku (portrait) */
   .hero-title span {
     color: darkred; /* tmavočervené písmená pred vypálením */
     opacity: 0.6; /* znížená priehľadnosť */
     transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
   }
 
-  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - MOBIL */
+  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  📱 Mobily na výšku (portrait) */
 
   .hero-title span.active {
     color: rgb(134, 8, 8); /* jasne červené */
@@ -913,10 +894,10 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* SCROLL DOWN ARROW - MOBILE */
+  /* SCROLL DOWN ARROW 📱 Mobily na výšku (portrait) */
   /* ====================================== */
   .scroll-down-arrow {
-    position: flex;
+    display: flex;
     left: 50%;
     bottom: -80px;
     width: 35px;
@@ -941,44 +922,29 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* SCROLL DOWN ARROW HOVER - MOBILE */
+  /* SCROLL DOWN ARROW HOVER 📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
   .scroll-down-arrow:hover .arrow-icon {
-    animation: bounce 1s infinite;
-    transform: scale(1.1); /* Zväčší šípku o 10% */
-    stroke: rgba(40, 40, 50, 0.9); /* Zmení farbu čiar na svetlejšiu červenú */
+    animation: none; /* žiadna animácia */
+    transform: none; /* žiadne posúvanie */
+    stroke: #fff; /* farba šípky */ /* Zmení farbu čiar na svetlejšiu červenú */
     filter: none;
     background-color: transparent; /* HELPED REMOVE SQUARE*/
     box-shadow: none;
   }
 
-  /* Zrušíme bounce efekt pri hoveri MOBILE */
+  .scroll-down-arrow.clicked {   /* Ak by sa trieda .clicked pridala, zrušíme efekt */
 
-  .scroll-down-arrow:hover .arrow-icon {
-    animation: none; /* žiadna animácia */
-    transform: none; /* žiadne posúvanie */
-    stroke: #fff; /* farba šípky */
-    filter: none; /* žiadny tieň */
-  }
-
-  /* Ak by sa trieda .clicked pridala, zrušíme efekt */
-  .scroll-down-arrow.clicked {
     animation: none;
   }
 
-  /* Zrušenie pseudo-elementov pre prípad, že by tam niečo bolo */
-  .scroll-down-arrow::before,
-  .scroll-down-arrow::after {
-    content: none !important;
-    display: none !important;
-  }
 
   /* ==================================================================================================================================== */
   /* ==================================================================================================================================== */
 
   /* ====================================== */
-  /* Nadpis v sekcii INFO - MOBILE */
+  /* Nadpis v sekcii INFO 📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
   .info-section h1 {
@@ -988,7 +954,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* Text v sekcii INFO  - MOBILE */
+  /* Text v sekcii INFO  📱 Mobily na výšku (portrait) */
   /* ====================================== */
 
   .info-section p {
@@ -1003,10 +969,13 @@ Tým sa zmení jeho vlastnosti:
   /* ==================================================================================================================================== */
 
   /* ============================= */
-  /* === POROVNÁVACIA TABUĽKA === */
+  /*  POROVNÁVACIA TABUĽKA 📱 Mobily na výšku (portrait) */
   /* ============================= */
 
+  /* ============================= */
   /* HLAVNÝ KONTAJNER SEKCIE */
+    /* ============================= */
+
   .comparison-table {
     width: 100%;
     padding: 40px 20px;
@@ -1020,13 +989,13 @@ Tým sa zmení jeho vlastnosti:
     font-size: 28px; /* VEĽKOSŤ NADPISU */
   }
 
-  /* WRAPPER TABUĽKY PRE SCROLL NA MOBILE */
+  /* WRAPPER TABUĽKY PRE SCROLL NA 📱 Mobily na výšku (portrait) */
   .table-wrapper {
     overflow-x: auto;
   }
 
   /* ============================= */
-  /* === ŠTÝL TABUĽKY (table) === */
+  /*  ŠTÝL TABUĽKY (table) 📱 Mobily na výšku (portrait) */
   /* ============================= */
   table {
     width: 100%;
@@ -1034,8 +1003,10 @@ Tým sa zmení jeho vlastnosti:
     border-collapse: collapse; /* Odstráni medzery medzi bunkami */
     background-color: #fff; /* Biele pozadie tabuľky */
   }
+  /* ============================= */
+  /* HLAVIČKA TABUĽKY 📱 Mobily na výšku (portrait) */
+    /* ============================= */
 
-  /* HLAVIČKA TABUĽKY */
   thead {
     background-color: rgb(76, 117, 205); /* Modré pozadie hlavičky */
     color: #fff; /* Text vo farbe bielej */
@@ -1047,7 +1018,7 @@ Tým sa zmení jeho vlastnosti:
     font-size: 16px; /* VEĽKOSŤ PÍSMA HLAVIČKY */
   }
 
-  /* RIADKY V TELE TABUĽKY */
+  /* RIADKY V TELE TABUĽKY 📱 Mobily na výšku (portrait) */
   tbody tr {
     border-bottom: 1px solid #ddd; /* Oddelenie riadkov */
   }
@@ -1059,14 +1030,14 @@ Tým sa zmení jeho vlastnosti:
     font-size: 14px; /* VEĽKOSŤ PÍSMA V TELE TABUĽKY */
   }
 
-  /* PRVÝ STĹPEC V RIADKU */
+  /* PRVÝ STĹPEC V RIADKU 📱 Mobily na výšku (portrait) */
   tbody td:first-child {
     text-align: left;
     font-weight: 500;
     padding-left: 3px; /* Odsadenie zľava */
   }
 
-  /* KATEGORIE (SKUPINY RIADKOV) */
+  /* KATEGORIE (SKUPINY RIADKOV) 📱 Mobily na výšku (portrait) */
   .category td {
     background-color: #ececec;
     font-weight: bold;
@@ -1075,13 +1046,10 @@ Tým sa zmení jeho vlastnosti:
     font-size: 16px;
   }
 
-  /* ============================= */
-  /* === ŠTÝLY IKON V TABUĽKE === */
-  /* ============================= */
 
-  /* Spoločné štýly pre všetky ikony (YES, NO, MAYBE) */
+
   /* ============================= */
-  /* === IKONY V TABUĽKE (.icon) === */
+  /*  IKONY V TABUĽKE YES NO MAYBE 📱 Mobily na výšku (portrait) */
   /* ============================= */
   .icon {
     display: inline-flex; /* Flex kvôli centrovaniu obsahu */
@@ -1098,7 +1066,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ================================================= */
-  /* === IKONY V LEGENDE (.legend-icon) - LANDSCAPE === */
+  /* === IKONY V LEGENDE 📱 Mobily na výšku (portrait)*/
   /* ================================================ */
   .legend-icon {
     display: inline-flex; /* aby bol symbol centrovaný */
@@ -1117,7 +1085,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ============================= */
-  /* === LEGENDA POD TABUĽKOU - LANDSCAPE === */
+  /*  LEGENDA POD TABUĽKOU 📱 Mobily na výšku (portrait)*/
   /* ============================= */
   .legend {
     margin-top: 30px;
@@ -1125,7 +1093,7 @@ Tým sa zmení jeho vlastnosti:
     justify-content: center;
     gap: 40px;
   }
-
+/* LEGEND TEXT 📱 Mobily na výšku (portrait)*/
   .legend p {
     font-size: 14px; /* VEĽKOSŤ TEXTU V LEGENDE */
     display: flex;
@@ -1135,7 +1103,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ============================================ */
-  /* CONTACT US - LANDSCAPE */
+  /* CONTACT US 📱 Mobily na výšku (portrait) */
   /* ============================================ */
 
   .contact-form-section {
@@ -1143,103 +1111,79 @@ Tým sa zmení jeho vlastnosti:
     color: #fff; /* biela farba textu */
     padding: 80px 20px; /* priestor okolo obsahu */
     text-align: center; /* vycentrovaný text */
+  }
+  /* ============================= */
+  /* BACK TO TOP BUTTON 📱 Mobily na výšku (portrait)           */
+  /* ============================= */
 
-    /* ============================= */
-    /* BACK TO TOP BUTTON - LANDSCAPE           */
-    /* ============================= */
 
-    /* 
-Toto je ten okrúhly gombík (šipka hore), 
-ktorý sa zobrazí v pravom dolnom rohu obrazovky, 
-keď sa posunieš nižšie na stránke.
+  .back-to-top {
+    position: fixed; /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
+    right: 30px; /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
+    bottom: 30px; /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
+    width: 60px; /* Šírka gombíka je 60 pixelov (taký menší krúžok). */
+    height: 60px; /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
+    background-color: rgba(
+      40,
+      40,
+      50,
+      0.9
+    ); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
+    border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
+    display: flex; /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
+    justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
+    align-items: center; /* Vycentruje šípku zvislo (hore a dole). */
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
+    text-decoration: none; /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
+    z-index: 999; /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
+    opacity: 0; /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
+    visibility: hidden; /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
+  }
+
+/* ARROW INSIDE 📱 Mobily na výšku (portrait)*/
+  .back-to-top svg {
+    stroke: #ffffff; /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
+    transition: transform 0.3s ease, stroke 0.3s ease;
+    /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
+  }
+
+  /* 
+/* BACK TO TOP HOVER 📱 Mobily na výšku (portrait)*/
+
+  .back-to-top:hover svg {
+    transform: scale(
+      1.2
+    ); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
+    stroke: #ff4d4d; /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
+  }
+
+
+/* BACK TO TOP SHOW 📱 Mobily na výšku (portrait)*/
+  .back-to-top.show { /*Toto spôsobí, že sa gombík objaví, keď je čas (keď sa posunieme dolu na stránke).  
 */
-
-    .back-to-top {
-      position: fixed; /* Gombík je vždy prilepený na jednom mieste na obrazovke, aj keď stránku posúvaš. */
-      right: 30px; /* Vzdialenosť gombíka od pravého okraja obrazovky: 30 pixelov. */
-      bottom: 30px; /* Vzdialenosť gombíka od spodného okraja obrazovky: 30 pixelov. */
-      width: 60px; /* Šírka gombíka je 60 pixelov (taký menší krúžok). */
-      height: 60px; /* Výška gombíka je rovnaká ako šírka, takže to bude pekný krúžok. */
-      background-color: rgba(
-        40,
-        40,
-        50,
-        0.9
-      ); /* Farba pozadia gombíka: tmavá, trochu priesvitná. Čísla znamenajú: čierna so štipkou modrej. */
-      border-radius: 50%; /* Zaoblenie rohov na 50%, takže sa z toho stane úplný kruh. */
-      display: flex; /* Použijeme "flex", aby sme mohli veci (napríklad tú šípku) vycentrovať dovnútra gombíka. */
-      justify-content: center; /* Vycentruje šípku vodorovne (doprava a doľava). */
-      align-items: center; /* Vycentruje šípku zvislo (hore a dole). */
-      box-shadow: 0 0 20px rgba(255, 0, 80, 0.6); /* Pridá jemný svetelný efekt okolo gombíka. Vyzerá to, akoby žiaril. */
-      text-decoration: none; /* Zabezpečí, že sa tam neobjaví žiadne podčiarknutie ako pri odkazoch. */
-      z-index: 999; /* Uloží gombík na najvyššiu vrstvu, takže ho nič neprekryje. Predstav si, že je to vždy "navrchu". */
-      opacity: 0; /* Na začiatku je úplne neviditeľný. 0 znamená, že ho vôbec nevidno. */
-      visibility: hidden; /* A hovorí stránke: "Tento gombík tu zatiaľ nie je!" - teda že sa vôbec nemá zobrazovať. */
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      /* Toto určuje, že ak sa gombík ukáže alebo skryje, prebehne to pekne plynule za 0.3 sekundy. */
-    }
-
-    /* 
-Toto je šípka vo vnútri toho gombíka.  
-Používame SVG obrázok (nie bežný obrázok, ale čiarový grafický obrázok).  
-Tento blok určuje, ako šípka vyzerá a ako sa bude správať pri zmene.
-*/
-
-    .back-to-top svg {
-      stroke: #ffffff; /* Farba čiar, z ktorých je šípka nakreslená: biela farba. */
-      transition: transform 0.3s ease, stroke 0.3s ease;
-      /* Ak sa niečo zmení (napríklad farba alebo veľkosť šípky), prebehne to plynule a pomaly (za 0.3 sekundy). */
-    }
-
-    /* 
-Toto sa stane, keď babka (alebo hocikto) dá kurzor myši na gombík.  
-Šípka sa jemne zväčší a zmení farbu. 
-*/
-
-    .back-to-top:hover svg {
-      transform: scale(
-        1.2
-      ); /* Zväčší šípku o 20%. Ako keď si dáš okuliare s lupou. */
-      stroke: #ff4d4d; /* Zmení farbu čiar šípky na svetločervenú. Vyzerá to výraznejšie, že je to pripravené na kliknutie. */
-    }
-
-    /* 
-Toto spôsobí, že sa gombík objaví, keď je čas (keď sa posunieme dolu na stránke).  
-Trieda "show" sa pridá pomocou JavaScriptu.  
-Tým sa zmení jeho vlastnosti:  
-- z neviditeľného (opacity 0) → na viditeľný (opacity 1)  
-- z hidden → na visible  
-*/
-
-    .back-to-top.show {
-      opacity: 1; /* Už ho vidíme, pretože je plne nepriehľadný. */
-      visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
-    }
+    opacity: 1; /* Už ho vidíme, pretože je plne nepriehľadný. */
+    visibility: visible; /* A stránka už s ním normálne ráta, takže sa správa ako bežný gombík. */
   }
 }
 
-  /* =========================================================================================================================================== */
- /* =========================================================================================================================================== */
- /* =========================================================================================================================================== */
- /* =========================================================================================================================================== */
- /* =========================================================================================================================================== */
-
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
-  /* tvoje štýly */
-
-
-
   /* ================================== */
   /* ŠTÝL PRE NAVIGAČNÉ MENU - LANDSCAPE   */
   /* =================================== */
 
-  /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU - MOBIL */
 
-  .site-nav ul {
+  .site-nav ul {   /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU 📱MOBILE LANDSCAPE  */
     display: none; /* Na začiatku je menu skryté */
     flex-direction: column; /* Položky budú zoradené vertikálne */
-    background-color: #b10707; /* Pozadie menu - tmavočervená farba */
+    background-color:  #041871; /* Pozadie menu - tmavočervená farba */
     width: 100%; /* Menu zaberie celú šírku rodiča */
     text-align: center; /* Text v položkách menu bude na stred */
   }
@@ -1261,7 +1205,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* LOGO ILCS Ltd - LANDSCAPE */
+  /* LOGO ILCS Ltd 📱MOBILE LANDSCAPE   */
   /* ====================================== */
   .logo-text {
     padding: 8px 6px;
@@ -1269,7 +1213,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* ILCS - LANDSCAPE */
+  /* ILCS 📱MOBILE LANDSCAPE   */
   /* ====================================== */
   .ilcs {
     font-family: "Insaniburger", sans-serif;
@@ -1281,7 +1225,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* LTD -  LANDSCAPE */
+  /* LTD 📱MOBILE LANDSCAPE   */
   /* ====================================== */
 
   .ltd {
@@ -1289,7 +1233,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* HEADER - LANDSCAPE */
+  /* HEADER 📱MOBILE LANDSCAPE  E */
   /* ====================================== */
 
   .site-nav {
@@ -1310,7 +1254,7 @@ Tým sa zmení jeho vlastnosti:
   }
 
   /* ====================================== */
-  /* HEADER BLUE - LANDSCAPE */
+  /* HEADER BLUE 📱MOBILE LANDSCAPE   */
   /* ====================================== */
 
   .site-header {
@@ -1319,40 +1263,39 @@ Tým sa zmení jeho vlastnosti:
     padding: 10px 20px;
     height: auto;
   }
-  
- .site-nav ul {
-    gap: 10px;            /* menší medzera medzi položkami */
+
+  .site-nav ul {
+    gap: 10px; /* menší medzera medzi položkami */
   }
 
   .site-nav li {
-    margin: 0;            /* odstráni nadbytočný margin */
+    margin: 0; /* odstráni nadbytočný margin */
   }
 
-  /* Položky menu (text) */
+  /* Položky menu (text) 📱MOBILE LANDSCAPE  */
   .site-nav a {
-    font-size: 16px;      /* zmenši veľkosť písma */
-    padding: 8px 12px;    /* menší padding */
+    font-size: 16px; /* zmenši veľkosť písma */
+    padding: 8px 12px; /* menší padding */
   }
 
-  /* Dropdown menu */
+  /* Dropdown menu 📱MOBILE LANDSCAPE   */
   .dropdown-menu {
-    max-height: 200px;    /* aby sa dalo scrollovať, ak je veľa položiek */
+    max-height: 200px; /* aby sa dalo scrollovať, ak je veľa položiek */
     overflow-y: auto;
   }
 
-  /* Celé navigačné menu */
+  /* Celé navigačné menu 📱MOBILE LANDSCAPE   */
   #nav-menu {
-    max-height: 90vh;    /* menu nebude väčšie ako 90% výšky obrazovky */
-    overflow-y: auto;    /* pridá scroll ak treba */
+    max-height: 90vh; /* menu nebude väčšie ako 90% výšky obrazovky */
+    overflow-y: auto; /* pridá scroll ak treba */
   }
 
-  /* Aby hamburger menu bolo nižšie ak treba */
+  /* hamburger menu 📱MOBILE LANDSCAPE   */
   .hamburger {
     top: 10px;
   }
 
- /*HERO SWCTION - LANDSCAPE */
-
+  /*HERO SWCTION 📱MOBILE LANDSCAPE   */
 
   .hero {
     background: linear-gradient(to bottom, #050f55, #030f31, #214399);
@@ -1363,8 +1306,8 @@ Tým sa zmení jeho vlastnosti:
     align-items: center; /* vertikálne vycentrovanie obsahu */
     overflow: hidden; /* skryje všetko, čo presahuje sekciu */
   }
-  
-  /* Plátno pre animáciu lasera */
+
+  /* Plátno pre animáciu lasera 📱MOBILE LANDSCAPE  */
   #laserCanvas {
     position: absolute; /* umiestni plátno nad celú sekciu hero */
     top: 0;
@@ -1374,8 +1317,8 @@ Tým sa zmení jeho vlastnosti:
     pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
     z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
   }
-  
-  /* Obsah v hero sekcii (názvy, titulky) */
+
+  /* Obsah v hero sekcii (názvy, titulky) 📱MOBILE LANDSCAPE   */
   .hero-content {
     position: absolute; /* presné pozicionovanie v strede sekcie */
     top: 50%;
@@ -1387,8 +1330,8 @@ Tým sa zmení jeho vlastnosti:
     flex-direction: column; /* usporiadanie obsahu zhora nadol */
     align-items: center; /* centrovanie obsahu */
   }
-  
-  /* Hlavný názov LASER CLEANING - LANDSCAPE */
+
+  /* Hlavný názov LASER CLEANING 📱MOBILE LANDSCAPE   */
   .hero-title {
     display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
     justify-content: center; /* centrovanie písmen */
@@ -1399,22 +1342,22 @@ Tým sa zmení jeho vlastnosti:
     margin: 20px 0; /* okraje nad a pod nadpisom */
     gap: 0.3em; /* medzera medzi jednotlivými písmenami */
   }
-  
-  /* Podnadpisy v hero sekcii - hore aj dole - PC */
+
+  /* Podnadpisy v hero sekcii - hore aj dole 📱MOBILE LANDSCAPE  */
   .hero-subtitle.top,
   .hero-subtitle.bottom {
     font-size: 2vw; /* veľkosť podnadpisu */
     color: #b50101; /* červená farba textu */
     font-weight: bold; /* tučné písmo */
   }
-  
+
   /* ==================================================================================================================================== */
   /* ==================================================================================================================================== */
-  
+
   /* =================================== */
-  /* CANVAS PRE ANIMACIU LASERA - LANDSCAPE     */
+  /* CANVAS PRE ANIMACIU LASERA - 📱MOBILE LANDSCAPE     */
   /* =================================== */
-  
+
   #laserCanvas {
     position: absolute; /* umiestni plátno nad celú sekciu hero */
     top: 0;
@@ -1424,37 +1367,37 @@ Tým sa zmení jeho vlastnosti:
     pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
     z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
   }
-  
+
   /* ============================= */
-  /* ---- LASER POINT ----  - LANDSCAPE   */
+  /*  LASER POINT 📱MOBILE LANDSCAPE   */
   /* ============================= */
-  
+
   /* Malá bodka simulujúca laserový bod */
   .laser-point {
     position: absolute; /* presná pozícia podľa JS */
     width: 2px; /* veľkosť bodky */
-    height: px;
+    height: 2px;
     background-color: orange; /* oranžová bodka */
     border-radius: 50%; /* kruhový tvar */
     box-shadow: 0 0 15px red; /* efekt žiarenia */
     z-index: 3; /* nad väčšinou elementov */
     pointer-events: none; /* neinteraktívny */
   }
-  
+
   /* ============================= */
-  /* ---- ISKRY (SPARKS) ---- - LANDSCAPE  
+  /*  ISKRY (SPARKS) 📱MOBILE LANDSCAPE 
   /* ============================= */
-  
   @keyframes fadeOut {
     from {
-      opacity: 1; /* plne viditeľná iskra na začiatku */
-      transform: scale(1); /* pôvodná veľkosť */
+      opacity: 1;
+      transform: scale(1);
     }
     to {
-      opacity: 0; /* zmizne */
-      transform: scale(0.5); /* zmenší sa */
+      opacity: 0;
+      transform: scale(0.5);
     }
-  }
+  } 
+/* SPARKS MOBILE LANDSCAPE 📱MOBILE LANDSCAPE*/
   .spark {
     position: absolute; /* presná pozícia, určuje JS */
     width: 1px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
@@ -1466,11 +1409,11 @@ Tým sa zmení jeho vlastnosti:
     box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* svetelný efekt okolo iskry */
     animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
   }
-  
+
   /* ============================= */
-  /* ---- LASER DOT ---- - LANDSCAPE 
+  /* LASER DOT 📱MOBILE LANDSCAPE*/
   /* ============================= */
-  
+
   .laser-dot {
     position: absolute;
     width: 2px;
@@ -1481,90 +1424,71 @@ Tým sa zmení jeho vlastnosti:
     z-index: 10;
     pointer-events: none;
   }
-  
+
   /* ====================================== */
-  /*  LETTERS-LASER CLEANING ANIMATION - PC */
+  /*  LETTERS-LASER CLEANING ANIMATION 📱MOBILE LANDSCAPE */
   /* ===================================== */
-  
-  /* LETTERS PRED CISTENIM LETTERS  - PC */
+
+  /* LETTERS PRED CISTENIM LETTERS 📱MOBILE LANDSCAPE */
   .hero-title span {
     color: rgb(129, 1, 1); /* tmavočervené písmená pred vypálením */
     opacity: 0.6; /* znížená priehľadnosť */
     transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
   }
-  
-  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS  - PC */
+
+  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS 📱MOBILE LANDSCAPE */
   .hero-title span.active {
     color: rgb(134, 8, 8); /* jasne červené */
     opacity: 1; /* plná viditeľnosť */
     text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
   }
-  
 
-
-
-
-  
   /* ====================================== */
-  /* SCROLL DOWN ARROW - LANDSCAPE */
+  /* SCROLL DOWN ARROW 📱MOBILE LANDSCAPE */
   /* ====================================== */
 
-.scroll-down-arrow {
-  position: flex;
-  left: 50%;
-  bottom: -80px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  .scroll-down-arrow {
+    display: flex;
+    left: 50%;
+    bottom: -80px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
 
-  text-decoration: none;
-  color: transparent;
-  font-size: 0;
+    text-decoration: none;
+    color: transparent;
+    font-size: 0;
 
-  outline: none; /* voliteľné, ale pomáha */
-  border: none; /* voliteľné, ale pomáha */
+    outline: none; /* voliteľné, ale pomáha */
+    border: none; /* voliteľné, ale pomáha */
 
-  z-index: 10;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
 
-/* ====================================== */
-/* SCROLL DOWN ARROW HOVER - LANDSCAPE */
-/* ====================================== */
+  /* ====================================== */
+  /* SCROLL DOWN ARROW HOVER 📱MOBILE LANDSCAPE */
+  /* ====================================== */
 
-.scroll-down-arrow:hover .arrow-icon {
-  animation: bounce 1s infinite;
-  transform: scale(1.1); /* Zväčší šípku o 10% */
-  stroke: transparent;
-  filter: none;
-  background-color: transparent; /* HELPED REMOVE SQUARE*/
-  box-shadow: transparent;
-}
+  .scroll-down-arrow:hover .arrow-icon {
+    animation: none; /* žiadna animácia */
+    transform: none; /* žiadne posúvanie */
+    stroke: #ffffff; /* farba šípky */
+    filter: none;
+    background-color: transparent; /* HELPED REMOVE SQUARE*/
+    box-shadow: none;
+  }
 
-/* Zrušíme bounce efekt pri hoveri MOBILE */
+  /* Zrušíme bounce efekt pri hoveri 📱MOBILE LANDSCAPE */
 
-.scroll-down-arrow:hover .arrow-icon {
-  animation: none; /* žiadna animácia */
-  transform: none; /* žiadne posúvanie */
-  stroke: #fff; /* farba šípky */
-  filter: none; /* žiadny tieň */
-}
-
-/* Ak by sa trieda .clicked pridala, zrušíme efekt */
-.scroll-down-arrow.clicked {
-  animation: none;
-}
-
-/* Zrušenie pseudo-elementov pre prípad, že by tam niečo bolo */
-.scroll-down-arrow::before,
-.scroll-down-arrow::after {
-  content: none !important;
-  display: none !important;
-}
-}
+  /* Ak by sa trieda .clicked pridala, zrušíme efekt */
+  .scroll-down-arrow.clicked {
+    animation: none;
+  }
+} 
