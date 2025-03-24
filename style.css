@@ -1,3 +1,4 @@
+
 * {
   margin: 0; /* odstráni všetky predvolené vonkajšie okraje */
   padding: 0; /* odstráni všetky predvolené vnútorné okraje */
@@ -47,6 +48,7 @@ body {
 /* 💻 PC & LAPTOS NORMAL */
 /* MacBook Air, Dell XPS, Surface Laptop    */
 /* ======================================== */
+
 
 /* ================================================= */
 /* LOGO - ILCS Ltd -  💻 PC & LAPTOS NORMAL */
@@ -1174,338 +1176,10 @@ tbody td:first-child {
   }
 }
 
-/* =========================================================================================================================================== */
-/* =========================================================================================================================================== */
-/* =========================================================================================================================================== */
-/* =========================================================================================================================================== */
-/* =========================================================================================================================================== */
- 
-  /* ================================================== */
-  /* ŠTÝL PRE NAVIGAČNÉ MENU - 📱MOBILE LANDSCAPE     */
-  /* ================================================ */
-  
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-
-  .site-nav ul {   /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU 📱MOBILE LANDSCAPE  */
-    display: none; /* Na začiatku je menu skryté */
-    flex-direction: column; /* Položky budú zoradené vertikálne */
-    background-color:  #041871; /* Pozadie menu - tmavočervená farba */
-    width: 100%; /* Menu zaberie celú šírku rodiča */
-    text-align: center; /* Text v položkách menu bude na stred */
-  }
-
-  /* Ak je pridaná trieda 'active' na #nav-menu, zobrazí sa zoznam menu */
-
-  #nav-menu.active ul {
-    display: flex; /* Zobrazí menu a aktivuje flex layout */
-  }
-
-  /* Štýl pre hamburger ikonu (ikonka na otvorenie menu) - MOBIL */
-  .hamburger {
-    display: block; /* Zobrazí hamburger ako blokový prvok */
-    position: absolute; /* Umiestnenie vzhľadom k rodiču s position: relative */
-    right: 20px; /* Vzdialenosť od pravého okraja */
-    top: 25px; /* Vzdialenosť od vrchného okraja */
-    font-size: 24px; /* Veľkosť ikony hamburger menu */
-    cursor: pointer; /* Zmení kurzor na ruku, keď prejdeš myšou */
-  }
-
-  /* ====================================== */
-  /* LOGO ILCS Ltd 📱MOBILE LANDSCAPE   */
-  /* ====================================== */
-  .logo-text {
-    padding: 8px 6px;
-    margin-left: -43px;
-  }
-
-  /* ====================================== */
-  /* ILCS 📱MOBILE LANDSCAPE   */
-  /* ====================================== */
-  .ilcs {
-    font-family: "Insaniburger", sans-serif;
-    font-size: 25px;
-    color: #ffffff;
-    font-weight: bold;
-    margin-left: 2px;
-    letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
-  }
-
-  /* ====================================== */
-  /* LTD 📱MOBILE LANDSCAPE   */
-  /* ====================================== */
-
-  .ltd {
-    font-size: 12px;
-    
-  }
-
-  /* ====================================== */
-  /* HEADER 📱MOBILE LANDSCAPE  E */
-  /* ====================================== */
-
-  .site-nav {
-    display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
-  }
-
-  /* Štýly pre zobrazenie menu po kliknutí na hamburger - MOBIL */
-
-  #nav-menu.active {
-    display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
-    flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
-    position: absolute; /* Umiestnenie cez ostatný obsah */
-    top: 100%; /* Umiestnenie pod hlavičku (ak je hlavička 100%) */
-    left: 0;
-    width: 100%; /* Rozšírenie na celú šírku obrazovky */
-    background-color: #fff; /* Pozadie menu */
-  }
-
-  /* ====================================== */
-  /* HEADER BLUE 📱MOBILE LANDSCAPE   */
-  /* ====================================== */
-
-  .site-header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-    height: auto;
-  }
-
-  .site-nav ul {
-    gap: 10px; /* menší medzera medzi položkami */
-  }
-
-  .site-nav li {
-    margin: 0; /* odstráni nadbytočný margin */
-  }
-
-  /* Položky menu (text) 📱MOBILE LANDSCAPE  */
-  .site-nav a {
-    font-size: 16px; /* zmenši veľkosť písma */
-    padding: 8px 12px; /* menší padding */
-  }
-
-  /* Dropdown menu 📱MOBILE LANDSCAPE   */
-  .dropdown-menu {
-    max-height: 200px; /* aby sa dalo scrollovať, ak je veľa položiek */
-    overflow-y: auto;
-  }
-
-  /* Celé navigačné menu 📱MOBILE LANDSCAPE   */
-  #nav-menu {
-    max-height: 90vh; /* menu nebude väčšie ako 90% výšky obrazovky */
-    overflow-y: auto; /* pridá scroll ak treba */
-  }
-
-  /* hamburger menu 📱MOBILE LANDSCAPE   */
-  .hamburger {
-    top: 10px;
-  }
-
-  /*HERO SWCTION 📱MOBILE LANDSCAPE   */
-
-  .hero {
-    background: linear-gradient(to bottom, #050f55, #030f31, #214399);
-    position: relative; /* umožňuje umiestňovať vnútorné elementy absolútne voči tejto sekcii */
-    height: 500px; /* výška sekcie, môžeš zmeniť podľa potreby */
-    display: flex; /* použijeme flexbox na centrovanie obsahu */
-    justify-content: center; /* horizontálne vycentrovanie obsahu */
-    align-items: center; /* vertikálne vycentrovanie obsahu */
-    overflow: hidden; /* skryje všetko, čo presahuje sekciu */
-  }
-
-  /* Plátno pre animáciu lasera 📱MOBILE LANDSCAPE  */
-  #laserCanvas {
-    position: absolute; /* umiestni plátno nad celú sekciu hero */
-    top: 0;
-    left: 0;
-    width: 100%; /* natiahne na celú šírku */
-    height: 100%; /* natiahne na celú výšku */
-    pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
-    z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
-  }
-
-  /* Obsah v hero sekcii (názvy, titulky) 📱MOBILE LANDSCAPE   */
-  .hero-content {
-    position: absolute; /* presné pozicionovanie v strede sekcie */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* centrovanie na stred */
-    text-align: center; /* zarovnanie textov na stred */
-    z-index: 10; /* vyššia vrstva, aby bol text nad animáciou */
-    display: flex; /* použijeme flexbox */
-    flex-direction: column; /* usporiadanie obsahu zhora nadol */
-    align-items: center; /* centrovanie obsahu */
-  }
-
-  /* Hlavný názov LASER CLEANING 📱MOBILE LANDSCAPE   */
-  .hero-title {
-    display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
-    justify-content: center; /* centrovanie písmen */
-    align-items: center; /* vertikálne centrovanie */
-    position: relative; /* umožňuje pozicionovanie detí voči tomuto elementu */
-    font-size: 5vw; /* veľkosť textu závisí od šírky okna */
-    letter-spacing: 0.5rem; /* medzera medzi písmenami */
-    margin: 20px 0; /* okraje nad a pod nadpisom */
-    gap: 0.3em; /* medzera medzi jednotlivými písmenami */
-  }
-
-  /* Podnadpisy v hero sekcii - hore aj dole 📱MOBILE LANDSCAPE  */
-  .hero-subtitle.top,
-  .hero-subtitle.bottom {
-    font-size: 2vw; /* veľkosť podnadpisu */
-    color: #b50101; /* červená farba textu */
-    font-weight: bold; /* tučné písmo */
-  }
-
-  /* ==================================================================================================================================== */
-  /* ==================================================================================================================================== */
-
-  /* ==================================================== */
-  /* CANVAS PRE ANIMACIU LASERA - 📱MOBILE LANDSCAPE     */
-  /* ==================================================== */
-
-  #laserCanvas {
-    position: absolute; /* umiestni plátno nad celú sekciu hero */
-    top: 0;
-    left: 0;
-    width: 100%; /* natiahne na celú šírku */
-    height: 100%; /* natiahne na celú výšku */
-    pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
-    z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
-  }
-
-  /* ================================== */
-  /*  LASER POINT 📱MOBILE LANDSCAPE   */
-  /* =================================== */
-
-  /* Malá bodka simulujúca laserový bod */
-  .laser-point {
-    position: absolute; /* presná pozícia podľa JS */
-    width: 2px; /* veľkosť bodky */
-    height: 2px;
-    background-color: orange; /* oranžová bodka */
-    border-radius: 50%; /* kruhový tvar */
-    box-shadow: 0 0 15px red; /* efekt žiarenia */
-    z-index: 3; /* nad väčšinou elementov */
-    pointer-events: none; /* neinteraktívny */
-  }
-
-  /* =================================== */
-  /*  ISKRY (SPARKS) 📱MOBILE LANDSCAPE */
-  /* =================================== */
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-      transform: scale(1);
-    }
-    to {
-      opacity: 0;
-      transform: scale(0.5);}
-  } 
-
-
-/* SPARKS MOBILE LANDSCAPE 📱MOBILE LANDSCAPE*/
-  .spark {
-    position: absolute; /* presná pozícia, určuje JS */
-    width: 1px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
-    height: 1px;
-    background-color: rgb(231, 150, 51); /* oranžová farba iskry */
-    border-radius: 50%; /* kruhový tvar */
-    z-index: 9; /* pod laserovým bodom */
-    pointer-events: none; /* neklikateľná, neinteraktívna */
-    box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* svetelný efekt okolo iskry */
-    animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
-  }
-
-  /* ============================= */
-  /* LASER DOT 📱MOBILE LANDSCAPE  */
-  /* ============================= */
-
-  .laser-dot {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: red;
-    border-radius: 50%;
-    box-shadow: 0 0 10px red, 0 0 20px red;
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  /* ===================================================== */
-  /*  LETTERS-LASER CLEANING ANIMATION 📱MOBILE LANDSCAPE */
-  /* ===================================================== */
-
-  /* LETTERS PRED CISTENIM LETTERS 📱MOBILE LANDSCAPE */
-  .hero-title span {
-    color: rgb(129, 1, 1); /* tmavočervené písmená pred vypálením */
-    opacity: 0.6; /* znížená priehľadnosť */
-    transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
-  }
-
-  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS 📱MOBILE LANDSCAPE */
-  .hero-title span.active {
-    color: rgb(134, 8, 8); /* jasne červené */
-    opacity: 1; /* plná viditeľnosť */
-    text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
-  }
-
-  /* ====================================== */
-  /* SCROLL DOWN ARROW 📱MOBILE LANDSCAPE */
-  /* ====================================== */
-
-  .scroll-down-arrow {
-    display: flex;
-    left: 50%;
-    bottom: -80px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
-
-    text-decoration: none;
-    color: transparent;
-    font-size: 0;
-
-    outline: none; /* voliteľné, ale pomáha */
-    border: none; /* voliteľné, ale pomáha */
-
-    z-index: 10;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  /* =========================================== */
-  /* SCROLL DOWN ARROW HOVER 📱MOBILE LANDSCAPE */
-  /* ========================================== */
-
-  .scroll-down-arrow:hover .arrow-icon {
-    animation: none; /* žiadna animácia */
-    transform: none; /* žiadne posúvanie */
-    stroke: #ffffff; /* farba šípky */
-    filter: none;
-    background-color: transparent; /* HELPED REMOVE SQUARE*/
-    box-shadow: none;
-  }
-
-  /* Zrušíme bounce efekt pri hoveri 📱MOBILE LANDSCAPE */
-
-  /* Ak by sa trieda .clicked pridala, zrušíme efekt */
-  .scroll-down-arrow.clicked {
-    animation: none;
-  }
-} 
-
 /* ========================================================================================================================================================= */
 /* ========================================================================================================================================================= */
 /* ========================================================================================================================================================= */
 /* ========================================================================================================================================================= */
-
-
 
 
 /* ============================== */
@@ -2079,6 +1753,338 @@ tbody td:first-child {
   gap: 10px; /* Medzera medzi ikonou a textom */
   color: #333; /* Farba textu - tmavosivá */
 }
+/* ============================================================================================================================================================================= */
+/* ============================================================================================================================================================================= */
+/* ============================================================================================================================================================================= */
+/* ============================================================================================================================================================================= */
 
+  /* ================================================== */
+  /* ŠTÝL PRE NAVIGAČNÉ MENU - 📱MOBILE LANDSCAPE     */
+  /* ================================================ */
+  
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+
+  .site-nav ul {   /* ZAKLANE NASTAVENIA PRE ZOZNAM A NAVIGACIU 📱MOBILE LANDSCAPE  */
+    display: none; /* Na začiatku je menu skryté */
+    flex-direction: column; /* Položky budú zoradené vertikálne */
+    background-color:  #041871; /* Pozadie menu - tmavočervená farba */
+    height: 600px;
+    width: 100%; /* Menu zaberie celú šírku rodiča */
+    text-align: center; /* Text v položkách menu bude na stred */
+  }
+
+  /* Ak je pridaná trieda 'active' na #nav-menu, zobrazí sa zoznam menu */
+
+  #nav-menu.active ul {
+    display: flex; /* Zobrazí menu a aktivuje flex layout */
+  }
+
+  /* Štýl pre hamburger ikonu (ikonka na otvorenie menu) - MOBIL */
+  .hamburger {
+    display: block; /* Zobrazí hamburger ako blokový prvok */
+    position: absolute; /* Umiestnenie vzhľadom k rodiču s position: relative */
+    right: 20px; /* Vzdialenosť od pravého okraja */
+    top: 25px; /* Vzdialenosť od vrchného okraja */
+    font-size: 24px; /* Veľkosť ikony hamburger menu */
+    cursor: pointer; /* Zmení kurzor na ruku, keď prejdeš myšou */
+  }
+
+  /* ====================================== */
+  /* LOGO ILCS Ltd 📱MOBILE LANDSCAPE   */
+  /* ====================================== */
+  .logo-text {
+    padding: 8px 6px;
+    margin-left: -43px;
+  }
+
+  /* ====================================== */
+  /* ILCS 📱MOBILE LANDSCAPE   */
+  /* ====================================== */
+  .ilcs {
+    font-family: "Insaniburger", sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 2px;
+    letter-spacing: 2px; /* TOTO je vzdialenosť medzi písmenami */
+  }
+
+  /* ====================================== */
+  /* LTD 📱MOBILE LANDSCAPE   */
+  /* ====================================== */
+
+  .ltd {
+    font-size: 12px;
+    
+  }
+
+  /* ====================================== */
+  /* HEADER 📱MOBILE LANDSCAPE   */
+  /* ====================================== */
+
+  .site-nav {
+    display: none; /* Alebo iný spôsob skrytia, napr. visibility: hidden; */
+  }
+
+  /* Štýly pre zobrazenie menu po kliknutí na hamburger - MOBIL */
+
+  #nav-menu.active {
+    display: flex; /* Alebo iný spôsob zobrazenia, napr. block, grid */
+    flex-direction: column; /* Menu položky pod sebou (pravdepodobne) */
+    position: absolute; /* Umiestnenie cez ostatný obsah */
+    top: 90%; /* Umiestnenie pod hlavičku (ak je hlavička 100%) */
+    left: 0;
+    width: 100%; /* Rozšírenie na celú šírku obrazovky */
+    background-color: #fff; /* Pozadie menu */
+  }
+
+  /* ====================================== */
+  /* HEADER BLUE 📱MOBILE LANDSCAPE   */
+  /* ====================================== */
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  .site-nav ul {
+    gap: 10px; /* menší medzera medzi položkami */
+  }
+
+  .site-nav li {
+    margin: 0; /* odstráni nadbytočný margin */
+  }
+
+  /* Položky menu (text) 📱MOBILE LANDSCAPE  */
+  .site-nav a {
+    font-size: 16px; /* zmenši veľkosť písma */
+    padding: 8px 12px; /* menší padding */
+  }
+
+  /* Dropdown menu 📱MOBILE LANDSCAPE   */
+  .dropdown-menu {
+    max-height: 200px; /* aby sa dalo scrollovať, ak je veľa položiek */
+    overflow-y: auto;
+  }
+
+  /* Celé navigačné menu 📱MOBILE LANDSCAPE   */
+  #nav-menu {
+    max-height: 60vh; /* menu nebude väčšie ako 90% výšky obrazovky */
+    overflow-y: auto; /* pridá scroll ak treba */
+  }
+
+
+
+  /*HERO SWCTION 📱MOBILE LANDSCAPE   */
+
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px; /* alebo si daj fixnú výšku ak chceš */
+  background: linear-gradient(
+    to bottom,
+    #000c4d,
+    #002147
+  ); /* tmavý gradient ako predtým */
+  overflow: hidden;
+}
+
+  /* Plátno pre animáciu lasera 📱MOBILE LANDSCAPE  */
+  #laserCanvas {
+    position: absolute; /* umiestni plátno nad celú sekciu hero */
+    top: 0;
+    left: 0;
+    width: 100%; /* natiahne na celú šírku */
+    height: 100%; /* natiahne na celú výšku */
+    pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
+    z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
+  }
+
+  /* Obsah v hero sekcii (názvy, titulky) 📱MOBILE LANDSCAPE   */
+  .hero-content {
+    position: absolute; /* presné pozicionovanie v strede sekcie */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centrovanie na stred */
+    text-align: center; /* zarovnanie textov na stred */
+    z-index: 10; /* vyššia vrstva, aby bol text nad animáciou */
+    display: flex; /* použijeme flexbox */
+    flex-direction: column; /* usporiadanie obsahu zhora nadol */
+    align-items: center; /* centrovanie obsahu */
+  }
+
+  /* Hlavný názov LASER CLEANING 📱MOBILE LANDSCAPE   */
+  .hero-title {
+    display: flex; /* flexbox, aby boli jednotlivé písmená vedľa seba */
+    justify-content: center; /* centrovanie písmen */
+    align-items: center; /* vertikálne centrovanie */
+    position: relative; /* umožňuje pozicionovanie detí voči tomuto elementu */
+    font-size: 5vw; /* veľkosť textu závisí od šírky okna */
+    letter-spacing: 0.5rem; /* medzera medzi písmenami */
+    margin: 20px 0; /* okraje nad a pod nadpisom */
+    gap: 0.3em; /* medzera medzi jednotlivými písmenami */
+  }
+
+  /* Podnadpisy v hero sekcii - hore aj dole 📱MOBILE LANDSCAPE  */
+  .hero-subtitle.top,
+  .hero-subtitle.bottom {
+    font-size: 2vw; /* veľkosť podnadpisu */
+    color: #b50101; /* červená farba textu */
+    font-weight: bold; /* tučné písmo */
+  }
+
+  /* ==================================================================================================================================== */
+  /* ==================================================================================================================================== */
+
+  /* ==================================================== */
+  /* CANVAS PRE ANIMACIU LASERA - 📱MOBILE LANDSCAPE     */
+  /* ==================================================== */
+
+  #laserCanvas {
+    position: absolute; /* umiestni plátno nad celú sekciu hero */
+    top: 0;
+    left: 0;
+    width: 100%; /* natiahne na celú šírku */
+    height: 100%; /* natiahne na celú výšku */
+    pointer-events: none; /* zabráni interakcii myši - kliky prejdú cez */
+    z-index: 5; /* zaraďuje sa pod text, ale nad pozadím */
+  }
+
+  /* ================================== */
+  /*  LASER POINT 📱MOBILE LANDSCAPE   */
+  /* =================================== */
+
+  /* Malá bodka simulujúca laserový bod */
+  .laser-point {
+    position: absolute; /* presná pozícia podľa JS */
+    width: 2px; /* veľkosť bodky */
+    height: 2px;
+    background-color: orange; /* oranžová bodka */
+    border-radius: 50%; /* kruhový tvar */
+    box-shadow: 0 0 15px red; /* efekt žiarenia */
+    z-index: 3; /* nad väčšinou elementov */
+    pointer-events: none; /* neinteraktívny */
+  }
+
+  /* =================================== */
+  /*  ISKRY (SPARKS) 📱MOBILE LANDSCAPE */
+  /* =================================== */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.5);}
+  } 
+
+
+/* SPARKS MOBILE LANDSCAPE 📱MOBILE LANDSCAPE*/
+  .spark {
+    position: absolute; /* presná pozícia, určuje JS */
+    width: 1px; /* veľkosť iskry (môžeš dať 2px, ak chceš menšiu) */
+    height: 1px;
+    background-color: rgb(231, 150, 51); /* oranžová farba iskry */
+    border-radius: 50%; /* kruhový tvar */
+    z-index: 9; /* pod laserovým bodom */
+    pointer-events: none; /* neklikateľná, neinteraktívna */
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.8); /* svetelný efekt okolo iskry */
+    animation: fadeOut 0.5s forwards; /* zmizne po 0.5 sekundy */
+  }
+
+  /* ============================= */
+  /* LASER DOT 📱MOBILE LANDSCAPE  */
+  /* ============================= */
+
+  .laser-dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 10px red, 0 0 20px red;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* ===================================================== */
+  /*  LETTERS-LASER CLEANING ANIMATION 📱MOBILE LANDSCAPE */
+  /* ===================================================== */
+
+  /* LETTERS PRED CISTENIM LETTERS 📱MOBILE LANDSCAPE */
+  .hero-title span {
+    color: rgb(129, 1, 1); /* tmavočervené písmená pred vypálením */
+    opacity: 0.6; /* znížená priehľadnosť */
+    transition: color 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease; /* plynulé zmeny */
+  }
+
+  /* LETTERS PO CISTENI LETTERS - keď sa aktivuje trieda 'active' cez JS 📱MOBILE LANDSCAPE */
+  .hero-title span.active {
+    color: rgb(134, 8, 8); /* jasne červené */
+    opacity: 1; /* plná viditeľnosť */
+    text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
+  }
+
+  /* ====================================== */
+  /* SCROLL DOWN ARROW 📱MOBILE LANDSCAPE */
+  /* ====================================== */
+
+  .scroll-down-arrow {
+    display: flex;
+    left: 50%;
+    bottom: -80px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.6);
+
+    text-decoration: none;
+    color: transparent;
+    font-size: 0;
+
+    outline: none; /* voliteľné, ale pomáha */
+    border: none; /* voliteľné, ale pomáha */
+
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* =========================================== */
+  /* SCROLL DOWN ARROW HOVER 📱MOBILE LANDSCAPE */
+  /* ========================================== */
+
+  .scroll-down-arrow:hover .arrow-icon {
+    animation: none; /* žiadna animácia */
+    transform: none; /* žiadne posúvanie */
+    stroke: #ffffff; /* farba šípky */
+    filter: none;
+    background-color: transparent; /* HELPED REMOVE SQUARE*/
+    box-shadow: none;
+  }
+
+  /* Zrušíme bounce efekt pri hoveri 📱MOBILE LANDSCAPE */
+
+  /* Ak by sa trieda .clicked pridala, zrušíme efekt */
+  .scroll-down-arrow.clicked {
+    animation: none;
+  }
+} 
 
 }
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
+/* =========================================================================================================================================== */
