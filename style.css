@@ -1462,7 +1462,7 @@ tbody td:first-child {
   .hero-title span.active {
     color: rgb(134, 8, 8); /* jasne červené */
     opacity: 1; /* plná viditeľnosť */
-    text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
+    text-shadow:none /* svetelný efekt */
   }
 
   /* ====================================== */
@@ -1675,7 +1675,7 @@ tbody td:first-child {
   .hero-title span.active {
     color: rgb(134, 8, 8); /* jasne červené */
     opacity: 1; /* plná viditeľnosť */
-    text-shadow: 0 0 10px red, 0 0 20px rgb(220, 7, 7); /* svetelný efekt */
+    text-shadow: none /* svetelný efekt */
   }
 
   /* ========================================== */
