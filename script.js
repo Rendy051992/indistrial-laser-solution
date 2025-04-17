@@ -42,16 +42,16 @@ function setSparkSettings() {
 
 
   // ===============================
-  //   PC VERZIA SPARKS
+  //   PC VERZIA SPARKS ANIMATION
   // ===============================
 
   // PC verzia (šírka okna 1024px a viac)
   else if (window.innerWidth >= 1024) {
-    numberOfSparks = 45; // Počet iskier na PC (výrazný efekt)
-    sparkSpeed = 14; // Rýchlosť pohybu iskier na PC
+    numberOfSparks = 90; // Počet iskier na PC (výrazný efekt)
+    sparkSpeed = 24; // Rýchlosť pohybu iskier na PC
     sparkSizeMin = 1.5; // Minimálna veľkosť iskier na PC
     sparkSizeMax = 3; // Maximálna veľkosť iskier na PC
-    delayBetweenLetters = 300; // Časový odstup medzi písmenami na PC
+    delayBetweenLetters = 200; // Časový odstup medzi písmenami na PC
   }
   // ================================================================================================================================================
 
@@ -61,11 +61,11 @@ function setSparkSettings() {
 
   // Mobilná verzia (telefón na výšku, šírka menšia ako 768px)
   else if (window.innerWidth < 768) {
-    numberOfSparks = 50; // Menej iskier kvôli výkonu telefónu
+    numberOfSparks = 30; // Menej iskier kvôli výkonu telefónu
     sparkSpeed = 13; // Pomalšia rýchlosť pohybu iskier na mobile
     sparkSizeMin = 0.5; // Najmenšia veľkosť iskier na mobile
-    sparkSizeMax = 2; // Najväčšia veľkosť iskier na mobile
-    delayBetweenLetters = 400; // Dlhší čas medzi písmenami kvôli čitateľnosti
+    sparkSizeMax = 1; // Najväčšia veľkosť iskier na mobile
+    delayBetweenLetters = 200; // Dlhší čas medzi písmenami kvôli čitateľnosti
   }
   // ================================================================================================================================================
 
